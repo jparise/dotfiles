@@ -156,11 +156,6 @@ if has("autocmd")
         au FileType python  set completeopt-=preview
     augroup END
 
-    augroup PHP
-        au!
-        au BufRead  *.phpt  set syntax=php
-    augroup END
-
     augroup reStructuredText
         au! FileType rst	set makeprg=python\ rst2html.py\ %\ output.html
     augroup END
