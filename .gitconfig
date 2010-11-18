@@ -1,0 +1,47 @@
+[user]
+	name = Jon Parise
+
+[core]
+    editor = mvim -f
+	pager = less -FRSX
+
+[alias]
+	amend = commit --amend
+	changes = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%cr)%Creset'
+	co = checkout
+	diff-staged = diff --cached
+	logd = log -1 --decorate --name-status
+	graph = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset'
+	head = log -1 --decorate --name-status HEAD
+	stat = status
+	unstage = reset HEAD --
+	uncommit = reset --soft HEAD^
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	pager = true
+	ui = true
+
+[color "branch"]
+	current = cyan reverse
+	local = cyan
+	remote = green
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[merge]
+	keepBackup = false
+	tool = p4merge
+
+[mergetool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \
+		"$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$REMOTE" "$PWD/$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
