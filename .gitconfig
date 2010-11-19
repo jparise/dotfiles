@@ -35,6 +35,10 @@
 	changed = green
 	untracked = cyan
 
+[diff "exif"]
+	# echo '*.png diff=exif' >> .gitattributes
+	textconv = exiftool
+
 [merge]
 	keepBackup = false
 	tool = p4merge
