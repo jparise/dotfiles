@@ -10,9 +10,10 @@
 	changes = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%cr)%Creset'
 	co = checkout
 	diff-staged = diff --cached
-	logd = log -1 --decorate --name-status
 	graph = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset'
 	head = log -1 --decorate --name-status HEAD
+	logd = log -1 --decorate --name-status
+	merge-subtree = merge --squash -s subtree --no-commit
 	stat = status
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
