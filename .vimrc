@@ -176,4 +176,9 @@ if has("autocmd")
         au!
         au BufRead  cvs*    set laststatus=1 tw=78 
     augroup END
+
+    augroup Git
+        au!
+        au BufRead .git/COMMIT_EDITMSG normal 1G
+    augroup END
 endif
