@@ -1,5 +1,6 @@
 [user]
 	name = Jon Parise
+	email = jon@indelible.org
 
 [core]
     editor = mvim -f
@@ -12,7 +13,7 @@
 	diff-staged = diff --cached
 	graph = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset'
 	head = log -1 --decorate --name-status HEAD
-	logd = log -1 --decorate --name-status
+	details = log -1 --decorate --patch
 	merge-subtree = merge --squash -s subtree --no-commit
 	stat = status
 	unstage = reset HEAD --
