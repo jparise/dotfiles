@@ -81,6 +81,7 @@ endif
 
 let g:zenburn_high_Contrast = 1
 colorscheme mustang
+hi Todo ctermfg=230 ctermbg=14 gui=italic guifg=#faf4c6 guibg=#202020
 
 "--[ System Options ]-----------------------------------------------------------
 
