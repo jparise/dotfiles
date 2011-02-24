@@ -14,8 +14,8 @@
 	graph = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset'
 	head = log -1 --decorate --name-status HEAD
 	details = log -1 --decorate --patch
-	merge-subtree = merge --squash -s subtree --no-commit
 	stat = status
+	subtree-merge = merge --squash -s subtree --no-commit
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
 
