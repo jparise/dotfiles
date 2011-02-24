@@ -19,6 +19,12 @@
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
 
+[branch]
+	autosetuprebase = local
+
+[branch "master"]
+	mergeoptions = --ff-only
+
 [color]
 	branch = auto
 	diff = auto
