@@ -2,6 +2,9 @@
 	name = Jon Parise
 	email = jon@indelible.org
 
+[github]
+	user = jparise
+
 [core]
     editor = mvim -f
 	pager = less -FRSX
