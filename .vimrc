@@ -181,5 +181,6 @@ if has("autocmd")
     augroup Git
         au!
         au BufRead .git/COMMIT_EDITMSG normal 1G
+        au BufRead .git/COMMIT_EDITMSG set tw=70
     augroup END
 endif
