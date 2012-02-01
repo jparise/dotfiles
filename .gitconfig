@@ -44,18 +44,3 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-
-[diff "exif"]
-	# echo '*.png diff=exif' >> .gitattributes
-	textconv = exiftool
-
-[merge]
-	keepBackup = false
-	tool = p4merge
-
-[mergetool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \
-		"$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$REMOTE" "$PWD/$MERGED"
-	keepTemporaries = false
-	trustExitCode = false
-	keepBackup = false
