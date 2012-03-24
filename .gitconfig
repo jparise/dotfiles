@@ -27,6 +27,12 @@
 [branch "master"]
 	mergeoptions = --ff-only
 
+[diff]
+    tool = araxis
+
+[merge]
+    tool = araxis
+
 [color]
 	branch = auto
 	diff = auto
