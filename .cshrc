@@ -17,7 +17,7 @@ endif
 unset autologout
 set echo_style = bsd
 set filec
-set fignore = (.o .class)
+set fignore = (.o .class .pyc)
 set history = 50
 set savehist = 10
 set nobeep
