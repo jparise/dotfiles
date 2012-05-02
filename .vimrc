@@ -100,7 +100,7 @@ if has('gui_running')
     if has('gui_macvim')
         "set guifont=Menlo Regular:h11
         "set guifont=Inconsolata:h14
-        set guifont=Monaco:h12
+        set guifont=Monaco:h14
     end
 end
 
