@@ -27,6 +27,9 @@
 [branch "master"]
 	mergeoptions = --ff-only
 
+[push]
+    default = upstream
+
 [diff]
     tool = araxis
 
