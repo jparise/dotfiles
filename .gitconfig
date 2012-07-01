@@ -7,7 +7,7 @@
 
 [core]
     editor = mvim -f
-	pager = less -FRSX
+	pager = less -FRX
 
 [alias]
 	amend = commit --amend
