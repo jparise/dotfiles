@@ -55,4 +55,4 @@ unlimit coredumpsize
 unalias *
 alias   pwd 'echo $cwd'
 alias   reload  'source ~/.cshrc ; source ~/.login'
-alias   gvim    '/Applications/MacVim.app/Contents/MacOS/Vim -g'
+alias   gvim    mvim
