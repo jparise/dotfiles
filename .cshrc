@@ -6,7 +6,6 @@ set path = ($HOME/Bin $HOME/.gem/ruby/1.8/bin)
 set path = ($path /usr/local/share/python)
 set path = ($path /usr/local/bin /usr/local/sbin)
 set path = ($path /usr/bin /bin /usr/sbin /sbin /usr/X11/bin)
-set path = ($path /opt/android/tools /opt/android/platform-tools)
 
 # Interactive shell?
 if ($?prompt == 0) then
