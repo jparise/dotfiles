@@ -14,7 +14,6 @@
 	changes = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%cr)%Creset'
 	co = checkout
 	diff-staged = diff --cached
-	graph = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset'
 	head = log -1 --decorate --name-status HEAD
 	stat = status -sb
 	sync = !git pull && git submodule update --init --recursive
