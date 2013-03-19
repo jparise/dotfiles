@@ -44,7 +44,7 @@
 	ui = true
 
 [color "branch"]
-	current = cyan reverse
+	current = cyan bold
 	local = cyan
 	remote = green
 
