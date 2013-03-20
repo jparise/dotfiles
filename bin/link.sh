@@ -11,6 +11,10 @@ $LN $HOME/.dotfiles/.lldbinit $HOME/.lldbinit
 # Mercurial
 $LN $HOME/.dotfiles/.hgrc $HOME/.hgrc
 
+# tcsh
+$LN $HOME/.dotfiles/.cshrc $HOME/.cshrc
+$LN $HOME/.dotfiles/.login $HOME/.login
+
 # Vim
 $LN $HOME/.dotfiles/.vim $HOME/.vim
 $LN $HOME/.dotfiles/.vimrc $HOME/.vimrc
