@@ -149,7 +149,7 @@ if has("autocmd")
     " Restore cursor position from this file's last edit
     au BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \ execute("normal`\"") |
+        \   execute('normal! g`"zvzz') |
         \ endif
 
     augroup C
