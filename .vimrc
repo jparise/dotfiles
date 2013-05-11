@@ -49,6 +49,7 @@ set smartindent         " smart indenting when starting a new line
 set smarttab            " smart movement and deleting based on tab settings
 set softtabstop=4       " set soft tab stop to four spaces
 set nostartofline       " don't jump to first char with page commands
+set synmaxcol=800       " don't attempt to syntax highlight long lines
 set tabstop=4           " set tabs to eight spaces
 set textwidth=78        " set the maximum text width
 set notitle             " turn off the titlebar
@@ -78,6 +79,9 @@ filetype indent on
 if &diff
     syntax off " only highlight the diff output itself
 endif
+
+" Match version control conflict markers.
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 let g:zenburn_high_Contrast = 1
 colorscheme mustang
