@@ -66,7 +66,11 @@ set viminfo='20,\"50,%,h,n~/.viminfo
 
 " Ignore filenames with these suffixes
 set suffixes=.bak,~
-set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.lib,*.swp,*.jpg,*.png,*.gif,*.pyc,*.pyo
+set wildignore+=.DS_Store,*.sw?
+set wildignore+=.svn,CVS,.git,.hg
+set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.lib
+set wildignore+=*.jpg,*.png,*.gif
+set wildignore+=*.pyc,*.pyo
 
 let mapleader = ","
 
