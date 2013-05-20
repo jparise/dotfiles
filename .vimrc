@@ -89,7 +89,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 let g:zenburn_high_Contrast = 1
 colorscheme mustang
-hi Todo ctermfg=230 ctermbg=14 gui=italic guifg=#faf4c6 guibg=#202020
+hi Todo ctermfg=9 ctermbg=0 term=standout gui=italic guifg=#faf4c6 guibg=#202020
 
 "--[ System Options ]-----------------------------------------------------------
 
