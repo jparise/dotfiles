@@ -5,6 +5,9 @@ LN='ln -fhsv'
 # Git
 $LN $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
+# IPython
+$LN $HOME/.dotfiles/.ipython $HOME/.ipython
+
 # LLDB
 $LN $HOME/.dotfiles/.lldbinit $HOME/.lldbinit
 
