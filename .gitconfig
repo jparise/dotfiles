@@ -6,7 +6,7 @@
 	user = jparise
 
 [core]
-    editor = mvim -f
+	editor = mvim -f
 	pager = less -FRX
 
 [alias]
@@ -16,7 +16,6 @@
 	diff-staged = diff --cached
 	head = log -1 --decorate --name-status HEAD
 	stat = status -sb
-	sync = !git pull && git submodule update --init --recursive
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
 
@@ -27,13 +26,10 @@
 	mergeoptions = --ff-only
 
 [push]
-    default = upstream
+	default = upstream
 
 [diff]
-    tool = araxis
-
-[merge]
-    tool = araxis
+	algorithm = patience
 
 [color]
 	branch = auto
