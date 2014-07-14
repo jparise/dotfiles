@@ -9,7 +9,6 @@ set nocompatible        " turn off full vi compatibility
 set cmdwinheight=3      " height of the command window
 set completeopt=menu,longest,preview " insert mode completion options
 set cpoptions=aABceF    " vi compatibility options
-set directory=/tmp      " swap directory
 set encoding=utf-8      " change the default text encoding
 set esckeys             " allows cursor keys in insert mode
 set noerrorbells        " turn off error bells
@@ -35,7 +34,7 @@ set mousefocus          " use the mouse to set the window focus
 set mousehide           " hide the mouse in the gui
 set nonumber            " don't number lines
 set report=0            " show all changes
-set noruler             " don't show cursor position
+set ruler               " show cursor position
 set scrolloff=3         " scroll when within 3 lines of the screen's edge
 set shell=tcsh          " set the shell
 set shiftround          " round indent size to a multiple of shiftwidth
