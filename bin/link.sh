@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LN='ln -fhsv'
+LN='ln -fsv'
 
 # Git
 $LN $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
