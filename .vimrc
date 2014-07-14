@@ -171,7 +171,12 @@ if has("autocmd")
 
     augroup Web
         au!
-        au Filetype css,html,htmldjango,xhtml  set noet tw=0 wm=0
+        au Filetype css,html,htmldjango,xhtml  set tw=0 wm=0
+    augroup END
+
+    augroup Nunjucks
+        au!
+        au BufRead  *.nunjucks  set syntax=htmljinja
     augroup END
 
     augroup Mail
