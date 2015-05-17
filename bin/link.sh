@@ -13,6 +13,7 @@ $LN $HOME/.dotfiles/.lldbinit $HOME/.lldbinit
 
 # Mercurial
 $LN $HOME/.dotfiles/.hgrc $HOME/.hgrc
+$LN $HOME/.dotfiles/.hgignore $HOME/.hgignore
 
 # bash
 $LN $HOME/.dotfiles/.inputrc $HOME/.inputrc
