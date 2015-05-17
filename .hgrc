@@ -6,3 +6,9 @@ ignore = ~/.hgignore
 
 [extensions]
 color =
+pager =
+shelve =
+
+[pager]
+pager = LESS='FRX' less
+quiet = True
