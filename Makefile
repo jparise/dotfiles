@@ -1,32 +1,33 @@
-install: bash git hg ipython lldb tcsh vim
+install: install-bash install-git install-hg install-ipython install-lldb \
+		 install-tcsh install-vim
 
-bash:
+install-bash:
 	rm -f ~/.inputrc
 	ln -s `pwd`/.inputrc ~/.inputrc
 
-git:
+install-git:
 	rm -f ~/.gitconfig
 	ln -s `pwd`/.gitconfig ~/.gitconfig
 
-hg:
+install-hg:
 	rm -f ~/.hgignore ~/.hgrc
 	ln -s `pwd`/.hgignore ~/.hgignore
 	ln -s `pwd`/.hgrc ~/.hgrc
 
-ipython:
+install-ipython:
 	rm -rf ~/.ipython
 	ln -s `pwd`/.ipython ~/.ipython
 
-lldb:
+install-lldb:
 	rm -f ~/.lldbinit
 	ln -s `pwd`/.lldbinit ~/.lldbinit
 
-tcsh:
+install-tcsh:
 	rm -f ~/.cshrc ~/.logic
 	ln -s `pwd`/.cshrc ~/.cshrc
 	ln -s `pwd`/.logic ~/.logic
 
-vim:
+install-vim:
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/.vim ~/.vim
 	ln -s `pwd`/.vimrc ~/.vimrc
