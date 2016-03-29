@@ -1,4 +1,4 @@
 .DS_Store
-.ipython/profile_default/db/
-.ipython/profile_default/history.sqlite
-.vim/.netrwhist
+ipython/profile_default/db/
+ipython/profile_default/history.sqlite
+vim/.netrwhist
