@@ -6,7 +6,7 @@
 	user = jparise
 
 [core]
-	editor = mvim -f
+	editor = mvim -f --nomru
 	pager = less -FRX
 
 [alias]
