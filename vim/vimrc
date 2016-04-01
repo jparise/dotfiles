@@ -1,14 +1,43 @@
 " Jon Parise <jon@indelible.org>
-version 7.0
+
+set nocompatible
+
+" Plugins
+"
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin()
+Plug 'croaker/mustang-vim'
+Plug 'chriskempson/base16-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-fugitive' | Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'airblade/vim-gitgutter'
+Plug 'mileszs/ack.vim'
+Plug 'solarnz/arcanist.vim'
+Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'rodjek/vim-puppet', {'for': 'puppet'}
+Plug 'solarnz/thrift.vim', {'for': 'thrift'}
+Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'jvirtanen/vim-cocoapods'
+call plug#end()
 
 set autoindent          " turn autoindenting on
 set autowrite           " auto-save before running external commands
+set background=dark     " dark background
 set nobackup            " turn backups off
 set backspace=indent,eol,start " smarter backspace
 set nocompatible        " turn off full vi compatibility
 set cmdwinheight=3      " height of the command window
 set completeopt=menu,longest,preview " insert mode completion options
 set cpoptions=aABceF    " vi compatibility options
+set directory=~/tmp,/tmp
 set encoding=utf-8      " change the default text encoding
 set esckeys             " allows cursor keys in insert mode
 set noerrorbells        " turn off error bells
@@ -25,7 +54,7 @@ set noinsertmode        " don't start vim in insertmode
 set joinspaces          " insert two spaces after period when joining lines
 set laststatus=2        " always show status line
 set nolist              " turn off extended character listing
-set listchars=tab:»·,trail:· " extended character representations
+set listchars=tab:Â»Â·,trail:Â· " extended character representations
 set magic               " use extended regexp in search patterns
 set modeline            " turn on the modeline
 set modelines=5         " last line is the modeline
@@ -47,12 +76,14 @@ set smartcase           " respect uppercase characters when searching
 set smartindent         " smart indenting when starting a new line
 set smarttab            " smart movement and deleting based on tab settings
 set softtabstop=4       " set soft tab stop to four spaces
+set splitright          " open new windows to the right
 set nostartofline       " don't jump to first char with page commands
 set synmaxcol=800       " don't attempt to syntax highlight long lines
 set tabstop=4           " set tabs to eight spaces
 set textwidth=78        " set the maximum text width
 set notitle             " turn off the titlebar
 set t_vb=               " turn off terminal's visual bell
+set updatetime=250      " speed up file sync frequency
 set visualbell          " turn on the visual bell
 set wildchar=<TAB>      " character used for command line expansion
 set wildmenu            " use menu when in 'full' command-line completion mode
@@ -60,67 +91,26 @@ set wildmode=list:longest,full " completion mode behavior
 set wrapmargin=0        " wrap from the right margin
 set nowritebackup       " don't write backups
 
-" Store marks, registers, and buffers in $TEMP/viminfo
-set viminfo='20,\"50,%,h,n~/.viminfo
-
-" Ignore filenames with these suffixes
-set suffixes=.bak,~
-set wildignore+=.DS_Store,*.sw?
-set wildignore+=.svn,CVS,.git,.hg
-set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.lib
-set wildignore+=*.jpg,*.png,*.gif
-set wildignore+=*.pyc,*.pyo
-
-let mapleader = ","
-
-" Enable syntax highlighting and filetype-based syntax and indentation rules.
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
-
-if &diff
-    syntax off " only highlight the diff output itself
-endif
-
-" Match version control conflict markers.
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-
-let g:zenburn_high_Contrast = 1
-colorscheme mustang
-hi Todo ctermfg=9 ctermbg=234 term=standout gui=italic guifg=#faf4c6 guibg=#202020
-
-"--[ System Options ]-----------------------------------------------------------
-
+" Platform Options
 if has('gui_running')
+    colorscheme base16-ocean
     set guioptions=aAeimgr
-    set lines=60
     set ruler
     set title
 
     if has('gui_win32')
-        "set guifont=Lucida_Console:h10
-        "set guifont=Andale_Mono:h10
         set guifont=Consolas:h10.5
-    end
+    endif
 
     if has('gui_macvim')
-        "set guifont=Menlo Regular:h11
-        "set guifont=Inconsolata:h14
-        set guifont=Monaco:h14
-    end
-end
+        set guifont=Menlo:h14
+    endif
+else
+    colorscheme mustang
+    hi Todo ctermfg=9 ctermbg=234 term=standout gui=italic guifg=#faf4c6 guibg=#202020
 
-if has('win32')
-    set shell=cmd.exe
+    let g:airline_theme='raven'
 endif
-
-"--[ Key Mappings ]-------------------------------------------------------------
-
-" Fix the backspace key on some terminals
-"imap <Del> <BS>
-"map  <Del> <BS>
-"fixdel
 
 " Buffer management
 map  <Right> :bnext<CR>
@@ -129,70 +119,41 @@ map  <Left>  :bprev<CR>
 imap <Left>  <ESC>:bprev<CR>
 map  <Del>   :bd<CR>
 
-" Ctrl-Space for omnicomplete
-inoremap <C-space> <C-x><C-o>
-
 " Reformat the current paragraph to textwidth
 imap <C-J> <c-o>gqap
 map  <C-J> gqap
 
-" Shift-tab to insert a hard tab
-imap <silent> <S-tab> <C-v><tab>
-
-" Run the current make program 
-nmap <F7> :make<CR>
-
-"--[ AutoCommands ]------------------------------------------------------------
-
-if has("autocmd")
-    " Restore cursor position from this file's last edit
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   execute('normal! g`"zvzz') |
-        \ endif
-
-    augroup C
-        au!
-        au FileType c,cpp   set formatoptions=croql
-        au FileType c,cpp   set cindent
-        au FileType c,cpp   set cinoptions=t0(0
-    augroup END
-
-    augroup Python
-        au!
-        au FileType python  set nosmartindent autoindent expandtab
-        au FileType python  set omnifunc=pythoncomplete#Complete
-        au FileType python  set completeopt-=preview
-    augroup END
-
-    augroup reStructuredText
-        au! FileType rst	set makeprg=python\ rst2html.py\ %\ output.html
-    augroup END
-
-    augroup Web
-        au!
-        au Filetype css,html,htmldjango,xhtml  set tw=0 wm=0
-    augroup END
-
-    augroup Nunjucks
-        au!
-        au BufRead  *.nunjucks  set syntax=htmljinja
-    augroup END
-
-    augroup Mail
-        au!
-        au BufRead  mutt*,SLRN*   set laststatus=1 tw=70
-        au BufRead  mutt*,SLRN*   normal :g/^> -- *$/,/^$/-1dgg
-    augroup END
-
-    augroup CVS
-        au!
-        au BufRead  cvs*    set laststatus=1 tw=78 
-    augroup END
-
-    augroup Git
-        au!
-        au BufRead COMMIT_EDITMSG normal 1G
-        au BufRead COMMIT_EDITMSG set tw=70
-    augroup END
+" Ack
+if executable('ag') == 1
+    let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#hunks#non_zero_only = 1
+
+" Go
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+
+" Syntastic
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "âœ—"
+let g:syntastic_warning_symbol = "âš "
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["go"] }
+
+au BufNewFile,BufRead *.nunjucks setlocal filetype=htmljinja expandtab
+au BufNewFile,BufRead *.yrl setfiletype erlang

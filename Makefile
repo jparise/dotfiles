@@ -27,7 +27,11 @@ install-tcsh:
 	ln -s `pwd`/tcsh/cshrc ~/.cshrc
 	ln -s `pwd`/tcsh/login ~/.login
 
-install-vim:
+install-vim: vim/autoload/plug.vim
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim ~/.vim
-	ln -s `pwd`/.vim/vimrc ~/.vimrc
+	ln -s `pwd`/vim/vimrc ~/.vimrc
+
+vim/autoload/plug.vim:
+	curl -fLo `pwd`/vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
