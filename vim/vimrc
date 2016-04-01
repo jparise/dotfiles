@@ -26,6 +26,7 @@ Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'jvirtanen/vim-cocoapods'
+Plug 'kergoth/vim-hilinks'
 call plug#end()
 
 set autoindent          " turn autoindenting on
