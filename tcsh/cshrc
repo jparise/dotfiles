@@ -53,4 +53,3 @@ unlimit coredumpsize
 unalias *
 alias   pwd 'echo $cwd'
 alias   reload  'source ~/.cshrc ; source ~/.login'
-alias   gvim    mvim
