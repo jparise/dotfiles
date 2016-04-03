@@ -10,8 +10,9 @@ install-bash:
 	ln -s `pwd`/bash/inputrc ~/.inputrc
 
 install-git:
-	rm -f ~/.gitconfig
+	rm -f ~/.gitconfig ~/.gitignore
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
+	ln -s `pwd`/git/gitignore ~/.gitignore
 
 install-hg:
 	rm -f ~/.hgignore ~/.hgrc
