@@ -1,5 +1,9 @@
-install: install-bash install-git install-hg install-ipython install-lldb \
-		 install-tcsh install-vim
+TARGETS = install-bash install-git install-hg install-ipython install-lldb \
+          install-tcsh install-vim
+
+.PHONY: install $(TARGETS)
+
+install: $(TARGETS)
 
 install-bash:
 	rm -f ~/.inputrc
