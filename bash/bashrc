@@ -53,3 +53,8 @@ export GREP_OPTIONS='--binary-files=without-match'
 
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
+
+# Optionally include any local settings.
+if [ -f $HOME/.bashrc.local ]; then
+	. $HOME/.bashrc.local
+fi
