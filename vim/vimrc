@@ -108,9 +108,9 @@ if has('gui_running')
     endif
 else
     colorscheme mustang
-    hi Todo ctermfg=9 ctermbg=234 term=standout gui=italic guifg=#faf4c6 guibg=#202020
-
-    let g:airline_theme='raven'
+    hi Todo ctermfg=9 ctermbg=234 term=standout
+    hi StatusLine term=bold,reverse ctermfg=236 ctermbg=252
+    let g:loaded_airline = 1
 endif
 
 " Buffer management
