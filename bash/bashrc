@@ -27,7 +27,7 @@ PROMPT_DIRTRIM=3
 # Configure git-aware prompt if __get_ps1 is available. Otherwise, fall back
 # to an equivalent PS1-based prompt. Both prompts include current host and
 # path information in the shell title.
-if [ "\$(type -t __git_ps1)" ]; then
+if [ "$(type -t __git_ps1)" == 'function' ]; then
 	PROMPT_COMMAND='__git_ps1 "\033]0;\h:\w\007[\W]" "\\\$ "'
 else
 	PS1="\033]0;\h:\w\007[\W]\$ "
