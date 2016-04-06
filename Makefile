@@ -1,5 +1,5 @@
-TARGETS = install-bash install-git install-hg install-ipython install-lldb \
-          install-tcsh install-vim
+TARGETS = install-bash install-ctags install-git install-hg install-ipython \
+		  install-lldb install-tcsh install-vim
 
 .PHONY: install $(TARGETS)
 
@@ -8,6 +8,10 @@ install: $(TARGETS)
 install-bash:
 	rm -f ~/.inputrc
 	ln -s `pwd`/bash/inputrc ~/.inputrc
+
+install-ctags:
+	rm -f ~/.ctags
+	ln -s `pwd`/ctags/ctags ~/.ctags
 
 install-git:
 	rm -f ~/.gitconfig ~/.gitignore
