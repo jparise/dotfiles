@@ -1,0 +1,54 @@
+[ -z "$PS1" ] && return
+
+set -o notify
+
+shopt -s checkwinsize
+shopt -s extglob
+shopt -s histappend
+
+umask 0022
+
+if [ -d "$HOME/Bin" ]; then
+	PATH="$HOME/Bin:$PATH"
+elif [ -d "$HOME/bin" ]; then
+	PATH="$HOME/bin:$PATH"
+fi
+
+# Default to en_US locale with UTF-8 encoding.
+: ${LANG:="en_US.UTF-8"}
+: ${LANGUAGE:="en"}
+: ${LC_CTYPE:="en_US.UTF-8"}
+: ${LC_ALL:="en_US.UTF-8"}
+export LANG LANGUAGE LC_CTYPE LC_ALL
+
+HISTCONTROL=ignoreboth
+PROMPT_DIRTRIM=3
+
+# Configure git-aware prompt if __get_ps1 is available. Otherwise, fall back
+# to an equivalent PS1-based prompt. Both prompts include current host and
+# path information in the shell title.
+if [ "\$(type -t __git_ps1)" ]; then
+	PROMPT_COMMAND='__git_ps1 "\033]0;\h:\w\007[\W]" "\\\$ "'
+else
+	PS1="\033]0;\h:\w\007[\W]\$ "
+fi
+
+# Prefer foregrounded MacVim if it's available.
+if [ -n "$(command -v mvim)" ]; then
+	EDITOR='mvim -f'
+	VISUAL='mvim -f'
+else
+	EDITOR=vim
+	VISUAL=vim
+fi
+export EDITOR VISUAL
+
+export PAGER=less
+export MANPAGER='less -FiRs'
+export LESS='-ErX'
+
+export DIFF_OPTIONS='-du'
+export GREP_OPTIONS='--binary-files=without-match'
+
+stty werase undef
+bind '"\C-w": unix-filename-rubout'

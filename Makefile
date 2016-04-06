@@ -6,7 +6,9 @@ TARGETS = install-bash install-ctags install-git install-hg install-ipython \
 install: $(TARGETS)
 
 install-bash:
-	rm -f ~/.inputrc
+	rm -f ~/.bash_profile ~/.bashrc ~/.inputrc
+	ln -s `pwd`/bash/bash_profile ~/.bash_profile
+	ln -s `pwd`/bash/bashrc ~/.bashrc
 	ln -s `pwd`/bash/inputrc ~/.inputrc
 
 install-ctags:
