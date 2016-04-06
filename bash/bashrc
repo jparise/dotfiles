@@ -22,6 +22,7 @@ fi
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 HISTCONTROL=ignoreboth
+HISTIGNORE="&:bg:fg"
 PROMPT_DIRTRIM=3
 
 # Configure git-aware prompt if __get_ps1 is available. Otherwise, fall back
