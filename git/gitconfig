@@ -1,12 +1,8 @@
 [user]
-	name = Jon Parise
-	email = jon@indelible.org
-
-[github]
-	user = jparise
+	useConfigOnly = true
 
 [core]
-	editor = mvim -f --nomru
+	editor = $EDITOR --nomru
 	excludesfile = ~/.gitignore
 	pager = less -FRX
 
