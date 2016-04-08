@@ -53,3 +53,8 @@ unlimit coredumpsize
 unalias *
 alias   pwd 'echo $cwd'
 alias   reload  'source ~/.cshrc ; source ~/.login'
+
+# Optionally include any local settings.
+if (-f "$HOME/.cshrc.local") then
+    source $HOME/.cshrc.local
+endif
