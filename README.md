@@ -21,3 +21,10 @@ Local settings can be placed in a file named `$HOME/.cshrc.local`.
 management. There is a Makefile rule that downloads `autoload/plug.vim` to
 bootstrap the system. You'll need to run `:PlugInstall` to install the
 individual plugins themselves.
+
+On Mac OS X, the patched [Menlo for Powerline][] font is used if available.
+This lets us enabled [vim-airline][]'s support for [Powerline][] symbols.
+
+[Menlo for Powerline]: https://github.com/abertsch/Menlo-for-Powerline
+[vim-airline]: https://github.com/vim-airline/vim-airline
+[Powerline]: https://github.com/powerline/powerline
