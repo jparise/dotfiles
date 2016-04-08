@@ -82,7 +82,7 @@ set nostartofline       " don't jump to first char with page commands
 set synmaxcol=800       " don't attempt to syntax highlight long lines
 set tabstop=4           " set tabs to eight spaces
 set textwidth=78        " set the maximum text width
-set notitle             " turn off the titlebar
+set title               " turn on the titlebar
 set t_vb=               " turn off terminal's visual bell
 set updatetime=250      " speed up file sync frequency
 set visualbell          " turn on the visual bell
