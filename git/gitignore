@@ -1,1 +1,13 @@
+# mac
 .DS_Store
+
+# vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+.netrwhist
+
+# tags
+tags
+
+# python
+.venv/
