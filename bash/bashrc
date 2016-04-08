@@ -31,9 +31,9 @@ PS1="[\W]\$ "
 # hostname.
 if [[ $TERM == "xterm"* ]]; then
 	if [ -x "$SSH_CONNECTION" ]; then
-		PS1="\e]0;\h:\w\a$PS1"
+		PS1="\[\e]0;\h:\w\a\]$PS1"
 	else
-		PS1="\e]0;\w\a$PS1"
+		PS1="\[\e]0;\w\a\]$PS1"
 	fi
 fi
 
