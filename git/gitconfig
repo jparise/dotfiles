@@ -13,6 +13,7 @@
 	co = checkout
 	diff-staged = diff --cached
 	head = log -1 --decorate --name-status HEAD
+	outgoing = log --pretty=oneline --abbrev-commit @{u}..
 	stat = status -sb
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
