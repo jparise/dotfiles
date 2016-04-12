@@ -114,7 +114,6 @@ else
     let g:loaded_airline = 1
 
     colorscheme mustang
-    hi Normal ctermbg=none
     hi StatusLine term=bold,reverse ctermfg=236 ctermbg=252
     hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
