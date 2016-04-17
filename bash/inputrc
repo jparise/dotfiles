@@ -4,6 +4,9 @@ set bell-style none
 # Immediately add a trailing slash when autocompleting symlinks to directories.
 set mark-symlinked-directories on
 
+# Show all possible completions immediately if the match is ambiguous.
+set show-all-if-ambiguous on
+
 # Be more intelligent when autocompleting by also looking at the text after
 # the cursor. ((This is supported by the Readline used by Bash 4.)
 set skip-completed-text on
