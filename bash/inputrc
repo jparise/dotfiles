@@ -22,6 +22,6 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
-"\e[A":history-search-backward
-"\e[B":history-search-forward
-C-d: possible-completions
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"C-d": possible-completions
