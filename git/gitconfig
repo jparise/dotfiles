@@ -2,7 +2,6 @@
 	useConfigOnly = true
 
 [core]
-	editor = $EDITOR --nomru
 	excludesfile = ~/.gitignore
 	pager = less -FRX
 
