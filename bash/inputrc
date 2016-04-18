@@ -1,6 +1,9 @@
 # Never ring any sort of bell.
 set bell-style none
 
+# Only prompt when there are more than this many completion candidates.
+set completion-query-items 200
+
 # Immediately add a trailing slash when autocompleting symlinks to directories.
 set mark-symlinked-directories on
 
