@@ -26,6 +26,7 @@ Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'raimon49/requirements.txt.vim'
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
 call plug#end()
