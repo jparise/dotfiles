@@ -31,7 +31,7 @@ install-ipython:
 
 install-lldb:
 	rm -f ~/.lldbinit
-	ln -s `pwd`/llbdb/lldbinit ~/.lldbinit
+	ln -s `pwd`/lldb/lldbinit ~/.lldbinit
 
 install-tcsh:
 	rm -f ~/.cshrc ~/.login
