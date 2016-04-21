@@ -62,7 +62,6 @@ set magic               " use extended regexp in search patterns
 set modeline            " turn on the modeline
 set modelines=5         " last line is the modeline
 set mouse=h             " mouse options
-set mousefocus          " use the mouse to set the window focus
 set mousehide           " hide the mouse in the gui
 set nonumber            " don't number lines
 set report=0            " show all changes
