@@ -58,6 +58,21 @@ export GREP_OPTIONS='--binary-files=without-match'
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
 
+# Basic shell completions
+complete -A export     printenv
+complete -A variable   export local readonly unset
+complete -A enabled    builtin
+complete -A alias      alias unalias
+complete -A function   function
+complete -A helptopic  help
+complete -A setopt     set
+complete -A shopt      shopt
+complete -A directory  mkdir rmdir
+complete -A directory   -o default cd pushd
+
+complete -A stopped -P '%' bg
+complete -A job -P '%'     fg jobs disown
+
 # Optionally include any local settings.
 if [ -f $HOME/.bashrc.local ]; then
 	. $HOME/.bashrc.local
