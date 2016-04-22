@@ -1,14 +1,17 @@
 # Never ring any sort of bell.
 set bell-style none
 
+# Match in a case-insensitive fashion.
+set completion-ignore-case on
+
 # Only prompt when there are more than this many completion candidates.
 set completion-query-items 200
 
 # Immediately add a trailing slash when autocompleting symlinks to directories.
 set mark-symlinked-directories on
 
-# Show all possible completions immediately if the match is ambiguous.
-set show-all-if-ambiguous on
+# Require an explicit '.' in order to match hidden files.
+set match-hidden-files off
 
 # Be more intelligent when autocompleting by also looking at the text after
 # the cursor. ((This is supported by the Readline used by Bash 4.)
