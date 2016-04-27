@@ -130,9 +130,11 @@ map  <Del>   :bd<CR>
 imap <C-J> <c-o>gqap
 map  <C-J> gqap
 
-" Ack
-if executable('ag') == 1
-    let g:ackprg = 'ag --nogroup --nocolor --column'
+" Ack (ag)
+if executable('ag')
+    set grepprg=ag\ --vimgrep
+    let g:ackprg = 'ag --vimgrep'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 " Airline
