@@ -119,6 +119,9 @@ else
     hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
 
+" Enter to start entering a command in normal mode
+nnoremap <cr> :
+
 " Buffer management
 map  <Right> :bnext<CR>
 imap <Right> <ESC>:bnext<CR>
