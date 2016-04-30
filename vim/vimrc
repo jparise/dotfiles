@@ -135,7 +135,8 @@ map  <C-J> gqap
 
 " Ack (ag)
 if executable('ag')
-    set grepprg=ag\ --vimgrep
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
     let g:ackprg = 'ag --vimgrep'
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
