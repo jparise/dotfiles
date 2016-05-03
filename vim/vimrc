@@ -26,6 +26,7 @@ Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'autowitch/hive.vim'
 Plug 'raimon49/requirements.txt.vim'
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
@@ -171,4 +172,5 @@ let g:syntastic_mode_map = {
     \ "passive_filetypes": ["go"] }
 
 au BufNewFile,BufRead *.nunjucks setlocal filetype=htmljinja expandtab
+au BufNewFile,BufRead *.q,*.ql set filetype=hive expandtab
 au BufNewFile,BufRead *.yrl setfiletype erlang
