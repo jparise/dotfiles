@@ -58,7 +58,7 @@ set noinsertmode        " don't start vim in insertmode
 set joinspaces          " insert two spaces after period when joining lines
 set laststatus=2        " always show status line
 set nolist              " turn off extended character listing
-set listchars=tab:»·,trail:· " extended character representations
+set listchars=tab:»·,extends:›,precedes:‹,nbsp:␣,trail:·
 set magic               " use extended regexp in search patterns
 set modeline            " turn on the modeline
 set modelines=5         " last line is the modeline
@@ -71,6 +71,7 @@ set scrolloff=3         " scroll when within 3 lines of the screen's edge
 set shiftround          " round indent size to a multiple of shiftwidth
 set shiftwidth=4        " number of spaces in each indent
 set shortmess=atI       " abbreviate all messages
+set showbreak=↪\        " show at the start of wrapped lines
 set noshowcmd           " don't show incomplete commands
 set showmode            " show the current mode
 set showtabline=1       " show tabline as needed
