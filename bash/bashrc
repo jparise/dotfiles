@@ -1,9 +1,14 @@
 [ -z "$PS1" ] && return
 
+set -o noclobber
 set -o notify
 
+shopt -s cdspell
 shopt -s checkwinsize
+shopt -s cmdhist
+shopt -s dirspell
 shopt -s extglob
+shopt -s globstar
 shopt -s histappend
 
 umask 0022
@@ -22,7 +27,7 @@ fi
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 HISTCONTROL=ignoreboth
-HISTIGNORE="&:bg:fg"
+HISTIGNORE="&:bg:fg:clear:exit"
 PROMPT_DIRTRIM=3
 PS1="[\W]\$ "
 
