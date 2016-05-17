@@ -61,8 +61,7 @@ set laststatus=2        " always show status line
 set nolist              " turn off extended character listing
 set listchars=tab:»·,extends:›,precedes:‹,nbsp:␣,trail:·
 set magic               " use extended regexp in search patterns
-set modeline            " turn on the modeline
-set modelines=5         " last line is the modeline
+set modelines=0         " turn off modelines
 set mouse=h             " mouse options
 set mousehide           " hide the mouse in the gui
 set nonumber            " don't number lines
