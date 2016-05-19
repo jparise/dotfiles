@@ -121,6 +121,9 @@ else
     hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
 
+" Open help in a vertical split
+autocmd FileType help wincmd L
+
 " Enter to start entering a command in normal mode
 nnoremap <cr> :
 
