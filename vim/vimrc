@@ -121,8 +121,18 @@ else
     hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
 
-" Open help in a vertical split
-autocmd FileType help wincmd L
+" Autocommands
+if has('autocmd')
+    augroup MainAutocmds
+        autocmd!
+
+        " Open help in a vertical split
+        autocmd FileType help wincmd L
+
+        " Resize all windows when vim itself is resized
+        autocmd VimResized * execute "normal! \<c-w>="
+    augroup END
+endif
 
 " Enter to start entering a command in normal mode
 nnoremap <cr> :
