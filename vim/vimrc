@@ -48,7 +48,7 @@ set esckeys             " allows cursor keys in insert mode
 set noerrorbells        " turn off error bells
 set esckeys             " allows cursor keys in insert mode
 set expandtab           " expand tabs to spaces
-set formatoptions=cqrt  " options for "text format" ("gp")
+set formatoptions+=jnr  " options for "text format" ("gp")
 set helpheight=0        " disable help
 set hidden              " enable hidden buffers
 set history=100         " remember the last 100 lines of command-line history
