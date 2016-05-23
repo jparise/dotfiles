@@ -48,7 +48,7 @@ set esckeys             " allows cursor keys in insert mode
 set noerrorbells        " turn off error bells
 set esckeys             " allows cursor keys in insert mode
 set expandtab           " expand tabs to spaces
-set formatoptions+=jnr  " options for "text format" ("gp")
+set formatoptions+=nr   " options for "text format" ("gp")
 set helpheight=0        " disable help
 set hidden              " enable hidden buffers
 set history=100         " remember the last 100 lines of command-line history
@@ -94,6 +94,10 @@ set wildmenu            " use menu when in 'full' command-line completion mode
 set wildmode=list:longest,full " completion mode behavior
 set wrapmargin=0        " wrap from the right margin
 set nowritebackup       " don't write backups
+
+if v:version > 703 || v:version == 703 && has('patch541')
+    set formatoptions+=j " remove comment leader when joining comment lines
+endif
 
 " Platform Options
 if has('gui_running')
