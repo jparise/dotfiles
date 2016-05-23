@@ -79,7 +79,8 @@ set smartcase           " respect uppercase characters when searching
 set smartindent         " smart indenting when starting a new line
 set smarttab            " smart movement and deleting based on tab settings
 set softtabstop=4       " set soft tab stop to four spaces
-set splitright          " open new windows to the right
+set splitbelow          " open horizontal splits below current window
+set splitright          " open vertical splits to the right
 set nostartofline       " don't jump to first char with page commands
 set synmaxcol=800       " don't attempt to syntax highlight long lines
 set tabstop=4           " set tabs to eight spaces
