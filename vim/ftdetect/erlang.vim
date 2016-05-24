@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.yrl setfiletype erlang
+au BufNewFile,BufRead *.xrl,*.yrl setfiletype erlang
