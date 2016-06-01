@@ -28,6 +28,7 @@ export LANG LANGUAGE LC_CTYPE LC_ALL
 
 HISTCONTROL=ignoreboth
 HISTIGNORE="&:bg:fg:clear:exit"
+PROMPT_COMMAND="history -a"
 PROMPT_DIRTRIM=3
 PS1="[\W]\$ "
 
