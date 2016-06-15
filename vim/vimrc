@@ -9,6 +9,7 @@ set nocompatible
 call plug#begin()
 Plug 'croaker/mustang-vim'
 Plug 'chriskempson/base16-vim'
+Plug 'cocopon/iceberg.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
