@@ -28,6 +28,7 @@
 
 [diff]
 	algorithm = patience
+	compactionHeuristic = true
 
 [color]
 	branch = auto
