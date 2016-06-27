@@ -1,7 +1,9 @@
 TARGETS = install-bash install-ctags install-git install-hg install-ipython \
-		  install-lldb install-tcsh install-vim
+		  install-lldb install-tcsh install-terminfo install-vim
 
-.PHONY: install $(TARGETS)
+TERMINFO_FILES := $(wildcard terminfo/*.terminfo)
+
+.PHONY: install $(TARGETS) $(TERMINFO_FILES)
 
 install: $(TARGETS)
 
@@ -38,10 +40,15 @@ install-tcsh:
 	ln -s `pwd`/tcsh/cshrc ~/.cshrc
 	ln -s `pwd`/tcsh/login ~/.login
 
+install-terminfo: $(TERMINFO_FILES)
+
 install-vim: vim/autoload/plug.vim
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
+
+$(TERMINFO_FILES):
+	tic -o ~/.terminfo $@
 
 vim/autoload/plug.vim:
 	curl -fLo `pwd`/vim/autoload/plug.vim --create-dirs \
