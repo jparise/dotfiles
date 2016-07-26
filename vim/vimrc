@@ -141,20 +141,6 @@ if has('autocmd')
     augroup END
 endif
 
-" Enter to start entering a command in normal mode
-nnoremap <cr> :
-
-" Buffer management
-map  <Right> :bnext<CR>
-imap <Right> <ESC>:bnext<CR>
-map  <Left>  :bprev<CR>
-imap <Left>  <ESC>:bprev<CR>
-map  <Del>   :bd<CR>
-
-" Reformat the current paragraph to textwidth
-imap <C-J> <c-o>gqap
-map  <C-J> gqap
-
 " Ack (ag)
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
@@ -162,3 +148,19 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+
+" Toggle fold at current position.
+nnoremap <Tab> za
+
+" Avoid unintentional switches to Ex mode.
+nmap Q q
+
+" Buffer management
+map  <Right> :bnext<CR>
+imap <Right> <ESC>:bnext<CR>
+map  <Left> :bprev<CR>
+imap <Left> <ESC>:bprev<CR>
+
+" Reformat the current paragraph to textwidth
+imap <C-J> <c-o>gqap
+map  <C-J> gqap
