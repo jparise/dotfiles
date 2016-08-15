@@ -42,10 +42,14 @@ install-tcsh:
 
 install-terminfo: $(TERMINFO_FILES)
 
-install-vim: vim/autoload/plug.vim
+install-vim: ~/.config vim/autoload/plug.vim
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
+	ln -s `pwd`/vim ~/.config/nvim
+
+~/.config:
+	mkdir -p ~/.config
 
 $(TERMINFO_FILES):
 	tic -o ~/.terminfo $@
