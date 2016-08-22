@@ -61,6 +61,12 @@ export LESS='-ErX'
 export DIFF_OPTIONS='-du'
 export GREP_OPTIONS='--binary-files=without-match'
 
+# Set up GOROOT when we detect that Go is available.
+if [ -n "$(command -v go)" ]; then
+	export GOROOT=$(go env GOROOT)
+	PATH="$PATH:$GOROOT/bin"
+fi
+
 # Remap Ctrl-w to kill words using whitespace and slashes as word boundaries.
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
