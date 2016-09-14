@@ -11,7 +11,7 @@ set mark-symlinked-directories on
 set match-hidden-files off
 
 # Be more intelligent when autocompleting by also looking at the text after
-# the cursor. ((This is supported by the Readline used by Bash 4.)
+# the cursor. (This is supported by the Readline used by Bash 4.)
 set skip-completed-text on
 
 # Show extra file information when completing, like `ls -F` does.
