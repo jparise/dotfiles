@@ -29,3 +29,5 @@
 --langdef=Markdown
 --langmap=markdown:.md
 --regex-markdown=/^#\+[ \t](.*$)/\1/h,heading,headings/
+
+--python-kinds=-i
