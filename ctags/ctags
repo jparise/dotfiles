@@ -1,7 +1,9 @@
 --exclude=.git
+--exclude=.hg
 --exclude=\*.pyc
 --exclude=\*.swp
 --exclude=\*.tar.\*
+--exclude=*/build/*
 --exclude=tags
 
 --langdef=go
