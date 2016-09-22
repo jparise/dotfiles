@@ -19,7 +19,6 @@ Plug 'junegunn/vader.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
 Plug 'mileszs/ack.vim'
@@ -34,6 +33,9 @@ Plug 'autowitch/hive.vim'
 Plug 'raimon49/requirements.txt.vim'
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
+if v:version >= 704
+    Plug 'ludovicchabant/vim-gutentags'
+endif
 call plug#end()
 
 set autoindent          " turn autoindenting on
