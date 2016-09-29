@@ -47,6 +47,7 @@ fi
 if [ -n "$(command -v mvim)" ]; then
 	EDITOR='mvim -f'
 	VISUAL='mvim -f'
+	export CSCOPE_EDITOR=vim
 	export GIT_EDITOR='mvim -f --nomru'
 else
 	EDITOR=vim
