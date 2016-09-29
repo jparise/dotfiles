@@ -100,6 +100,13 @@ set wildmode=list:longest,full " completion mode behavior
 set wrapmargin=0        " wrap from the right margin
 set nowritebackup       " don't write backups
 
+if has('linebreak')
+    set breakindent                 " indent wrapped lines to match start
+    if exists('&breakindentopt')
+        set breakindentopt=shift:2  " emphasize broken lines by indenting them
+    endif
+endif
+
 if v:version > 703 || v:version == 703 && has('patch541')
     set formatoptions+=j " remove comment leader when joining comment lines
 endif
