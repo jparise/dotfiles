@@ -101,7 +101,7 @@ set wildmode=list:longest,full " completion mode behavior
 set wrapmargin=0        " wrap from the right margin
 set nowritebackup       " don't write backups
 
-if has('linebreak')
+if has('linebreak') && exists('&breakindent')
     set breakindent                 " indent wrapped lines to match start
     if exists('&breakindentopt')
         set breakindentopt=shift:2  " emphasize broken lines by indenting them
