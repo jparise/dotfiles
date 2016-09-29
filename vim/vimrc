@@ -104,6 +104,10 @@ if v:version > 703 || v:version == 703 && has('patch541')
     set formatoptions+=j " remove comment leader when joining comment lines
 endif
 
+if has('termguicolors')
+    set termguicolors   " use guifg/guibg instead of ctermfg/ctermbg in terminal
+endif
+
 " Platform Options
 if has('gui_running')
     colorscheme base16-ocean
