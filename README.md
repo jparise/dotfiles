@@ -22,9 +22,11 @@ management. There is a Makefile rule that downloads `autoload/plug.vim` to
 bootstrap the system. You'll need to run `:PlugInstall` to install the
 individual plugins themselves.
 
-On Mac OS X, the patched [Menlo for Powerline][] font is used if available.
+On Mac OS X, the patched [Powerline fonts][] are assumed to be available.
 This lets us enabled [vim-airline][]'s support for [Powerline][] symbols.
+In particular, we use [Menlo for Powerline][] in GUI mode if available.
 
 [Menlo for Powerline]: https://github.com/abertsch/Menlo-for-Powerline
 [vim-airline]: https://github.com/vim-airline/vim-airline
 [Powerline]: https://github.com/powerline/powerline
+[Powerline fonts]: https://github.com/powerline/fonts
