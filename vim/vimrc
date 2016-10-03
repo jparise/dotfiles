@@ -13,7 +13,6 @@ Plug 'junegunn/seoul256.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
-Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vader.vim'
 Plug 'tpope/vim-fugitive'
@@ -29,7 +28,7 @@ Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'autowitch/hive.vim'
 Plug 'raimon49/requirements.txt.vim'
 Plug 'jvirtanen/vim-cocoapods'
