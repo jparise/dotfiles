@@ -28,6 +28,15 @@ let g:tagbar_type_go = {
     \ ]
 \ }
 
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:headings',
+        \ 'i:images',
+    \ ],
+    \ 'sort' : 0
+\ }
+
 let g:tagbar_type_objc = {
     \ 'ctagstype' : 'ObjectiveC',
     \ 'kinds'     : [
