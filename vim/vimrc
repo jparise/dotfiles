@@ -20,7 +20,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', {'on': 'TagbarOpen'}
 Plug 'mileszs/ack.vim'
 Plug 'solarnz/arcanist.vim'
 Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
