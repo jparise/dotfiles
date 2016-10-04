@@ -41,13 +41,11 @@ call plug#end()
 set autoindent          " turn autoindenting on
 set autowrite           " auto-save before running external commands
 set background=dark     " dark background
-set nobackup            " turn backups off
 set backspace=indent,eol,start " smarter backspace
 set nocompatible        " turn off full vi compatibility
 set cmdwinheight=3      " height of the command window
 set completeopt=menu,longest,preview " insert mode completion options
 set cpoptions=aABceF    " vi compatibility options
-set directory=~/tmp,/tmp
 set encoding=utf-8      " change the default text encoding
 set esckeys             " allows cursor keys in insert mode
 set noerrorbells        " turn off error bells
@@ -110,6 +108,14 @@ endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
     set formatoptions+=j " remove comment leader when joining comment lines
+endif
+
+" Swap files, etc.
+if $USER != 'root'
+    set directory=~/.vim/tmp//,~/tmp//,/tmp//,.
+else
+    set noswapfile
+    set viminfo=
 endif
 
 " Platform / GUI options
