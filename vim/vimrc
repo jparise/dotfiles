@@ -136,12 +136,9 @@ if has('gui_running')
         set guifont=Consolas:h10.5
     endif
 elseif has('termguicolors')
-    if $TERM_PROGRAM == "iTerm.app"
-        let g:airline_powerline_fonts = 1
-    endif
-
     set termguicolors
     colorscheme base16-ocean
+    let g:airline_powerline_fonts = 1
 else
     let g:loaded_airline = 1
 
