@@ -126,8 +126,8 @@ if has('gui_running')
     set title
 
     if has('gui_macvim')
-        silent! set guifont=Menlo\ Regular\ for\ Powerline:h14
-        if &guifont == 'Menlo Regular for Powerline:h14'
+        silent! set guifont=Source\ Code\ Pro:h14
+        if &guifont == 'Source Code Pro:h14'
             let g:airline_powerline_fonts = 1
         else
             set guifont=Menlo:h14

@@ -24,9 +24,9 @@ individual plugins themselves.
 
 On Mac OS X, the patched [Powerline fonts][] are assumed to be available.
 This lets us enabled [vim-airline][]'s support for [Powerline][] symbols.
-In particular, we use [Menlo for Powerline][] in GUI mode if available.
+In particular, we use [Source Code Pro][] in GUI mode if available.
 
-[Menlo for Powerline]: https://github.com/abertsch/Menlo-for-Powerline
 [vim-airline]: https://github.com/vim-airline/vim-airline
 [Powerline]: https://github.com/powerline/powerline
 [Powerline fonts]: https://github.com/powerline/fonts
+[Source Code Pro]: https://github.com/adobe-fonts/source-code-pro
