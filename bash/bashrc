@@ -43,17 +43,8 @@ if [[ $TERM == "xterm"* ]]; then
 	fi
 fi
 
-# Prefer foregrounded MacVim if it's available.
-if [ -n "$(command -v mvim)" ]; then
-	EDITOR='mvim -f'
-	VISUAL='mvim -f'
-	export CSCOPE_EDITOR=vim
-	export GIT_EDITOR='mvim -f --nomru'
-else
-	EDITOR=vim
-	VISUAL=vim
-fi
-export EDITOR VISUAL
+export EDITOR=vim
+export VISUAL=vim
 
 export PAGER=less
 export MANPAGER='less -FiRs'
