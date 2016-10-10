@@ -20,6 +20,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
+Plug 'wincent/terminus'
 Plug 'majutsushi/tagbar', {'on': 'TagbarOpen'}
 Plug 'mileszs/ack.vim'
 Plug 'solarnz/arcanist.vim'
@@ -67,7 +68,6 @@ set nolist              " turn off extended character listing
 set listchars=tab:»·,extends:›,precedes:‹,nbsp:␣,trail:·
 set magic               " use extended regexp in search patterns
 set modelines=0         " turn off modelines
-set mouse=h             " mouse options
 set mousehide           " hide the mouse in the gui
 set nonumber            " don't number lines
 set report=0            " show all changes
@@ -147,6 +147,8 @@ else
     hi StatusLine term=bold,reverse ctermfg=236 ctermbg=252
     hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
+
+let g:TerminusCursorShape = 0
 
 " Autocommands
 if has('autocmd')
