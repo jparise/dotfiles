@@ -60,7 +60,7 @@ set nohlsearch          " turn off search result highlighting
 set ignorecase          " mostly ignore case in search patterns. see smartcase
 set incsearch           " use incremental search
 set noinsertmode        " don't start vim in insertmode
-set joinspaces          " insert two spaces after period when joining lines
+set nojoinspaces        " don't insert two spaces after period when joining lines
 set laststatus=2        " always show status line
 set lazyredraw          " don't bother updating screen during macro playback
 set nolist              " turn off extended character listing
