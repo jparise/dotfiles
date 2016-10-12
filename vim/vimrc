@@ -21,7 +21,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
 Plug 'wincent/terminus'
-Plug 'majutsushi/tagbar', {'on': 'TagbarOpen'}
+Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'mileszs/ack.vim'
 Plug 'solarnz/arcanist.vim'
 Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
@@ -186,3 +186,6 @@ imap <Left> <ESC>:bprev<CR>
 " Reformat the current paragraph to textwidth
 imap <C-J> <c-o>gqap
 map  <C-J> gqap
+
+" Toggle the tagbar.
+nnoremap <silent> <leader>t :TagbarToggle<CR>
