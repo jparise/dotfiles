@@ -54,7 +54,6 @@ set esckeys             " allows cursor keys in insert mode
 set fillchars=vert:┃    " window separator character
 set expandtab           " expand tabs to spaces
 set formatoptions+=nr   " options for "text format" ("gp")
-set helpheight=0        " disable help
 set hidden              " enable hidden buffers
 set history=100         " remember the last 100 lines of command-line history
 set nohlsearch          " turn off search result highlighting
@@ -154,9 +153,6 @@ let g:TerminusCursorShape = 0
 if has('autocmd')
     augroup MainAutocmds
         autocmd!
-
-        " Open help in a vertical split
-        autocmd FileType help wincmd L
 
         " Resize all windows when vim itself is resized
         autocmd VimResized * execute "normal! \<c-w>="
