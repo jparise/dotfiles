@@ -151,11 +151,18 @@ let g:TerminusCursorShape = 0
 
 " Autocommands
 if has('autocmd')
-    augroup MainAutocmds
+    augroup VimStartup
         autocmd!
 
-        " Resize all windows when vim itself is resized
+        " Resize all windows when vim itself is resized.
         autocmd VimResized * execute "normal! \<c-w>="
+
+        " When editing a file, always jump to the last known cursor position,
+        " unless the position is invalid or we're inside of an event handler.
+        autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+        \   execute "normal! g`\"" |
+        \ endif
     augroup END
 endif
 
