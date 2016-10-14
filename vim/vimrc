@@ -112,7 +112,7 @@ endif
 
 " Swap files, etc.
 if $USER != 'root'
-    set directory=~/.vim/tmp//,~/tmp//,/tmp//,.
+    set directory=~/.cache/vim//,~/tmp//,.
 else
     set noswapfile
     set viminfo=

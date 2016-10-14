@@ -47,7 +47,7 @@ install-vim: ~/.config vim/autoload/plug.vim
 	ln -s `pwd`/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
 	ln -s `pwd`/vim ~/.config/nvim
-	mkdir -p ~/.vim/tmp
+	mkdir -p ~/.cache/vim
 
 ~/.config:
 	mkdir -p ~/.config
