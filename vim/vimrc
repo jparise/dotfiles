@@ -1,7 +1,5 @@
 " Jon Parise <jon@indelible.org>
 
-set nocompatible
-
 " Plugins
 "
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -43,7 +41,6 @@ set autoindent          " turn autoindenting on
 set autowrite           " auto-save before running external commands
 set background=dark     " dark background
 set backspace=indent,eol,start " smarter backspace
-set nocompatible        " turn off full vi compatibility
 set cmdwinheight=3      " height of the command window
 set completeopt=menu,longest,preview " insert mode completion options
 set cpoptions=aABceF    " vi compatibility options
