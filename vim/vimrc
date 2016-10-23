@@ -87,14 +87,18 @@ set synmaxcol=800       " don't attempt to syntax highlight long lines
 set tabstop=4           " set tabs to eight spaces
 set textwidth=78        " set the maximum text width
 set title               " turn on the titlebar
-set t_vb=               " turn off terminal's visual bell
 set updatetime=250      " speed up file sync frequency
-set visualbell          " turn on the visual bell
 set wildchar=<TAB>      " character used for command line expansion
 set wildmenu            " use menu when in 'full' command-line completion mode
 set wildmode=list:longest,full " completion mode behavior
 set wrapmargin=0        " wrap from the right margin
 set nowritebackup       " don't write backups
+
+if exists('&belloff')
+    set belloff=all
+else
+    set visualbell t_vb=
+endif
 
 if has('linebreak') && exists('&breakindent')
     set breakindent                 " indent wrapped lines to match start
