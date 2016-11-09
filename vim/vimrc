@@ -182,10 +182,9 @@ endif
 nmap Q q
 
 " Buffer management
-map  <Right> :bnext<CR>
-imap <Right> <ESC>:bnext<CR>
-map  <Left> :bprev<CR>
-imap <Left> <ESC>:bprev<CR>
+map <Left>  :bprev<CR>
+map <Right> :bnext<CR>
+nnoremap <leader>d :bp\|bd #<CR>
 
 " Reformat the current paragraph to textwidth
 imap <C-J> <c-o>gqap
