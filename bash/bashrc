@@ -1,6 +1,5 @@
 [ -z "$PS1" ] && return
 
-set -o noclobber
 set -o notify
 
 shopt -s cdspell
