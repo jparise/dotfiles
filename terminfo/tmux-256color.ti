@@ -1,4 +1,5 @@
 tmux-256color|tmux with 256 colors,
+  kbs=\177,
   sitm=\E[3m, ritm=\E[23m,
   smso=\E[7m, rmso=\E[27m,
   use=screen-256color,
