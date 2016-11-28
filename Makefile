@@ -1,7 +1,7 @@
 TARGETS = install-bash install-ctags install-git install-hg install-ipython \
 		  install-lldb install-tcsh install-terminfo install-vim
 
-TERMINFO_FILES := $(wildcard terminfo/*.terminfo)
+TERMINFO_FILES := $(wildcard terminfo/*.ti)
 
 .PHONY: install $(TARGETS) $(TERMINFO_FILES)
 
