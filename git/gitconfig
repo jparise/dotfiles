@@ -26,6 +26,9 @@
 [push]
 	default = upstream
 
+[blame]
+	date = short
+
 [diff]
 	algorithm = patience
 	compactionHeuristic = true
