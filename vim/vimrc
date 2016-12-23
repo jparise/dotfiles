@@ -21,11 +21,13 @@ Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'mileszs/ack.vim'
 Plug 'solarnz/arcanist.vim'
 Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
+Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'autowitch/hive.vim'
