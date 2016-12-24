@@ -93,7 +93,6 @@ function iterm_profile()
 	fi
 }
 
-# Optionally include any local settings.
-if [ -f $HOME/.bashrc.local ]; then
-	. $HOME/.bashrc.local
-fi
+# Optionally include any additional local settings.
+[ -f $HOME/.bashrc.local ] && . $HOME/.bashrc.local
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
