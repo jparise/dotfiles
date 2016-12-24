@@ -15,7 +15,8 @@ let g:tagbar_type_elixir = {
         \ 'o:operators',
         \ 'm:modules',
         \ 'p:protocols',
-        \ 'r:records'
+        \ 'r:records',
+        \ 't:test'
     \ ]
 \ }
 
