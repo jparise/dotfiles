@@ -16,6 +16,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
+Plug 'yuttie/comfortable-motion.vim'
 Plug 'wincent/terminus'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'mileszs/ack.vim'
