@@ -46,6 +46,7 @@ set autowrite           " auto-save before running external commands
 set background=dark     " dark background
 set backspace=indent,eol,start " smarter backspace
 set cmdwinheight=3      " height of the command window
+set complete=.,w,b,u,t,i,kspell " completion sources
 set completeopt=menu,longest,preview " insert mode completion options
 set cpoptions=aABceF    " vi compatibility options
 set encoding=utf-8      " change the default text encoding
