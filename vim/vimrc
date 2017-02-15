@@ -32,7 +32,7 @@ Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
-Plug 'autowitch/hive.vim'
+Plug 'autowitch/hive.vim', {'for': 'hive'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
