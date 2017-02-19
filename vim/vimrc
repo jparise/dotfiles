@@ -173,14 +173,6 @@ if has('autocmd')
     augroup END
 endif
 
-" Ack (ag)
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-    let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-endif
-
 " Avoid unintentional switches to Ex mode.
 nmap Q q
 
