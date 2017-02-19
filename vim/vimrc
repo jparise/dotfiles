@@ -18,8 +18,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
 Plug 'wincent/terminus'
+Plug 'wincent/ferret'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-Plug 'mileszs/ack.vim'
 Plug 'solarnz/arcanist.vim'
 Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
 Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
@@ -175,9 +175,6 @@ endif
 
 " Ack (ag)
 if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-    let g:ackprg = 'ag --vimgrep'
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 else
     let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
