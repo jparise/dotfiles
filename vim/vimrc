@@ -7,7 +7,6 @@
 call plug#begin()
 Plug 'croaker/mustang-vim'
 Plug 'chriskempson/base16-vim'
-Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/goyo.vim'
@@ -37,6 +36,9 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'jparise/vim-graphql', {'for': 'graphql'}
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
+if has('timers') && (has('nvim') || (exists('*job_start') && exists('*ch_close_in')))
+    Plug 'w0rp/ale'
+endif
 if v:version >= 704
     Plug 'ludovicchabant/vim-gutentags'
 endif
