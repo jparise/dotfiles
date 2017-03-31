@@ -56,7 +56,7 @@ set encoding=utf-8      " change the default text encoding
 set esckeys             " allows cursor keys in insert mode
 set noerrorbells        " turn off error bells
 set esckeys             " allows cursor keys in insert mode
-set fillchars=vert:┃    " window separator character
+set fillchars=vert:│    " window separator character
 set expandtab           " expand tabs to spaces
 set formatoptions+=nr   " options for "text format" ("gp")
 set hidden              " enable hidden buffers
@@ -130,6 +130,7 @@ endif
 " Platform / GUI options
 if has('gui_running')
     colorscheme base16-ocean
+    hi VertSplit ctermbg=NONE guibg=NONE
     set guioptions=aAeimgr
     set ruler
     set title
@@ -147,6 +148,7 @@ if has('gui_running')
 elseif has('termguicolors')
     set termguicolors
     colorscheme base16-ocean
+    hi VertSplit ctermbg=NONE guibg=NONE
     let g:airline_powerline_fonts = 1
 else
     let g:loaded_airline = 1
