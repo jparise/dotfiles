@@ -53,9 +53,7 @@ set complete=.,w,b,u,t,i,kspell " completion sources
 set completeopt=menu,longest,preview " insert mode completion options
 set cpoptions=aABceF    " vi compatibility options
 set encoding=utf-8      " change the default text encoding
-set esckeys             " allows cursor keys in insert mode
 set noerrorbells        " turn off error bells
-set esckeys             " allows cursor keys in insert mode
 set fillchars=vert:│    " window separator character
 set expandtab           " expand tabs to spaces
 set formatoptions+=nr   " options for "text format" ("gp")
