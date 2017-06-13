@@ -12,6 +12,7 @@
 	co = checkout
 	diff-staged = diff --cached
 	head = log -1 --decorate --name-status HEAD
+	mine = "!f() { git log --no-merges --author=$(git config user.email); }; f"
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
 	stat = status -sb
 	unstage = reset HEAD --
