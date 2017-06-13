@@ -95,3 +95,17 @@ let g:tagbar_type_scala = {
       \ 'v:variables:1'
     \ ]
 \ }
+
+let g:tagbar_type_thrift = {
+    \ 'ctagstype' : 'thrift',
+    \ 'sro'       : '.',
+    \ 'kinds'     : [
+        \ 'x:exceptions',
+        \ 'e:enumerations',
+        \ 's:structs',
+        \ 'v:services',
+        \ 'm:members',
+        \ 'a:values',
+        \ 'f:functions',
+    \ ]
+\ }
