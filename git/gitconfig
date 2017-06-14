@@ -43,9 +43,10 @@
 	ui = true
 
 [color "branch"]
-	current = cyan bold
+	current = bold cyan
 	local = cyan
 	remote = green
+	upstream = bold blue
 
 [color "status"]
 	added = yellow
