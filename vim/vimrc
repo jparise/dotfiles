@@ -45,6 +45,8 @@ if v:version >= 704
 endif
 call plug#end()
 
+source $VIMRUNTIME/macros/matchit.vim
+
 set autoindent          " turn autoindenting on
 set autowrite           " auto-save before running external commands
 set background=dark     " dark background
