@@ -52,6 +52,8 @@ export LESS='-ErX'
 export DIFF_OPTIONS='-du'
 export GREP_OPTIONS='--binary-files=without-match'
 
+export ERL_AFLAGS='-kernel shell_history enabled'
+
 # Set up GOROOT when we detect that Go is available.
 if [ -n "$(command -v go)" ]; then
 	export GOROOT=$(go env GOROOT)
