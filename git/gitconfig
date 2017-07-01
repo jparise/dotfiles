@@ -28,7 +28,7 @@
 	ff = only
 
 [push]
-	default = upstream
+	default = simple
 
 [blame]
 	date = short
