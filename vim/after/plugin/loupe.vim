@@ -1,1 +1,1 @@
-let g:LoupeVeryMagic=0
+let g:LoupeCenterResults=0
