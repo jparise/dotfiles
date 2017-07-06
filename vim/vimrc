@@ -191,9 +191,5 @@ nnoremap <leader>d :bp\|bd #<CR>
 imap <C-J> <c-o>gqap
 map  <C-J> gqap
 
-" <CR> in normal mode will clear the current search highlight
-nmap <CR> <Plug>(LoupeClearHighlight)
-"nnoremap <silent> <CR> :noh<CR><CR>
-
 " Toggle the tagbar.
 nnoremap <silent> <leader>t :TagbarToggle<CR>
