@@ -12,12 +12,6 @@ shopt -s histappend
 
 umask 0022
 
-if [ -d "$HOME/Bin" ]; then
-	PATH="$HOME/Bin:$PATH"
-elif [ -d "$HOME/bin" ]; then
-	PATH="$HOME/bin:$PATH"
-fi
-
 # Default to en_US locale with UTF-8 encoding.
 : ${LANG:="en_US.UTF-8"}
 : ${LANGUAGE:="en"}
@@ -57,7 +51,22 @@ export ERL_AFLAGS='-kernel shell_history enabled'
 # Set up GOROOT when we detect that Go is available.
 if [ -n "$(command -v go)" ]; then
 	export GOROOT=$(go env GOROOT)
-	PATH="$PATH:$GOROOT/bin"
+	PATH="$GOROOT/bin:$PATH"
+fi
+
+# Add preferred Homebrew locations to PATH when available.
+if [ -d "/usr/local/opt/bison/bin" ]; then
+	PATH="/usr/local/opt/bison/bin/:$PATH"
+fi
+if [ -d "/usr/local/opt/python/libexec/bin" ]; then
+	PATH="/usr/local/opt/python/libexec/bin:$PATH"
+fi
+
+# Lastly, add my personal ~/[Bb]in directory to the front of $PATH.
+if [ -d "$HOME/Bin" ]; then
+	PATH="$HOME/Bin:$PATH"
+elif [ -d "$HOME/bin" ]; then
+	PATH="$HOME/bin:$PATH"
 fi
 
 # Remap Ctrl-w to kill words using whitespace and slashes as word boundaries.
