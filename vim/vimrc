@@ -69,6 +69,7 @@ set incsearch           " use incremental search
 set noinsertmode        " don't start vim in insertmode
 set nojoinspaces        " don't insert two spaces after period when joining lines
 set laststatus=2        " always show status line
+set lazyredraw          " don't update screen while executing commands
 set nolist              " turn off extended character listing
 set listchars=tab:»·,extends:›,precedes:‹,nbsp:␣,trail:·
 set magic               " use extended regexp in search patterns
