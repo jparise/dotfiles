@@ -87,7 +87,6 @@ set noshowcmd           " don't show incomplete commands
 set showmode            " show the current mode
 set showtabline=1       " show tabline as needed
 set smartcase           " respect uppercase characters when searching
-set smartindent         " smart indenting when starting a new line
 set smarttab            " smart movement and deleting based on tab settings
 set softtabstop=4       " set soft tab stop to four spaces
 set splitbelow          " open horizontal splits below current window
