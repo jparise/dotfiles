@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.q,*.ql set filetype=hive expandtab
+au BufNewFile,BufRead *.ql setfiletype hive
