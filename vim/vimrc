@@ -20,6 +20,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'
+Plug 'milkypostman/vim-togglelist'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'solarnz/arcanist.vim'
 Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
@@ -193,3 +194,8 @@ map  <C-J> gqap
 
 " Toggle the tagbar.
 nnoremap <silent> <leader>t :TagbarToggle<CR>
+
+" Toggle the location and quickfix lists with custom mappings
+let g:toggle_list_no_mappings = 1
+nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+nmap <script> <silent> <leader>c :call ToggleQuickfixList()<CR>
