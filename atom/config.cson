@@ -1,0 +1,55 @@
+"*":
+  "autocomplete-python":
+    useKite: false
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+  build: {}
+  core:
+    disabledPackages: [
+      "language-gfm"
+      "exception-reporting"
+      "metrics"
+    ]
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
+      ".pyc"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "base16-ocean-dark-spacegray"
+    ]
+  editor:
+    fontFamily: "Menlo"
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    tabLength: 4
+  "file-icons": {}
+  flake8:
+    validateOnSave: false
+  linter:
+    showHighlighting: false
+  "linter-flake8":
+    executableDir: "/usr/local/bin/"
+    executablePath: "/usr/local/bin/flake8"
+    maxComplexity: 0
+    maxLineLength: 120
+    projectConfigFile: [
+      "setup.cfg"
+    ]
+  "markdown-preview": {}
+  "one-dark-ui":
+    tabSizing: "Minimum"
+  "package-sync":
+    createOnChange: true
+  "release-notes":
+    viewedVersion: "0.60.0"
+  welcome:
+    showOnStartup: false
+".elixir.source":
+  editor:
+    tabLength: 2
