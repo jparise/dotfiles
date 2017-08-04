@@ -9,23 +9,23 @@ install: $(TARGETS)
 
 install-bash:
 	rm -f ~/.bash_profile ~/.bashrc ~/.inputrc
-	ln -s `pwd`/bash/bash_profile ~/.bash_profile
-	ln -s `pwd`/bash/bashrc ~/.bashrc
-	ln -s `pwd`/bash/inputrc ~/.inputrc
+	ln -s `pwd`/bash/.bash_profile ~/.bash_profile
+	ln -s `pwd`/bash/.bashrc ~/.bashrc
+	ln -s `pwd`/bash/.inputrc ~/.inputrc
 
 install-ctags:
 	rm -f ~/.ctags
-	ln -s `pwd`/ctags/ctags ~/.ctags
+	ln -s `pwd`/ctags/.ctags ~/.ctags
 
 install-git:
 	rm -f ~/.gitconfig ~/.gitignore
-	ln -s `pwd`/git/gitconfig ~/.gitconfig
-	ln -s `pwd`/git/gitignore ~/.gitignore
+	ln -s `pwd`/git/.gitconfig ~/.gitconfig
+	ln -s `pwd`/git/.gitignore ~/.gitignore
 
 install-hg:
 	rm -f ~/.hgignore ~/.hgrc
-	ln -s `pwd`/hg/hgignore ~/.hgignore
-	ln -s `pwd`/hg/hgrc ~/.hgrc
+	ln -s `pwd`/hg/.hgignore ~/.hgignore
+	ln -s `pwd`/hg/.hgrc ~/.hgrc
 
 install-ipython:
 	rm -rf ~/.ipython
@@ -33,12 +33,12 @@ install-ipython:
 
 install-lldb:
 	rm -f ~/.lldbinit
-	ln -s `pwd`/lldb/lldbinit ~/.lldbinit
+	ln -s `pwd`/lldb/.lldbinit ~/.lldbinit
 
 install-tcsh:
 	rm -f ~/.cshrc ~/.login
-	ln -s `pwd`/tcsh/cshrc ~/.cshrc
-	ln -s `pwd`/tcsh/login ~/.login
+	ln -s `pwd`/tcsh/.cshrc ~/.cshrc
+	ln -s `pwd`/tcsh/.login ~/.login
 
 install-terminfo: $(TERMINFO_FILES)
 
