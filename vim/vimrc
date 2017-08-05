@@ -35,9 +35,9 @@ Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
+Plug 'jparise/vim-graphql', {'for': 'graphql'}
 Plug 'jparise/hive.vim', {'for': 'hive'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'jparise/vim-graphql', {'for': 'graphql'}
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
 if has('timers') && (has('nvim') || (exists('*job_start') && exists('*ch_close_in')))
