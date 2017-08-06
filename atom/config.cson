@@ -1,6 +1,4 @@
 "*":
-  "autocomplete-python":
-    useKite: false
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
