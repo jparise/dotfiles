@@ -1,8 +1,17 @@
 if has('syntax')
-    " Skip capitalized words, words with at least one non-alphabetic
-    " character, and the "'s" word suffix.
-    syn match spellSkipWords +\<\p*[^A-Za-z \t]\p*\>\|'s+ contains=@NoSpell
+  " Automatically rebuild custom spelling dictionary binaries when saving the
+  " text versions.
+  augroup SpellAutocmds
+    autocmd!
+    autocmd BufWritePost */vim/spell/*.add silent! :mkspell! %
+  augroup END
 
-    " Skip URLs.
-    syn match spellSkipURLs "\w\+:\/\/[^[:space:]]\+" contains=@NoSpell
+  " Skip words containing multiple capital letters.
+  syn match spellSkipMultiCaps "\<\p*\u\p*\u\p*\>" contains=@NoSpell
+
+  " Skip words that contain at least one non-alphabetic character.
+  syn match spellSkipNonWords "\<\p*\A\p*\>" contains=@NoSpell
+
+  " Skip URLs.
+  syn match spellSkipURLs "\w\+:\/\/[^[:space:]]\+" contains=@NoSpell
 endif
