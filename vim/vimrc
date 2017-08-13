@@ -196,8 +196,3 @@ map  <C-J> gqap
 
 " Toggle the tagbar.
 nnoremap <silent> <leader>t :TagbarToggle<CR>
-
-" Toggle the location and quickfix lists with custom mappings
-let g:toggle_list_no_mappings = 1
-nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
-nmap <script> <silent> <leader>c :call ToggleQuickfixList()<CR>
