@@ -164,8 +164,6 @@ else
     hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
 
-let g:TerminusCursorShape = 0
-
 " Autocommands
 if has('autocmd')
     augroup VimStartup
