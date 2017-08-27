@@ -199,5 +199,8 @@ map  <C-J> gqap
 nmap <silent> [w <Plug>(ale_previous_wrap)
 nmap <silent> ]w <Plug>(ale_next_wrap)
 
+" Open a recently-used file
+nnoremap <silent> <Leader>o :CtrlPMRUFiles<CR>
+
 " Toggle the tagbar.
 nnoremap <silent> <leader>t :TagbarToggle<CR>
