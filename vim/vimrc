@@ -195,5 +195,9 @@ nnoremap <leader>d :bp\|bd #<CR>
 imap <C-J> <c-o>gqap
 map  <C-J> gqap
 
+" Move between ALE lint warnings
+nmap <silent> [w <Plug>(ale_previous_wrap)
+nmap <silent> ]w <Plug>(ale_next_wrap)
+
 " Toggle the tagbar.
 nnoremap <silent> <leader>t :TagbarToggle<CR>
