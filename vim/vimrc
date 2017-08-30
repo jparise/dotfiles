@@ -1,4 +1,5 @@
-" Jon Parise <jon@indelible.org>
+set encoding=utf-8
+scriptencoding utf-8
 
 " Plugins
 "
@@ -60,7 +61,6 @@ set cmdwinheight=3      " height of the command window
 set complete=.,w,b,u,t,i,kspell " completion sources
 set completeopt=menu,longest,preview " insert mode completion options
 set cpoptions=aABceF    " vi compatibility options
-set encoding=utf-8      " change the default text encoding
 set noerrorbells        " turn off error bells
 set fillchars=vert:│    " window separator character
 set expandtab           " expand tabs to spaces
