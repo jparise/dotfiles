@@ -126,7 +126,7 @@ if v:version > 703 || v:version == 703 && has('patch541')
 endif
 
 " Swap files, etc.
-if $USER != 'root'
+if $USER !=# 'root'
     set directory=~/.cache/vim//,~/tmp//,.
 else
     set noswapfile
@@ -143,7 +143,7 @@ if has('gui_running')
 
     if has('gui_macvim')
         silent! set guifont=Source\ Code\ Pro:h14
-        if &guifont == 'Source Code Pro:h14'
+        if &guifont ==? 'Source Code Pro:h14'
             let g:airline_powerline_fonts = 1
         else
             set guifont=Menlo:h14
