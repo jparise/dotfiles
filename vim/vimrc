@@ -10,7 +10,6 @@ Plug 'croaker/mustang-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': './install.sh'}
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive' | Plug 'tommcdo/vim-fugitive-blame-ext'
 Plug 'tpope/vim-projectionist'
