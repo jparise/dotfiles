@@ -21,7 +21,6 @@ Plug 'justinmk/vim-dirvish'
 Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'
-Plug 'romainl/vim-cool'
 Plug 'milkypostman/vim-togglelist'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'solarnz/arcanist.vim'
@@ -44,6 +43,9 @@ Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
 if has('timers') && (has('nvim') || (exists('*job_start') && exists('*ch_close_in')))
     Plug 'w0rp/ale'
+endif
+if v:version >= 800
+    Plug 'romainl/vim-cool'
 endif
 if v:version >= 704
     Plug 'ludovicchabant/vim-gutentags'
