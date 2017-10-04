@@ -29,6 +29,7 @@ Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 Plug 'vim-erlang/vim-erlang-runtime', {'for': 'erlang'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
@@ -36,7 +37,7 @@ Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
-Plug 'jparise/vim-graphql', {'for': 'graphql'}
+Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript']}
 Plug 'jparise/hive.vim', {'for': 'hive'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'jvirtanen/vim-cocoapods'
