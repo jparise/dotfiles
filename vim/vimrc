@@ -190,6 +190,9 @@ map <Left>  :bprev<CR>
 map <Right> :bnext<CR>
 nnoremap <leader>d :bp\|bd #<CR>
 
+" Make <C-L> also update diff and syntax highlighting
+nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
+
 " Reformat the current paragraph to textwidth
 imap <C-J> <c-o>gqap
 map  <C-J> gqap
