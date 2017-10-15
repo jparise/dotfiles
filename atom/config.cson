@@ -4,6 +4,10 @@
     autocompleteSmartQuotes: false
   build: {}
   core:
+    customFileTypes:
+      "source.hql": [
+        "ql"
+      ]
     disabledPackages: [
       "language-gfm"
       "exception-reporting"
