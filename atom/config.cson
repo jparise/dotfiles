@@ -44,6 +44,7 @@
     tabSizing: "Minimum"
   "package-sync":
     createOnChange: true
+    forceOverwrite: true
   "release-notes":
     viewedVersion: "0.60.0"
   welcome:
