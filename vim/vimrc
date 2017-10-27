@@ -11,7 +11,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': './install.sh'}
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive' | Plug 'tommcdo/vim-fugitive-blame-ext'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
