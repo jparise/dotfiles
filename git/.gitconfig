@@ -38,6 +38,9 @@
 	algorithm = patience
 	compactionHeuristic = true
 
+[stash]
+	showPatch = true
+
 [color]
 	branch = auto
 	diff = auto
