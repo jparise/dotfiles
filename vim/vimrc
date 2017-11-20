@@ -19,6 +19,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'chaoren/vim-wordmotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
+Plug 'moll/vim-bbye'
 Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'
@@ -187,9 +188,9 @@ endif
 nmap Q q
 
 " Buffer management
-map <Left>  :bprev<CR>
-map <Right> :bnext<CR>
-nnoremap <leader>d :bp\|bd #<CR>
+nmap <Left>     :bprev<CR>
+nmap <Right>    :bnext<CR>
+nmap <leader>d  :Bdelete<CR>
 
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
