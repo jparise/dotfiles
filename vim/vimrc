@@ -196,12 +196,11 @@ nmap <leader>d  :Bdelete<CR>
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
 
 " Reformat the current paragraph to textwidth
-imap <C-J> <c-o>gqap
-map  <C-J> gqap
+nnoremap <C-J> gqap
 
 " Move between ALE lint warnings
-nmap <silent> [w <Plug>(ale_previous_wrap)
-nmap <silent> ]w <Plug>(ale_next_wrap)
+nnoremap <silent> [w <Plug>(ale_previous_wrap)
+nnoremap <silent> ]w <Plug>(ale_next_wrap)
 
 " Open a recently-used file
 nnoremap <silent> <Leader>o :CtrlPMRUFiles<CR>
