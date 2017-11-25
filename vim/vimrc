@@ -185,9 +185,9 @@ endif
 nmap Q q
 
 " Buffer management
-nmap <Left>     :bprev<CR>
-nmap <Right>    :bnext<CR>
-nmap <leader>d  :Bdelete<CR>
+nnoremap <Left>     :bprev<CR>
+nnoremap <Right>    :bnext<CR>
+nnoremap <leader>d  :Bdelete<CR>
 
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
