@@ -109,19 +109,24 @@ complete -A stopped -P '%' bg
 complete -A job -P '%'     fg jobs disown
 
 # Set the xterm title
-function xtitle()
-{
+function xtitle() {
 	if [[ $TERM == "xterm"* ]]; then
 		echo -en "\e]0;$*\a"
 	fi
 }
 
 # Set the iTerm2 profile
-function iterm_profile()
-{
+function iterm_profile() {
 	if [ "$TERM_PROGRAM" == iTerm.app ]; then
 		echo -en "\033]50;SetProfile=$*\a"
 	fi
+}
+
+# Use an alternate iTerm2 profile for ssh sessions
+function ssh() {
+	iterm_profile Remote
+	command ssh $*
+	iterm_profile Default
 }
 
 # Optionally include any additional local settings.
