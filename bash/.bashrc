@@ -48,6 +48,22 @@ export GREP_OPTIONS='--binary-files=without-match'
 
 export ERL_AFLAGS='-kernel shell_history enabled'
 
+# Set up fzf defaults when it's available.
+if [ -n "$(command -v fzf)" ]; then
+    export FZF_DEFAULT_OPTS="
+    --height 40% --border
+    --color=bg+:#343d46,bg:#2b303b,spinner:#96b5b4,hl:#8fa1b3
+    --color=fg:#a7adba,header:#8fa1b3,info:#ebcb8b,pointer:#96b5b4
+    --color=marker:#96b5b4,fg+:#dfe1e8,prompt:#ebcb8b,hl+:#8fa1b3
+    "
+
+    # Prefer ripgrep-based fzf searches when available.
+    if [ -n "$(command -v rg)" ]; then
+        export FZF_DEFAULT_COMMAND='rg --files'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    fi
+fi
+
 # Set up GOROOT when we detect that Go is available.
 if [ -n "$(command -v go)" ]; then
 	export GOROOT=$(go env GOROOT)
@@ -105,5 +121,6 @@ function iterm_profile()
 }
 
 # Optionally include any additional local settings.
-[ -f $HOME/.bashrc.local ] && . $HOME/.bashrc.local
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
