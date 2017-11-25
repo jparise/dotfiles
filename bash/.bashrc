@@ -48,6 +48,10 @@ export GREP_OPTIONS='--binary-files=without-match'
 
 export ERL_AFLAGS='-kernel shell_history enabled'
 
+# Disable open source analytics reporting
+export COCOAPODS_DISABLE_STATS=1
+export HOMEBREW_NO_ANALYTICS=1
+
 # Set up fzf defaults when it's available.
 if [ -n "$(command -v fzf)" ]; then
     export FZF_DEFAULT_OPTS="
