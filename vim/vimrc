@@ -9,7 +9,7 @@ call plug#begin()
 Plug 'croaker/mustang-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': 'env PY3=OFF ./install.sh'}
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim' | Plug 'felixjung/vim-base16-lightline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
@@ -148,9 +148,7 @@ if has('gui_running')
 
     if has('gui_macvim')
         silent! set guifont=Source\ Code\ Pro:h14
-        if &guifont ==? 'Source Code Pro:h14'
-            let g:airline_powerline_fonts = 1
-        else
+        if &guifont !=? 'Source Code Pro:h14'
             set guifont=Menlo:h14
         endif
     elseif has('gui_win32')
@@ -160,9 +158,8 @@ elseif has('termguicolors')
     set termguicolors
     colorscheme base16-ocean
     hi VertSplit ctermbg=NONE guibg=NONE
-    let g:airline_powerline_fonts = 1
 else
-    let g:loaded_airline = 1
+    let g:loaded_lightline = 1
     colorscheme mustang
     hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
