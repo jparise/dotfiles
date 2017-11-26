@@ -20,10 +20,10 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
 Plug 'moll/vim-bbye'
+Plug 'romainl/vim-qf'
 Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'
-Plug 'milkypostman/vim-togglelist'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'solarnz/arcanist.vim'
 Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
@@ -188,6 +188,10 @@ nmap Q q
 nnoremap <Left>     :bprev<CR>
 nnoremap <Right>    :bnext<CR>
 nnoremap <leader>d  :Bdelete<CR>
+
+" Window management
+nmap <leader>l <Plug>qf_loc_toggle
+nmap <leader>q <Plug>qf_qf_toggle
 
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
