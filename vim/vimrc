@@ -194,15 +194,15 @@ nnoremap <leader>d  :Bdelete<CR>
 nmap <leader>l <Plug>qf_loc_toggle
 nmap <leader>q <Plug>qf_qf_toggle
 
+" Move between ALE lint warnings
+nmap [w <Plug>(ale_previous_wrap)
+nmap ]w <Plug>(ale_next_wrap)
+
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
 
 " Reformat the current paragraph to textwidth
 nnoremap <C-J> gqap
-
-" Move between ALE lint warnings
-nnoremap <silent> [w <Plug>(ale_previous_wrap)
-nnoremap <silent> ]w <Plug>(ale_next_wrap)
 
 " Toggle the tagbar.
 nnoremap <silent> <leader>t :TagbarToggle<CR>
