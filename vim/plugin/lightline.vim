@@ -63,7 +63,7 @@ function! LightlineFilename() abort
   if l:pathname ==# '' || l:pathname ==# '.'
     let l:pathname = '[No Name]'
   else
-    let l:pathname = fnamemodify(l:pathname, ':~')
+    let l:pathname = fnamemodify(l:pathname, ':~:.')
   endif
 
   let l:readonly = &readonly && &filetype !=# 'help' ? ' [RO]' : ''
