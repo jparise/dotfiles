@@ -10,8 +10,7 @@ let g:lightline = {
 \   ],
 \   'right': [
 \     ['lineinfo'],
-\     ['gitbranch'],
-\     ['lint_warnings', 'lint_errors'],
+\     ['lint_warnings', 'lint_errors', 'gitbranch'],
 \     ['ctrlppath', 'fileinfo', 'spell']
 \   ]
 \ },
