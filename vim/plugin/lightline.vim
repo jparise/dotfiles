@@ -2,15 +2,16 @@ scriptencoding utf-8
 
 let g:lightline = {
 \ 'colorscheme': 'base16_ocean',
+\ 'separator': {'left': "\uE0B0", 'right': "\uE0B2"},
+\ 'subseparator': {'left': "\uE0B1", 'right': "\uE0B3"},
 \ 'active': {
 \   'left': [
 \     ['mode', 'paste'],
-\     ['filename'],
-\     ['ctrlpmark']
+\     ['gitbranch'],
+\     ['filename', 'ctrlpmark'],
 \   ],
 \   'right': [
-\     ['lineinfo'],
-\     ['lint_warnings', 'lint_errors', 'gitbranch'],
+\     ['lineinfo', 'lint_warnings', 'lint_errors'],
 \     ['ctrlppath', 'fileinfo', 'spell']
 \   ]
 \ },
@@ -26,7 +27,7 @@ let g:lightline = {
 \   'mode': 'LightlineMode',
 \   'filename': 'LightlineFilename',
 \   'fileinfo': 'LightlineFileinfo',
-\   'gitbranch': 'fugitive#head'
+\   'gitbranch': 'LightlineGitBranch'
 \ },
 \ 'component_expand': {
 \   'ctrlpmark': 'LightlineCtrlPMark',
@@ -37,6 +38,10 @@ let g:lightline = {
 \ 'component_type': {
 \   'lint_warnings': 'warning',
 \   'lint_errors': 'error'
+\ },
+\ 'mode_map':{
+\   'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'V', "\<C-v>": 'V',
+\   'c': 'C', 's': 'S', 'S': 'S', "\<C-s>": 'S', 't': 'T',
 \ }
 \ }
 
@@ -82,6 +87,11 @@ endfunction
 function! LightlineFileinfo() abort
   return strlen(&filetype) ? &filetype : '' .
         \ strlen(&fileencoding) && &fileencoding !=# 'utf-8' ? ',' . &fileencoding : ''
+endfunction
+
+function! LightlineGitBranch() abort
+  let l:branch = fugitive#head()
+  return l:branch !=# '' ? "\uE0A0 " . l:branch : ''
 endfunction
 
 function! LightlineLintWarnings() abort
