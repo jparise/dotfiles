@@ -4,6 +4,7 @@
 --exclude=\*.swp
 --exclude=\*.tar.\*
 --exclude=*/build/*
+--exclude=*/node_modules/*
 --exclude=tags
 
 --langdef=Elixir
