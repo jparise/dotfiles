@@ -33,7 +33,6 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
