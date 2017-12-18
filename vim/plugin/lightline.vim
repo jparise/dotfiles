@@ -4,6 +4,8 @@ let g:lightline = {
 \ 'colorscheme': 'base16_ocean',
 \ 'separator': {'left': "\uE0B0", 'right': "\uE0B2"},
 \ 'subseparator': {'left': "\uE0B1", 'right': "\uE0B3"},
+\ 'tabline_separator': {'left': ''},
+\ 'tabline_subseparator': {'left': ''},
 \ 'active': {
 \   'left': [
 \     ['mode', 'paste'],
@@ -23,6 +25,7 @@ let g:lightline = {
 \     ['lineinfo']
 \   ]
 \ },
+\ 'tabline': {'left': [['buffers']], 'right': [['bufnum']]},
 \ 'component_function': {
 \   'mode': 'LightlineMode',
 \   'filename': 'LightlineFilename',
@@ -30,12 +33,14 @@ let g:lightline = {
 \   'gitbranch': 'LightlineGitBranch'
 \ },
 \ 'component_expand': {
+\   'buffers': 'lightline#bufferline#buffers',
 \   'ctrlpmark': 'LightlineCtrlPMark',
 \   'ctrlppath': 'LightlineCtrlPPath',
 \   'lint_warnings': 'LightlineLintWarnings',
 \   'lint_errors': 'LightlineLintErrors'
 \ },
 \ 'component_type': {
+\   'buffers': 'tabsel',
 \   'lint_warnings': 'warning',
 \   'lint_errors': 'error'
 \ },
@@ -44,6 +49,27 @@ let g:lightline = {
 \   'c': 'C', 's': 'S', 'S': 'S', "\<C-s>": 'S', 't': 'T',
 \ }
 \ }
+
+let g:lightline#bufferline#filename_modifier = ':t:.'
+let g:lightline#bufferline#modified = '+'
+let g:lightline#bufferline#min_buffer_count = 2
+let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#unicode_symbols = 1
+let g:lightline#bufferline#unnamed = '[No Name]'
+let g:lightline#bufferline#number_map = {
+\ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+\ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 function! LightlineMode() abort
   return expand('%:t') ==# 'ControlP' ? 'CtrlP' : lightline#mode()
@@ -123,7 +149,7 @@ function! CtrlPStatusFuncProg(len) abort
   return lightline#statusline(0)
 endfunction
 
-augroup LightlineLint
+augroup LightlineAutoCommands
   autocmd!
   autocmd User ALELint call lightline#update()
 augroup END

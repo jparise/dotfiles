@@ -9,7 +9,7 @@ call plug#begin()
 Plug 'croaker/mustang-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': 'env PY3=OFF ./install.sh'}
-Plug 'itchyny/lightline.vim' | Plug 'felixjung/vim-base16-lightline'
+Plug 'itchyny/lightline.vim' | Plug 'mgee/lightline-bufferline' | Plug 'felixjung/vim-base16-lightline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
