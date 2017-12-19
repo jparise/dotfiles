@@ -6,7 +6,6 @@ scriptencoding utf-8
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
-Plug 'croaker/mustang-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': 'env PY3=OFF ./install.sh'}
 Plug 'itchyny/lightline.vim' | Plug 'mgee/lightline-bufferline' | Plug 'felixjung/vim-base16-lightline'
@@ -162,7 +161,6 @@ elseif has('termguicolors')
 else
     let g:loaded_lightline = 1
     colorscheme mustang
-    hi Todo ctermfg=9 ctermbg=234 term=standout
 endif
 
 " Autocommands
