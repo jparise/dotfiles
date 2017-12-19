@@ -35,7 +35,7 @@ Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
-Plug 'mitsuhiko/vim-jinja', {'for': 'html'}
+Plug 'niftylettuce/Vim-Jinja2-Syntax', {'for': ['jinja', 'jinja.html']}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
