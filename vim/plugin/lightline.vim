@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 let g:lightline = {
-\ 'colorscheme': 'base16_ocean',
+\ 'colorscheme': g:colors_name ==# 'base16-ocean' ? 'base16_ocean' : 'jellybeans',
 \ 'separator': {'left': "\uE0B0", 'right': "\uE0B2"},
 \ 'subseparator': {'left': "\uE0B1", 'right': "\uE0B3"},
 \ 'tabline_separator': {'left': ''},

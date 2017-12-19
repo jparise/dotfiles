@@ -159,7 +159,6 @@ elseif has('termguicolors')
     colorscheme base16-ocean
     hi VertSplit ctermbg=NONE guibg=NONE
 else
-    let g:loaded_lightline = 1
     colorscheme mustang
 endif
 
