@@ -6,10 +6,10 @@
 
 set background=dark
 highlight clear
-if exists("syntax_on")
+if exists('syntax_on')
     syntax reset
 endif
-let g:colors_name = "candlelight"
+let g:colors_name = 'candlelight'
 
 if has('gui_running')
     highlight   Cursor          guibg=#ffffff   guifg=#000000
