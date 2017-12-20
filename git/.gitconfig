@@ -38,6 +38,9 @@
 	algorithm = patience
 	compactionHeuristic = true
 
+[commit]
+	verbose = true
+
 [stash]
 	showPatch = true
 
