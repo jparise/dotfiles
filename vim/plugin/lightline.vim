@@ -84,8 +84,6 @@ function! LightlineFilename() abort
     else
       return g:lightline.ctrlp_item
     endif
-  elseif l:filename ==# '__Tagbar__'
-    return ''
   elseif &filetype ==# 'help'
     return l:filename
   endif
