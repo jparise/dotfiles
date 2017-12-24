@@ -4,8 +4,12 @@ let g:projectionist_heuristics = {
 \           'alternate': '{}.h',
 \           'type': 'source'
 \       },
+\       '*.cc': {
+\           'alternate': '{}.h',
+\           'type': 'source'
+\       },
 \       '*.h': {
-\           'alternate': '{}.c',
+\           'alternate': ['{}.c', '{}.cc'],
 \           'type': 'header'
 \       },
 \       'src/main/java/*.java': {
