@@ -8,8 +8,12 @@ let g:projectionist_heuristics = {
 \           'alternate': '{}.h',
 \           'type': 'source'
 \       },
+\       '*.m': {
+\           'alternate': '{}.h',
+\           'type': 'source'
+\       },
 \       '*.h': {
-\           'alternate': ['{}.c', '{}.cc'],
+\           'alternate': ['{}.c', '{}.cc', '{}.m'],
 \           'type': 'header'
 \       },
 \       '*.go': {
