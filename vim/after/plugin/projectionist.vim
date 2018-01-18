@@ -12,6 +12,14 @@ let g:projectionist_heuristics = {
 \           'alternate': ['{}.c', '{}.cc'],
 \           'type': 'header'
 \       },
+\       '*.go': {
+\           'alternate': '{}_test.go',
+\           'type': 'source'
+\       },
+\       '*_test.go': {
+\           'alternate': '{}.go',
+\           'type': 'test'
+\       },
 \       'src/main/java/*.java': {
 \           'alternate': 'src/test/java/{}Test.java',
 \           'type': 'source'
