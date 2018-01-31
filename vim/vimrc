@@ -199,6 +199,3 @@ nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
 
 " Reformat the current paragraph to textwidth
 nnoremap <C-J> gqap
-
-" Toggle the tagbar.
-nnoremap <silent> <leader>t :TagbarToggle<CR>
