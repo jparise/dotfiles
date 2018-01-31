@@ -74,6 +74,12 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+## Safari
+
+# Map Command-W to only close tabs but not the window
+defaults write com.apple.Safari NSUserKeyEquivalents -dict-add 'Close Tab' '<string>@w</string></dict>'
+defaults write com.apple.universalaccess com.apple.custommenu.apps -array-add '<string>com.apple.Safari</string>'
+
 ## Tweetbot
 
 # Bypass the annoyingly slow t.co URL shortener
