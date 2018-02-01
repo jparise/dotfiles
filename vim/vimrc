@@ -7,7 +7,7 @@ scriptencoding utf-8
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
 Plug 'chriskempson/base16-vim'
-Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': 'env PY3=OFF ./install.sh'}
+Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': 'env PY3=OFF ./install.sh'} | Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'itchyny/lightline.vim' | Plug 'mgee/lightline-bufferline' | Plug 'felixjung/vim-base16-lightline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -193,6 +193,9 @@ nmap <leader>q <Plug>qf_qf_toggle
 " Move between ALE lint warnings
 nmap [w <Plug>(ale_previous_wrap)
 nmap ]w <Plug>(ale_next_wrap)
+
+" Search within locally-modified files (per git)
+nnoremap <silent> <leader>m :CtrlPModified<CR>
 
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
