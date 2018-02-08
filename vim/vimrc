@@ -46,9 +46,6 @@ Plug 'kergoth/vim-hilinks'
 if has('timers') && (has('nvim') || (exists('*job_start') && exists('*ch_close_in')))
     Plug 'w0rp/ale'
 endif
-if v:version > 704 || v:version == 704 && has('patch2008')
-    Plug 'romainl/vim-cool'
-endif
 if v:version >= 704
     Plug 'ludovicchabant/vim-gutentags'
 endif
