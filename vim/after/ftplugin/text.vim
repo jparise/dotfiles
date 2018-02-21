@@ -11,3 +11,7 @@ setlocal formatlistpat+=[\\]:.)}                    " Closing punctuation
 setlocal formatlistpat+=]
 setlocal formatlistpat+=\\s\\+
 setlocal formatlistpat+=\\\|^\\s*[-+o*]\\s\\+       " ASCII-style bullets
+
+" Move between paragraphs, landing on text instead of blank lines.
+nnoremap <buffer> <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
+nnoremap <buffer> <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
