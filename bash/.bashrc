@@ -78,8 +78,8 @@ fi
 if [ -d "/usr/local/opt/bison/bin" ]; then
 	PATH="/usr/local/opt/bison/bin/:$PATH"
 fi
-if [ -d "/usr/local/opt/python/libexec/bin" ]; then
-	PATH="/usr/local/opt/python/libexec/bin:$PATH"
+if [ -d "/usr/local/opt/python@2/libexec/bin" ]; then
+	PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 fi
 
 # Lastly, add my personal ~/[Bb]in directory to the front of $PATH.
