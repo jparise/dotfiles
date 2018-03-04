@@ -25,7 +25,7 @@ let g:lightline = {
 \     ['lineinfo']
 \   ]
 \ },
-\ 'tabline': {'left': [['buffers']], 'right': [['bufnum']]},
+\ 'tabline': {'left': [['buffers']], 'right': []},
 \ 'component_function': {
 \   'mode': 'LightlineMode',
 \   'filename': 'LightlineFilename',
