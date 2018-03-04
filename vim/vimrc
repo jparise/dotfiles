@@ -171,10 +171,10 @@ if has('autocmd')
         " Resize all windows when vim itself is resized.
         autocmd VimResized * execute "normal! \<c-w>="
 
-        " When editing a file, always jump to the last known cursor position,
+        " When reading a file, always jump to its last known cursor position,
         " unless the position is invalid or we're inside of an event handler.
         autocmd BufReadPost *
-        \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype != 'gitcommit' |
         \   execute "normal! g`\"" |
         \ endif
     augroup END
