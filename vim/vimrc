@@ -202,5 +202,5 @@ nnoremap <silent> <leader>m :CtrlPModified<CR>
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
 
-" Reformat the current paragraph to textwidth
-nnoremap <C-J> gqap
+" Format the current paragraph
+nnoremap <C-J> gwap
