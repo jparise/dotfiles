@@ -7,7 +7,7 @@ scriptencoding utf-8
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
 Plug 'chriskempson/base16-vim'
-Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': 'env PY3=OFF ./install.sh'} | Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': './install.sh'} | Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'itchyny/lightline.vim' | Plug 'mgee/lightline-bufferline' | Plug 'felixjung/vim-base16-lightline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
