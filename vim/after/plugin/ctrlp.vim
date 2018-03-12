@@ -7,7 +7,10 @@ let g:ctrlp_mruf_relative = 1
 
 let g:ctrlp_extensions = ['tag']
 
-if executable('rg')
+if executable('fd')
+    let g:ctrlp_user_command = 'fd --type f --color never "" %s'
+    let g:ctrlp_use_caching = 0
+elseif executable('rg')
     let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
     let g:ctrlp_use_caching = 0
 elseif executable('ag')
