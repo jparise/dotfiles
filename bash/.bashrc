@@ -61,8 +61,11 @@ if [ -n "$(command -v fzf)" ]; then
     --color=marker:#96b5b4,fg+:#dfe1e8,prompt:#ebcb8b,hl+:#8fa1b3
     "
 
-    # Prefer ripgrep-based fzf searches when available.
-    if [ -n "$(command -v rg)" ]; then
+    # Prefer fd- or ripgrep-based fzf searches when available.
+    if [ -n "$(command -v fd)" ]; then
+        export FZF_DEFAULT_COMMAND='fd --type f'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    elif [ -n "$(command -v rg)" ]; then
         export FZF_DEFAULT_COMMAND='rg --files'
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     fi
