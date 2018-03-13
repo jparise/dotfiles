@@ -8,15 +8,20 @@ let g:ctrlp_mruf_relative = 1
 let g:ctrlp_extensions = ['tag']
 
 if executable('fd')
-    let g:ctrlp_user_command = 'fd --type f --color never "" %s'
+    let s:fallback_command = 'fd --type f --color never "" %s'
     let g:ctrlp_use_caching = 0
 elseif executable('rg')
-    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+    let s:fallback_command = 'rg %s --files --color=never --glob ""'
     let g:ctrlp_use_caching = 0
 elseif executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let s:fallback_command = 'ag %s -l --nocolor -g ""'
     let g:ctrlp_use_caching = 0
 else
+    let s:fallback_command = ''
     let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
+
+let g:ctrlp_user_command = [
+\ '.git',
+\ 'cd %s && git ls-files . --cached --exclude-standard --others',
+\ s:fallback_command]
