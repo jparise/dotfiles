@@ -189,8 +189,8 @@ nnoremap <Right>    :bnext<CR>
 nnoremap <leader>d  :Bdelete<CR>
 
 " Window management
-nmap <leader>l <Plug>qf_loc_toggle
-nmap <leader>q <Plug>qf_qf_toggle
+nmap <leader>l <Plug>(qf_loc_toggle)
+nmap <leader>q <Plug>(qf_qf_toggle)
 
 " Move between ALE lint warnings
 nmap [w <Plug>(ale_previous_wrap)
