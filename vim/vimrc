@@ -189,9 +189,10 @@ nnoremap <leader>d  :Bdelete<CR>
 nmap <leader>l <Plug>(qf_loc_toggle)
 nmap <leader>q <Plug>(qf_qf_toggle)
 
-" Move between ALE lint warnings
+" ALE mappings
 nmap [w <Plug>(ale_previous_wrap)
 nmap ]w <Plug>(ale_next_wrap)
+nnoremap <leader>F :ALEFix<CR>
 
 " Search within locally-modified files (per git)
 nnoremap <silent> <leader>m :CtrlPModified<CR>
