@@ -48,9 +48,12 @@ export GREP_OPTIONS='--binary-files=without-match'
 
 export ERL_AFLAGS='-kernel shell_history enabled'
 
-# Disable open source analytics reporting
-export COCOAPODS_DISABLE_STATS=1
-export HOMEBREW_NO_ANALYTICS=1
+# macOS-specific environment flags
+if [[ $OSTYPE == "darwin"* ]]; then
+    export COCOAPODS_DISABLE_STATS=1
+    export HOMEBREW_NO_ANALYTICS=1
+    export HOMEBREW_UPGRADE_CLEANUP=1
+fi
 
 # Set up fzf defaults when it's available.
 if [ -n "$(command -v fzf)" ]; then
