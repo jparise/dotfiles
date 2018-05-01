@@ -194,8 +194,11 @@ nmap [w <Plug>(ale_previous_wrap)
 nmap ]w <Plug>(ale_next_wrap)
 nnoremap <leader>F :ALEFix<CR>
 
-" Search within locally-modified files (per git)
-nnoremap <silent> <leader>m :CtrlPModified<CR>
+" CtrlP mappings
+nnoremap <leader>\ :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPBranchModified<CR>
+nnoremap <leader>t :CtrlPTag<CR>
 
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
