@@ -45,6 +45,9 @@ Plug 'jparise/hive.vim', {'for': 'hive'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
+if isdirectory('/usr/local/opt/fzf')
+    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+endif
 if has('timers') && (has('nvim') || (exists('*job_start')))
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'w0rp/ale'
