@@ -2,6 +2,8 @@
 username = Jon Parise <jon@indelible.org>
 ssh = ssh -C
 ignore = ~/.hgignore
+tweakdefaults = true
+interface = curses
 
 [extensions]
 shelve =
