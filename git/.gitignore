@@ -9,9 +9,6 @@
 # tags
 cscope.out
 tags
-tags.files
-tags.lock
-tags.temp
 
 # python
 .venv/
