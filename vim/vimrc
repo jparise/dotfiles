@@ -60,7 +60,6 @@ set autoindent          " turn autoindenting on
 set autowrite           " auto-save before running external commands
 set background=dark     " dark background
 set backspace=indent,eol,start " smarter backspace
-set clipboard=autoselect " copy visual selection area system clipboard
 set cmdwinheight=3      " height of the command window
 set complete=.,w,b,u,t,i,kspell " completion sources
 set completeopt=menu,longest,preview " insert mode completion options
@@ -111,6 +110,10 @@ set wildmenu            " use menu when in 'full' command-line completion mode
 set wildmode=list:longest,full " completion mode behavior
 set wrapmargin=0        " wrap from the right margin
 set nowritebackup       " don't write backups
+
+if !has('nvim')
+  set clipboard=autoselect " copy visual selection area system clipboard
+endif
 
 if exists('&belloff')
     set belloff=all
