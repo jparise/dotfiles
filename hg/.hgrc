@@ -1,6 +1,5 @@
 [ui]
 username = Jon Parise <jon@indelible.org>
-editor = mvim -f
 ssh = ssh -C
 ignore = ~/.hgignore
 
