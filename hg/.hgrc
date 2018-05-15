@@ -13,5 +13,8 @@ fsmonitor =
 blackbox =
 
 [pager]
-pager = LESS='FRX' less
-quiet = True
+quiet = true
+
+[diff]
+git = true
+showfunc = true
