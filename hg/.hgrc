@@ -5,6 +5,10 @@ ignore = ~/.hgignore
 
 [extensions]
 shelve =
+histedit =
+rebase =
+fsmonitor =
+blackbox =
 
 [pager]
 pager = LESS='FRX' less
