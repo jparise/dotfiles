@@ -4,8 +4,6 @@ ssh = ssh -C
 ignore = ~/.hgignore
 
 [extensions]
-color =
-pager =
 shelve =
 
 [pager]
