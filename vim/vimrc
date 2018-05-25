@@ -27,7 +27,7 @@ Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'
 Plug 'solarnz/arcanist.vim', {'for': 'arcanistdiff'}
-Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
+Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 Plug 'vim-erlang/vim-erlang-runtime', {'for': 'erlang'}
 Plug 'fatih/vim-go', {'for': 'go'}
