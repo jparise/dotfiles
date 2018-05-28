@@ -21,7 +21,10 @@ else
     let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 endif
 
-let g:ctrlp_user_command = [
-\ '.git',
-\ 'cd %s && git ls-files . --cached --exclude-standard --others',
-\ s:fallback_command]
+let g:ctrlp_user_command = {
+\ 'types': {
+\   1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+\   2: ['.hg', 'hg --cwd %s locate -I .'],
+\  },
+\  'fallback': s:fallback_command
+\}
