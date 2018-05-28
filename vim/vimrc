@@ -112,7 +112,7 @@ set wrapmargin=0        " wrap from the right margin
 set nowritebackup       " don't write backups
 
 if !has('nvim')
-  set clipboard=autoselect " copy visual selection area system clipboard
+  set clipboard^=autoselect " copy visual selection area system clipboard
 endif
 
 if exists('&belloff')
