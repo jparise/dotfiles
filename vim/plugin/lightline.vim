@@ -90,7 +90,7 @@ function! LightlineFileinfo() abort
 endfunction
 
 function! LightlineGitBranch() abort
-  let l:branch = fugitive#head()
+  let l:branch = FugitiveHead()
   return l:branch !=# '' ? "\uE0A0 " . l:branch : ''
 endfunction
 
