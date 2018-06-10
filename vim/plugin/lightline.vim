@@ -14,7 +14,8 @@ let g:lightline = {
 \   ],
 \   'right': [
 \     ['lineinfo', 'lint_warnings', 'lint_errors'],
-\     ['ctrlppath', 'fileinfo', 'spell']
+\     ['ctrlppath', 'fileinfo', 'spell'],
+\     ['gutentags']
 \   ]
 \ },
 \ 'inactive': {
@@ -29,7 +30,8 @@ let g:lightline = {
 \   'mode': 'LightlineMode',
 \   'filename': 'LightlineFilename',
 \   'fileinfo': 'LightlineFileinfo',
-\   'gitbranch': 'LightlineGitBranch'
+\   'gitbranch': 'LightlineGitBranch',
+\   'gutentags': 'LightlineGutentags'
 \ },
 \ 'component_expand': {
 \   'ctrlpmark': 'LightlineCtrlPMark',
@@ -107,6 +109,10 @@ function! LightlineLintErrors() abort
   return l:all_errors == 0 ? '' : printf('%d ✗', l:all_errors)
 endfunction
 
+function! LightlineGutentags() abort
+  return exists('b:gutentags_files') ? gutentags#statusline() : ''
+endfunction
+
 " CtrlP Integration
 let g:ctrlp_status_func = {
 \ 'main': 'CtrlPStatusFuncMain',
@@ -126,4 +132,6 @@ endfunction
 augroup LightlineAutoCommands
   autocmd!
   autocmd User ALELint call lightline#update()
+  autocmd User GutentagsUpdating call lightline#update()
+  autocmd User GutentagsUpdated call lightline#update()
 augroup END
