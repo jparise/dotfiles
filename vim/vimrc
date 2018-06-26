@@ -199,6 +199,7 @@ nmap <leader>q <Plug>(qf_qf_toggle)
 nmap [w <Plug>(ale_previous_wrap)
 nmap ]w <Plug>(ale_next_wrap)
 nnoremap <leader>F :ALEFix<CR>
+nnoremap <leader>L :ALELint<CR>
 
 " CtrlP mappings
 nnoremap <leader>\ :CtrlP<CR>
