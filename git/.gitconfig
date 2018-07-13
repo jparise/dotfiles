@@ -9,7 +9,7 @@
 	amend = commit --amend
 	changes = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%an, %cr)%Creset'
 	edit = "!f() { $EDITOR `git diff --name-only $*`; }; f"
-	files = "!f() { git ls-files ${*--m} | tr \"\\n\" \" \"; }; f"
+	files = "!f() { git ls-files ${*--m} | sort -u | tr \"\\n\" \" \"; }; f"
 	co = checkout
 	diff-staged = diff --cached
 	head = log -1 --decorate --name-status HEAD
