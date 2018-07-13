@@ -183,6 +183,12 @@ if has('autocmd')
     augroup END
 endif
 
+" Temporary word-around for Python 3.7 `imp` module deprecation warning.
+" See: https://github.com/vim/vim/issues/3117
+if has('python3')
+  silent! python3 1
+endif
+
 " Avoid unintentional switches to Ex mode.
 nmap Q q
 
