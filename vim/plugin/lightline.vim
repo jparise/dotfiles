@@ -131,7 +131,7 @@ endfunction
 
 augroup LightlineAutoCommands
   autocmd!
-  autocmd User ALELint call lightline#update()
+  autocmd User ALELintPost call lightline#update()
   autocmd User GutentagsUpdating call lightline#update()
   autocmd User GutentagsUpdated call lightline#update()
 augroup END
