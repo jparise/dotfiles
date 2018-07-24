@@ -219,6 +219,9 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPBranchModified<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
+" vim-wordmotion mapping prefix
+let g:wordmotion_prefix = '_'
+
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
 
