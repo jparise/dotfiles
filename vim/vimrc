@@ -142,6 +142,23 @@ else
     set viminfo=
 endif
 
+" Autocommands
+if has('autocmd')
+    augroup VimStartup
+        autocmd!
+
+        " Resize all windows when vim itself is resized.
+        autocmd VimResized * execute "normal! \<c-w>="
+
+        " When reading a file, always jump to its last known cursor position,
+        " unless the position is invalid or we're inside of an event handler.
+        autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype != 'gitcommit' |
+        \   execute "normal! g`\"" |
+        \ endif
+    augroup END
+endif
+
 " Platform / GUI options
 if has('gui_running')
     colorscheme base16-ocean
@@ -164,23 +181,6 @@ elseif has('termguicolors')
     hi VertSplit ctermbg=NONE guibg=NONE
 else
     colorscheme mustang
-endif
-
-" Autocommands
-if has('autocmd')
-    augroup VimStartup
-        autocmd!
-
-        " Resize all windows when vim itself is resized.
-        autocmd VimResized * execute "normal! \<c-w>="
-
-        " When reading a file, always jump to its last known cursor position,
-        " unless the position is invalid or we're inside of an event handler.
-        autocmd BufReadPost *
-        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype != 'gitcommit' |
-        \   execute "normal! g`\"" |
-        \ endif
-    augroup END
 endif
 
 " Temporary word-around for Python 3.7 `imp` module deprecation warning.
