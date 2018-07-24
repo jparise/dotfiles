@@ -156,6 +156,12 @@ if has('autocmd')
         \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype != 'gitcommit' |
         \   execute "normal! g`\"" |
         \ endif
+
+        " Standardize spelling error highlighting across all color schemes.
+        autocmd ColorScheme * highlight clear SpellBad
+        autocmd ColorScheme * highlight clear SpellCap
+        autocmd ColorScheme * highlight SpellBad cterm=undercurl
+        autocmd ColorScheme * highlight SpellCap cterm=undercurl
     augroup END
 endif
 
