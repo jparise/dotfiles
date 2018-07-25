@@ -3,5 +3,5 @@ if has('folding')
 endif
 
 if has('syntax')
-    setlocal spell
+    setlocal spell spellcapcheck=
 endif
