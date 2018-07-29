@@ -15,7 +15,7 @@ let g:lightline = {
 \   'right': [
 \     ['lineinfo', 'lint_warnings', 'lint_errors'],
 \     ['ctrlppath', 'fileinfo', 'spell'],
-\     ['gutentags']
+\     ['gutentags', 'lint']
 \   ]
 \ },
 \ 'inactive': {
@@ -31,7 +31,8 @@ let g:lightline = {
 \   'filename': 'LightlineFilename',
 \   'fileinfo': 'LightlineFileinfo',
 \   'gitbranch': 'LightlineGitBranch',
-\   'gutentags': 'LightlineGutentags'
+\   'gutentags': 'LightlineGutentags',
+\   'lint': 'LightlineLint',
 \ },
 \ 'component_expand': {
 \   'ctrlpmark': 'LightlineCtrlPMark',
@@ -96,6 +97,10 @@ function! LightlineGitBranch() abort
   return l:branch !=# '' ? "\uE0A0 " . l:branch : ''
 endfunction
 
+function! LightlineLint() abort
+  return ale#engine#IsCheckingBuffer(bufnr('')) ? 'lint' : ''
+endfunction
+
 function! LightlineLintWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -131,6 +136,7 @@ endfunction
 
 augroup LightlineAutoCommands
   autocmd!
+  autocmd User ALEJobStarted call lightline#update()
   autocmd User ALELintPost call lightline#update()
   autocmd User GutentagsUpdating call lightline#update()
   autocmd User GutentagsUpdated call lightline#update()
