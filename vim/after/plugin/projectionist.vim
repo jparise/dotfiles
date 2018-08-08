@@ -32,6 +32,14 @@ let g:projectionist_heuristics = {
 \           'alternate': 'src/main/java/{}.java',
 \           'type': 'test'
 \       },
+\       'src/main/kotlin/*.kt': {
+\           'alternate': 'src/test/kotlin/{}Test.kt',
+\           'type': 'source'
+\       },
+\       'src/test/kotlin/*Test.kt': {
+\           'alternate': 'src/main/kotlin/{}.kt',
+\           'type': 'test'
+\       },
 \       '*.py': {
 \           'alternate': 'tests/{dirname}/test_{basename}.py',
 \           'type': 'source'
