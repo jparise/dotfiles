@@ -34,6 +34,7 @@ Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'keith/swift.vim', {'for': 'swift'}
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'niftylettuce/Vim-Jinja2-Syntax', {'for': ['jinja', 'jinja.html']}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
