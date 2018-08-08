@@ -31,10 +31,11 @@ Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 Plug 'vim-erlang/vim-erlang-runtime', {'for': 'erlang'}
 Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'tfnico/vim-gradle', {'for': ['groovy', 'kotlin', 'java']}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'keith/swift.vim', {'for': 'swift'}
-Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'niftylettuce/Vim-Jinja2-Syntax', {'for': ['jinja', 'jinja.html']}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
