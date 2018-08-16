@@ -13,5 +13,8 @@ tags.files
 tags.lock
 tags.temp
 
+# elixir
+/.elixir_ls
+
 # python
 .venv/
