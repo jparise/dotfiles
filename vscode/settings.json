@@ -12,5 +12,9 @@
         "statusBar.noFolderBackground" : "#212121",
         "statusBar.debuggingBackground": "#263238",
         "statusBar.foreground":"#bbbbbb"
+    },
+
+    "[elixir]": {
+        "editor.formatOnSave": true
     }
 }
