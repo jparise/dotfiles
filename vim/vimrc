@@ -124,10 +124,7 @@ else
 endif
 
 if has('linebreak') && exists('&breakindent')
-    set breakindent                 " indent wrapped lines to match start
-    if exists('&breakindentopt')
-        set breakindentopt=shift:2  " emphasize broken lines by indenting them
-    endif
+    set breakindent     " indent wrapped lines to match start
 endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
