@@ -219,6 +219,9 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPBranchModified<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
+" Fugitive mappings
+nnoremap <leader>gb :Gblame<CR>
+
 " vim-wordmotion mapping prefix
 let g:wordmotion_prefix = '_'
 
