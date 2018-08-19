@@ -171,6 +171,7 @@ endif
 if has('gui_running')
     colorscheme base16-ocean
     hi VertSplit ctermbg=NONE guibg=NONE
+    set guicursor+=a:blinkon0
     set guioptions=aAeimgr
     set ruler
     set title
