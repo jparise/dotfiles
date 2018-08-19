@@ -1,8 +1,9 @@
 TARGETS = install-atom install-bash install-ctags install-git install-hg \
 		  install-ipython install-lldb install-tcsh install-terminfo \
-		  install-vim
+		  install-vim install-vscode
 
 TERMINFO_FILES := $(wildcard terminfo/*.ti)
+UNAME := $(shell uname -s)
 
 .PHONY: install $(TARGETS) $(TERMINFO_FILES)
 
@@ -53,6 +54,15 @@ install-vim: ~/.config vim/autoload/plug.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
 	ln -s `pwd`/vim ~/.config/nvim
 	mkdir -p ~/.cache/vim
+
+install-vscode: ~/.config
+ifeq ($(UNAME),Darwin)
+	rm -rf ~/Library/Application\ Support/Code/User
+	ln -s `pwd`/vscode ~/Library/Application\ Support/Code/User
+else
+	rm -rf ~/.config/Code/User
+	ln -s `pwd`/vscode ~/.config/Code/User
+endif
 
 ~/.config:
 	mkdir -p ~/.config
