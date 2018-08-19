@@ -6,7 +6,7 @@
     "editor.renderLineHighlight": "gutter",
     "editor.renderIndentGuides": false,
     "python.linting.flake8Enabled": true,
-    "workbench.colorTheme": "Ocean Dark",
+    "workbench.colorTheme": "Ocean Dark Extended",
     "workbench.colorCustomizations": {
         "statusBar.background" : "#1a1a1a",
         "statusBar.noFolderBackground" : "#212121",
