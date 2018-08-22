@@ -1,10 +1,12 @@
 #!/bin/bash
 
 declare -a extensions=(
+    "bierner.markdown-preview-github-styles"
     "cduruk.thrift"
     "JakeBecker.elixir-ls"
     "kleber-swf.ocean-dark-extended"
     "ms-python.python"
+    "pgourlain.erlang"
 )
 
 if [ -z "$(command -v code)" ]; then
