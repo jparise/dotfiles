@@ -41,6 +41,9 @@
 [commit]
 	verbose = true
 
+[fetch]
+	prune = true
+
 [stash]
 	showPatch = true
 
