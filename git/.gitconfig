@@ -8,10 +8,10 @@
 [alias]
 	amend = commit --amend
 	changes = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%an, %cr)%Creset'
-	edit = "!f() { $EDITOR `git files $*`; }; f"
-	files = "!f() { git ls-files --exclude-standard ${*--m} | sort -u | tr \"\\n\" \" \"; }; f"
 	co = checkout
 	diff-staged = diff --cached
+	edit = "!f() { $EDITOR `git files $*`; }; f"
+	files = "!f() { git ls-files --exclude-standard ${*--m} | sort -u | tr \"\\n\" \" \"; }; f"
 	head = log -1 --decorate --name-status HEAD
 	mine = "!f() { git log --no-merges --author=$(git config user.email) $*; }; f"
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
