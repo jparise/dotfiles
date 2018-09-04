@@ -196,10 +196,10 @@ nnoremap <Right>    :bnext<CR>
 nnoremap <leader>d  :Bdelete<CR>
 
 " Quickfix management
-nmap [l <Plug>(qf_loc_previous)
-nmap ]l <Plug>(qf_loc_next)
-nmap [q <Plug>(qf_qf_previous)
-nmap ]q <Plug>(qf_qf_next)
+nnoremap <silent> [l :lprev<CR>\|zz
+nnoremap <silent> ]l :lnext<CR>\|zz
+nnoremap <silent> [q :cprev<CR>\|zz
+nnoremap <silent> ]q :cnext<CR>\|zz
 nmap <leader>l <Plug>(qf_loc_toggle)
 nmap <leader>q <Plug>(qf_qf_toggle)
 
