@@ -215,6 +215,13 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPBranchModified<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
+" Ferret mappings
+let g:FerretMap=0
+let g:FerretQFCommands=0
+let g:FerretQFOptions=0
+nmap <leader>a <Plug>(FerretAck)
+nmap <leader>s <Plug>(FerretAckWord)
+
 " Fugitive mappings
 nnoremap <leader>gb :Gblame<CR>
 
