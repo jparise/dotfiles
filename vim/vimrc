@@ -159,13 +159,13 @@ if has('autocmd')
         autocmd ColorScheme * highlight clear SpellCap
         autocmd ColorScheme * highlight SpellBad cterm=undercurl
         autocmd ColorScheme * highlight SpellCap cterm=undercurl
+        autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
     augroup END
 endif
 
 " Platform / GUI options
 if has('gui_running')
     colorscheme base16-ocean
-    hi VertSplit ctermbg=NONE guibg=NONE
     set guicursor+=a:blinkon0
     set guioptions=aAeimgr
     set ruler
@@ -182,7 +182,6 @@ if has('gui_running')
 elseif has('termguicolors')
     set termguicolors
     colorscheme base16-ocean
-    hi VertSplit ctermbg=NONE guibg=NONE
 else
     colorscheme mustang
 endif
