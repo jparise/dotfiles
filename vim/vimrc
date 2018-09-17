@@ -9,6 +9,7 @@ call plug#begin()
 Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': './install.sh'} | Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'itchyny/lightline.vim' | Plug 'felixjung/vim-base16-lightline'
+Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
