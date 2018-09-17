@@ -51,7 +51,7 @@ let g:lightline = {
 \ }
 
 function! LightlineMode() abort
-  return expand('%:t') ==# 'ControlP' ? 'CtrlP' : lightline#mode()
+  return expand('%') ==# 'ControlP' ? "\u22EF" : lightline#mode()
 endfunction
 
 function! LightlineFilename() abort
@@ -80,11 +80,11 @@ function! LightlineFilename() abort
 endfunction
 
 function! LightlineCtrlPMark() abort
-  return expand('%:t') =~# 'ControlP' ? g:lightline.ctrlp_marked : ''
+  return expand('%') ==# 'ControlP' ? g:lightline.ctrlp_marked : ''
 endfunction
 
 function! LightlineCtrlPPath() abort
-  return expand('%:t') =~# 'ControlP' ? fnamemodify(getcwd(), ':~') : ''
+  return expand('%') ==# 'ControlP' ? fnamemodify(getcwd(), ':~') : ''
 endfunction
 
 function! LightlineFileinfo() abort
