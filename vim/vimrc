@@ -55,7 +55,7 @@ if has('timers') && (has('nvim') || (exists('*job_start')))
 endif
 call plug#end()
 
-source $VIMRUNTIME/macros/matchit.vim
+runtime macros/matchit.vim
 
 set autoindent          " turn autoindenting on
 set autowrite           " auto-save before running external commands
