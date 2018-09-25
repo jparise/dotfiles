@@ -70,7 +70,6 @@ set expandtab           " expand tabs to spaces
 set formatoptions+=nr   " options for "text format" ("gp")
 set hidden              " enable hidden buffers
 set history=100         " remember the last 100 lines of command-line history
-set hlsearch            " turn on search result highlighting
 set ignorecase          " mostly ignore case in search patterns. see smartcase
 set incsearch           " use incremental search
 set noinsertmode        " don't start vim in insertmode
