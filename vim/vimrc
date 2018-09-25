@@ -150,7 +150,7 @@ if has('autocmd')
         " When reading a file, always jump to its last known cursor position,
         " unless the position is invalid or we're inside of an event handler.
         autocmd BufReadPost *
-        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype != 'gitcommit' |
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit' |
         \   execute "normal! g`\"" |
         \ endif
 
