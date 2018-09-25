@@ -44,6 +44,7 @@ Plug 'machakann/vim-vimhelplint', {'for': 'help'}
 Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript']}
 Plug 'jparise/hive.vim', {'for': 'hive'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'bfontaine/Brewfile.vim', {'for': 'ruby'}
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'kergoth/vim-hilinks'
 if isdirectory('/usr/local/opt/fzf')
