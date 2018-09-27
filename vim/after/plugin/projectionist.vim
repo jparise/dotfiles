@@ -1,5 +1,5 @@
 let g:projectionist_heuristics = {
-\   'Makefile': {
+\   'Makefile|Makefile.am': {
 \       '*.c': {
 \           'alternate': '{}.h',
 \           'type': 'source'
@@ -8,18 +8,12 @@ let g:projectionist_heuristics = {
 \           'alternate': '{}.h',
 \           'type': 'source'
 \       },
-\       '*.h': {
-\           'alternate': ['{}.c', '{}.cc'],
-\           'type': 'header'
-\       },
-\   },
-\   '*.xcodeproj|*.xcworkspace': {
-\       '*.m': {
+\       '*.cpp': {
 \           'alternate': '{}.h',
 \           'type': 'source'
 \       },
 \       '*.h': {
-\           'alternate': '{}.m',
+\           'alternate': ['{}.c', '{}.cc', '{}.cpp'],
 \           'type': 'header'
 \       },
 \   },
