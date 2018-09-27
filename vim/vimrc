@@ -229,6 +229,3 @@ let g:wordmotion_prefix = '_'
 
 " Make <C-L> also update diff and syntax highlighting
 nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
-
-" Format the current paragraph
-nnoremap <C-J> gwap
