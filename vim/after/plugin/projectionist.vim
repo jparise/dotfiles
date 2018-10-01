@@ -58,6 +58,7 @@ let g:projectionist_heuristics = {
 \   'mix.exs': {
 \       'lib/*.ex': {
 \           'alternate': 'test/{}_test.exs',
+\           'make': 'mix',
 \           'type': 'source'
 \       },
 \       'test/*_test.exs': {
