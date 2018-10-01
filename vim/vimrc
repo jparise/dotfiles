@@ -212,7 +212,6 @@ nnoremap <leader>L :ALELint<CR>
 nnoremap <silent> <leader>\ :CtrlP<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <leader>m :CtrlPBranchModified<CR>
-nnoremap <silent> <leader>t :CtrlPTag<CR>
 
 " Ferret mappings
 let g:FerretMap=0
