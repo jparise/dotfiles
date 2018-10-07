@@ -82,6 +82,7 @@ set listchars=tab:»·,extends:›,precedes:‹,nbsp:␣,trail:·
 set magic               " use extended regexp in search patterns
 set modelines=0         " turn off modelines
 set mousehide           " hide the mouse in the gui
+set nrformats=bin,hex   " only increment binary and hex numbers
 set nonumber            " don't number lines
 set report=0            " show all changes
 set ruler               " show cursor position
