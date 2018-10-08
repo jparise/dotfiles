@@ -98,6 +98,9 @@ function! LightlineGitBranch() abort
 endfunction
 
 function! LightlineLint() abort
+  if get(g:, 'ale_enabled', 0) != 1 || getbufvar(bufnr(''), 'ale_linted', 0) == 0
+    return ''
+  endif
   return ale#engine#IsCheckingBuffer(bufnr('')) ? 'lint' : ''
 endfunction
 
