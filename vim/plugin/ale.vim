@@ -12,3 +12,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \ 'python': ['flake8']
 \ }
+
+if isdirectory(g:plug_home . '/elixir-ls')
+  let g:ale_elixir_elixir_ls_release = g:plug_home . '/elixir-ls'
+endif
