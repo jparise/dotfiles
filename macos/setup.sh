@@ -85,6 +85,11 @@ defaults write com.apple.universalaccess com.apple.custommenu.apps -array-add '<
 # Bypass the annoyingly slow t.co URL shortener
 defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
+## Visual Studio Code
+
+# Disable system "press-and-hold" behavior so we get key repeats
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
 ## Cleanup
 
 # Restart all affected applications.
