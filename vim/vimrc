@@ -217,7 +217,7 @@ let g:FerretMap=0
 let g:FerretQFCommands=0
 let g:FerretQFOptions=0
 nmap <leader>a <Plug>(FerretAck)
-nmap <leader>s <Plug>(FerretAckWord)
+nmap <leader>s :Ack <C-R><C-W><Space>
 
 " Fugitive mappings
 nnoremap <leader>gb :Gblame<CR>
