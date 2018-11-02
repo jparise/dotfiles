@@ -9,3 +9,4 @@ hostname
 AST
 GraphQL
 dialyzer
+linter
