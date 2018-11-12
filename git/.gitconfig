@@ -38,6 +38,9 @@
 	algorithm = patience
 	compactionHeuristic = true
 
+[merge]
+	tool = fugitive
+
 [commit]
 	verbose = true
 
@@ -65,3 +68,6 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+
+[mergetool "fugitive"]
+	cmd = vim -f -c "Gvdiff" "$MERGED"
