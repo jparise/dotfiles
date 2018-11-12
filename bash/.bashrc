@@ -26,7 +26,7 @@ HISTCONTROL=ignoreboth
 HISTIGNORE="&:bg:fg:clear:exit"
 PROMPT_COMMAND="history -a"
 PROMPT_DIRTRIM=3
-PS1="[\W]\$ "
+PS1='[\W]\$ '
 
 # Some shells let us configure their window title. Take advantage of that to
 # display the current working directory. Remote (ssh) shels also include the
