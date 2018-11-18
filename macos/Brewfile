@@ -1,3 +1,6 @@
+tap "homebrew/cask"
+tap "homebrew/core"
+
 brew "bash"
 brew "bash-completion"
 brew "ctags"
@@ -7,3 +10,5 @@ brew "python"
 brew "python@2"
 brew "ripgrep"
 brew "vim"
+
+cask "isolator"
