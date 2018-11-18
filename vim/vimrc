@@ -16,7 +16,9 @@ Plug 'tpope/vim-projectionist'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/gv.vim'
+Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-dirvish'
 Plug 'moll/vim-bbye'
