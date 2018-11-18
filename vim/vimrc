@@ -190,6 +190,9 @@ endif
 " Avoid unintentional switches to Ex mode.
 nmap Q q
 
+" Make Y behave like other capital letter commands.
+nnoremap Y y$
+
 " Buffer management
 nnoremap ,              :buffers<CR>:buffer<Space>
 nnoremap <silent> <tab> :buffer#<CR>
