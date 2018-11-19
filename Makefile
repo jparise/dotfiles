@@ -1,4 +1,4 @@
-TARGETS = install-atom install-bash install-ctags install-git install-hg \
+TARGETS = install-bash install-ctags install-git install-hg \
 		  install-ipython install-lldb install-tcsh install-terminfo \
 		  install-vim install-vscode
 
@@ -8,10 +8,6 @@ UNAME := $(shell uname -s)
 .PHONY: install $(TARGETS) $(TERMINFO_FILES)
 
 install: $(TARGETS)
-
-install-atom:
-	rm -rf ~/.atom
-	ln -s `pwd`/atom ~/.atom
 
 install-bash:
 	rm -f ~/.bash_profile ~/.bashrc ~/.inputrc

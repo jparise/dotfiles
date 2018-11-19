@@ -7,12 +7,6 @@ Installation is handled by the Makefile. `make install` should take care of
 everything, but note that any existing configuration files will be removed
 _without_ making backup copies.
 
-## atom
-
-Atom packages aren't stored in source control. The set of installed packages
-is maintained in `atom/packages.cson` with the help of the [Package
-Sync](https://atom.io/packages/package-sync) package.
-
 ## bash
 
 Local settings can be placed in a file named `$HOME/.bashrc.local`.
