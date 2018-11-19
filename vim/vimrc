@@ -82,14 +82,14 @@ set listchars=tab:»·,extends:›,precedes:‹,nbsp:␣,trail:·
 set magic               " use extended regexp in search patterns
 set modelines=0         " turn off modelines
 set mousehide           " hide the mouse in the gui
-set nrformats=bin,hex   " only increment binary and hex numbers
+set nrformats=alpha,hex " increment alphabet characters and hex numbers
 set nonumber            " don't number lines
 set report=0            " show all changes
 set ruler               " show cursor position
 set scrolloff=3         " scroll when within 3 lines of the screen's edge
 set shiftround          " round indent size to a multiple of shiftwidth
 set shiftwidth=4        " number of spaces in each indent
-set shortmess=acstI     " abbreviate all messages
+set shortmess=astI      " abbreviate all messages
 set showbreak=↪\        " show at the start of wrapped lines
 set noshowcmd           " don't show incomplete commands
 set showmode            " show the current mode
@@ -128,6 +128,12 @@ endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
     set formatoptions+=j " remove comment leader when joining comment lines
+endif
+if v:version > 704 || v:version == 704 && has('patch314')
+    set shortmess+=c    " completion messages
+endif
+if v:version > 704 || v:version == 704 && has('patch1027')
+    set nrformats+=bin  " completion messages
 endif
 
 " Swap files, etc.
