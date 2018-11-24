@@ -11,3 +11,6 @@ syn match gitcommitUnderDotsC "\<\w*[_.]\+\w*\>" contains=@NoSpell
 " Email addresses and URLs [commit body only]
 syn match gitcommitEmail "<\?\w\+@\w\+\.\w\+>\?" contains=@NoSpell
 syn match gitcommitURL "https\?:\/\/[^[:space:]]\+" contains=@NoSpell
+
+" Git SHA1 references [commit body only]
+syn match gitcommitSHA1 "\<\x\{5,40}\>" contains=@NoSpell
