@@ -10,8 +10,6 @@ let g:markdown_fenced_languages = [
 \ 'viml=vim',
 \]
 
-setlocal formatoptions=tacwqn
-
 if has('syntax')
   setlocal spell
 endif
