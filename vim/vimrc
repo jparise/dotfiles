@@ -40,7 +40,6 @@ Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'niftylettuce/Vim-Jinja2-Syntax', {'for': ['jinja', 'jinja.html']}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'html.handlebars'}
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'machakann/vim-vimhelplint', {'for': 'help'}
 Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript']}
