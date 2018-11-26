@@ -105,8 +105,8 @@ endfunction
 function! LightlineLintWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:all_non_errors == 0 ? '' : printf('%d ⁉', l:all_non_errors)
+  let l:warnings = l:counts.total - l:all_errors
+  return l:warnings == 0 ? '' : printf('%d ⁉', l:warnings)
 endfunction
 
 function! LightlineLintErrors() abort
