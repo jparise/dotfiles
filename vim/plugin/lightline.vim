@@ -72,7 +72,7 @@ function! LightlineFilename() abort
     let l:pathname = fnamemodify(l:pathname, ':~:.')
   endif
 
-  let l:readonly = &readonly && &filetype !=# 'help' ? ' [RO]' : ''
+  let l:readonly = &readonly ? ' [RO]' : ''
   let l:modified = &modified ? ' [+]' : ''
   return l:pathname . l:readonly . l:modified
 endfunction
