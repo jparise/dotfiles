@@ -51,20 +51,18 @@ let g:lightline = {
 \ }
 
 function! LightlineMode() abort
-  return expand('%') ==# 'ControlP' ? "\u22EF" : lightline#mode()
+  return &filetype ==# 'ctrlp' ? "\u22EF" : lightline#mode()
 endfunction
 
 function! LightlineFilename() abort
-  let l:filename = expand('%:t')
-
-  if l:filename ==# 'ControlP'
+  if &filetype ==# 'ctrlp'
     if exists('g:lightline.ctrlp_progress')
       return g:lightline.ctrlp_progress
     else
       return g:lightline.ctrlp_item
     endif
   elseif &filetype ==# 'help'
-    return l:filename
+    return expand('%:t')
   endif
 
   let l:pathname = expand('%')
@@ -80,11 +78,11 @@ function! LightlineFilename() abort
 endfunction
 
 function! LightlineCtrlPMark() abort
-  return expand('%') ==# 'ControlP' ? g:lightline.ctrlp_marked : ''
+  return &filetype ==# 'ctrlp' ? g:lightline.ctrlp_marked : ''
 endfunction
 
 function! LightlineCtrlPPath() abort
-  return expand('%') ==# 'ControlP' ? fnamemodify(getcwd(), ':~') : ''
+  return &filetype ==# 'ctrlp' ? fnamemodify(getcwd(), ':~') : ''
 endfunction
 
 function! LightlineFileinfo() abort
