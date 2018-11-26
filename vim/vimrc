@@ -215,6 +215,7 @@ nmap <leader>F <Plug>(ale_fix)
 nmap <leader>L <Plug>(ale_lint)
 
 " CtrlP mappings
+let g:ctrlp_map=''
 nnoremap <silent> <leader>\ :CtrlP<CR>
 nnoremap <silent> <leader>m :CtrlPBranchModified<CR>
 
