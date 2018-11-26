@@ -1,11 +1,12 @@
+let g:ctrlp_brief_prompt = 1
+let g:ctrlp_types = ['fil', 'mru']
+
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 let g:ctrlp_working_path_mode = 'ra'
 
 let g:ctrlp_mruf_exclude = '.*/tmp/.*\|.*/.git/.*'
 let g:ctrlp_mruf_max = 100
 let g:ctrlp_mruf_relative = 1
-
-let g:ctrlp_extensions = ['tag']
 
 if executable('fd')
     let s:fallback_command = 'fd --type f --color never "" %s'
