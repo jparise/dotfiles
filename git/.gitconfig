@@ -69,5 +69,8 @@
 	changed = green
 	untracked = cyan
 
+[mergetool]
+	keepBackup = false
+
 [mergetool "fugitive"]
 	cmd = vim -f -c "Gvdiff" "$MERGED"
