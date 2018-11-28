@@ -132,7 +132,7 @@ function iterm_profile() {
 # Use an alternate iTerm2 profile for ssh sessions
 function ssh() {
 	iterm_profile Remote
-	command ssh $*
+	command ssh "$@"
 	iterm_profile Default
 }
 
