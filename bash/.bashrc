@@ -8,7 +8,7 @@ shopt -s cmdhist        # save multi-line commands in the same history entry
 shopt -s extglob        # enable extended pattern matching features
 shopt -s histappend     # append to the history file when shell exits
 
-if [[ "$BASH_VERSINFO" -ge 4 ]]; then
+if [[ "${BASH_VERSINFO[0]}" -ge 4 ]]; then
     shopt -s dirspell   # completion spelling correction on directory names
     shopt -s globstar   # '**' matches all directories and files recursively
 fi
