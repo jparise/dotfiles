@@ -1,3 +1,5 @@
+# shellcheck disable=SC1090
+
 [ -z "$PS1" ] && return
 
 set -o notify
