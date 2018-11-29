@@ -82,7 +82,8 @@ fi
 
 # Set up GOROOT when we detect that Go is available.
 if [ -n "$(command -v go)" ]; then
-	export GOROOT=$(go env GOROOT)
+	GOROOT=$(go env GOROOT)
+	export GOROOT
 	PATH="$GOROOT/bin:$PATH"
 fi
 
