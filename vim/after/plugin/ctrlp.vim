@@ -1,4 +1,3 @@
-let g:ctrlp_brief_prompt = 1
 let g:ctrlp_types = ['fil', 'mru']
 
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
