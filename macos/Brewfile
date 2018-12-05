@@ -1,4 +1,5 @@
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 brew "bash"
@@ -12,3 +13,6 @@ brew "ripgrep"
 brew "vim"
 
 cask "isolator"
+
+cask "font-fira-code"
+cask "font-source-code-pro"
