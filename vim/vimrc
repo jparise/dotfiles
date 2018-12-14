@@ -127,9 +127,6 @@ endif
 if v:version > 704 || v:version == 704 && has('patch314')
     set shortmess+=c    " completion messages
 endif
-if v:version > 704 || v:version == 704 && has('patch1027')
-    set nrformats+=bin  " completion messages
-endif
 
 " Swap files, etc.
 if $USER !=# 'root'
