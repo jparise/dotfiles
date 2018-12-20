@@ -61,6 +61,8 @@ function! LightlineFilename() abort
     else
       return g:lightline.ctrlp_item
     endif
+  elseif &filetype ==# 'qf'
+    return w:quickfix_title
   elseif &filetype ==# 'help'
     return expand('%:t')
   endif
