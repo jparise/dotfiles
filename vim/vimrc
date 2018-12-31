@@ -17,6 +17,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-unimpaired'
+Plug 'lifepillar/vim-mucomplete'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
 Plug 'machakann/vim-vimhelplint', {'for': 'help'}
