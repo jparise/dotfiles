@@ -15,7 +15,7 @@ let g:lightline = {
 \   'right': [
 \     ['lineinfo', 'lint_warnings', 'lint_errors'],
 \     ['ctrlppath', 'fileinfo', 'spell'],
-\     ['gutentags', 'lint']
+\     ['gutentags', 'lint', 'asyncrun']
 \   ]
 \ },
 \ 'inactive': {
@@ -32,6 +32,7 @@ let g:lightline = {
 \   'fileinfo': 'LightlineFileinfo',
 \   'gitbranch': 'LightlineGitBranch',
 \   'gutentags': 'LightlineGutentags',
+\   'asyncrun': 'LightlineAsyncRun',
 \   'lint': 'LightlineLint',
 \ },
 \ 'component_expand': {
@@ -121,6 +122,10 @@ function! LightlineGutentags() abort
   return exists('b:gutentags_files') ? gutentags#statusline() : ''
 endfunction
 
+function! LightlineAsyncRun() abort
+  return get(g:, 'asyncrun_status') !=# 'running' ? "'" . get(g:, 'asyncrun_info') . "'" : ''
+endfunction
+
 " CtrlP Integration
 let g:ctrlp_status_func = {
 \ 'main': 'CtrlPStatusFuncMain',
@@ -141,6 +146,8 @@ augroup LightlineAutoCommands
   autocmd!
   autocmd User ALEJobStarted call lightline#update_once()
   autocmd User ALELintPost call lightline#update()
+  autocmd User AsyncRunStart call lightline#update_once()
+  autocmd User AsyncRunStop call lightline#update_once()
   autocmd User GutentagsUpdating call lightline#update_once()
   autocmd User GutentagsUpdated call lightline#update_once()
 augroup END
