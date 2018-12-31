@@ -58,12 +58,28 @@ let g:projectionist_heuristics = {
 \   'mix.exs': {
 \       'lib/*.ex': {
 \           'alternate': 'test/{}_test.exs',
-\           'make': 'mix',
+\           'compiler': 'mix',
 \           'type': 'source'
 \       },
 \       'test/*_test.exs': {
 \           'alternate': 'lib/{}.ex',
+\           'compiler': 'exunit',
 \           'type': 'test'
 \       }
 \   }
 \}
+
+function! s:activate() abort
+  for [root, value] in projectionist#query('compiler')
+    try
+      execute 'compiler ' . value
+    catch /^Vim\%((\a\+)\)\=:E666/
+    endtry
+    break
+  endfor
+endfunction
+
+augroup ProjectionistCustom
+  autocmd!
+  autocmd User ProjectionistActivate call s:activate()
+augroup END
