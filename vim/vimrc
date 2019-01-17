@@ -117,6 +117,11 @@ if has('linebreak') && exists('&breakindent')
     set breakindent     " indent wrapped lines to match start
 endif
 
+if has('diff')
+  set diffopt+=algorithm:patience
+  set diffopt+=indent-heuristic
+endif
+
 if v:version > 703 || has('patch-7.3.541')
     set formatoptions+=j " remove comment leader when joining comment lines
 endif
