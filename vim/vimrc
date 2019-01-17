@@ -220,7 +220,7 @@ let g:FerretQFCommands=0
 let g:FerretQFOptions=0
 nmap <leader>a <Plug>(FerretAck)
 nmap <leader>s <Plug>(FerretAckWord)
-nmap <leader>S :Ack <C-R><C-W><Space>
+nmap <leader>S :Ack <C-R><C-W><Space><C-R>=expand('%:h')<CR>
 
 " Fugitive mappings
 nnoremap <leader>gb :Gblame<CR>
