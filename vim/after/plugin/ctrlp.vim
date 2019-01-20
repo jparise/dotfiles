@@ -21,6 +21,11 @@ else
     let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 endif
 
+let g:ctrlp_status_func = {
+\ 'main': 'statusline#ctrlp_main',
+\ 'prog': 'statusline#ctrlp_progress',
+\ }
+
 let g:ctrlp_user_command = {
 \ 'types': {
 \   1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
