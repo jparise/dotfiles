@@ -14,7 +14,7 @@ if has('timers') && (has('nvim') || (exists('*job_start')))
   set statusline+=%4*%(%{statusline#lint_warnings()}\ %)
   set statusline+=%5*%(%{statusline#lint_errors()}\ %)
 endif
-set statusline+=%2*%4l:%-3v
+set statusline+=%1*%4l:%-3v
 
 augroup StatuslineRefresh
   autocmd!
