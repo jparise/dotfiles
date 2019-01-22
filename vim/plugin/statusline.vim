@@ -9,9 +9,11 @@ set statusline+=%2*%t
 set statusline+=%<
 set statusline+=%3*%(\ [%{statusline#fileinfo()}]%)
 set statusline+=%=
-set statusline+=%3*%(%{statusline#async_jobs()}\ \ %)
-set statusline+=%4*%(%{statusline#lint_warnings()}\ %)
-set statusline+=%5*%(%{statusline#lint_errors()}\ %)
+if has('timers') && (has('nvim') || (exists('*job_start')))
+  set statusline+=%3*%(%{statusline#async_jobs()}\ \ %)
+  set statusline+=%4*%(%{statusline#lint_warnings()}\ %)
+  set statusline+=%5*%(%{statusline#lint_errors()}\ %)
+endif
 set statusline+=%2*%4l:%-3v
 
 augroup StatuslineRefresh
