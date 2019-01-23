@@ -188,7 +188,7 @@ endif
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Avoid unintentional switches to Ex mode.
-nmap Q q
+noremap Q <Nop>
 
 " Make Y behave like other capital letter commands.
 nnoremap Y y$
