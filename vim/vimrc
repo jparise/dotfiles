@@ -229,6 +229,3 @@ nmap <leader>S :Ack <C-R><C-W><Space><C-R>=expand('%:h')<CR>
 
 " Fugitive mappings
 nnoremap <leader>gb :Gblame<CR>
-
-" Make <C-L> also update diff and syntax highlighting
-nnoremap <silent> <C-L> :diffupdate<CR>:syntax sync fromstart<CR><C-L>
