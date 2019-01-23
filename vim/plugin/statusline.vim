@@ -3,7 +3,7 @@ scriptencoding utf-8
 set rulerformat=%8(%4l:%-3v%)
 
 set statusline=%1*
-set statusline+=%{&modifiable&&&modified?'•':&readonly?'×':'\ '}
+set statusline+=%{&modifiable&&&modified?'∙':&readonly?'×':'\ '}
 set statusline+=%{statusline#fileprefix()}
 set statusline+=%2*%t
 set statusline+=%<
