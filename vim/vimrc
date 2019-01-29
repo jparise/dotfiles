@@ -77,6 +77,7 @@ set laststatus=2        " always show status line
 set lazyredraw          " don't update screen while executing commands
 set listchars=tab:»·,extends:›,precedes:‹,nbsp:␣,trail:·
 set modelines=0         " turn off modelines
+set mouse=a             " enable the mouse for all modes
 set nrformats=alpha,hex " increment alphabet characters and hex numbers
 set report=0            " show all changes
 set ruler               " show cursor position
