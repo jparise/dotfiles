@@ -162,6 +162,10 @@ if has('autocmd')
         autocmd ColorScheme * highlight SpellBad cterm=undercurl
         autocmd ColorScheme * highlight SpellCap cterm=undercurl
         autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
+
+        if exists('##TerminalOpen')
+          autocmd TerminalOpen * runtime! ftplugin/terminal.vim
+        endif
     augroup END
 endif
 
