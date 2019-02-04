@@ -1,13 +1,10 @@
-scriptencoding utf-8
-
 set rulerformat=%8(%4l:%-3v%)
 
 set statusline=%1*
-set statusline+=%{&modifiable&&&modified?'∙':&readonly?'×':'\ '}
 set statusline+=%{statusline#fileprefix()}
 set statusline+=%2*%t
 set statusline+=%<
-set statusline+=%3*%(\ [%{statusline#fileinfo()}]%)
+set statusline+=%3*%(\ [%{statusline#fileinfo()}%R%M]%)
 set statusline+=%=
 if has('timers') && (has('nvim') || (exists('*job_start')))
   set statusline+=%3*%(%{statusline#async_jobs()}\ \ %)
