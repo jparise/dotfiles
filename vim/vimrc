@@ -89,7 +89,7 @@ set showbreak=↪\        " show at the start of wrapped lines
 set noshowcmd           " don't show incomplete commands
 set smartcase           " respect uppercase characters when searching
 set smarttab            " smart movement and deleting based on tab settings
-set softtabstop=4       " set soft tab stop to four spaces
+set softtabstop=-1      " set soft tab stop to match 'shiftwidth'
 set splitbelow          " open horizontal splits below current window
 set splitright          " open vertical splits to the right
 set nostartofline       " don't jump to first char with page commands
