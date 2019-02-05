@@ -26,7 +26,6 @@ Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
-Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-dirvish'
 Plug 'moll/vim-bbye'
 Plug 'xtal8/traces.vim'
