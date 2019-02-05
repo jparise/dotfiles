@@ -147,7 +147,7 @@ if has('autocmd')
         autocmd!
 
         " Resize all windows when vim itself is resized.
-        autocmd VimResized * execute "normal! \<c-w>="
+        autocmd VimResized * silent! wincmd =
 
         " When reading a file, always jump to its last known cursor position,
         " unless the position is invalid or we're inside of an event handler.
