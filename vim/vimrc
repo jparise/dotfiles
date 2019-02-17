@@ -33,7 +33,6 @@ Plug 'romainl/vim-qf'
 Plug 'skywind3000/asyncrun.vim', {'on': ['AsyncRun', 'AsyncRun!']}
 Plug 'wincent/ferret'
 Plug 'wincent/loupe'
-Plug 'wincent/pinnacle'
 Plug 'wincent/terminus'
 Plug 'solarnz/arcanist.vim', {'for': 'arcanistdiff'}
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}

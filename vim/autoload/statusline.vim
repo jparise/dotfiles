@@ -74,30 +74,81 @@ function! statusline#ctrlp_main(focus, byfname, regex, prev, item, next, marked)
 endfunction
 
 function! statusline#update_colorscheme() abort
-  let l:bg = pinnacle#extract_bg('StatusLineNC')
+  let l:bg = s:extract_colors('StatusLineNC', 'bg')
 
   " Light
-  execute 'highlight User1 ' .
-      \ pinnacle#highlight({
-      \   'bg': l:bg,
-      \   'fg': pinnacle#extract_fg('StatusLine'),
-      \ })
+  execute 'highlight User1 ' . s:highlight('StatusLine', l:bg)
 
   " Light (Bold) and Dark (Italic)
-  execute 'highlight User2 ' . pinnacle#embolden('User1')
-  execute 'highlight User3 ' . pinnacle#italicize('StatusLineNC')
+  execute 'highlight User2 ' . s:decorate('User1', 'bold')
+  execute 'highlight User3 ' . s:decorate('StatusLineNC', 'italic')
 
-  " Warnings
-  execute 'highlight User4 ' .
-      \ pinnacle#highlight({
-      \   'bg': l:bg,
-      \   'fg': pinnacle#extract_fg('Label'),
-      \ })
+  " Warnings and Errors
+  execute 'highlight User4 ' . s:highlight('Label', l:bg)
+  execute 'highlight User5 ' . s:highlight('ErrorMsg', l:bg)
+endfunction
 
-  " Errors
-  execute 'highlight User5 ' .
-      \ pinnacle#highlight({
-      \   'bg': l:bg,
-      \   'fg': pinnacle#extract_fg('ErrorMsg'),
-      \ })
+function! s:extract_highlight(group) abort
+  redir => l:highlight
+    silent execute '0verbose silent highlight ' . a:group
+  redir END
+
+  " Traverse links back to authoritative group.
+  let l:links = matchlist(l:highlight, 'links to \(\S\+\)')
+  if !empty(l:links)
+    return s:extract_highlight(l:links[1])
+  endif
+
+  " Extract the highlighting details (the bit after "xxx")
+  let l:matches = matchlist(l:highlight, '\<xxx\>\s\+\(.*\)')
+  return l:matches[1]
+endfunction
+
+function! statusline#test(group)
+  return s:extract_highlight(a:group)
+endfunction
+
+function! s:extract_colors(group, type) abort
+  let l:highlight = s:extract_highlight(a:group)
+  let l:cterm = s:extract_color(l:highlight, 'cterm' . a:type . '=\(\w\+\)')
+  let l:gui   = s:extract_color(l:highlight, 'gui' . a:type . '=\(#\w\+\)')
+  return [l:gui, l:cterm]
+endfunction
+
+function! s:extract_color(highlight, pattern) abort
+  let l:matches = matchlist(a:highlight, a:pattern)
+  return empty(l:matches) ? 'NONE' : l:matches[1]
+endfunction
+
+function! s:highlight(group, bg) abort
+  let [l:guifg, l:ctermfg] = s:extract_colors(a:group, 'fg')
+  return
+        \ 'guifg=' . l:guifg . ' ctermfg=' . l:ctermfg . ' ' .
+        \ 'guibg=' . a:bg[0] . ' ctermbg=' . a:bg[1]
+endfunction
+
+function s:decorate(group, attr) abort
+  let l:original = s:extract_highlight(a:group)
+
+  for l:type in ['gui', 'term', 'cterm']
+    let l:matches = matchlist(
+      \   l:original,
+      \   '^\(\%([^ ]\+ \)*\)' .
+      \   '\(' . l:type . '=[^ ]\+\)' .
+      \   '\(\%( [^ ]\+\)*\)$'
+      \ )
+    if empty(l:matches)
+      " No existing match so just add a:attr to it.
+      let l:original .= ' ' . l:type . '=' . a:attr
+    else
+      " Existing match so only add a:attr if it's not already there.
+      let [l:start, l:value, l:end] = l:matches[1:3]
+      if l:value !~# '.*' . a:attr . '.*'
+        let l:original = l:start . l:value . ',' . a:attr . l:end
+      endif
+    endif
+  endfor
+
+  " Remove newlines in case this came from a narrow window with wrapped output.
+  return tr(l:original, "\r\n", '  ')
 endfunction
