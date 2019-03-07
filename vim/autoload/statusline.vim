@@ -104,10 +104,6 @@ function! s:extract_highlight(group) abort
   return l:matches[1]
 endfunction
 
-function! statusline#test(group)
-  return s:extract_highlight(a:group)
-endfunction
-
 function! s:extract_colors(group, type) abort
   let l:highlight = s:extract_highlight(a:group)
   let l:cterm = s:extract_color(l:highlight, 'cterm' . a:type . '=\(\w\+\)')
