@@ -10,3 +10,5 @@ AST
 GraphQL
 dialyzer
 linter
+Parise
+JSON
