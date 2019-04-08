@@ -139,6 +139,11 @@ function ssh() {
 	iterm_profile Default
 }
 
+# Perform a ripgrep search and load its results into vim's quickfix list.
+function vimgrep() {
+    vim -q <(rg --vimgrep "$@")
+}
+
 # Optionally include any additional local settings.
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
