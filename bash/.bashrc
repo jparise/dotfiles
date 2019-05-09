@@ -139,6 +139,12 @@ function ssh() {
 	iterm_profile Default
 }
 
+# Execute a command and load its output into vim's quickfix list.
+function vimq() {
+    vim -q <("$@")
+}
+complete -F _command vimq
+
 # Perform a ripgrep search and load its results into vim's quickfix list.
 function vimgrep() {
     vim -q <(rg --vimgrep "$@")
