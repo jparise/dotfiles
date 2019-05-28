@@ -215,6 +215,10 @@ nnoremap <silent> ]q :cnext<CR>zz
 nmap <leader>l <Plug>(qf_loc_toggle)
 nmap <leader>q <Plug>(qf_qf_toggle)
 
+" Search and replace the current word in the entire buffer or current block
+nnoremap <leader>r :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader>R :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
+
 " ALE mappings
 nmap [w <Plug>(ale_previous_wrap)
 nmap ]w <Plug>(ale_next_wrap)
