@@ -15,4 +15,5 @@ brew "vim"
 cask "isolator"
 
 cask "font-fira-code"
+cask 'font-roboto-mono'
 cask "font-source-code-pro"
