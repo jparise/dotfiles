@@ -9,6 +9,7 @@
 	amend = commit --amend
 	changes = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%an, %cr)%Creset'
 	co = checkout
+	deletes = log --diff-filter=D --summary
 	diff-staged = diff --cached
 	edit = "!f() { $EDITOR `git files $*`; }; f"
 	files = "!f() { git ls-files --exclude-standard ${*--m} | sort -u | tr \"\\n\" \" \"; }; f"
