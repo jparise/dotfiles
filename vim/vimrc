@@ -53,6 +53,7 @@ if has('timers') && (has('nvim') || (exists('*job_start')))
 endif
 call plug#end()
 
+runtime ftplugin/man.vim
 runtime macros/matchit.vim
 
 set autoindent          " turn autoindenting on
@@ -118,6 +119,10 @@ endif
 if has('diff') && has('patch-8.1.0360')
   set diffopt+=algorithm:patience
   set diffopt+=indent-heuristic
+endif
+
+if exists(':Man')
+  set keywordprg=:Man
 endif
 
 if v:version > 703 || has('patch-7.3.541')
