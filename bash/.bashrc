@@ -88,8 +88,11 @@ if [ -n "$(command -v go)" ]; then
 fi
 
 # Add preferred Homebrew locations to PATH when available.
+if [ -d "/usr/local/opt/binutils/bin" ]; then
+	PATH="/usr/local/opt/binutils/bin:$PATH"
+fi
 if [ -d "/usr/local/opt/bison/bin" ]; then
-	PATH="/usr/local/opt/bison/bin/:$PATH"
+	PATH="/usr/local/opt/bison/bin:$PATH"
 fi
 
 # Lastly, add my personal ~/[Bb]in directory to the front of $PATH.
