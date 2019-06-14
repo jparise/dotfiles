@@ -204,7 +204,7 @@ nnoremap ,              :buffers<CR>:buffer<Space>
 nnoremap <silent> <tab> :buffer#<CR>
 nnoremap <leader><tab>  :A<CR>
 nnoremap <leader>d      :Bdelete<CR>
-nnoremap <leader>D      :w\|:silent :Bdelete<CR>
+nnoremap <leader>D      :update\|:silent :Bdelete<CR>
 
 " Quickfix management
 nnoremap <silent> [l :lprev<CR>zz
