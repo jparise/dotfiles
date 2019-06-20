@@ -192,7 +192,7 @@ else
 endif
 
 " Highlight conflict markers
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+match ErrorMsg '^\(<\|=\||\|>\)\{7\}\([^=].\+\)\?$'
 
 " Avoid unintentional switches to Ex mode.
 noremap Q <Nop>
