@@ -51,6 +51,9 @@
 [stash]
 	showPatch = true
 
+[rerere]
+	enabled = true
+
 [color]
 	branch = auto
 	diff = auto
