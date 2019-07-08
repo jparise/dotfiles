@@ -1,5 +1,12 @@
-TARGETS = install-bash install-ctags install-git install-hg \
-		  install-ipython install-lldb install-tcsh install-terminfo \
+TARGETS = install-bash \
+		  install-ctags \
+		  install-git \
+		  install-hg \
+		  install-ipython \
+		  install-lldb \
+		  install-proselint \
+		  install-tcsh \
+		  install-terminfo \
 		  install-vim install-vscode
 
 TERMINFO_FILES := $(wildcard terminfo/*.ti)
@@ -36,6 +43,9 @@ install-ipython:
 install-lldb:
 	rm -f ~/.lldbinit
 	ln -s `pwd`/lldb/.lldbinit ~/.lldbinit
+
+install-proselint: ~/.config
+	ln -s `pwd`/proselint ~/.config/proselint
 
 install-tcsh:
 	rm -f ~/.cshrc ~/.login
