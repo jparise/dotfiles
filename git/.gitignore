@@ -12,6 +12,7 @@ tags
 tags.files
 tags.lock
 tags.temp
+tags.temp.tmp
 
 # elixir
 /.elixir_ls
