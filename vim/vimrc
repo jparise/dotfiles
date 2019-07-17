@@ -207,7 +207,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Buffer management
 nnoremap ,              :buffers<CR>:buffer<Space>
-nnoremap <silent> <tab> :buffer#<CR>
+nnoremap <tab>          <C-^>
 nnoremap <leader><tab>  :A<CR>
 nnoremap <leader>d      :Bdelete<CR>
 nnoremap <leader>D      :update\|:silent :Bdelete<CR>
