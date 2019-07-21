@@ -41,6 +41,7 @@
 
 [merge]
 	tool = fugitive
+	conflictstyle = diff3
 
 [commit]
 	verbose = true
