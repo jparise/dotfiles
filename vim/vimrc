@@ -50,7 +50,7 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'bfontaine/Brewfile.vim', {'for': 'ruby'}
 if has('timers') && (has('nvim') || (exists('*job_start')))
     Plug 'ludovicchabant/vim-gutentags'
-    Plug 'w0rp/ale'
+    Plug 'dense-analysis/ale'
 endif
 call plug#end()
 
