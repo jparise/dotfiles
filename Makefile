@@ -7,7 +7,8 @@ TARGETS = install-bash \
 		  install-proselint \
 		  install-tcsh \
 		  install-terminfo \
-		  install-vim install-vscode
+		  install-vim \
+		  install-vscode
 
 TERMINFO_FILES := $(wildcard terminfo/*.ti)
 UNAME := $(shell uname -s)
