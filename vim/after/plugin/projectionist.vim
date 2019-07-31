@@ -47,11 +47,18 @@ let g:projectionist_heuristics = {
 \   },
 \   'setup.py': {
 \       '*.py': {
-\           'alternate': 'tests/{dirname}/test_{basename}.py',
+\           'alternate': [
+\             'tests/{dirname}/test_{basename}.py',
+\             '{dirname|dirname}/tests/{dirname|basename}/test_{basename}.py',
+\           ],
 \           'type': 'source'
 \       },
 \       'tests/**/test_*.py': {
 \           'alternate': '{}.py',
+\           'type': 'test'
+\       },
+\       '**/test_*.py': {
+\           'alternate': '{dirname|dirname|dirname}/{dirname|basename}/{basename}.py',
 \           'type': 'test'
 \       },
 \   },
