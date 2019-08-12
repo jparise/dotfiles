@@ -12,3 +12,4 @@ dialyzer
 linter
 Parise
 JSON
+deserialization
