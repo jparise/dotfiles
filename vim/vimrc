@@ -212,7 +212,7 @@ nnoremap <tab>          <C-^>
 nnoremap <leader><tab>  :A<CR>
 nnoremap <leader>d      :Bdelete<CR>
 nnoremap <leader>D      :update\|:silent :Bdelete<CR>
-nnoremap <leader>%      :let @*=expand("%")\|echo @*<CR>
+nnoremap <silent> <leader>% :let @*=expand("%")\|echo @*<CR>
 
 " Quickfix management
 nnoremap <silent> [l :lprev<CR>zz
