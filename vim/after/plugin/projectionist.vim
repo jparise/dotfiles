@@ -27,6 +27,16 @@ let g:projectionist_heuristics = {
 \           'type': 'test'
 \       },
 \   },
+\   '*.xcodeproj': {
+\       '*.m': {
+\           'alternate': '{}.h',
+\           'type': 'source'
+\       },
+\       '*.h': {
+\           'alternate': '{}.m',
+\           'type': 'header'
+\       },
+\   },
 \   '*.gradle': {
 \       'src/main/java/*.java': {
 \           'alternate': 'src/test/java/{}Test.java',
