@@ -7,7 +7,6 @@
 
 [alias]
 	amend = commit --amend
-	changes = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%an, %cr)%Creset'
 	co = checkout
 	deletes = log --diff-filter=D --summary
 	diff-staged = diff --cached
@@ -16,6 +15,7 @@
 	head = log -1 --decorate --name-status HEAD
 	mine = !git log --no-merges --author=$(git config user.email)
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
+	slog = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%an, %cr)%Creset'
 	stat = status -sb
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
