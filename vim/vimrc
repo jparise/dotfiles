@@ -69,7 +69,6 @@ set expandtab           " expand tabs to spaces
 set formatoptions+=nr   " options for "text format" ("gp")
 set hidden              " enable hidden buffers
 set history=100         " remember the last 100 lines of command-line history
-set ignorecase          " mostly ignore case in search patterns. see smartcase
 set incsearch           " use incremental search
 set nojoinspaces        " don't insert two spaces after period when joining lines
 set laststatus=2        " always show status line
@@ -86,7 +85,6 @@ set shiftwidth=4        " number of spaces in each indent
 set shortmess=astI      " abbreviate all messages
 set showbreak=↪\        " show at the start of wrapped lines
 set noshowcmd           " don't show incomplete commands
-set smartcase           " respect uppercase characters when searching
 set smarttab            " smart movement and deleting based on tab settings
 set softtabstop=-1      " set soft tab stop to match 'shiftwidth'
 set splitbelow          " open horizontal splits below current window
