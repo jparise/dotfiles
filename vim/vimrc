@@ -200,10 +200,6 @@ noremap Q <Nop>
 " Make Y behave like other capital letter commands.
 nnoremap Y y$
 
-" Improved completion menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 " Buffer management
 nnoremap ,              :buffers<CR>:buffer<Space>
 nnoremap <tab>          <C-^>
