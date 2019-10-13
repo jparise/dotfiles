@@ -149,7 +149,9 @@ complete -F _command vimq
 
 # Perform a ripgrep search and load its results into vim's quickfix list.
 function vimgrep() {
-    vim -q <(rg --vimgrep "$@")
+    local args=(--vimgrep)
+    args+=("$@")
+    vim -q <(rg "${args[@]}")
 }
 
 # Optionally include any additional local settings.
