@@ -153,6 +153,7 @@ function vimgrep() {
     args+=("$@")
     vim -q <(rg "${args[@]}")
 }
+complete -o bashdefault -o default vimgrep
 
 # Optionally include any additional local settings.
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
