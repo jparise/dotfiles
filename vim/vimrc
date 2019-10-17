@@ -29,7 +29,6 @@ Plug 'moll/vim-bbye'
 Plug 'peterrincker/vim-argumentative'
 Plug 'xtal8/traces.vim'
 Plug 'romainl/vim-qf'
-Plug 'skywind3000/asyncrun.vim', {'on': ['AsyncRun', 'AsyncRun!']}
 Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'

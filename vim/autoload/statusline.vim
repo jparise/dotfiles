@@ -31,9 +31,6 @@ function! statusline#async_jobs() abort
   if get(g:, 'ale_enabled', 0) == 1 && ale#engine#IsCheckingBuffer(bufnr('')) 
     call add(l:jobs, 'lint')
   endif
-  if get(g:, 'asyncrun_status', '') ==# 'running'
-    call add(l:jobs, "'" . get(g:, 'asyncrun_info') . "'")
-  endif
 
   return join(l:jobs, ',')
 endfunction
