@@ -9,6 +9,7 @@
 	amend = commit --amend
 	changes = !git diff --name-only $(git merge-base HEAD \"${DIFF_BASE:-master}\")
 	co = checkout
+	conflicts = diff --name-only --diff-filter=U
 	deletes = log --diff-filter=D --summary
 	diff-staged = diff --cached
 	edit = "!f() { $EDITOR `git files $*`; }; f"
