@@ -62,14 +62,6 @@ function! statusline#quickfix() abort
   return printf('(%d/%d) %s', l:index, l:total, l:title)
 endfunction
 
-function! statusline#ctrlp_progress(len) abort
-  return '%2*» %3*' . a:len
-endfunction
-
-function! statusline#ctrlp_main(focus, byfname, regex, prev, item, next, marked) abort
-  return '%2*» ' . a:item . ' %3*' . a:byfname . '%=' . fnamemodify(getcwd(), ':~') . ' '
-endfunction
-
 function! statusline#update_colorscheme() abort
   let l:bg = s:extract_colors('StatusLineNC', 'bg')
 

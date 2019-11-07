@@ -9,7 +9,6 @@ call plug#begin()
 Plug 'arzg/vim-corvine'
 Plug 'arzg/vim-plan9'
 Plug 'chriskempson/base16-vim'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'nixprime/cpsm', {'do': './install.sh'} | Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
@@ -52,6 +51,9 @@ Plug 'bfontaine/Brewfile.vim', {'for': 'ruby'}
 if has('timers') && (has('nvim') || (exists('*job_start')))
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'dense-analysis/ale'
+endif
+if isdirectory('/usr/local/opt/fzf')
+  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 endif
 call plug#end()
 
@@ -226,10 +228,11 @@ nmap ]w <Plug>(ale_next_wrap)
 nmap <leader>F <Plug>(ale_fix)
 nmap <leader>L <Plug>(ale_lint)
 
-" CtrlP mappings
-let g:ctrlp_map=''
-nnoremap <silent> <leader>\ :CtrlP<CR>
-nnoremap <silent> <leader>m :CtrlPBranchModified<CR>
+" FZF mappings
+nnoremap <silent> <leader>\ :GFiles<CR>
+nnoremap <silent> <leader>m :GFiles?<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>t :Tags<CR>
 
 " Ferret mappings
 let g:FerretMap=0
