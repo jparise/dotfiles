@@ -8,10 +8,19 @@ brew "ctags"
 brew "curl"
 brew "fd"
 brew "fzf"
+brew "mas"
 brew "python"
 brew "python@2"
 brew "ripgrep"
 brew "vim"
+
+mas "Acorn", id: 1233861775
+mas "Byword", id: 420212497
+mas "DaisyDisk", id: 411643860
+mas "Marked 2", id: 890031187
+mas "Noizio", id: 928871589
+mas "Soulver 2", id: 413965349
+mas "WiFi Explorer", id: 494803304
 
 cask "isolator"
 
