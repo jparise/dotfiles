@@ -229,10 +229,11 @@ nmap <leader>F <Plug>(ale_fix)
 nmap <leader>L <Plug>(ale_lint)
 
 " FZF mappings
-nnoremap <silent> <leader>\ :GFiles<CR>
-nnoremap <silent> <leader>m :GFiles?<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>t :Tags<CR>
+let g:fzf_command_prefix = 'Fzf'
+nnoremap <silent> <leader>\ :FzfGFiles<CR>
+nnoremap <silent> <leader>m :FzfGFiles?<CR>
+nnoremap <silent> <leader>b :FzfBuffers<CR>
+nnoremap <silent> <leader>t :FzfTags<CR>
 
 " Ferret mappings
 let g:FerretMap=0
