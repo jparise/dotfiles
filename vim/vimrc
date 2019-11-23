@@ -203,6 +203,9 @@ noremap Q <Nop>
 " Make Y behave like other capital letter commands.
 nnoremap Y y$
 
+" Redraw the window with this line in the center.
+nnoremap <Space> zz
+
 " Buffer management
 nnoremap ,              :buffers<CR>:buffer<Space>
 nnoremap <tab>          <C-^>
