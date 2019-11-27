@@ -75,6 +75,9 @@ function! statusline#update_colorscheme() abort
   " Warnings and Errors
   execute 'highlight User4 ' . s:highlight('Label', l:bg)
   execute 'highlight User5 ' . s:highlight('ErrorMsg', l:bg)
+
+  " Preview Window
+  execute 'highlight User6 ' . s:decorate('User4', 'bold')
 endfunction
 
 function! s:extract_highlight(group) abort
