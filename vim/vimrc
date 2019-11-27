@@ -92,7 +92,6 @@ set softtabstop=-1      " set soft tab stop to match 'shiftwidth'
 set splitbelow          " open horizontal splits below current window
 set splitright          " open vertical splits to the right
 set nostartofline       " don't jump to first char with page commands
-set synmaxcol=800       " don't attempt to syntax highlight long lines
 set tabstop=4           " set tabs to eight spaces
 set textwidth=78        " set the maximum text width
 set title               " turn on the titlebar
