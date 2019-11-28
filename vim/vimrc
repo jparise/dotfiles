@@ -98,9 +98,8 @@ set title               " turn on the titlebar
 set undofile            " maintain undo history between sessions
 set updatetime=250      " speed up file sync frequency
 set wildcharm=<C-Z>     " 'wildchar' but for use within commands and macros
-set wildignore+=*/.git/*,*/.hg/*,*.swp,*.o " file patterns to ignore
 set wildmenu            " use menu when in 'full' command-line completion mode
-set wildmode=list:longest,full " completion mode behavior
+set wildmode=longest,list:lastused,full " completion mode behavior
 set nowritebackup       " don't write backups
 
 if !has('nvim')
@@ -142,6 +141,14 @@ else
     set noundofile
     set viminfo=
 endif
+
+" File patterns to ignore when globbing, expanding wilcards, and completing
+" file and directory names.
+set wildignore=*.swp,*.bak
+set wildignore+=*.pyc,*.class,*.o
+set wildignore+=*/.git/**/*,*/.hg/**/*
+set wildignore+=tags
+set wildignore+=*.tar.*
 
 " Autocommands
 if has('autocmd')
