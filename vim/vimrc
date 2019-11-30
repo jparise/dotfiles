@@ -226,6 +226,9 @@ nnoremap <silent> ]q :cnext<CR>zz
 nmap <leader>l <Plug>(qf_loc_toggle)
 nmap <leader>q <Plug>(qf_qf_toggle)
 
+" Tag management
+nnoremap <leader>t :tjump /
+
 " Search and replace the current word in the current buffer
 nnoremap <leader>r :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
