@@ -5,7 +5,7 @@ let g:projectionist_heuristics = {
 \           'type': 'source'
 \       },
 \       '*.cc': {
-\           'alternate': '{}.h',
+\           'alternate': ['{}.h', '{}_test.cc'],
 \           'type': 'source'
 \       },
 \       '*.cpp': {
@@ -13,8 +13,12 @@ let g:projectionist_heuristics = {
 \           'type': 'source'
 \       },
 \       '*.h': {
-\           'alternate': ['{}.c', '{}.cc', '{}.cpp'],
+\           'alternate': ['{}.c', '{}_test.cc', '{}.cc', '{}.cpp'],
 \           'type': 'header'
+\       },
+\       '*_test.cc': {
+\           'alternate': '{}.cc',
+\           'type': 'test'
 \       },
 \   },
 \   'src/': {
