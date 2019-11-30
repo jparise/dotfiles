@@ -98,7 +98,7 @@ set undofile            " maintain undo history between sessions
 set updatetime=250      " speed up file sync frequency
 set wildcharm=<C-Z>     " 'wildchar' but for use within commands and macros
 set wildmenu            " use menu when in 'full' command-line completion mode
-set wildmode=longest,list:lastused,full " completion mode behavior
+set wildmode=longest,list,full " completion mode behavior
 set nowritebackup       " don't write backups
 
 if !has('nvim')
