@@ -64,5 +64,14 @@ endfunction
 
 command! -nargs=? GitFiles  call fzf#run(s:gitfiles(<q-args>))
 
+" Hide the statusline when running inside of a terminal buffer
+if has('nvim') && !exists('g:fzf_layout')
+  augroup FzfStatusline
+    autocmd! FileType fzf
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  augroup END
+endif
+
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
