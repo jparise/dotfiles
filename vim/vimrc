@@ -86,7 +86,6 @@ set shiftround          " round indent size to a multiple of shiftwidth
 set shiftwidth=4        " number of spaces in each indent
 set shortmess=astI      " abbreviate all messages
 set showbreak=↪\        " show at the start of wrapped lines
-set noshowcmd           " don't show incomplete commands
 set smarttab            " smart movement and deleting based on tab settings
 set softtabstop=-1      " set soft tab stop to match 'shiftwidth'
 set splitbelow          " open horizontal splits below current window
