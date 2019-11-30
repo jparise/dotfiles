@@ -21,6 +21,7 @@
 	stat = status -sb
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
+	vimdiff = !vim -p $(git changes) +\"tabdo Gdiff ${DIFF_BASE:-master}\" +\"let g:gitgutter_enabled = 0\"
 
 [branch]
 	autosetuprebase = local
