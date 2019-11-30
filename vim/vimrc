@@ -53,7 +53,7 @@ if has('timers') && (has('nvim') || (exists('*job_start')))
     Plug 'dense-analysis/ale'
 endif
 if isdirectory('/usr/local/opt/fzf')
-  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+  Plug '/usr/local/opt/fzf'
 endif
 call plug#end()
 
@@ -236,11 +236,10 @@ nmap <leader>F <Plug>(ale_fix)
 nmap <leader>L <Plug>(ale_lint)
 
 " FZF mappings
-let g:fzf_command_prefix = 'Fzf'
-nnoremap <silent> <leader>\ :FzfGFiles<CR>
-nnoremap <silent> <leader>m :FzfGFiles?<CR>
-nnoremap <silent> <leader>b :FzfBuffers<CR>
-nnoremap <silent> <leader>t :FzfTags<CR>
+nnoremap <leader>f :FZF<Space>
+nnoremap <leader>F :FZF <C-R>=expand('%:h')<CR><CR>
+nnoremap <silent> <leader>\ :GitFiles<CR>
+nnoremap <silent> <leader>m :GitFiles?<CR>
 
 " Ferret mappings
 let g:FerretMap=0
