@@ -149,6 +149,11 @@ set wildignore+=*/.git/**/*,*/.hg/**/*
 set wildignore+=tags
 set wildignore+=*.tar.*
 
+if &diff
+  let g:gitgutter_enabled=0
+  let g:gutentags_dont_load=1
+endif
+
 " Autocommands
 if has('autocmd')
     augroup VimStartup
