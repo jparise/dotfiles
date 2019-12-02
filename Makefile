@@ -46,6 +46,7 @@ install-lldb:
 	ln -s `pwd`/lldb/.lldbinit ~/.lldbinit
 
 install-proselint: ~/.config
+	rm -rf ~/.config/proselint
 	ln -s `pwd`/proselint ~/.config/proselint
 
 install-tcsh:
