@@ -245,7 +245,6 @@ nmap <leader>L <Plug>(ale_lint)
 
 " FZF mappings
 nnoremap <leader>f :FZF<Space>
-nnoremap <leader>F :FZF <C-R>=expand('%:h')<CR><CR>
 nnoremap <silent> <leader>\ :GitFiles<CR>
 nnoremap <silent> <leader>m :GitFiles?<CR>
 
