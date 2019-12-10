@@ -15,19 +15,24 @@ endfunction
 
 function! s:gitfiles(args)
   let root = s:get_git_root()
-  if empty(root)
-    echom 'Not in git repo'
-    return 0
-  endif
 
   " If we weren't called as GitFiles?, simply list all files in the git repo.
   " Any additional function arguments will be passed to `git ls-files`.
   if a:args !=# '?'
-    return fzf#wrap({
+    if empty(root)
+      return fzf#run(fzf#wrap('FZF'))
+    endif
+    return fzf#run(fzf#wrap({
     \ 'source':  'git ls-files '.a:args.' | uniq',
     \ 'dir':     root,
     \ 'options': '-m --prompt "GitFiles> "'
-    \})
+    \}))
+  endif
+
+  " We can't proceed unless we're in a git repository.
+  if empty(root)
+    echom getcwd().' is not in a git repository'
+    return 0
   endif
 
   " List changes between the current branch and its origin (e.g. master).
@@ -59,10 +64,10 @@ function! s:gitfiles(args)
   endfunction
   let wrapped['sink*'] = remove(wrapped, 'newsink')
 
-  return wrapped
+  return fzf#run(wrapped)
 endfunction
 
-command! -nargs=? GitFiles  call fzf#run(s:gitfiles(<q-args>))
+command! -nargs=? GitFiles  call s:gitfiles(<q-args>)
 
 " Hide the statusline when running inside of a terminal buffer
 if has('nvim') && !exists('g:fzf_layout')
