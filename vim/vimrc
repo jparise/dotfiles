@@ -34,7 +34,6 @@ Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
-Plug 'vim-erlang/vim-erlang-runtime', {'for': 'erlang'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'tfnico/vim-gradle', {'for': ['groovy', 'kotlin', 'java']}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
