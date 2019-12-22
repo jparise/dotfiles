@@ -44,7 +44,6 @@ Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript']}
 Plug 'jparise/vim-phabricator'
 Plug 'jparise/hive.vim', {'for': 'hive'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'bfontaine/Brewfile.vim', {'for': 'ruby'}
 if has('timers') && (has('nvim') || (exists('*job_start')))
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'dense-analysis/ale'
