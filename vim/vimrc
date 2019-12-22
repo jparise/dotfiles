@@ -254,6 +254,12 @@ nmap <leader>a <Plug>(FerretAck)
 nmap <leader>s <Plug>(FerretAckWord)
 nmap <leader>S :Ack <C-R><C-W><Space><C-R>=expand('%:h')<CR>
 
+" Fugitive mappings
+nnoremap <leader>gb :Gblame<CR>
+vnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>go :Gbrowse<CR>
+vnoremap <leader>go :Gbrowse<CR>
+
 " Sandwich mappings
 let g:textobj_sandwich_no_default_key_mappings = 1
 xmap ib <Plug>(textobj-sandwich-auto-i)
