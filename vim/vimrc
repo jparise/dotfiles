@@ -55,8 +55,8 @@ if isdirectory('/usr/local/opt/fzf')
 endif
 call plug#end()
 
-runtime ftplugin/man.vim
-runtime macros/matchit.vim
+runtime! ftplugin/man.vim
+runtime! macros/matchit.vim
 
 set autoindent          " turn autoindenting on
 set autoread            " auto-read files that are changed outside of vim
