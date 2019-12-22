@@ -35,7 +35,6 @@ Plug 'wincent/loupe'
 Plug 'wincent/terminus'
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'tfnico/vim-gradle', {'for': ['groovy', 'kotlin', 'java']}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'keith/swift.vim', {'for': 'swift'}
