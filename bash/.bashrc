@@ -87,6 +87,11 @@ if [ -n "$(command -v go)" ]; then
 	PATH="$GOROOT/bin:$PATH"
 fi
 
+# Add cargo's bin directory to the path.
+if [ -d "$HOME/.cargo/bin" ]; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # Add preferred Homebrew locations to PATH when available.
 for PKG in binutils bison curl; do
     if [ -d "/usr/local/opt/$PKG/bin" ]; then
