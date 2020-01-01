@@ -17,7 +17,7 @@
 	head = log -1 --decorate --name-status HEAD
 	mine = !git log --no-merges --author=$(git config user.email)
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
-	slog = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%an, %cr)%Creset'
+	slog = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%aN)%C(bold red)%d%Creset'
 	stat = status -sb
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
