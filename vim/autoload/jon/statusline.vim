@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-function! statusline#fileprefix() abort
+function! jon#statusline#fileprefix() abort
   let l:filename = expand('%')
   let l:prefix = fnamemodify(l:filename, ':~:.:h')
 
@@ -11,13 +11,13 @@ function! statusline#fileprefix() abort
   return l:prefix . '/'
 endfunction
 
-function! statusline#fileinfo() abort
+function! jon#statusline#fileinfo() abort
   return (&filetype !=# '' && &filetype !=# 'qf' ? ',' . &filetype : '') .
        \ (&fileencoding !=# '' && &fileencoding !=# 'utf-8' ? ',' . &fileencoding : '') .
        \ (&spell ? ',' . &spelllang : '')
 endfunction
 
-function! statusline#async_jobs() abort
+function! jon#statusline#async_jobs() abort
   if winwidth(0) <= 60 | return '' | endif
 
   let l:jobs = []
@@ -35,20 +35,20 @@ function! statusline#async_jobs() abort
   return join(l:jobs, ',')
 endfunction
 
-function! statusline#lint_warnings() abort
+function! jon#statusline#lint_warnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:warnings = l:counts.total - l:all_errors
   return l:warnings == 0 ? '' : printf('%d ⁉', l:warnings)
 endfunction
 
-function! statusline#lint_errors() abort
+function! jon#statusline#lint_errors() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   return l:all_errors == 0 ? '' : printf('%d ✗', l:all_errors)
 endfunction
 
-function! statusline#quickfix() abort
+function! jon#statusline#quickfix() abort
   " qf_isLoc is maintained by the vim-qf plugin and is a fast way to write
   " this test. Alternatively: !empty(getloclist(0))
   let GetList = get(b:, 'qf_isLoc', 0)
@@ -62,7 +62,7 @@ function! statusline#quickfix() abort
   return printf('(%d/%d) %s', l:index, l:total, l:title)
 endfunction
 
-function! statusline#update_colorscheme() abort
+function! jon#statusline#update_colorscheme() abort
   let l:bg = s:extract_colors('StatusLineNC', 'bg')
 
   " Light
