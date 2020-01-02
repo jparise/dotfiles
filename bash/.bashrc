@@ -99,10 +99,8 @@ for PKG in binutils bison curl; do
     fi
 done
 
-# Lastly, add my personal ~/[Bb]in directory to the front of $PATH.
-if [ -d "$HOME/Bin" ]; then
-	PATH="$HOME/Bin:$PATH"
-elif [ -d "$HOME/bin" ]; then
+# Lastly, add my personal ~/bin directory to the front of $PATH.
+if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
