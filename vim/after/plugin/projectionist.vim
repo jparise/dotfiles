@@ -84,12 +84,22 @@ let g:projectionist_heuristics = {
 \       'lib/*.ex': {
 \           'alternate': 'test/{}_test.exs',
 \           'compiler': 'mix',
-\           'type': 'source'
+\           'type': 'source',
+\           'template': [
+\               'defmodule {camelcase|capitalize|dot} do',
+\               'end'
+\           ]
 \       },
 \       'test/*_test.exs': {
 \           'alternate': 'lib/{}.ex',
 \           'compiler': 'exunit',
-\           'type': 'test'
+\           'type': 'test',
+\           'template': [
+\               'defmodule {camelcase|capitalize|dot}Test do',
+\               '  use ExUnit.Case',
+\               '',
+\               'end'
+\           ]
 \       }
 \   }
 \}
