@@ -36,8 +36,12 @@ let g:projectionist_heuristics = {
 \           'alternate': '{}.h',
 \           'type': 'source'
 \       },
+\       '*.mm': {
+\           'alternate': '{}.h',
+\           'type': 'source'
+\       },
 \       '*.h': {
-\           'alternate': '{}.m',
+\           'alternate': ['{}.m', '{}.mm'],
 \           'type': 'header'
 \       },
 \   },
