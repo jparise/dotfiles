@@ -30,7 +30,6 @@ Plug 'moll/vim-bbye'
 Plug 'peterrincker/vim-argumentative'
 Plug 'xtal8/traces.vim'
 Plug 'romainl/vim-qf'
-Plug 'wincent/ferret'
 Plug 'wincent/loupe'
 Plug 'wincent/terminus'
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
@@ -244,19 +243,16 @@ nnoremap <silent> <leader>f :FZF <C-R>=expand('%:h')<CR><CR>
 nnoremap <silent> <leader>\ :GitFiles<CR>
 nnoremap <silent> <leader>m :GitFiles?<CR>
 
-" Ferret mappings
-let g:FerretMap=0
-let g:FerretQFCommands=0
-let g:FerretQFOptions=0
-nmap <leader>a <Plug>(FerretAck)
-nmap <leader>s <Plug>(FerretAckWord)
-nmap <leader>S :Ack <C-R><C-W><Space><C-R>=expand('%:h')<CR>
-
 " Fugitive mappings
 nnoremap <leader>gb :Gblame<CR>
 vnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>go :Gbrowse<CR>
 vnoremap <leader>go :Gbrowse<CR>
+
+" Grep mappings
+nmap <leader>a :Grep<Space>
+nmap <leader>s :Grep -w <C-R><C-W><CR>
+nmap <leader>S :Grep -w <C-R><C-W><Space><C-R>=expand('%:h')<CR>
 
 " Sandwich mappings
 let g:textobj_sandwich_no_default_key_mappings = 1

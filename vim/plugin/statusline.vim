@@ -18,7 +18,7 @@ augroup StatuslineRefresh
   autocmd!
   autocmd VimEnter,ColorScheme * call jon#statusline#update_colorscheme()
   autocmd User ALEJobStarted,ALEFixPost,ALELintPost redrawstatus
-  autocmd User FerretAsyncStart let b:ferret_async = 1 | redrawstatus
-  autocmd User FerretAsyncFinish unlet b:ferret_async | redrawstatus
+  autocmd User GrepStart let g:grepping = 1 | redrawstatus
+  autocmd User GrepFinish unlet g:grepping | redrawstatus
   autocmd User GutentagsUpdating,GutentagsUpdated redrawstatus 
 augroup END

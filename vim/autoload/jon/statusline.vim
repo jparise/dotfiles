@@ -25,8 +25,8 @@ function! jon#statusline#async_jobs() abort
   if exists('b:gutentags_files') && !empty(gutentags#inprogress())
     call add(l:jobs, gutentags#statusline())
   endif
-  if get(b:, 'ferret_async', 0)
-    call add(l:jobs, 'search')
+  if get(g:, 'grepping', 0)
+    call add(l:jobs, 'grep')
   endif
   if get(g:, 'ale_enabled', 0) == 1 && ale#engine#IsCheckingBuffer(bufnr('')) 
     call add(l:jobs, 'lint')
