@@ -19,7 +19,6 @@ Plug 'tpope/vim-scriptease'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
-Plug 'machakann/vim-vimhelplint', {'on': 'VimhelpLint'}
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
