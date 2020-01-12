@@ -163,6 +163,11 @@ if has('autocmd')
         \   execute "normal! g`\"" |
         \ endif
 
+        " Rebuild custom spelling files when writing their text sources.
+        if has('syntax')
+          autocmd BufWritePost */vim/spell/*.add silent! :mkspell! %
+        endif
+
         " Standardize spelling error highlighting across all color schemes.
         autocmd ColorScheme * highlight clear SpellBad
         autocmd ColorScheme * highlight clear SpellCap
