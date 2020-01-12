@@ -230,6 +230,11 @@ nnoremap <silent> ]q :cnext<CR>zz
 nmap <leader>l <Plug>(qf_loc_toggle)
 nmap <leader>q <Plug>(qf_qf_toggle)
 
+" Tab management
+nnoremap <silent> [x :tabprev<CR>
+nnoremap <silent> ]x :tabnext<CR>
+nnoremap <silent> <leader>x :tabclose<CR>
+
 " Tag management
 nnoremap <leader>t :tjump /
 
