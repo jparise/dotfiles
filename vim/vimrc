@@ -115,6 +115,7 @@ if has('diff') && has('patch-8.1.0360')
 endif
 
 if exists(':Man')
+  let g:ft_man_open_mode='vert'
   set keywordprg=:Man
 endif
 
