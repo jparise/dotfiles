@@ -17,10 +17,10 @@ function! s:grep(kind, ...) abort
   silent doautocmd <nomodeline> User GrepStart
   silent let lines = system(join(extend([&grepprg], a:000), ' '))
   execute a:kind.'getexpr lines'
-  if a:kind ==# 'l'
-    call setloclist(0, [], 'a', {'title': ':Grep '.join(a:000, ' ')})
+  if a:kind ==# 'c'
+    call setqflist([], 'a', {'title': ':Grep '.join(a:000, ' ')})
   else
-    call setqflist([], 'a', {'title': ':Lgrep '.join(a:000, ' ')})
+    call setloclist(0, [], 'a', {'title': ':Lgrep '.join(a:000, ' ')})
   endif
   silent doautocmd <nomodeline> User GrepFinish
 endfunction
