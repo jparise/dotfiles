@@ -3,7 +3,6 @@ TARGETS = install-bash \
 		  install-git \
 		  install-hg \
 		  install-ipython \
-		  install-lldb \
 		  install-proselint \
 		  install-tcsh \
 		  install-terminfo \
@@ -40,10 +39,6 @@ install-hg:
 install-ipython:
 	rm -rf ~/.ipython
 	ln -s `pwd`/ipython ~/.ipython
-
-install-lldb:
-	rm -f ~/.lldbinit
-	ln -s `pwd`/lldb/.lldbinit ~/.lldbinit
 
 install-proselint: ~/.config
 	rm -rf ~/.config/proselint
