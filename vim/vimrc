@@ -25,7 +25,6 @@ Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
-Plug 'moll/vim-bbye'
 Plug 'peterrincker/vim-argumentative'
 Plug 'xtal8/traces.vim'
 Plug 'romainl/vim-qf'
@@ -217,10 +216,9 @@ nnoremap <Space> zz
 
 " Buffer management
 nnoremap ,              :buffers<CR>:buffer<Space>
-nnoremap <tab>          <C-^>
+nnoremap <expr> <tab>   (bufloaded(0) ? '<C-^>' : ':bnext<CR>')
 nnoremap <leader><tab>  :A<CR>
-nnoremap <leader>d      :Bdelete<CR>
-nnoremap <leader>D      :update\|:silent :Bdelete<CR>
+nnoremap <expr> <leader>d (len(getbufinfo({'buflisted':1})) > 1 ? ':bp' : ':enew').'\|bd#<CR>'
 nnoremap <silent> <leader>% :let @*=expand("%")\|echo @*<CR>
 
 " Quickfix management
