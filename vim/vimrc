@@ -51,7 +51,7 @@ endif
 call plug#end()
 
 runtime! ftplugin/man.vim
-runtime! macros/matchit.vim
+packadd! matchit
 
 set autoindent          " turn autoindenting on
 set autoread            " auto-read files that are changed outside of vim
