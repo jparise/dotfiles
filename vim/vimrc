@@ -8,7 +8,6 @@ scriptencoding utf-8
 call plug#begin()
 Plug 'arzg/vim-mayanfog'
 Plug 'arzg/vim-plan9'
-Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
