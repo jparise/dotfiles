@@ -45,12 +45,12 @@ function! s:gitfiles(args)
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
   let wrapped = fzf#wrap({
-  \ 'source': branch.' && '.modified,
+  \ 'source': '('.modified.' && '.branch.") | awk '!filenames[$NF]++'",
   \ 'dir':    root,
   \ 'options': [
   \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
   \   '--prompt', 'GitFiles?> ', '--preview',
-  \   'sh -c "(git diff --color -- {-1} | sed 1,4d; cat {-1}) | head -500"']
+  \   'sh -c "(git diff origin --color -- {-1} | sed 1,4d; head -500 {-1})"']
   \})
 
   " This is a sink that strips status characters from the line (leaving just
