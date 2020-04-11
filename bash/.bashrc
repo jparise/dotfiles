@@ -93,11 +93,14 @@ if [ -d "$HOME/.cargo/bin" ]; then
 fi
 
 # Add preferred Homebrew locations to PATH when available.
-for PKG in binutils bison curl; do
+for PKG in binutils bison curl ruby; do
     if [ -d "/usr/local/opt/$PKG/bin" ]; then
         PATH="/usr/local/opt/$PKG/bin:$PATH"
     fi
 done
+if [ -d "/usr/local/opt/python/libexec/bin" ]; then
+    PATH="/usr/local/opt/python/libexec/bin:$PATH"
+fi
 
 # Lastly, add my personal ~/bin directory to the front of $PATH.
 if [ -d "$HOME/bin" ]; then
