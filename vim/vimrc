@@ -18,9 +18,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
-Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
 Plug 'peterrincker/vim-argumentative'
