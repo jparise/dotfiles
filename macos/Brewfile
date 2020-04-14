@@ -10,7 +10,6 @@ brew "fd"
 brew "fzf"
 brew "mas"
 brew "python"
-brew "python@2"
 brew "ripgrep"
 brew "vim"
 
