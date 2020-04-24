@@ -7,6 +7,7 @@ scriptencoding utf-8
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
 Plug 'arzg/vim-plan9'
+Plug 'rhysd/vim-color-spring-night'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
@@ -176,6 +177,10 @@ if has('autocmd')
         endif
     augroup END
 endif
+
+" Colors cheme configuration
+let g:spring_night_high_contrast=1
+let g:spring_night_cterm_italic=1
 
 " Platform / GUI options
 if has('gui_running')
