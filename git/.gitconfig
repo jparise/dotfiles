@@ -81,4 +81,4 @@
 	keepBackup = false
 
 [mergetool "fugitive"]
-	cmd = vim -f -c "Gdiffsplit!" "$MERGED"
+	cmd = vim -f -c "Gvdiffsplit!" "$MERGED"
