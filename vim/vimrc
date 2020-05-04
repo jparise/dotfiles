@@ -60,7 +60,6 @@ set fillchars=vert:│    " window separator character
 set expandtab           " expand tabs to spaces
 set formatoptions+=nr   " options for "text format" ("gp")
 set hidden              " enable hidden buffers
-set history=100         " remember the last 100 lines of command-line history
 set incsearch           " use incremental search
 set nojoinspaces        " don't insert two spaces after period when joining lines
 set laststatus=2        " always show status line
