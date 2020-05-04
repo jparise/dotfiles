@@ -70,7 +70,6 @@ set modelines=0         " turn off modelines
 set mouse=a             " enable the mouse for all modes
 set nrformats=alpha,hex " increment alphabet characters and hex numbers
 set report=0            " show all changes
-set ruler               " show cursor position
 set scrolloff=3         " scroll when within 3 lines of the screen's edge
 set shiftround          " round indent size to a multiple of shiftwidth
 set shiftwidth=4        " number of spaces in each indent
