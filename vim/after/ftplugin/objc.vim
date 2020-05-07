@@ -1,4 +1,5 @@
 setlocal commentstring=//\ %s
+setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#pragma\ mark'?'>1':'='
 
 if has('osx')
   let prefix = ''
@@ -9,5 +10,5 @@ if has('osx')
   endif
 
   let includeexpr="substitute(v:fname,'\\([^/]\\+\\)/\\(.\\+\\)','".prefix."/System/Library/Frameworks/\\1.framework/Headers/\\2','')"
-  exec "let &l:includeexpr=includeexpr"
+  exec 'let &l:includeexpr=includeexpr'
 endif
