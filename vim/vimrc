@@ -50,7 +50,6 @@ call plug#end()
 runtime! ftplugin/man.vim
 packadd! matchit
 
-set autoindent          " turn autoindenting on
 set autoread            " auto-read files that are changed outside of vim
 set autowrite           " auto-save before running external commands
 set backspace=indent,eol,start " smarter backspace
