@@ -1,5 +1,5 @@
 setlocal commentstring=//\ %s
-setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#pragma\ mark'?'>1':'='
+setlocal foldexpr=getline(v:lnum)=~'^#pragma\ mark'?'>1':'='
 
 if has('osx')
   let prefix = ''
