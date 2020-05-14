@@ -17,6 +17,7 @@
 	head = log -1 --decorate --name-status HEAD
 	mine = !git log --no-merges --author=$(git config user.email)
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
+	remotes = for-each-ref --sort=-committerdate --format='%(color:yellow)%(authordate:short)\t%(align:50)%(color:reset)%(refname:short)%(end)\t%(color:green)%(authorname)' refs/remotes
 	slog = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%aN)%C(bold red)%d%Creset'
 	stat = status -sb
 	unstage = reset HEAD --
