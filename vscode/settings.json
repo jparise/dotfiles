@@ -16,5 +16,6 @@
 
     "[elixir]": {
         "editor.formatOnSave": true
-    }
+    },
+    "telemetry.enableTelemetry": false
 }
