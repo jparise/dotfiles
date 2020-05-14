@@ -79,7 +79,6 @@ set splitbelow          " open horizontal splits below current window
 set splitright          " open vertical splits to the right
 set nostartofline       " don't jump to first char with page commands
 set tabstop=4           " set tabs to eight spaces
-set textwidth=78        " set the maximum text width
 set title               " turn on the titlebar
 set undofile            " maintain undo history between sessions
 set updatetime=250      " speed up file sync frequency
