@@ -7,6 +7,7 @@ declare -a extensions=(
     "kleber-swf.ocean-dark-extended"
     "ms-python.python"
     "pgourlain.erlang"
+    "eamodio.gitlens"
 )
 
 if [ -z "$(command -v code)" ]; then

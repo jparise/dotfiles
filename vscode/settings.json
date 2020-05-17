@@ -17,5 +17,8 @@
     "[elixir]": {
         "editor.formatOnSave": true
     },
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.currentLine.enabled": false
 }
