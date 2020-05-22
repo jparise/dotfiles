@@ -34,7 +34,7 @@ function! s:scratch(cmd, rng, start, end)
   endif
   vnew
   let w:scratch = 1
-  setlocal buftype=nofile filetype=scratch bufhidden=wipe nobuflisted noswapfile
+  setlocal buftype=nofile filetype=scratch bufhidden=wipe nobuflisted noswapfile nomodeline
   call setline(1, output)
 endfunction
 
