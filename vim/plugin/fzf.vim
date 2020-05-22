@@ -50,7 +50,7 @@ function! s:gitfiles(args)
   \ 'options': [
   \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
   \   '--prompt', 'GitFiles?> ', '--preview',
-  \   'git diff origin/HEAD --color -- {-1} | sed 1,4d; head -500 {-1}']
+  \   'sh -c "(git diff origin --color -- {-1} | sed 1,4d; head -500 {-1})"']
   \})
 
   " This is a sink that strips status characters from the line (leaving just
