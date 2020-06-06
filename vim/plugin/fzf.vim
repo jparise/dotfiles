@@ -36,7 +36,8 @@ function! s:gitfiles(args)
   endif
 
   " List changes between the current branch and its origin (e.g. master).
-  let branch = 'git diff --name-status $(git merge-base origin/HEAD HEAD)..'
+  let branch = 'git diff --name-status --no-renames '.
+        \ '$(git merge-base origin/HEAD HEAD)..'
 
   " Also list modified files in the current working tree. Only include
   " untracked files if we're not in the middle of e.g. a merge operation.
