@@ -189,8 +189,6 @@ if has('gui_running')
         if &guifont !=? 'Source Code Pro:h14'
             set guifont=Menlo:h14
         endif
-    elseif has('gui_win32')
-        set guifont=Consolas:h10.5
     endif
 elseif has('termguicolors')
     set termguicolors
