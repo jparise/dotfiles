@@ -174,7 +174,7 @@ if has('autocmd')
     augroup END
 endif
 
-" Colors cheme configuration
+" Color scheme configuration
 let g:spring_night_high_contrast=1
 let g:spring_night_cterm_italic=1
 
