@@ -40,7 +40,7 @@ function! s:gitfiles(args)
 
   " Also list modified files in the current working tree. Only include
   " untracked files if we're not in the middle of e.g. a merge operation.
-  let modified = 'git -c color.status=always status --short '.
+  let modified = 'git -c color.status=always status --short --no-renames '.
         \ (s:git_operation_in_progress(root)
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
