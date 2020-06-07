@@ -49,12 +49,12 @@ export MANPAGER='less -FiRs'
 export LESS='-ErX'
 
 export DIFF_OPTIONS='-du'
-export GREP_OPTIONS='--binary-files=without-match'
 
 export ERL_AFLAGS='-kernel shell_history enabled'
 
 # macOS-specific environment flags
 if [[ $OSTYPE == "darwin"* ]]; then
+    export GREP_OPTIONS='--binary-files=without-match'
     export COCOAPODS_DISABLE_STATS=1
     export HOMEBREW_NO_ANALYTICS=1
     export HOMEBREW_NO_AUTO_UPDATE=1
