@@ -1,3 +1,2 @@
-if [ -r $HOME/.bashrc ]; then
-	. $HOME/.bashrc
-fi
+# shellcheck source=/dev/null
+[ -r ~/.bashrc ] && . ~/.bashrc
