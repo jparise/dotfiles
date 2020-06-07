@@ -107,10 +107,6 @@ if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-# Remap Ctrl-w to kill words using whitespace and slashes as word boundaries.
-stty werase undef
-bind '"\C-w": unix-filename-rubout'
-
 # Basic shell completions
 complete -A export     printenv
 complete -A variable   export local readonly unset
