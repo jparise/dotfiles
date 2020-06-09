@@ -258,8 +258,8 @@ vnoremap <leader>go :Gbrowse<CR>
 
 " Grep mappings
 nmap <leader>a :Grep<Space>
-nmap <leader>s :Grep -w -- <C-R><C-W><CR>
-nmap <leader>S :Grep -w -- <C-R><C-W><Space><C-R>=expand('%:h')<CR>
+nmap <leader>s :Grep -F -w -- <C-R><C-W><CR>
+nmap <leader>S :Grep -F -w -- <C-R><C-W><Space><C-R>=expand('%:h')<CR>
 
 " Sandwich mappings
 let g:textobj_sandwich_no_default_key_mappings = 1
