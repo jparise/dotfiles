@@ -25,7 +25,7 @@ umask 0022
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 HISTCONTROL=ignoreboth
-HISTIGNORE="&:bg:fg:clear:exit:pwd:* --help"
+HISTIGNORE="&:bg:fg:clear:exit:pwd"
 PROMPT_COMMAND="history -a"
 PROMPT_DIRTRIM=3
 PS1='[\W]\$ '
