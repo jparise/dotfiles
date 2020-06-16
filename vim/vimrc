@@ -255,6 +255,7 @@ nnoremap <leader>gb :Gblame<CR>
 vnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>go :Gbrowse<CR>
 vnoremap <leader>go :Gbrowse<CR>
+nnoremap <leader>gv :GV!<CR>
 
 " Grep mappings
 nmap <leader>a :Grep<Space>
