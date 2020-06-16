@@ -37,7 +37,6 @@ Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'Glench/Vim-Jinja2-Syntax', {'for': ['jinja', 'jinja.html']}
 Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
 Plug 'jparise/vim-phabricator'
-Plug 'jparise/hive.vim', {'for': 'hive'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 if has('timers') && (has('nvim') || (exists('*job_start')))
   Plug 'ludovicchabant/vim-gutentags'
