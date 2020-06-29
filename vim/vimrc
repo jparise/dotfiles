@@ -250,10 +250,10 @@ nnoremap <silent> <leader>\ :GitFiles<CR>
 nnoremap <silent> <leader>m :GitFiles?<CR>
 
 " Fugitive mappings
-nnoremap <leader>gb :Gblame<CR>
-vnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>go :Gbrowse<CR>
-vnoremap <leader>go :Gbrowse<CR>
+nnoremap <leader>gb :Git blame<CR>
+vnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>go :GBrowse<CR>
+vnoremap <leader>go :GBrowse<CR>
 nnoremap <leader>gv :GV!<CR>
 
 " Grep mappings
