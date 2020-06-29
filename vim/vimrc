@@ -252,6 +252,8 @@ nnoremap <silent> <leader>m :GitFiles?<CR>
 " Fugitive mappings
 nnoremap <leader>gb :Git blame<CR>
 vnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gc :GBrowse!<CR>
+vnoremap <leader>gc :GBrowse!<CR>
 nnoremap <leader>go :GBrowse<CR>
 vnoremap <leader>go :GBrowse<CR>
 nnoremap <leader>gv :GV!<CR>
