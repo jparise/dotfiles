@@ -213,7 +213,7 @@ nnoremap <expr> <leader>d
       \ (len(getbufinfo({'buflisted':1})) > 1
       \ ? (bufloaded(0) ? ':b#' : ':bprev')
       \ : ':enew').'\|bd#<CR>'
-nnoremap <silent> <leader>% :let @*=expand("%")\|echo @*<CR>
+nnoremap <silent> <leader>% :let @*=expand("%")\|echomsg @*<CR>
 
 " Quickfix management
 nnoremap <silent> [l :lprev<CR>zz
