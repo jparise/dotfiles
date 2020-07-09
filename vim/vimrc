@@ -24,9 +24,10 @@ Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
 Plug 'peterrincker/vim-argumentative'
+Plug 'peterrincker/vim-searchlight'
 Plug 'xtal8/traces.vim'
+Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
-Plug 'wincent/loupe'
 Plug 'wincent/terminus'
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'fatih/vim-go', {'for': 'go'}
@@ -59,6 +60,7 @@ set fillchars=vert:│    " window separator character
 set expandtab           " expand tabs to spaces
 set formatoptions+=nr   " options for "text format" ("gp")
 set hidden              " enable hidden buffers
+set hlsearch            " enabled search highlights
 set icon                " set icon text of the window to the current filename
 set incsearch           " use incremental search
 set nojoinspaces        " don't insert two spaces after period when joining lines
@@ -166,6 +168,7 @@ if has('autocmd')
         autocmd ColorScheme * highlight SpellBad cterm=undercurl
         autocmd ColorScheme * highlight SpellCap cterm=undercurl
         autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
+        autocmd ColorScheme * highlight link Searchlight Incsearch
 
         if exists('##TerminalOpen')
           autocmd TerminalOpen * runtime! ftplugin/terminal.vim
