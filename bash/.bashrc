@@ -160,4 +160,5 @@ complete -o bashdefault -o default vimgrep
 # Optionally include any additional local settings.
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
+[ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
