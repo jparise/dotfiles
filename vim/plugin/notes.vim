@@ -11,6 +11,12 @@ if !isdirectory(expand(s:notes_dir))
   finish
 endif
 
+if executable('fd')
+  let s:source_cmd = 'fd -e md'
+else
+  let s:source_cmd = 'find . -name "*.md" 2> /dev/null | cut -c3- | sort'
+endif
+
 if executable('bat')
   let s:preview_cmd = 'bat --plain --color=always {}'
 else
@@ -42,6 +48,7 @@ endfunction
 command! -nargs=* -bang Notes
   \ call fzf#run(fzf#wrap('Notes', {
   \   'dir':    s:notes_dir,
+  \   'source': s:source_cmd,
   \   'sink*':  function('s:handler'),
   \   'options': [
   \     '--ansi', '--multi', '--exact', '--tiebreak=length,begin',
