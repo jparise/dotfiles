@@ -4,6 +4,7 @@ tap "homebrew/core"
 
 brew "bash"
 brew "bash-completion"
+brew "bat"
 brew "ctags", args: ["HEAD"]
 brew "curl"
 brew "fd"
