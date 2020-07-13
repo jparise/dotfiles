@@ -234,6 +234,9 @@ nnoremap <silent> <leader>x :tabclose<CR>
 " Tag management
 nnoremap <leader>t :tjump /
 
+" Notes
+nnoremap <silent> <leader>n :Notes<CR>
+
 " Replace the current word (repeatable)
 nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
 xnoremap <silent> s* "sy:let @/=@s<CR>cgn
