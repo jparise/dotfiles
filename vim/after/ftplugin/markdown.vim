@@ -3,10 +3,13 @@ let g:markdown_fenced_languages = [
 \ 'c++=cpp',
 \ 'elixir',
 \ 'erlang',
+\ 'gradle=groovy',
+\ 'groovy',
 \ 'html',
 \ 'ini=dosini',
 \ 'java',
 \ 'python',
+\ 'sh',
 \ 'viml=vim',
 \]
 
