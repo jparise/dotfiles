@@ -23,6 +23,8 @@ else
   let s:preview_cmd = 'cat {}'
 endif
 
+let s:create_key = 'ctrl-x'
+
 function! s:handler(lines) abort
   if empty(a:lines) || a:lines == ['','','']
     return
@@ -31,12 +33,13 @@ function! s:handler(lines) abort
   let query  = a:lines[0]
   let action = a:lines[1]
 
-  " Open the files that were selected from the list. Otherwise, create a new
-  " Markdown file in the notes directory named after the query string.
-  if len(a:lines) > 2
-    let files = a:lines[2:]
-  else
+  " If the "create" key was pressed, or if no files were selected from the
+  " list, create a new file named after the query string. Otherwise, open
+  " all of the selected files.
+  if action ==? s:create_key || len(a:lines) <= 2
     let files = [fnameescape(s:notes_dir.'/'.query.'.md')]
+  else
+    let files = a:lines[2:]
   endif
 
   let cmd = get(g:fzf_action, action, 'edit')
@@ -53,8 +56,9 @@ command! -nargs=* -bang Notes
   \   'options': [
   \     '--ansi', '--multi', '--exact', '--tiebreak=length,begin',
   \     '--prompt', 'Notes> ', '--info=hidden', '--print-query',
-  \     '--query', <q-args>, '--expect', join(keys(g:fzf_action), ','),
-  \     '--preview', s:preview_cmd, '--preview-window', ':75%:wrap']
+  \     '--expect', join(keys(g:fzf_action) + [s:create_key], ','),
+  \     '--preview', s:preview_cmd, '--preview-window', ':75%:wrap',
+  \     '--query', <q-args>]
   \ }, <bang>0))
 
 let &cpoptions = s:cpo_save
