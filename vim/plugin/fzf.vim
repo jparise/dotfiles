@@ -22,7 +22,7 @@ function! s:gitfiles(args)
     if empty(root)
       return fzf#run(fzf#wrap('FZF'))
     endif
-    return fzf#run(fzf#wrap({
+    return fzf#run(fzf#wrap('gitfiles', {
     \ 'source':  'git ls-files '.a:args.' | uniq',
     \ 'dir':     root,
     \ 'options': '-m --prompt "GitFiles> "'
@@ -45,7 +45,7 @@ function! s:gitfiles(args)
         \ (s:git_operation_in_progress(root)
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
-  let wrapped = fzf#wrap({
+  let wrapped = fzf#wrap('gitfiles', {
   \ 'source': '('.modified.' && '.branch.") | awk '!filenames[$NF]++'",
   \ 'dir':    root,
   \ 'options': [
