@@ -20,6 +20,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/goyo.vim', {'on': ['Goyo']}
 Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
@@ -263,6 +264,9 @@ vnoremap <leader>gc :GBrowse!<CR>
 nnoremap <leader>go :GBrowse<CR>
 vnoremap <leader>go :GBrowse<CR>
 nnoremap <leader>gv :GV!<CR>
+
+" Goyo mappings
+nnoremap <leader>G :Goyo<CR>
 
 " Grep mappings
 nmap <leader>a :Grep<Space>
