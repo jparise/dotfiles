@@ -28,6 +28,7 @@ cask "nvalt"
 cask "font-fira-code"
 cask "font-ibm-plex"
 cask "font-input"
+cask "font-iosevka"
 cask "font-lato"
 cask 'font-roboto-mono'
 cask "font-source-code-pro"
