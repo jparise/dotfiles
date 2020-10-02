@@ -30,6 +30,18 @@ PROMPT_COMMAND="history -a"
 PROMPT_DIRTRIM=3
 PS1='[\W]\$ '
 
+# Add git branch and status in the prompt
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+    . /usr/local/etc/bash_completion.d/git-prompt.sh
+elif [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
+    . /usr/local/git/contrib/completion/git-prompt.sh
+fi
+if [ "$(declare -Ff __git_ps1)" ]; then
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    export GIT_PS1_SHOWUPSTREAM=auto
+    PS1="\$(__git_ps1 \"[%s] \")$PS1"
+fi
+
 # Some shells let us configure their window title. Take advantage of that to
 # display the current working directory. Remote (ssh) shels also include the
 # hostname.
