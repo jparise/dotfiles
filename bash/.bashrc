@@ -43,7 +43,7 @@ if [ "$(declare -Ff __git_ps1)" ]; then
 fi
 
 # Some shells let us configure their window title. Take advantage of that to
-# display the current working directory. Remote (ssh) shels also include the
+# display the current working directory. Remote (ssh) shells also include the
 # hostname.
 if [[ $TERM == "xterm"* ]]; then
 	if [ -n "$SSH_CONNECTION" ]; then
