@@ -1,4 +1,4 @@
-# shellcheck disable=SC1090
+# shellcheck disable=SC1090,SC1091,SC2039
 
 [ -z "$PS1" ] && return
 
@@ -135,34 +135,34 @@ complete -A stopped -P '%' bg
 complete -A job -P '%'     fg jobs disown
 
 # Set the xterm title
-function xtitle() {
+xtitle() {
 	if [[ $TERM == "xterm"* ]]; then
 		echo -en "\\e]0;$*\\a"
 	fi
 }
 
 # Set the iTerm2 profile
-function iterm_profile() {
+iterm_profile() {
 	if [ "$TERM_PROGRAM" == iTerm.app ]; then
 		echo -en "\\033]50;SetProfile=$*\\a"
 	fi
 }
 
 # Use an alternate iTerm2 profile for ssh sessions
-function ssh() {
+ssh() {
 	iterm_profile Remote
 	command ssh "$@"
 	iterm_profile Default
 }
 
 # Execute a command and load its output into vim's quickfix list.
-function vimq() {
+vimq() {
     vim -q <("$@")
 }
 complete -F _command vimq
 
 # Perform a ripgrep search and load its results into vim's quickfix list.
-function vimgrep() {
+vimgrep() {
     local args=(--vimgrep)
     args+=("$@")
     vim -q <(rg "${args[@]}")
