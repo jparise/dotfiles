@@ -1,10 +1,11 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "Input Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "IBM Plex Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
     "editor.minimap.enabled": false,
     "editor.renderLineHighlight": "gutter",
     "editor.renderIndentGuides": false,
+    "python.languageServer": "Pylance",
     "python.linting.flake8Enabled": true,
     "workbench.colorCustomizations": {
         "statusBar.background" : "#1a1a1a",
