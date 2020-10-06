@@ -271,9 +271,9 @@ nnoremap <leader>gv :GV!<CR>
 nnoremap <leader>G :Goyo<CR>
 
 " Grep mappings
-nmap <leader>a :Grep<Space>
-nmap <leader>s :Grep -F -w -- <C-R><C-W><CR>
-nmap <leader>S :Grep -F -w -- <C-R><C-W><Space><C-R>=expand('%:h')<CR>
+nnoremap <leader>a :Grep<Space>
+nnoremap <leader>s :Grep -F -w -- <C-R><C-W><CR>
+nnoremap <leader>S :Grep -F -w -- <C-R><C-W><Space><C-R>=expand('%:h')<CR>
 
 " Sandwich mappings
 let g:textobj_sandwich_no_default_key_mappings = 1
