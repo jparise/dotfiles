@@ -52,6 +52,7 @@ endif
 call plug#end()
 
 runtime! ftplugin/man.vim
+packadd! cfilter
 packadd! matchit
 
 set autoread            " auto-read files that are changed outside of vim
