@@ -13,6 +13,10 @@ let g:markdown_fenced_languages = [
 \ 'viml=vim',
 \]
 
+if has('linebreak')
+  setlocal linebreak
+endif
+
 if has('syntax')
   setlocal spell
 endif
