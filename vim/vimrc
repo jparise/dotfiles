@@ -213,7 +213,7 @@ noremap Q <Nop>
 nnoremap Y y$
 
 " Buffer management
-nnoremap ,              :buffers<CR>:buffer<Space>
+nnoremap <Space>        :buffers<CR>:buffer<Space>
 nnoremap <expr> <tab>   (bufloaded(0) ? '<C-^>' : ':bnext<CR>')
 nnoremap <leader><tab>  :A<CR>
 nnoremap <expr> <leader>d
