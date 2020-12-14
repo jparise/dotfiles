@@ -1,14 +1,14 @@
-if exists('g:scratch_loaded') || &compatible
+if exists('g:redir_loaded') || &compatible
   finish
 endif
-let g:scratch_loaded = 1
+let g:redir_loaded = 1
 
 let s:cpo_save = &cpoptions
 set cpoptions&vim
 
 " Redirect the output of a Vim or external command into a scratch buffer
 " https://gist.github.com/romainl/eae0a260ab9c135390c30cd370c20cd7
-function! s:scratch(cmd, rng, start, end)
+function! s:redir(cmd, rng, start, end)
   " Close any existing scratch windows.
   for win in range(1, winnr('$'))
     if getwinvar(win, 'scratch')
@@ -38,7 +38,7 @@ function! s:scratch(cmd, rng, start, end)
   call setline(1, output)
 endfunction
 
-command! -nargs=1 -complete=command -bar -range Scratch silent call s:scratch(<q-args>, <range>, <line1>, <line2>)
+command! -nargs=1 -complete=command -bar -range Redir silent call s:redir(<q-args>, <range>, <line1>, <line2>)
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
