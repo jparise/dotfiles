@@ -5,6 +5,9 @@
 	excludesfile = ~/.gitignore
 	pager = less -FRX
 
+[protocol]
+	version = 2
+
 [alias]
 	amend = commit --amend
 	changes = !git diff --name-only $(git merge-base HEAD \"${DIFF_BASE:-master}\")
