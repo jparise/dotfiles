@@ -22,5 +22,6 @@
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.currentLine.enabled": false,
     "workbench.colorTheme": "Ocean Dark Extended",
-    "workbench.startupEditor": "readme"
+    "workbench.startupEditor": "readme",
+    "python.showStartPage": false
 }
