@@ -97,6 +97,7 @@ if [ -n "$(command -v go)" ]; then
 	GOROOT=$(go env GOROOT)
 	export GOROOT
 	PATH="$GOROOT/bin:$PATH"
+	[ -d "$HOME/go/bin" ] && PATH="$HOME/go/bin:$PATH"
 fi
 
 # Add cargo's bin directory to the path.
