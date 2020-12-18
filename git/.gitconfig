@@ -51,6 +51,9 @@
 	tool = fugitive
 	conflictstyle = diff3
 
+[grep]
+	lineNumber = true
+
 [commit]
 	verbose = true
 
