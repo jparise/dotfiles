@@ -25,7 +25,7 @@ function! s:gitfiles(args) abort
     return fzf#run(fzf#wrap('gitfiles', {
     \ 'source':  'git ls-files '.a:args.' | uniq',
     \ 'dir':     root,
-    \ 'options': '-m --prompt "GitFiles> "'
+    \ 'options': '--multi --prompt "GitFiles> "'
     \}))
   endif
 
