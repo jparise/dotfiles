@@ -1,19 +1,19 @@
 let s:cpo_save = &cpoptions
 set cpoptions&vim
 
-function! s:get_git_root()
+function! s:get_git_root() abort
   let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
   return v:shell_error ? '' : root
 endfunction
 
-function! s:git_operation_in_progress(root)
+function! s:git_operation_in_progress(root) abort
   return filereadable(a:root.'/.git/MERGE_HEAD') ||
         \filereadable(a:root.'/.git/rebase-merge') ||
         \filereadable(a:root.'/.git/rebase-apply') ||
         \filereadable(a:root.'/.git/CHERRY_PICK_HEAD')
 endfunction
 
-function! s:gitfiles(args)
+function! s:gitfiles(args) abort
   let root = s:get_git_root()
 
   " If we weren't called as GitFiles?, simply list all files in the git repo.
