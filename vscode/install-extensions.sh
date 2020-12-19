@@ -3,6 +3,7 @@
 declare -a extensions=(
     "bierner.markdown-preview-github-styles"
     "cduruk.thrift"
+    "golang.go"
     "JakeBecker.elixir-ls"
     "kleber-swf.ocean-dark-extended"
     "ms-python.python"
