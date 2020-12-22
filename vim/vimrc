@@ -98,6 +98,7 @@ set complete+=t         " tags
 set formatoptions+=n    " recognize numbered lists
 set formatoptions+=r    " insert comment leader after <Enter>
 set formatoptions-=o    " don't insert comment leader after 'o' or 'O'
+set formatoptions+=j    " remove comment leader when joining comment lines
 
 set listchars=tab:»·
 set listchars+=trail:·
@@ -109,6 +110,7 @@ set shortmess=a         " all standard abbreviations
 set shortmess+=s        " disable 'search hit BOTTOM', etc.
 set shortmess+=t        " truncate file messages to fit command line
 set shortmess+=I        " disable :intro message when starting vim
+set shortmess+=c        " completion messages
 
 if !has('nvim')
   set clipboard^=autoselect " copy visual selection area to system clipboard
@@ -132,13 +134,6 @@ endif
 if exists(':Man')
   let g:ft_man_open_mode='vert'
   set keywordprg=:Man
-endif
-
-if v:version > 703 || has('patch-7.3.541')
-    set formatoptions+=j " remove comment leader when joining comment lines
-endif
-if v:version > 704 || has('patch-7.4.314')
-    set shortmess+=c    " completion messages
 endif
 
 " Swap files, etc.
