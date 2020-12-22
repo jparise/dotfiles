@@ -75,7 +75,6 @@ set report=0            " show all changes
 set scrolloff=3         " scroll when within 3 lines of the screen's edge
 set shiftround          " round indent size to a multiple of shiftwidth
 set shiftwidth=4        " number of spaces in each indent
-set shortmess=astI      " abbreviate all messages
 set showbreak=↪\        " show at the start of wrapped lines
 set smarttab            " smart movement and deleting based on tab settings
 set softtabstop=-1      " set soft tab stop to match 'shiftwidth'
@@ -105,6 +104,11 @@ set listchars+=trail:·
 set listchars+=extends:›
 set listchars+=precedes:‹
 set listchars+=nbsp:␣
+
+set shortmess=a         " all standard abbreviations
+set shortmess+=s        " disable 'search hit BOTTOM', etc.
+set shortmess+=t        " truncate file messages to fit command line
+set shortmess+=I        " disable :intro message when starting vim
 
 if !has('nvim')
   set clipboard^=autoselect " copy visual selection area to system clipboard
