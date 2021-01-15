@@ -38,6 +38,7 @@ Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
+Plug 'mustache/vim-mustache-handlebars', {'for': 'mustache'}
 Plug 'Glench/Vim-Jinja2-Syntax', {'for': ['jinja', 'jinja.html']}
 Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
 Plug 'jparise/vim-phabricator'
