@@ -198,6 +198,11 @@ endif
 let g:spring_night_high_contrast=1
 let g:spring_night_cterm_italic=1
 
+augroup ColorSchemes
+  autocmd!
+  autocmd ColorScheme spring-night highlight! link Todo Special
+augroup END
+
 " Platform / GUI options
 if has('gui_running')
     colorscheme base16-ocean
