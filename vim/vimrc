@@ -276,6 +276,14 @@ nmap ]w <Plug>(ale_next_wrap)
 nmap <leader>F <Plug>(ale_fix)
 nmap <leader>L <Plug>(ale_lint)
 
+" Diff mappings
+nmap [n <Plug>diffContextPrevious
+nmap ]n <Plug>diffContextNext
+xmap [n <Plug>diffContextPrevious
+xmap ]n <Plug>diffContextNext
+omap [n <Plug>diffContextPrevious
+omap ]n <Plug>diffContextNext
+
 " FZF mappings
 nnoremap <silent> <leader>f :FZF <C-R>=expand('%:h')<CR><CR>
 nnoremap <silent> <leader>\ :GitFiles<CR>
