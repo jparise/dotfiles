@@ -25,8 +25,8 @@ function! s:grep(kind, ...) abort
   silent doautocmd <nomodeline> User GrepFinish
 endfunction
 
-command! -nargs=+ -complete=file_in_path -bar Grep  call s:grep('c', <q-args>)
-command! -nargs=+ -complete=file_in_path -bar Lgrep call s:grep('l', <q-args>)
+command! -nargs=+ -complete=file -bar Grep  call s:grep('c', <q-args>)
+command! -nargs=+ -complete=file -bar Lgrep call s:grep('l', <q-args>)
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
