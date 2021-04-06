@@ -5,13 +5,13 @@ tap "homebrew/core"
 brew "bash"
 brew "bash-completion"
 brew "bat"
-brew "ctags", args: ["HEAD"]
 brew "curl"
 brew "fd"
 brew "fzf"
 brew "mas"
 brew "python"
 brew "ripgrep"
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "vim"
 
 mas "Acorn", id: 1233861775
