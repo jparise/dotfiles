@@ -5,3 +5,4 @@ let g:gutentags_file_list_command = {
 \   '.hg': 'hg files',
 \   }
 \ }
+let g:gutentags_generate_on_new = 0
