@@ -22,9 +22,9 @@ install-bash:
 	ln -s `pwd`/bash/.bashrc ~/.bashrc
 	ln -s `pwd`/bash/.inputrc ~/.inputrc
 
-install-ctags:
-	rm -f ~/.ctags
-	ln -s `pwd`/ctags/.ctags ~/.ctags
+install-ctags: ~/.config
+	rm -f ~/.config/ctags
+	ln -s `pwd`/ctags ~/.config/ctags
 
 install-git:
 	rm -f ~/.gitconfig ~/.gitignore
