@@ -10,7 +10,7 @@ syn match gitcommitUnderDotsC "\<\w*[_.]\+\w*\>" contains=@NoSpell
 
 " Email addresses and URLs [commit body only]
 syn match gitcommitEmail "<\?\w\+@\w\+\.\w\+>\?" contains=@NoSpell
-syn match gitcommitURL "https\?:\/\/[^[:space:]]\+" contains=@NoSpell
+syn match gitcommitURL "https\?:\/\/[^[:space:])>]\+" contains=@NoSpell
 hi link gitcommitEmail Label
 hi link gitcommitURL Label
 
