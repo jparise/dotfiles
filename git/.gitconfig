@@ -53,7 +53,6 @@
 
 [merge]
 	tool = fugitive
-	conflictstyle = diff3
 
 [grep]
 	lineNumber = true
