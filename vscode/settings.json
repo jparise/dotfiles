@@ -1,27 +1,35 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "IBM Plex Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
     "editor.minimap.enabled": false,
     "editor.renderLineHighlight": "gutter",
     "editor.renderIndentGuides": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "go.toolsManagement.autoUpdate": true,
     "python.languageServer": "Pylance",
     "python.linting.flake8Enabled": true,
+    "telemetry.enableTelemetry": false,
     "workbench.colorCustomizations": {
         "statusBar.background" : "#1a1a1a",
         "statusBar.noFolderBackground" : "#212121",
         "statusBar.debuggingBackground": "#263238",
         "statusBar.foreground":"#bbbbbb"
     },
+    "workbench.colorTheme": "Ocean Dark Extended",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "workbench.startupEditor": "readme",
 
     "[elixir]": {
         "editor.formatOnSave": true
     },
-    "telemetry.enableTelemetry": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "workbench.colorTheme": "Ocean Dark Extended",
-    "workbench.startupEditor": "readme",
-    "python.showStartPage": false
 }
