@@ -257,9 +257,6 @@ nnoremap <silent> <leader>x :tabclose<CR>
 " Tag management
 nnoremap <leader>t :tjump /
 
-" Terminal
-tnoremap <Esc> <C-\><C-n>
-
 " Notes
 nnoremap <silent> <leader>n :Notes<CR>
 
