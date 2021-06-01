@@ -27,3 +27,10 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 let g:fzf_layout = { 'down': '40%' }
+
+" Hide the statusline when running inside of a terminal buffer
+augroup FZFStatusline
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
