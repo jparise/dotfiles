@@ -9,7 +9,6 @@ call plug#begin()
 Plug 'rhysd/vim-color-spring-night'
 Plug 'YorickPeterse/vim-paper'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -72,6 +71,7 @@ set lazyredraw          " don't update screen while executing commands
 set modelines=0         " turn off modelines
 set mouse=a             " enable the mouse for all modes
 set nrformats=alpha,hex " increment alphabet characters and hex numbers
+set path=.,,            " start with a simplified 'path' on all systems
 set report=0            " show all changes
 set scrolloff=3         " scroll when within 3 lines of the screen's edge
 set shiftround          " round indent size to a multiple of shiftwidth
