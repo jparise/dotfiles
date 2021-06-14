@@ -28,7 +28,6 @@ Plug 'peterrincker/vim-searchlight'
 Plug 'xtal8/traces.vim'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
-Plug 'wincent/terminus'
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
@@ -83,6 +82,7 @@ set splitbelow          " open horizontal splits below current window
 set splitright          " open vertical splits to the right
 set nostartofline       " don't jump to first char with page commands
 set tabstop=4           " set tabs to eight spaces
+set ttimeoutlen=10      " speed up key codes and mapped keys
 set undofile            " maintain undo history between sessions
 set updatetime=250      " speed up file sync frequency
 set wildmenu            " use menu when in 'full' command-line completion mode
@@ -165,6 +165,9 @@ if has('autocmd')
     augroup VimStartup
         autocmd!
 
+        " Check if buffer was changed outside of vim when focus returns.
+        autocmd FocusGained * silent! checktime
+
         " Resize all windows when vim itself is resized.
         autocmd VimResized * silent! wincmd =
 
@@ -192,6 +195,13 @@ if has('autocmd')
           autocmd TerminalOpen * runtime! ftplugin/terminal.vim
         endif
     augroup END
+endif
+
+" Cursor shapes
+if !has('nvim') && exists('$ITERM_PROFILE')
+  let &t_SI="\<Esc>]1337;CursorShape=1\x7"
+  let &t_SR="\<Esc>]1337;CursorShape=2\x7"
+  let &t_EI="\<Esc>]1337;CursorShape=0\x7"
 endif
 
 " Color scheme configuration
