@@ -139,8 +139,8 @@ endif
 
 " Swap files, etc.
 if $USER !=# 'root'
-    set directory=~/.cache/vim//,~/tmp//,.
-    set undodir=~/.cache/vim//,~/tmp//
+    set directory=~/.cache/vim,~/tmp,/tmp,.
+    set undodir=~/.cache/vim,~/tmp,/tmp
 else
     set noswapfile
     set noundofile
