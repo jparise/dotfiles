@@ -204,6 +204,11 @@ if !has('nvim') && exists('$ITERM_PROFILE')
   let &t_EI="\<Esc>]1337;CursorShape=0\x7"
 endif
 
+" https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+if &term ==# 'xterm-kitty'
+  let &t_ut=''
+endif
+
 " Color scheme configuration
 let g:spring_night_high_contrast=1
 let g:spring_night_cterm_italic=1
