@@ -25,12 +25,6 @@
         "statusBar.foreground":"#bbbbbb"
     },
     "workbench.colorTheme": "Ocean Dark Extended",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
     "workbench.startupEditor": "readme",
 
     "[elixir]": {
