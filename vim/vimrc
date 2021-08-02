@@ -275,6 +275,12 @@ nnoremap <leader>t :tjump /
 " Notes
 nnoremap <silent> <leader>n :Notes<CR>
 
+" Search mappings
+nmap * *zz
+nmap # #zz
+nmap n nzz
+nmap N Nzz
+
 " Search and replace the current word in the current buffer
 nnoremap <leader>r :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
