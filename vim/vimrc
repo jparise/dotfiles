@@ -275,10 +275,6 @@ nnoremap <leader>t :tjump /
 " Notes
 nnoremap <silent> <leader>n :Notes<CR>
 
-" Replace the current word (repeatable)
-nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
-xnoremap <silent> s* "sy:let @/=@s<CR>cgn
-
 " Search and replace the current word in the current buffer
 nnoremap <leader>r :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
