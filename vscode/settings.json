@@ -25,7 +25,7 @@
         "statusBar.foreground":"#bbbbbb"
     },
     "workbench.colorTheme": "Ocean Dark Extended",
-    "workbench.startupEditor": "readme",
+    "workbench.startupEditor": "none",
 
     "[elixir]": {
         "editor.formatOnSave": true
