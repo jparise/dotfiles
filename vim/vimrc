@@ -312,9 +312,6 @@ nnoremap <leader>go :GBrowse<CR>
 vnoremap <leader>go :GBrowse<CR>
 nnoremap <leader>gv :GV!<CR>
 
-" Goyo mappings
-nnoremap <leader>G :Goyo<CR>
-
 " Grep mappings
 nnoremap <leader>a :Grep<Space>
 nnoremap <leader>s :Grep -F -w -- <C-R><C-W><CR>
