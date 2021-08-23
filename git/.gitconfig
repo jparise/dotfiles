@@ -29,6 +29,9 @@
 	uncommit = reset --soft HEAD^
 	vimdiff = !vim -d -p $(git changes) +\"tabdo Gdiff ${DIFF_BASE:-master}\"
 
+[init]
+	defaultBranch = main
+
 [status]
 	aheadBehind = false
 
