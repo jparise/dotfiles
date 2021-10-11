@@ -9,6 +9,7 @@ let g:ale_completion_enabled = 1
 let g:ale_floating_preview=1
 let g:ale_hover_to_floating_preview=1
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
+let g:ale_virtualtext_cursor=1
 
 function! s:on_lsp_started() abort
   nmap <buffer> <CR>  <Plug>(ale_detail)
