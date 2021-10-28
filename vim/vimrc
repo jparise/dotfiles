@@ -219,7 +219,7 @@ augroup ColorSchemes
   autocmd ColorScheme spring-night highlight! ALEError ctermbg=235 guibg=#3a4b5c
   autocmd ColorScheme spring-night highlight! ALEErrorSign cterm=bold ctermfg=210 ctermbg=235 gui=bold guifg=#fd8489 guibg=#3a4b5c
   autocmd ColorScheme spring-night highlight! link ALEWarning ALEError
-  autocmd ColorScheme spring-night highlight! link ALEVirtualTextError Question
+  autocmd ColorScheme spring-night highlight! link ALEVirtualTextError NonText
 augroup END
 
 " Platform / GUI options
