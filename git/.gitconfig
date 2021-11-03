@@ -25,6 +25,7 @@
 	root = rev-parse --show-toplevel
 	slog = log --pretty=format:'%C(yellow)%h %Creset%s %C(green)(%aN)%C(bold red)%d%Creset'
 	stat = status -sb
+	tags = tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=-creatordate
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
 	vimdiff = !vim -d -p $(git changes) +\"tabdo Gdiff ${DIFF_BASE:-master}\"
