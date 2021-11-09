@@ -11,11 +11,12 @@ if !isdirectory(expand(s:notes_dir))
   finish
 endif
 
-if executable('fd')
-  let s:source_cmd = 'fd -e md'
-else
-  let s:source_cmd = 'find . -name "*.md" 2> /dev/null | cut -c3- | sort'
-endif
+" Recursively list .md files, sorted by last modification time (using -t).
+"
+" We force bash's 'extglob' and 'globstar' options to enable the '**' syntax;
+" otherwise, we'd need to do a lot of extra work to retool this using find(1)
+" or other recursive-capable tools.
+let s:source_cmd = 'bash -O extglob -O globstar -c "ls -t **/*.md"'
 
 if executable('bat')
   let s:preview_cmd = 'bat --plain --color=always {}'
