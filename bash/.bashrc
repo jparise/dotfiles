@@ -151,7 +151,7 @@ iterm_profile() {
 
 # Use an alternate iTerm2 profile for ssh sessions
 ssh() {
-	iterm_profile Remote
+	iterm_profile ssh
 	command ssh "$@"
 	iterm_profile Default
 }
