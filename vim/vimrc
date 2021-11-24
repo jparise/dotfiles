@@ -86,7 +86,7 @@ set ttimeoutlen=10      " speed up key codes and mapped keys
 set undofile            " maintain undo history between sessions
 set updatetime=250      " speed up file sync frequency
 set wildmenu            " use menu when in 'full' command-line completion mode
-set wildmode=longest,list,full " completion mode behavior
+set wildmode=longest,list:full " completion mode behavior
 set nowritebackup       " don't write backups
 
 set complete=.          " current buffer
