@@ -151,9 +151,9 @@ iterm_profile() {
 
 # Use an alternate iTerm2 profile for ssh sessions
 ssh() {
+	trap "iterm_profile Default" RETURN
 	iterm_profile ssh
 	command ssh "$@"
-	iterm_profile Default
 }
 
 # Execute a command and load its output into vim's quickfix list.
