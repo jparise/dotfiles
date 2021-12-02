@@ -179,7 +179,7 @@ complete -o bashdefault -o default vimgrep
 if [ -n "$(command -v curlie)" ] && [ -n "$(command -v security)" ]; then
     curlie() {
         args=("$@")
-        host=$(echo "$@" | sed -En 's#.*://([^"/ ]+).*#\1#p')
+        host=$(echo "$@" | perl -pe 's#.*?https?://([^"/ ]+).*#\1#')
         if [[ -n $host ]]; then
             token=$(security find-internet-password -s "$host" -r http -D oauth2 -w 2>/dev/null)
             if [[ -n $token ]]; then
