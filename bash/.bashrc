@@ -92,17 +92,18 @@ if [ -n "$(command -v fzf)" ]; then
     fi
 fi
 
-# Set up GOROOT when we detect that Go is available.
+# Language-specific paths
 if [ -n "$(command -v go)" ]; then
 	GOROOT=$(go env GOROOT)
 	export GOROOT
 	PATH="$GOROOT/bin:$PATH"
 	[ -d "$HOME/go/bin" ] && PATH="$HOME/go/bin:$PATH"
 fi
-
-# Add cargo's bin directory to the path.
 if [ -d "$HOME/.cargo/bin" ]; then
 	PATH="$HOME/.cargo/bin:$PATH"
+fi
+if [ -d "$HOME/.mix/escripts" ]; then
+	PATH="$HOME/.mix/escripts:$PATH"
 fi
 
 # Add preferred Homebrew locations to PATH when available.
