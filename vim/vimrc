@@ -227,13 +227,6 @@ if has('gui_running')
     colorscheme base16-ocean
     set guicursor+=a:blinkon0
     set guioptions=aAeimgr
-
-    if has('gui_macvim')
-        silent! set guifont=Source\ Code\ Pro:h14
-        if &guifont !=? 'Source Code Pro:h14'
-            set guifont=Menlo:h14
-        endif
-    endif
 elseif has('termguicolors')
     set termguicolors
     colorscheme spring-night
