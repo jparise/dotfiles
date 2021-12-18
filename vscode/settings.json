@@ -20,14 +20,13 @@
     "telemetry.telemetryLevel": "error",
     "terminal.integrated.fontSize": 13,
     "workbench.colorCustomizations": {
-        "statusBar.background" : "#1a1a1a",
-        "statusBar.noFolderBackground" : "#212121",
+        "statusBar.background": "#1a1a1a",
+        "statusBar.noFolderBackground": "#212121",
         "statusBar.debuggingBackground": "#263238",
-        "statusBar.foreground":"#bbbbbb"
+        "statusBar.foreground": "#bbbbbb"
     },
     "workbench.colorTheme": "Ocean Dark Extended",
     "workbench.startupEditor": "none",
-
     "[elixir]": {
         "editor.formatOnSave": true
     },
