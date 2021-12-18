@@ -5,7 +5,6 @@
     "editor.fontWeight": "200",
     "editor.minimap.enabled": false,
     "editor.renderLineHighlight": "gutter",
-    "editor.renderIndentGuides": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "gitlens.codeLens.enabled": false,
