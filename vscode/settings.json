@@ -17,7 +17,7 @@
     "go.toolsManagement.autoUpdate": true,
     "python.languageServer": "Pylance",
     "python.linting.flake8Enabled": true,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "error",
     "terminal.integrated.fontSize": 13,
     "workbench.colorCustomizations": {
         "statusBar.background" : "#1a1a1a",
