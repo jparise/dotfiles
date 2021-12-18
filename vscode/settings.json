@@ -1,7 +1,8 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "'Fira Code Light', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'Fira Code', Arial, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 14,
+    "editor.fontWeight": "200",
     "editor.minimap.enabled": false,
     "editor.renderLineHighlight": "gutter",
     "editor.renderIndentGuides": false,
