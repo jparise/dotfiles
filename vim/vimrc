@@ -253,6 +253,8 @@ nnoremap <expr> <leader>d
       \ : ':enew').'\|bd#<CR>'
 nnoremap <silent> <leader>% :let @*=expand("%")\|echomsg @*<CR>
 
+command! Remove :call delete(expand('%')) | :call feedkeys("\\d")
+
 " Quickfix management
 nnoremap <silent> [l :lprev<CR>zz
 nnoremap <silent> ]l :lnext<CR>zz
