@@ -19,6 +19,7 @@
     "python.linting.flake8Enabled": true,
     "telemetry.telemetryLevel": "error",
     "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontWeight": "200",
     "workbench.colorCustomizations": {
         "statusBar.background": "#1a1a1a",
         "statusBar.noFolderBackground": "#212121",
