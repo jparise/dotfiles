@@ -1,5 +1,5 @@
 let b:ale_fixers = ['black', 'isort']
-let b:ale_linters = ['flake8', 'pyright']
+let b:ale_linters = ['flake8', 'pyright', 'unimport']
 
 if !exists('g:python_path')
   let cmd = "import sys; print('\\n'.join(p for p in sys.path if not p.endswith(('dynload', 'zip'))))"
