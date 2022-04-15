@@ -138,12 +138,17 @@ endif
 
 " Swap files, etc.
 if $USER !=# 'root'
+  if has('nvim')
+    set directory=~/.cache/nvim,~/tmp,/tmp,.
+    set undodir=~/.cache/nvim,~/tmp,/tmp
+  else
     set directory=~/.cache/vim,~/tmp,/tmp,.
     set undodir=~/.cache/vim,~/tmp,/tmp
+  endif
 else
-    set noswapfile
-    set noundofile
-    set viminfo=
+  set noswapfile
+  set noundofile
+  set viminfo=
 endif
 
 " File patterns to ignore when globbing, expanding wilcards, and completing
