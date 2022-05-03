@@ -28,7 +28,7 @@ HISTCONTROL=ignoreboth
 HISTIGNORE="&:bg:fg:clear:exit:pwd"
 PROMPT_COMMAND="history -a"
 PROMPT_DIRTRIM=3
-PS1='[\W]\$ '
+PS1='[\W]$([ \j -gt 0 ] && echo \*)\$ '
 
 # Add git branch and status in the prompt
 if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
