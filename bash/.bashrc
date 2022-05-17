@@ -200,6 +200,27 @@ if [ -n "$(command -v curlie)" ] && [ -n "$(command -v security)" ]; then
     }
 fi
 
+# If ondir is available, set up its shell hooks.
+if [ -n "$(command -v ondir)" ]; then
+    cd() {
+        # shellcheck disable=SC2006
+        builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+    }
+
+    pushd() {
+        # shellcheck disable=SC2006
+        builtin pushd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+    }
+
+    popd() {
+        # shellcheck disable=SC2006
+        builtin popd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+    }
+
+    # shellcheck disable=SC2006
+    eval "`ondir /`"
+fi
+
 # Optionally include any additional local settings.
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
