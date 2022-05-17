@@ -23,6 +23,7 @@ mas "Soulver 2", id: 413965349
 mas "WiFi Explorer", id: 494803304
 
 cask "dash"
+cask "iterm2"
 cask "rectangle"
 cask "fliqlo"
 cask "nvalt"
