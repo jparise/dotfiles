@@ -31,4 +31,3 @@ cask "font-fira-code"
 cask "font-ibm-plex"
 cask "font-iosevka"
 cask "font-lato"
-cask 'font-roboto-mono'
