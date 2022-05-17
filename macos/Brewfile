@@ -11,6 +11,7 @@ brew "fzf"
 brew "mas"
 brew "python"
 brew "ripgrep"
+brew "shellcheck"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "vim"
 
