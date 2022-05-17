@@ -22,6 +22,7 @@ mas "Marked 2", id: 890031187
 mas "Soulver 2", id: 413965349
 mas "WiFi Explorer", id: 494803304
 
+cask "alfred"
 cask "dash"
 cask "iterm2"
 cask "rectangle"
