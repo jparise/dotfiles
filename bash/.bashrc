@@ -106,14 +106,23 @@ if [ -d "$HOME/.mix/escripts" ]; then
 	PATH="$HOME/.mix/escripts:$PATH"
 fi
 
+# Set up the Homebrew shell environment.
+if [ -x "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # Add preferred Homebrew locations to PATH when available.
-for PKG in binutils bison curl ruby; do
-    if [ -d "/usr/local/opt/$PKG/bin" ]; then
-        PATH="/usr/local/opt/$PKG/bin:$PATH"
+if [ -n "$HOMEBREW_PREFIX" ]; then
+    for PKG in binutils bison curl ruby; do
+        if [ -d "$HOMEBREW_PREFIX/opt/$PKG/bin" ]; then
+            PATH="$HOMEBREW_PREFIX/opt/$PKG/bin:$PATH"
+        fi
+    done
+    if [ -d "$HOMEBREW_PREFIX/opt/python/libexec/bin" ]; then
+        PATH="$HOMEBREW_PREFIX/opt/python/libexec/bin:$PATH"
     fi
-done
-if [ -d "/usr/local/opt/python/libexec/bin" ]; then
-    PATH="/usr/local/opt/python/libexec/bin:$PATH"
 fi
 
 # Lastly, add my personal ~/bin directory to the front of $PATH.
@@ -195,4 +204,4 @@ fi
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 [ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
