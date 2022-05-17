@@ -30,9 +30,16 @@ PROMPT_COMMAND="history -a"
 PROMPT_DIRTRIM=3
 PS1='[\W]$([ \j -gt 0 ] && echo \*)\$ '
 
+# Set up the Homebrew shell environment.
+if [ -x "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # Add git branch and status in the prompt
-if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
-    . /usr/local/etc/bash_completion.d/git-prompt.sh
+if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
+    . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh"
 elif [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
     . /usr/local/git/contrib/completion/git-prompt.sh
 fi
@@ -104,13 +111,6 @@ if [ -d "$HOME/.cargo/bin" ]; then
 fi
 if [ -d "$HOME/.mix/escripts" ]; then
 	PATH="$HOME/.mix/escripts:$PATH"
-fi
-
-# Set up the Homebrew shell environment.
-if [ -x "/opt/homebrew/bin/brew" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ -x "/usr/local/bin/brew" ]; then
-    eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 # Add preferred Homebrew locations to PATH when available.
