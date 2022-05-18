@@ -68,9 +68,13 @@ defaults write com.apple.dock orientation right
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock mineffect scale
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
+
+# Don't show recent applications
+defaults write com.apple.dock show-recents -bool false
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
