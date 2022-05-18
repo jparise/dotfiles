@@ -44,8 +44,9 @@ if has('timers') && (has('nvim') || (exists('*job_start')))
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'dense-analysis/ale'
 endif
-if isdirectory('/usr/local/opt/fzf')
-  Plug '/usr/local/opt/fzf'
+let fzf_prefix = exists('$HOMEBREW_PREFIX') ? $HOMEBREW_PREFIX : '/usr/local'
+if isdirectory(fzf_prefix.'/opt/fzf')
+  Plug fzf_prefix.'/opt/fzf'
 endif
 call plug#end()
 
