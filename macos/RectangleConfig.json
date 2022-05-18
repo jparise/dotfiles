@@ -65,7 +65,7 @@
       "float" : 0
     },
     "hideMenubarIcon" : {
-      "bool" : false
+      "bool" : true
     },
     "ignoredSnapAreas" : {
       "int" : 0
@@ -106,6 +106,9 @@
     "screenEdgeGapRight" : {
       "float" : 0
     },
+    "screenEdgeGapsOnMainScreenOnly" : {
+      "bool" : false
+    },
     "screenEdgeGapTop" : {
       "float" : 0
     },
@@ -113,6 +116,9 @@
       "float" : 145
     },
     "showAllActionsInMenu" : {
+      "int" : 0
+    },
+    "sixthsSnapArea" : {
       "int" : 0
     },
     "sizeOffset" : {
@@ -265,5 +271,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "59"
+  "version" : "62"
 }
