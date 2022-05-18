@@ -28,7 +28,5 @@
     },
     "workbench.colorTheme": "Ocean Dark Extended",
     "workbench.startupEditor": "none",
-    "[elixir]": {
-        "editor.formatOnSave": true
-    },
+    "editor.formatOnSave": true,
 }
