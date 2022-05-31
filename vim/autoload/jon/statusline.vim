@@ -73,7 +73,7 @@ function! jon#statusline#update_colorscheme() abort
   execute 'highlight User3 ' . s:decorate('StatusLineNC', 'italic')
 
   " Warnings and Errors
-  execute 'highlight User4 ' . s:highlight('Label', l:bg)
+  execute 'highlight User4 ' . s:highlight('Title', l:bg)
   execute 'highlight User5 ' . s:highlight('ErrorMsg', l:bg)
 endfunction
 
