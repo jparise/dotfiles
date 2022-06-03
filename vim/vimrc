@@ -7,7 +7,7 @@ scriptencoding utf-8
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
 Plug 'rhysd/vim-color-spring-night'
-Plug 'YorickPeterse/vim-paper'
+Plug 'sainnhe/edge'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
@@ -234,8 +234,12 @@ if has('gui_running')
     set guicursor+=a:blinkon0
     set guioptions=aAeimgr
 elseif has('termguicolors')
-    set termguicolors
+  set termguicolors
+  if &background == "dark"
     colorscheme spring-night
+  else
+    colorscheme edge
+  endif
 else
     colorscheme mustang
 endif
