@@ -70,6 +70,9 @@
 [rerere]
 	enabled = true
 
+[submodule]
+	recurse = true
+
 [color]
 	branch = auto
 	diff = auto
