@@ -16,7 +16,7 @@ brew "shellcheck"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "vim"
 
-mas "Acorn", id: 1233861775
+mas "Acorn", id: 1547371478
 mas "DaisyDisk", id: 411643860
 mas "Dark Noise", id: 1465439395
 mas "Marked 2", id: 890031187
