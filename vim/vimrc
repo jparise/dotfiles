@@ -255,6 +255,10 @@ noremap Q <Nop>
 " Make Y behave like other capital letter commands.
 nnoremap Y y$
 
+" Paste most recent yank.
+nnoremap <leader>p "0p
+nnoremap <leader>P "0P
+
 " Buffer management
 nnoremap <Space>        :buffers<CR>:buffer<Space>
 nnoremap <expr> <tab>   (bufloaded(0) ? '<C-^>' : ':bnext<CR>')
