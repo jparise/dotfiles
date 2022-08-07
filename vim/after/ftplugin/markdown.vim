@@ -9,6 +9,7 @@ let g:markdown_fenced_languages = [
 \ 'ini=dosini',
 \ 'java',
 \ 'python',
+\ 'py=python',
 \ 'pycon=python',
 \ 'sh',
 \ 'viml=vim',
