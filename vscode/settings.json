@@ -1,32 +1,33 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "'Fira Code', Arial, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 14,
-    "editor.fontWeight": "200",
-    "editor.minimap.enabled": false,
-    "editor.renderLineHighlight": "gutter",
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "go.lintTool": "golangci-lint",
-    "go.lintFlags": [
-        "--fast"
-    ],
-    "go.toolsManagement.autoUpdate": true,
-    "python.languageServer": "Pylance",
-    "python.linting.flake8Enabled": true,
-    "telemetry.telemetryLevel": "error",
-    "terminal.integrated.fontSize": 13,
-    "terminal.integrated.fontWeight": "200",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#1a1a1a",
-        "statusBar.noFolderBackground": "#212121",
-        "statusBar.debuggingBackground": "#263238",
-        "statusBar.foreground": "#bbbbbb"
-    },
-    "workbench.colorTheme": "Ocean Dark Extended",
-    "workbench.startupEditor": "none",
-    "editor.formatOnSave": true,
+  "editor.fontFamily": "'Fira Code', Arial, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "200",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "go.toolsManagement.autoUpdate": true,
+  "python.languageServer": "Pylance",
+  "python.linting.flake8Enabled": true,
+  "telemetry.telemetryLevel": "error",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontWeight": "200",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#1a1a1a",
+    "statusBar.noFolderBackground": "#212121",
+    "statusBar.debuggingBackground": "#263238",
+    "statusBar.foreground": "#bbbbbb"
+  },
+  "workbench.colorTheme": "Ocean Dark Extended",
+  "workbench.startupEditor": "none",
+  "editor.formatOnSave": true,
+  "search.exclude": {
+    "tags": true
+  }
 }
