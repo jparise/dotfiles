@@ -8,6 +8,7 @@ scriptencoding utf-8
 call plug#begin()
 Plug 'rhysd/vim-color-spring-night'
 Plug 'sainnhe/edge'
+Plug 'sainnhe/everforest'
 Plug 'vyshane/cleanroom-vim-color'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-characterize'
@@ -219,6 +220,7 @@ if &term ==# 'xterm-kitty'
 endif
 
 " Color scheme configuration
+let g:everforest_background = 'hard'
 let g:spring_night_high_contrast=1
 let g:spring_night_cterm_italic=1
 
