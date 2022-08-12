@@ -24,7 +24,7 @@
     "statusBar.debuggingBackground": "#263238",
     "statusBar.foreground": "#bbbbbb"
   },
-  "workbench.colorTheme": "Ocean Dark Extended",
+  "workbench.colorTheme": "Everforest Dark",
   "workbench.startupEditor": "none",
   "editor.formatOnSave": true,
   "search.exclude": {
