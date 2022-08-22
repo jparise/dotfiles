@@ -16,6 +16,7 @@
 	edit = "!f() { $EDITOR `git files $*`; }; f"
 	files = "!f() { git ls-files --exclude-standard ${*--m} | sort -u | tr \"\\n\" \" \"; }; f"
 	head = log -1 --decorate --name-status HEAD
+	main = !basename $(git symbolic-ref refs/remotes/origin/HEAD)
 	mine = !git log --no-merges --author=$(git config user.email)
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
 	remotes = for-each-ref --sort=-committerdate --format='%(color:yellow)%(authordate:short)\t%(align:50)%(color:reset)%(refname:short)%(end)\t%(color:green)%(authorname)' refs/remotes
