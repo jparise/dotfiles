@@ -160,7 +160,7 @@ endif
 " File patterns to ignore when globbing, expanding wilcards, and completing
 " file and directory names.
 set wildignore=*.swp,*.bak
-set wildignore+=*.pyc,*.class,*.o
+set wildignore+=*.py[co],*.egg-info/,**/__pycache__/,*.class,*.o
 set wildignore+=*/.git/**/*,*/.hg/**/*
 set wildignore+=tags
 set wildignore+=*.tar.*
