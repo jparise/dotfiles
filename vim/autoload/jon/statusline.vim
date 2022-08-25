@@ -63,17 +63,17 @@ function! jon#statusline#quickfix() abort
 endfunction
 
 function! jon#statusline#update_colorscheme() abort
-  let l:bg = s:extract_colors('StatusLineNC', 'bg')
+  let l:bg = s:extract_colors('StatusLine', 'bg')
 
   " Light
   execute 'highlight User1 ' . s:highlight('StatusLine', l:bg)
 
   " Light (Bold) and Dark (Italic)
   execute 'highlight User2 ' . s:decorate('User1', 'bold')
-  execute 'highlight User3 ' . s:decorate('StatusLineNC', 'italic')
+  execute 'highlight User3 ' . s:decorate('StatusLine', 'italic')
 
   " Warnings and Errors
-  execute 'highlight User4 ' . s:highlight('Title', l:bg)
+  execute 'highlight User4 ' . s:highlight('WarningMsg', l:bg)
   execute 'highlight User5 ' . s:highlight('ErrorMsg', l:bg)
 endfunction
 
