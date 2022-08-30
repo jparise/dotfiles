@@ -73,6 +73,7 @@ export ERL_AFLAGS='-kernel shell_history enabled'
 
 # macOS-specific environment flags
 if [[ $OSTYPE == "darwin"* ]]; then
+    export BASH_SILENCE_DEPRECATION_WARNING=1
     export GREP_OPTIONS='--binary-files=without-match'
     export COCOAPODS_DISABLE_STATS=1
     export HOMEBREW_NO_ANALYTICS=1
