@@ -181,26 +181,6 @@ vimgrep() {
 }
 complete -o bashdefault -o default vimgrep
 
-# On macOS systems with the `curlie` curl wrapper installed, add support for
-# fetching OAuth2 bearer tokens from the keychain. "Internet Passwords" are
-# stored on a per-hostname basis (-s) with an 'oauth2' kind (-D). New tokens
-# can be added to the keychain using:
-#
-#    security add-internet-password -a $USER -s $HOSTNAME -r http -D oauth2 -w
-if [ -n "$(command -v curlie)" ] && [ -n "$(command -v security)" ]; then
-    curlie() {
-        args=("$@")
-        host=$(echo "$@" | perl -pe 's#.*?https?://([^"/ ]+).*#\1#')
-        if [[ -n $host ]]; then
-            token=$(security find-internet-password -s "$host" -r http -D oauth2 -w 2>/dev/null)
-            if [[ -n $token ]]; then
-                args+=(--oauth2-bearer "$token")
-            fi
-        fi
-        command curlie "${args[@]}"
-    }
-fi
-
 # If ondir is available, set up its shell hooks.
 if [ -n "$(command -v ondir)" ]; then
     cd() {
