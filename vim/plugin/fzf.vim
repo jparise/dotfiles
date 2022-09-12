@@ -36,7 +36,7 @@ function! s:gitfiles(args) abort
   endif
 
   " List changes between the current branch and its origin (e.g. master).
-  let branch = 'git diff --name-status --no-renames '.
+  let committed = 'git diff --name-status --no-renames '.
         \ '$(git merge-base origin/HEAD HEAD)..'
 
   " Also list modified files in the current working tree. Only include
@@ -46,7 +46,7 @@ function! s:gitfiles(args) abort
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
   let wrapped = fzf#wrap('gitfiles', {
-  \ 'source': '('.modified.' && '.branch.") | awk '!filenames[$NF]++'",
+  \ 'source': '('.modified.' && '.committed.") | awk '!filenames[$NF]++'",
   \ 'dir':    root,
   \ 'options': [
   \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
