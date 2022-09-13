@@ -241,8 +241,8 @@ if has('gui_running')
     set guioptions=aAeimgr
 elseif has('termguicolors')
   set termguicolors
-  if &background == "dark"
-    colorscheme spring-night
+  if &background ==# 'dark'
+    colorscheme everforest
   else
     colorscheme edge
   endif
