@@ -116,7 +116,7 @@ fi
 
 # Add preferred Homebrew locations to PATH when available.
 if [ -n "$HOMEBREW_PREFIX" ]; then
-    for PKG in binutils bison curl ruby; do
+    for PKG in binutils bison curl libpq ruby; do
         if [ -d "$HOMEBREW_PREFIX/opt/$PKG/bin" ]; then
             PATH="$HOMEBREW_PREFIX/opt/$PKG/bin:$PATH"
         fi
