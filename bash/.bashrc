@@ -83,12 +83,7 @@ fi
 
 # Set up fzf defaults when it's available.
 if [ -n "$(command -v fzf)" ]; then
-    export FZF_DEFAULT_OPTS="
-    --height 40% --border
-    --color=bg+:#343d46,bg:#2b303b,spinner:#96b5b4,hl:#8fa1b3
-    --color=fg:#a7adba,header:#8fa1b3,info:#ebcb8b,pointer:#96b5b4
-    --color=marker:#96b5b4,fg+:#dfe1e8,prompt:#ebcb8b,hl+:#8fa1b3
-    "
+    export FZF_DEFAULT_OPTS="--height 40% --border"
 
     # Prefer fd- or ripgrep-based fzf searches when available.
     if [ -n "$(command -v fd)" ]; then
