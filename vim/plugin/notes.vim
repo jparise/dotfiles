@@ -3,13 +3,13 @@ if exists('g:notes_loaded') || &compatible
 endif
 let g:notes_loaded = 1
 
-let s:cpo_save = &cpoptions
-set cpoptions&vim
-
 let s:notes_dir = '~/Notes'
 if !isdirectory(expand(s:notes_dir))
   finish
 endif
+
+let s:cpo_save = &cpoptions
+set cpoptions&vim
 
 " Recursively list .md files, sorted by last modification time (using -t).
 "
