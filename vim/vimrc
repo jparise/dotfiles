@@ -50,9 +50,6 @@ let fzf_prefix = exists('$HOMEBREW_PREFIX') ? $HOMEBREW_PREFIX : '/usr/local'
 if isdirectory(fzf_prefix.'/opt/fzf')
   Plug fzf_prefix.'/opt/fzf'
 endif
-if has('nvim')
-  Plug 'rmehri01/onenord.nvim'
-endif
 call plug#end()
 
 runtime! ftplugin/man.vim
