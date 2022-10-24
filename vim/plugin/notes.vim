@@ -62,5 +62,18 @@ command! -nargs=* -bang Notes
   \     '--query', <q-args>]
   \ }, <bang>0))
 
+command! -nargs=* -bang NotesGrep
+  \ call fzf#run(fzf#wrap('NotesGrep', {
+  \   'dir':    s:notes_dir,
+  \   'source': 'rg -l --sortr accessed -g "**/*.md" -- '.shellescape(<q-args>),
+  \   'sink*':  function('s:handler'),
+  \   'options': [
+  \     '--ansi', '--multi', '--exact', '--tiebreak=length,begin',
+  \     '--prompt', 'Notes: '.<q-args>.'> ', '--info=hidden', '--print-query',
+  \     '--expect', join(keys(g:fzf_action) + [s:create_key], ','),
+  \     '--preview', 'rg --pretty --context 5 '.shellescape(<q-args>).' {}',
+  \     '--preview-window', ':75%:wrap']
+  \ }, <bang>0))
+
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
