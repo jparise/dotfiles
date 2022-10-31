@@ -62,7 +62,7 @@ command! -nargs=* -bang Notes
   \     '--query', <q-args>]
   \ }, <bang>0))
 
-command! -nargs=* -bang NotesGrep
+command! -nargs=+ -bang NotesGrep
   \ call fzf#run(fzf#wrap('NotesGrep', {
   \   'dir':    s:notes_dir,
   \   'source': 'rg -i -l --sortr accessed -g "**/*.md" -- '.shellescape(<q-args>),
