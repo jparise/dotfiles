@@ -141,6 +141,9 @@ complete -A directory   -o default cd pushd
 complete -A stopped -P '%' bg
 complete -A job -P '%'     fg jobs disown
 
+# Aliases
+alias gv='vim -c GV'
+
 # Set the xterm title
 xtitle() {
 	if [[ $TERM == "xterm"* ]]; then
