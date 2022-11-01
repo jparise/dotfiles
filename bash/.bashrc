@@ -141,9 +141,6 @@ complete -A directory   -o default cd pushd
 complete -A stopped -P '%' bg
 complete -A job -P '%'     fg jobs disown
 
-# Aliases
-alias gv='vim -c GV'
-
 # Set the xterm title
 xtitle() {
 	if [[ $TERM == "xterm"* ]]; then
@@ -178,6 +175,21 @@ vimgrep() {
     vim -q <(rg "${args[@]}")
 }
 complete -o bashdefault -o default vimgrep
+
+# Open Notes with optional (file) search arguments
+notes() {
+    vim -c "Notes $*"
+}
+
+# Open NotesGrep with optional (content) search arguments
+notesgrep() {
+    vim -c "NotesGrep $*"
+}
+
+# Aliases
+alias gv='vim -c GV'
+alias n=notes
+alias ng=notesgrep
 
 # If ondir is available, set up its shell hooks.
 if [ -n "$(command -v ondir)" ]; then
