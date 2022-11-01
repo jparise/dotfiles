@@ -12,6 +12,7 @@ let g:markdown_fenced_languages = [
 \ 'py=python',
 \ 'pycon=python',
 \ 'sh',
+\ 'sql',
 \ 'viml=vim',
 \]
 
