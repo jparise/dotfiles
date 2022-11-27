@@ -1,5 +1,7 @@
 let g:markdown_fenced_languages = [
 \ 'bash=sh',
+\ 'c',
+\ 'cpp',
 \ 'c++=cpp',
 \ 'elixir',
 \ 'erlang',
@@ -8,6 +10,7 @@ let g:markdown_fenced_languages = [
 \ 'html',
 \ 'ini=dosini',
 \ 'java',
+\ 'objc',
 \ 'python',
 \ 'py=python',
 \ 'pycon=python',
