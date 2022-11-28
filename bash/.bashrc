@@ -186,8 +186,12 @@ notesgrep() {
     vim -c "NotesGrep $*"
 }
 
+# Open GV with optional `git log` arguments
+gv() {
+    vim -c "GV $*"
+}
+
 # Aliases
-alias gv='vim -c GV'
 alias n=notes
 alias ng=notesgrep
 
