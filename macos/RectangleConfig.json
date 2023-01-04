@@ -46,8 +46,17 @@
     "disabledApps" : {
 
     },
+    "dragFromStage" : {
+      "int" : 0
+    },
+    "enhancedUI" : {
+      "int" : 1
+    },
     "footprintAlpha" : {
       "float" : 0.30000001192092896
+    },
+    "footprintAnimationDurationMultiplier" : {
+      "float" : 0
     },
     "footprintBorderWidth" : {
       "float" : 2
@@ -70,6 +79,9 @@
     "ignoredSnapAreas" : {
       "int" : 0
     },
+    "landscapeSnapAreas" : {
+
+    },
     "launchOnLogin" : {
       "bool" : true
     },
@@ -78,6 +90,15 @@
     },
     "minimumWindowWidth" : {
       "float" : 0
+    },
+    "missionControlDragging" : {
+      "int" : 0
+    },
+    "missionControlDraggingAllowedOffscreenDistance" : {
+      "float" : 25
+    },
+    "missionControlDraggingDisallowedDuration" : {
+      "int" : 250
     },
     "moveCursor" : {
       "int" : 0
@@ -90,6 +111,9 @@
     },
     "obtainWindowOnClick" : {
       "int" : 0
+    },
+    "portraitSnapAreas" : {
+
     },
     "relaunchOpensMenu" : {
       "bool" : false
@@ -144,6 +168,9 @@
     },
     "specifiedWidth" : {
       "float" : 1680
+    },
+    "stageSize" : {
+      "float" : 190
     },
     "subsequentExecutionMode" : {
       "int" : 0
@@ -271,5 +298,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "62"
+  "version" : "70"
 }
