@@ -30,7 +30,6 @@ cask "dash"
 cask "iterm2"
 cask "rectangle"
 cask "fliqlo"
-cask "nvalt"
 
 cask "font-fira-code"
 cask "font-ibm-plex"
