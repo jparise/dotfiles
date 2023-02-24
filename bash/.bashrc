@@ -92,6 +92,8 @@ if [ -n "$(command -v fzf)" ]; then
         export FZF_DEFAULT_COMMAND='rg --files'
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     fi
+
+    [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 fi
 
 # Language-specific paths
@@ -216,7 +218,6 @@ if [ -n "$(command -v ondir)" ]; then
 fi
 
 # Optionally include any additional local settings.
-[ -f ~/.fzf.bash ] && . ~/.fzf.bash
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 [ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
