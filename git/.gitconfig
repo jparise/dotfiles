@@ -5,6 +5,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -FRX
+	precomposeunicode = true
 
 [alias]
 	amend = commit --amend
