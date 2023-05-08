@@ -59,7 +59,7 @@ command! -nargs=* -bang Notes
   \     '--prompt', 'Notes> ', '--info=hidden', '--print-query',
   \     '--expect', join(keys(g:fzf_action) + [s:create_key], ','),
   \     '--preview', s:preview_cmd, '--preview-window', ':75%:wrap',
-  \     '--query', <q-args>]
+  \     '--select-1', '--query', <q-args>]
   \ }, <bang>0))
 
 command! -nargs=+ -bang NotesGrep
