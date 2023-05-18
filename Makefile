@@ -1,4 +1,5 @@
 TARGETS = install-bash \
+		  install-bat \
 		  install-ctags \
 		  install-git \
 		  install-hg \
@@ -21,6 +22,10 @@ install-bash:
 	ln -s `pwd`/bash/.bash_profile ~/.bash_profile
 	ln -s `pwd`/bash/.bashrc ~/.bashrc
 	ln -s `pwd`/bash/.inputrc ~/.inputrc
+
+install-bat:
+	rm -f ~/.config/bat
+	ln -s `pwd`/bat ~/.config/bat
 
 install-ctags: ~/.config
 	rm -f ~/.config/ctags
