@@ -54,6 +54,9 @@
 [blame]
 	date = short
 
+[checkout]
+	workers = 0
+
 [diff]
 	algorithm = patience
 	compactionHeuristic = true
