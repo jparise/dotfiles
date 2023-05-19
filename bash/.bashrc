@@ -65,7 +65,7 @@ export VISUAL=vim
 
 export PAGER=less
 export MANPAGER='less -FiRs'
-export LESS='-ErX --mouse'
+export LESS='-ErX'
 
 export DIFF_OPTIONS='-du'
 
