@@ -8,7 +8,8 @@ TARGETS = install-bash \
 		  install-tcsh \
 		  install-terminfo \
 		  install-vim \
-		  install-vscode
+		  install-vscode \
+		  install-wezterm
 
 TERMINFO_FILES := $(wildcard terminfo/*.ti)
 UNAME := $(shell uname -s)
@@ -73,6 +74,10 @@ else
 	rm -rf ~/.config/Code/User
 	ln -s `pwd`/vscode ~/.config/Code/User
 endif
+
+install-wezterm: ~/.config
+	rm -f ~/.config/wezterm
+	ln -s `pwd`/wezterm ~/.config/wezterm
 
 ~/.config:
 	mkdir -p ~/.config
