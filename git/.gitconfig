@@ -55,7 +55,7 @@
 	date = short
 
 [checkout]
-	workers = 0
+	workers = 4
 
 [diff]
 	algorithm = patience
