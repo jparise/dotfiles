@@ -30,6 +30,8 @@ config.pane_focus_follows_mouse = true
 
 -- Keys
 config.keys = {
+  { key = 't', mods = 'CMD', action = act.SpawnCommandInNewTab { domain = 'DefaultDomain', cwd = wezterm.home_dir } },
+  { key = 'n', mods = 'CMD', action = act.SpawnCommandInNewWindow { domain = 'DefaultDomain', cwd = wezterm.home_dir } },
   { key = 'd', mods = 'CMD', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
   { key = 'd', mods = 'SHIFT|CMD', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
   { key = 'w', mods = 'CMD', action = act.CloseCurrentPane { confirm = true } },
