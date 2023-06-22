@@ -20,7 +20,7 @@ Plug 'tpope/vim-scriptease'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', { 'branch': 'main' }
 Plug 'junegunn/goyo.vim', {'on': ['Goyo']}
 Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
