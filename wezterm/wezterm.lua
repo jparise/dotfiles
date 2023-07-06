@@ -27,6 +27,13 @@ config.window_padding = {
 
 -- Mouse
 config.pane_focus_follows_mouse = true
+config.mouse_bindings = {
+  {
+    event = { Down = { streak = 3, button = 'Left' } },
+    action = act.SelectTextAtMouseCursor 'SemanticZone',
+    mods = 'NONE',
+  },
+}
 
 -- Keys
 config.keys = {
@@ -35,6 +42,8 @@ config.keys = {
   { key = 'd', mods = 'CMD', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
   { key = 'd', mods = 'SHIFT|CMD', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
   { key = 'w', mods = 'CMD', action = act.CloseCurrentPane { confirm = true } },
+  { key = 'UpArrow', mods = 'SHIFT', action = act.ScrollToPrompt(-1) },
+  { key = 'DownArrow', mods = 'SHIFT', action = act.ScrollToPrompt(1) },
   { key = 'LeftArrow', mods = 'CMD', action = act.ActivateTabRelative(-1) },
   { key = 'RightArrow', mods = 'CMD', action = act.ActivateTabRelative(1) },
   { key = 'LeftArrow', mods = 'SHIFT|CMD', action = act.MoveTabRelative(-1) },

@@ -219,5 +219,6 @@ fi
 
 # Optionally include any additional local settings.
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
+[ -f ~/.config/wezterm/wezterm.sh ] && . ~/.config/wezterm/wezterm.sh
 [ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
