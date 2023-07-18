@@ -24,7 +24,7 @@ install-bash:
 	ln -s `pwd`/bash/.bashrc ~/.bashrc
 	ln -s `pwd`/bash/.inputrc ~/.inputrc
 
-install-bat:
+install-bat: ~/.config
 	rm -f ~/.config/bat
 	ln -s `pwd`/bat ~/.config/bat
 
