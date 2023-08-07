@@ -15,7 +15,7 @@
 	conflicts = diff --name-only --diff-filter=U
 	deletes = log --diff-filter=D --summary
 	diff-staged = diff --cached
-	edit = "!f() { git files $*; }; `git var GIT_EDITOR` `f`"
+	edit = "!$(git var GIT_EDITOR) $(git files $*)"
 	files = "!f() { git ls-files --exclude-standard ${*--m} -- ${*/#/$GIT_PREFIX} | sort -u | tr \"\\n\" \" \"; }; f"
 	head = log -1 --decorate --name-status HEAD
 	main = !basename $(git symbolic-ref refs/remotes/origin/HEAD)
