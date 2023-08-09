@@ -16,10 +16,10 @@
 	deletes = log --diff-filter=D --summary
 	diff-staged = diff --cached
 	edit = "!$(git var GIT_EDITOR) $(git files $*)"
-	files = "!f() { git ls-files --exclude-standard ${*--m} -- ${*/#/$GIT_PREFIX} | sort -u | tr \"\\n\" \" \"; }; f"
+	files = "!f() { git ls-files --exclude-standard -m -- ${@/#/$GIT_PREFIX} | sort -u | tr '\n' ' '; }; f"
 	head = log -1 --decorate --name-status HEAD
 	main = !basename $(git symbolic-ref refs/remotes/origin/HEAD)
-	mine = "!f() { git log --no-merges --author=$(git config user.email) -- ${*/#/$GIT_PREFIX}; }; f"
+	mine = "!f() { git log --no-merges --author=$(git config user.email) -- ${@/#/$GIT_PREFIX}; }; f"
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
 	remotes = for-each-ref --sort=-committerdate --format='%(color:yellow)%(authordate:short)\t%(align:50)%(color:reset)%(refname:short)%(end)\t%(color:green)%(authorname)' refs/remotes
 	root = rev-parse --show-toplevel
