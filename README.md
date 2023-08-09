@@ -21,3 +21,5 @@ Local settings can be placed in a file named `$HOME/.cshrc.local`.
 management. There is a Makefile rule that downloads `autoload/plug.vim` to
 bootstrap the system. Run `:PlugInstall` to install the individual plugins
 themselves.
+
+Local settings can be placed in files named `*.local.vim`.
