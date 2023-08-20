@@ -41,6 +41,9 @@
 [branch]
 	autosetuprebase = local
 
+[branch "main"]
+	mergeoptions = --ff-only
+
 [branch "master"]
 	mergeoptions = --ff-only
 
