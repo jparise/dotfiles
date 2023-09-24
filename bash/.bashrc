@@ -24,6 +24,7 @@ umask 0022
 : "${LC_ALL:="en_US.UTF-8"}"
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
+FIGNORE=".o:.class:.pyc:.egg-info"
 HISTCONTROL=ignoreboth
 HISTIGNORE="&:bg:fg:clear:exit:pwd"
 PROMPT_COMMAND="history -a"
