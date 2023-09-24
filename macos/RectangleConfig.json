@@ -16,6 +16,9 @@
     "altThirdCycle" : {
       "int" : 0
     },
+    "alwaysAccountForStage" : {
+      "int" : 0
+    },
     "applyGapsToMaximize" : {
       "int" : 0
     },
@@ -46,6 +49,12 @@
     "disabledApps" : {
 
     },
+    "doubleClickTitleBar" : {
+      "int" : 0
+    },
+    "doubleClickTitleBarRestore" : {
+      "int" : 0
+    },
     "dragFromStage" : {
       "int" : 0
     },
@@ -75,6 +84,9 @@
     },
     "hideMenubarIcon" : {
       "bool" : true
+    },
+    "ignoreDragSnapToo" : {
+      "int" : 0
     },
     "ignoredSnapAreas" : {
       "int" : 0
@@ -187,6 +199,9 @@
     "todoMode" : {
       "bool" : false
     },
+    "todoSidebarSide" : {
+      "int" : 1
+    },
     "todoSidebarWidth" : {
       "float" : 400
     },
@@ -229,10 +244,6 @@
       "keyCode" : 2,
       "modifierFlags" : 786432
     },
-    "firstThreeFourths" : {
-      "keyCode" : 33,
-      "modifierFlags" : 786432
-    },
     "firstTwoThirds" : {
       "keyCode" : 123,
       "modifierFlags" : 917504
@@ -243,10 +254,6 @@
     },
     "lastThird" : {
       "keyCode" : 5,
-      "modifierFlags" : 786432
-    },
-    "lastThreeFourths" : {
-      "keyCode" : 30,
       "modifierFlags" : 786432
     },
     "lastTwoThirds" : {
@@ -265,13 +272,9 @@
       "keyCode" : 126,
       "modifierFlags" : 917504
     },
-    "nextDisplay" : {
-      "keyCode" : 124,
-      "modifierFlags" : 1835008
-    },
-    "previousDisplay" : {
-      "keyCode" : 123,
-      "modifierFlags" : 1835008
+    "reflowTodo" : {
+      "keyCode" : 45,
+      "modifierFlags" : 786432
     },
     "restore" : {
       "keyCode" : 51,
@@ -283,6 +286,10 @@
     },
     "smaller" : {
       "keyCode" : 27,
+      "modifierFlags" : 786432
+    },
+    "toggleTodo" : {
+      "keyCode" : 11,
       "modifierFlags" : 786432
     },
     "topHalf" : {
@@ -298,5 +305,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "70"
+  "version" : "77"
 }
