@@ -148,19 +148,18 @@ xtitle() {
 	fi
 }
 
-# Set the iTerm2 profile
-iterm_profile() {
-	if [ "$TERM_PROGRAM" == iTerm.app ]; then
-		echo -en "\\033]50;SetProfile=$*\\a"
-	fi
-}
+# Support for programmatically changing the current iTerm profile
+if [ -n "$ITERM_PROFILE" ]; then
+    iterm_profile() {
+        echo -en "\\033]50;SetProfile=$*\\a"
+    }
 
-# Use an alternate iTerm2 profile for ssh sessions
-ssh() {
-	trap "iterm_profile Default" RETURN
-	iterm_profile ssh
-	command ssh "$@"
-}
+    ssh() {
+        trap "iterm_profile Default" RETURN
+        iterm_profile ssh
+        command ssh "$@"
+    }
+fi
 
 # Execute a command and load its output into vim's quickfix list.
 vimq() {
