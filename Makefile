@@ -4,7 +4,6 @@ TARGETS = install-bash \
 		  install-git \
 		  install-hg \
 		  install-pip \
-		  install-proselint \
 		  install-tcsh \
 		  install-terminfo \
 		  install-vim \
@@ -45,10 +44,6 @@ install-hg:
 install-pip: ~/.config
 	rm -rf ~/.config/pip
 	ln -s `pwd`/pip ~/.config/pip
-
-install-proselint: ~/.config
-	rm -rf ~/.config/proselint
-	ln -s `pwd`/proselint ~/.config/proselint
 
 install-tcsh:
 	rm -f ~/.cshrc ~/.login
