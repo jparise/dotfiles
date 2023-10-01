@@ -4,6 +4,7 @@ TARGETS = install-bash \
 		  install-git \
 		  install-hg \
 		  install-ipython \
+		  install-pip \
 		  install-proselint \
 		  install-tcsh \
 		  install-terminfo \
@@ -45,6 +46,10 @@ install-hg:
 install-ipython:
 	rm -rf ~/.ipython
 	ln -s `pwd`/ipython ~/.ipython
+
+install-pip: ~/.config
+	rm -rf ~/.config/pip
+	ln -s `pwd`/pip ~/.config/pip
 
 install-proselint: ~/.config
 	rm -rf ~/.config/proselint
