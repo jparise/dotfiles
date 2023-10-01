@@ -3,7 +3,6 @@ TARGETS = install-bash \
 		  install-ctags \
 		  install-git \
 		  install-hg \
-		  install-ipython \
 		  install-pip \
 		  install-proselint \
 		  install-tcsh \
@@ -42,10 +41,6 @@ install-hg:
 	rm -f ~/.hgignore ~/.hgrc
 	ln -s `pwd`/hg/.hgignore ~/.hgignore
 	ln -s `pwd`/hg/.hgrc ~/.hgrc
-
-install-ipython:
-	rm -rf ~/.ipython
-	ln -s `pwd`/ipython ~/.ipython
 
 install-pip: ~/.config
 	rm -rf ~/.config/pip
