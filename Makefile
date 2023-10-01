@@ -10,10 +10,9 @@ TARGETS = install-bash \
 		  install-vscode \
 		  install-wezterm
 
-TERMINFO_FILES := $(wildcard terminfo/*.ti)
 UNAME := $(shell uname -s)
 
-.PHONY: install $(TARGETS) $(TERMINFO_FILES)
+.PHONY: install $(TARGETS)
 
 install: $(TARGETS)
 
@@ -50,8 +49,6 @@ install-tcsh:
 	ln -s `pwd`/tcsh/.cshrc ~/.cshrc
 	ln -s `pwd`/tcsh/.login ~/.login
 
-install-terminfo: $(TERMINFO_FILES)
-
 install-vim: ~/.config vim/autoload/plug.vim
 	rm -rf ~/.vim ~/.vimrc ~/.config/nvim
 	ln -s `pwd`/vim ~/.vim
@@ -76,9 +73,6 @@ install-wezterm: ~/.config
 
 ~/.config:
 	mkdir -p ~/.config
-
-$(TERMINFO_FILES):
-	tic -o ~/.terminfo $@
 
 vim/autoload/plug.vim:
 	curl -fLo `pwd`/vim/autoload/plug.vim --create-dirs \
