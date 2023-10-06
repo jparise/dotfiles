@@ -32,6 +32,13 @@
 	uncommit = reset --soft HEAD^
 	vimdiff = !vim -d -p $(git changes) +\"tabdo Gdiff ${DIFF_BASE:-$(git main)}\"
 
+
+[protocol "http"]
+	allow = never
+
+[protocol "git"]
+	allow = never
+
 [init]
 	defaultBranch = main
 
