@@ -83,6 +83,13 @@
 [fetch]
 	prune = true
 
+[fetch "fsck"]
+	zeroPaddedFilemode = ignore
+	badTimezone = ignore
+
+[transfer]
+	fsckObjects = true
+
 [stash]
 	showPatch = true
 
