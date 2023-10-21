@@ -217,5 +217,6 @@ fi
 
 # Optionally include any additional local settings.
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
-[ -f ~/.config/wezterm/wezterm.sh ] && . ~/.config/wezterm/wezterm.sh
+[ -n "$GHOSTTY_RESOURCES_DIR" ] && . "$GHOSTTY_RESOURCES_DIR/shell-integration/bash/ghostty.bash"
+[[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
