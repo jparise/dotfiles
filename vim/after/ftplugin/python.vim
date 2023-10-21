@@ -12,4 +12,7 @@ end
 execute 'setlocal path^=' . join(g:python_path, ',')
 setlocal textwidth=79
 
+let b:match_words = '\<if\>:\<elif\>:\<else\>,\<try\>:\<except\>'
+let b:match_skip = 'R:^\s*'
+
 let b:undo_ftplugin .= '|setlocal path< textwidth<'
