@@ -26,7 +26,6 @@ mas "WiFi Explorer", id: 494803304
 cask "alfred"
 cask "dash"
 cask "iterm2"
-cask "fliqlo"
 cask "rectangle"
 
 cask "font-fira-code"
