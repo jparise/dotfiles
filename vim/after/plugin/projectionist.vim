@@ -63,23 +63,27 @@ let g:projectionist_heuristics = {
 \           'type': 'test'
 \       },
 \   },
-\   'setup.py': {
+\   'pyproject.toml|setup.py': {
 \       '*.py': {
 \           'alternate': [
+\             'tests/test_{basename}.py',
+\           ],
+\           'console': 'python -i {file}',
+\           'type': 'source'
+\       },
+\       'src/*.py': {
+\           'alternate': [
+\             'tests/test_{basename}.py',
 \             'tests/{dirname}/test_{basename}.py',
-\             '{dirname}/tests/test_{basename}.py',
-\             '{dirname|dirname}/tests/{dirname|basename}/test_{basename}.py',
 \           ],
 \           'type': 'source'
 \       },
 \       'tests/**/test_*.py': {
-\           'alternate': '{}.py',
-\           'type': 'test'
-\       },
-\       '**/test_*.py': {
 \           'alternate': [
-\               '{dirname|dirname}/{basename}.py',
-\               '{dirname|dirname|dirname}/{dirname|basename}/{basename}.py',
+\             '{}.py',
+\             '{project|basename}/{}.py',
+\             'src/{}.py',
+\             'src/{project|basename}/{}.py',
 \           ],
 \           'type': 'test'
 \       },
