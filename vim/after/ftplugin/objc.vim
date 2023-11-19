@@ -1,6 +1,9 @@
 setlocal commentstring=//\ %s
 setlocal foldexpr=getline(v:lnum)=~'^#pragma\ mark'?'>1':'='
 
+let b:undo_ftplugin = get(b:, 'undo_ftplugin', 'execute')
+let b:undo_ftplugin .= '|setlocal commentstring< foldexpr<'
+
 if has('osx')
   let prefix = ''
 
@@ -11,4 +14,6 @@ if has('osx')
 
   let includeexpr="substitute(v:fname,'\\([^/]\\+\\)/\\(.\\+\\)','".prefix."/System/Library/Frameworks/\\1.framework/Headers/\\2','')"
   exec 'let &l:includeexpr=includeexpr'
+
+  let b:undo_ftplugin .= '|setlocal includeexpr<'
 endif
