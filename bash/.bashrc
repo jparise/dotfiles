@@ -37,6 +37,9 @@ if [ -x "/opt/homebrew/bin/brew" ]; then
 elif [ -x "/usr/local/bin/brew" ]; then
     eval "$(/usr/local/bin/brew shellenv)"
 fi
+if [ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]; then
+    . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+fi
 
 # Add git branch and status in the prompt
 if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
@@ -189,6 +192,7 @@ notesgrep() {
 gv() {
     vim -c "GV $*"
 }
+[ "$(declare -Ff __git_complete)" ] && __git_complete gv git_log
 
 # Aliases
 alias n=notes
@@ -219,4 +223,3 @@ fi
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 [ -n "$GHOSTTY_RESOURCES_DIR" ] && . "$GHOSTTY_RESOURCES_DIR/shell-integration/bash/ghostty.bash"
 [[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
-[[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
