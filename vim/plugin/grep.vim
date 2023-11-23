@@ -8,8 +8,6 @@ set cpoptions&vim
 
 if executable('rg')
   set grepprg=rg\ --vimgrep
-elseif executable('ag')
-  set grepprg=ag\ --vimgrep
 endif
 
 " Inspired by https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3
