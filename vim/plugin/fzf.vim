@@ -2,7 +2,7 @@ let s:cpo_save = &cpoptions
 set cpoptions&vim
 
 function! s:get_git_root() abort
-  let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
+  let root = systemlist('git rev-parse --show-toplevel')[0]
   return v:shell_error ? '' : root
 endfunction
 
@@ -54,10 +54,10 @@ function! s:gitfiles(args) abort
   \   'sh -c "(git diff origin --color -- {-1} | sed 1,4d; head -500 {-1})"']
   \})
 
-  " This is a sink that strips status characters from the line (leaving just
-  " the filename) and then passes the filename to the s:common_sink() function
-  " that was added by fzf#wrap(). This way, we don't have to reimplement all
-  " of the common action behavior.
+  " This replacement sink strips status characters from each line (leaving
+  " just the filename) and then passes the lines to the s:common_sink()
+  " function that will be added by fzf#wrap(). That way, we don't have to
+  " reimplement all of the common action behavior.
   let wrapped.common_sink = remove(wrapped, 'sink*')
   function! wrapped.newsink(lines)
     let lines = extend(a:lines[0:0], map(a:lines[1:], 'trim(v:val[2:])'))
