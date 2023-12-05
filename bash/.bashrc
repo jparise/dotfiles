@@ -37,9 +37,6 @@ if [ -x "/opt/homebrew/bin/brew" ]; then
 elif [ -x "/usr/local/bin/brew" ]; then
     eval "$(/usr/local/bin/brew shellenv)"
 fi
-if [ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]; then
-    . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-fi
 
 # Add git branch and status in the prompt
 if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
@@ -129,7 +126,7 @@ if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-# Basic shell completions
+# Completion rules
 complete -A export     printenv
 complete -A variable   export local readonly unset
 complete -A enabled    builtin
@@ -143,6 +140,10 @@ complete -A directory   -o default cd pushd
 
 complete -A stopped -P '%' bg
 complete -A job -P '%'     fg jobs disown
+
+if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash" ]; then
+    . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
+fi
 
 # Set the xterm title
 xtitle() {
@@ -221,5 +222,6 @@ fi
 
 # Optionally include any additional local settings.
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
+[ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -n "$GHOSTTY_RESOURCES_DIR" ] && . "$GHOSTTY_RESOURCES_DIR/shell-integration/bash/ghostty.bash"
 [[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
