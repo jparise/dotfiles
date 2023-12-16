@@ -30,10 +30,9 @@ install-ctags: ~/.config
 	rm -f ~/.config/ctags
 	ln -s `pwd`/ctags ~/.config/ctags
 
-install-git:
-	rm -f ~/.gitconfig ~/.gitignore
-	ln -s `pwd`/git/.gitconfig ~/.gitconfig
-	ln -s `pwd`/git/.gitignore ~/.gitignore
+install-git: ~/.config
+	rm -f ~/.config/git
+	ln -s `pwd`/git ~/.config/git
 
 install-hg:
 	rm -f ~/.hgignore ~/.hgrc
