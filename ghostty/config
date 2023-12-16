@@ -1,0 +1,34 @@
+# vim:ft=conf
+
+theme = "Oceanic-Next"
+
+font-family = "Iosevka Term"
+font-style = "Light"
+font-feature = "-calt"
+font-feature = "-liga"
+font-feature = "-dlig"
+font-size = 15
+
+# Windows
+window-theme = "dark"
+window-height = 70
+window-width = 132
+window-step-resize = true
+window-inherit-working-directory = false
+unfocused-split-opacity = 0.96
+
+# Shell
+shell-integration = "none"
+shell-integration-features = "no-cursor"
+
+# Clipboard
+copy-on-select = clipboard
+
+# Misc
+cursor-style-blink = false
+mouse-hide-while-typing = true
+quit-after-last-window-closed = true
+
+# Keys
+keybind = cmd+left=goto_split:left
+keybind = cmd+right=goto_split:right

@@ -1,6 +1,7 @@
 TARGETS = install-bash \
 		  install-bat \
 		  install-ctags \
+		  install-ghostty \
 		  install-git \
 		  install-hg \
 		  install-pip \
@@ -29,6 +30,10 @@ install-bat: ~/.config
 install-ctags: ~/.config
 	rm -f ~/.config/ctags
 	ln -s `pwd`/ctags ~/.config/ctags
+
+install-ghostty: ~/.config
+	rm -f ~/.config/ghostty
+	ln -s `pwd`/ghostty ~/.config/ghostty
 
 install-git: ~/.config
 	rm -f ~/.config/git
