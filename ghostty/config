@@ -30,5 +30,7 @@ mouse-hide-while-typing = true
 quit-after-last-window-closed = true
 
 # Keys
-keybind = cmd+left=goto_split:left
-keybind = cmd+right=goto_split:right
+keybind = cmd+left=previous_tab
+keybind = cmd+right=next_tab
+keybind = cmd+shift+left=goto_split:previous
+keybind = cmd+shift+right=goto_split:next
