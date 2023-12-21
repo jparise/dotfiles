@@ -12,7 +12,7 @@ config.font = wezterm.font {
 }
 config.font_size = 15.0
 config.initial_cols = 130
-config.initial_rows = 50
+config.initial_rows = 70
 config.window_decorations = "RESIZE"
 config.window_frame = {
     font = wezterm.font 'Iosevka Term',
