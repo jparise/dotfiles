@@ -46,8 +46,10 @@ config.keys = {
   { key = 'DownArrow', mods = 'SHIFT', action = act.ScrollToPrompt(1) },
   { key = 'LeftArrow', mods = 'CMD', action = act.ActivateTabRelative(-1) },
   { key = 'RightArrow', mods = 'CMD', action = act.ActivateTabRelative(1) },
-  { key = 'LeftArrow', mods = 'SHIFT|CMD', action = act.MoveTabRelative(-1) },
-  { key = 'RightArrow', mods = 'SHIFT|CMD', action = act.MoveTabRelative(1) },
+  { key = 'UpArrow', mods = 'SHIFT|CMD', action = act.ActivatePaneDirection 'Up' },
+  { key = 'DownArrow', mods = 'SHIFT|CMD', action = act.ActivatePaneDirection 'Down' },
+  { key = 'LeftArrow', mods = 'SHIFT|CMD', action = act.ActivatePaneDirection 'Left' },
+  { key = 'RightArrow', mods = 'SHIFT|CMD', action = act.ActivatePaneDirection 'Right' },
 }
 
 return config
