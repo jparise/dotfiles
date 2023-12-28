@@ -10,6 +10,8 @@ let g:markdown_fenced_languages = [
 \ 'html',
 \ 'ini=dosini',
 \ 'java',
+\ 'javascript',
+\ 'js=javascript',
 \ 'objc',
 \ 'python',
 \ 'py=python',
@@ -17,6 +19,9 @@ let g:markdown_fenced_languages = [
 \ 'sh',
 \ 'sql',
 \ 'swift',
+\ 'typescript',
+\ 'ts=typescript',
+\ 'vim',
 \ 'viml=vim',
 \]
 
