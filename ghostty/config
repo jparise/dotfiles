@@ -2,11 +2,8 @@
 
 theme = "Oceanic-Next"
 
-font-family = "Iosevka Term"
+font-family = "Iosevka Fixed"
 font-style = "Light"
-font-feature = "-calt"
-font-feature = "-liga"
-font-feature = "-dlig"
 font-size = 15
 
 # Windows
