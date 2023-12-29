@@ -8,16 +8,10 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "githubPullRequests.pullBranch": "never",
-  "gitlens.codeLens.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.currentLine.enabled": false,
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": [
-    "--fast"
-  ],
+  "go.lintFlags": ["--fast"],
   "go.toolsManagement.autoUpdate": true,
   "python.languageServer": "Pylance",
-  "python.linting.flake8Enabled": true,
   "redhat.telemetry.enabled": false,
   "telemetry.telemetryLevel": "error",
   "terminal.integrated.fontSize": 13,
