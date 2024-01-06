@@ -72,6 +72,8 @@
 [diff]
 	algorithm = patience
 	compactionHeuristic = true
+	colorMoved = "default"
+	colorMovedWS = "allow-indentation-change"
 
 [merge]
 	tool = fugitive
