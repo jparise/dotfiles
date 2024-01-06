@@ -10,7 +10,6 @@ font-size = 15
 window-theme = "dark"
 window-height = 70
 window-width = 132
-window-step-resize = true
 window-inherit-working-directory = false
 unfocused-split-opacity = 0.96
 
