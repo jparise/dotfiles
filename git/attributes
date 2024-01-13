@@ -6,6 +6,7 @@
 *.java diff=java
 *.perl diff=perl
 *.pl diff=perl
+*.plist diff=plist
 *.php diff=php
 *.py diff=python
 *.rb diff=ruby
