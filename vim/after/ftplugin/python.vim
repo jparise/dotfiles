@@ -1,4 +1,4 @@
-let b:ale_fixers = ['black', 'isort']
+let b:ale_fixers = ['black', 'isort', 'ruff', 'ruff_format']
 let b:ale_linters = ['flake8', 'mypy', 'pyright', 'ruff', 'unimport']
 
 if !exists('g:python_path')
