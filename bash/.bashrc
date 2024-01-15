@@ -142,13 +142,6 @@ if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash" ]; then
     . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
 fi
 
-# Set the xterm title
-xtitle() {
-	if [[ $TERM == "xterm"* ]]; then
-		echo -en "\\e]0;$*\\a"
-	fi
-}
-
 # Support for programmatically changing the current iTerm profile
 if [ -n "$ITERM_PROFILE" ]; then
     iterm_profile() {
