@@ -32,10 +32,14 @@ PROMPT_DIRTRIM=3
 PS1='[\W]$([ \j -gt 0 ] && echo \*)\$ '
 
 # Set up the Homebrew shell environment.
-if [ -x "/opt/homebrew/bin/brew" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ -x "/usr/local/bin/brew" ]; then
-    eval "$(/usr/local/bin/brew shellenv)"
+if [ -d "/opt/homebrew" ]; then
+    # eval "$(/opt/homebrew/bin/brew shellenv)"
+    export HOMEBREW_PREFIX="/opt/homebrew";
+    export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar";
+    export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX";
+    export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}";
+    export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
+    export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
 fi
 
 # Add git branch and status in the prompt
