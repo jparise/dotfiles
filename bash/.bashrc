@@ -96,11 +96,8 @@ if [ -n "$(command -v fzf)" ]; then
 fi
 
 # Language-specific paths
-if [ -n "$(command -v go)" ]; then
-	GOROOT=$(go env GOROOT)
-	export GOROOT
-	PATH="$GOROOT/bin:$PATH"
-	[ -d "$HOME/go/bin" ] && PATH="$HOME/go/bin:$PATH"
+if [ -d "$HOME/go/bin" ]; then
+    PATH="$HOME/go/bin:$PATH"
 fi
 if [ -d "$HOME/.cargo/bin" ]; then
 	PATH="$HOME/.cargo/bin:$PATH"
