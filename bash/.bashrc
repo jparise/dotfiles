@@ -41,8 +41,6 @@ fi
 # Add git branch and status in the prompt
 if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
     . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh"
-fi
-if [ "$(declare -Ff __git_ps1)" ]; then
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWUPSTREAM=auto
     PS1="\$(__git_ps1 \"[%s] \")$PS1"
