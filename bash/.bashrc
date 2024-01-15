@@ -207,7 +207,7 @@ if [ -n "$(command -v ondir)" ]; then
     }
 
     # shellcheck disable=SC2006
-    eval "`ondir /`"
+    [ "$PWD" != "$HOME" ] && eval "`ondir /`"
 fi
 
 # Optionally include any additional local settings.
