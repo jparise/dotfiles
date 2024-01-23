@@ -9,6 +9,7 @@
 # tags
 cscope.out
 tags
+!tags/
 tags.files
 tags.lock
 tags.temp
