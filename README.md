@@ -11,10 +11,6 @@ _without_ making backup copies.
 
 Local settings can be placed in a file named `$HOME/.bashrc.local`.
 
-## tcsh
-
-Local settings can be placed in a file named `$HOME/.cshrc.local`.
-
 ## vim
 
 [vim-plug](https://github.com/junegunn/vim-plug) is used for plugin

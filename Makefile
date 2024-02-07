@@ -5,7 +5,6 @@ TARGETS = install-bash \
 		  install-git \
 		  install-hg \
 		  install-pip \
-		  install-tcsh \
 		  install-terminfo \
 		  install-vim \
 		  install-vscode \
@@ -47,11 +46,6 @@ install-hg:
 install-pip: ~/.config
 	rm -rf ~/.config/pip
 	ln -s `pwd`/pip ~/.config/pip
-
-install-tcsh:
-	rm -f ~/.cshrc ~/.login
-	ln -s `pwd`/tcsh/.cshrc ~/.cshrc
-	ln -s `pwd`/tcsh/.login ~/.login
 
 install-vim: ~/.config vim/autoload/plug.vim
 	rm -rf ~/.vim ~/.vimrc ~/.config/nvim
