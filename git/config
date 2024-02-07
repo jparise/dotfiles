@@ -70,7 +70,7 @@
 	workers = 4
 
 [diff]
-	algorithm = patience
+	algorithm = histogram
 	compactionHeuristic = true
 	colorMoved = "default"
 	colorMovedWS = "allow-indentation-change"
