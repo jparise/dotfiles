@@ -75,6 +75,7 @@
 	colorMoved = "default"
 	colorMovedWS = "allow-indentation-change"
 	mnemonicPrefix = true
+	renames = copies
 
 [merge]
 	tool = fugitive
