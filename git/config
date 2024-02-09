@@ -74,6 +74,7 @@
 	compactionHeuristic = true
 	colorMoved = "default"
 	colorMovedWS = "allow-indentation-change"
+	mnemonicPrefix = true
 
 [merge]
 	tool = fugitive
