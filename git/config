@@ -46,6 +46,7 @@
 
 [branch]
 	autosetuprebase = local
+	sort = -committerdate
 
 [branch "main"]
 	mergeoptions = --ff-only
