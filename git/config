@@ -80,6 +80,7 @@
 	renames = copies
 
 [merge]
+	conflictStyle = zdiff3
 	tool = fugitive
 
 [grep]
