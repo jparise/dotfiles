@@ -54,9 +54,6 @@
 [branch "master"]
 	mergeoptions = --ff-only
 
-[pull]
-	ff = only
-
 [push]
 	default = current
 	autoSetupRemote = true
