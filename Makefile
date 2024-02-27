@@ -7,7 +7,6 @@ TARGETS = install-bash \
 		  install-pip \
 		  install-terminfo \
 		  install-vim \
-		  install-vscode \
 		  install-wezterm
 
 UNAME := $(shell uname -s)
@@ -53,17 +52,6 @@ install-vim: ~/.config vim/autoload/plug.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
 	ln -s `pwd`/vim ~/.config/nvim
 	mkdir -p ~/.cache/vim
-
-install-vscode: ~/.config
-ifeq ($(UNAME),Darwin)
-	mkdir -p ~/Library/Application\ Support/Code
-	rm -rf ~/Library/Application\ Support/Code/User
-	ln -s `pwd`/vscode ~/Library/Application\ Support/Code/User
-else
-	mkdir -p ~/.config/Code
-	rm -rf ~/.config/Code/User
-	ln -s `pwd`/vscode ~/.config/Code/User
-endif
 
 install-wezterm: ~/.config
 	rm -f ~/.config/wezterm
