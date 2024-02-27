@@ -81,22 +81,6 @@ if [[ $OSTYPE == "darwin"* ]]; then
     export HOMEBREW_NO_ENV_HINTS=1
 fi
 
-# Set up fzf defaults when it's available.
-if [ -n "$(command -v fzf)" ]; then
-    export FZF_DEFAULT_OPTS="--height 40% --border"
-
-    # Prefer fd- or ripgrep-based fzf searches when available.
-    if [ -n "$(command -v fd)" ]; then
-        export FZF_DEFAULT_COMMAND='fd --type f'
-        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    elif [ -n "$(command -v rg)" ]; then
-        export FZF_DEFAULT_COMMAND='rg --files'
-        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    fi
-
-    [ -f ~/.fzf.bash ] && . ~/.fzf.bash
-fi
-
 # Language-specific paths
 if [ -d "$HOME/go/bin" ]; then
     PATH="$HOME/go/bin:$PATH"
@@ -125,23 +109,26 @@ if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-# Completion rules
-complete -A export     printenv
-complete -A variable   export local readonly unset
-complete -A enabled    builtin
-complete -A alias      alias unalias
-complete -A function   function
-complete -A helptopic  help
-complete -A setopt     set
-complete -A shopt      shopt
-complete -A directory  mkdir rmdir
-complete -A directory   -o default cd pushd
+# Apply any additional local settings. Ordering here is important.
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
+[ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+[ -n "$GHOSTTY_RESOURCES_DIR" ] && . "$GHOSTTY_RESOURCES_DIR/shell-integration/bash/ghostty.bash"
+[[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
 
-complete -A stopped -P '%' bg
-complete -A job -P '%'     fg jobs disown
+# Set up fzf defaults when it's available.
+if [ -x "$(command -v fzf)" ]; then
+    export FZF_DEFAULT_OPTS="--height 40% --border"
 
-if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash" ]; then
-    . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
+    # Prefer fd- or ripgrep-based fzf searches when available.
+    if [ -x "$(command -v fd)" ]; then
+        export FZF_DEFAULT_COMMAND='fd --type f'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    elif [ -x "$(command -v rg)" ]; then
+        export FZF_DEFAULT_COMMAND='rg --files'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    fi
+
+    [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 fi
 
 # Support for programmatically changing the current iTerm profile
@@ -211,9 +198,3 @@ if [ -n "$(command -v ondir)" ]; then
     # shellcheck disable=SC2006
     [ "$PWD" != "$HOME" ] && eval "`ondir /`"
 fi
-
-# Optionally include any additional local settings.
-[ -f ~/.bashrc.local ] && . ~/.bashrc.local
-[ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-[ -n "$GHOSTTY_RESOURCES_DIR" ] && . "$GHOSTTY_RESOURCES_DIR/shell-integration/bash/ghostty.bash"
-[[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
