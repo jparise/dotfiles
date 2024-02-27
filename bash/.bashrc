@@ -179,7 +179,7 @@ alias n=notes
 alias ng=notesgrep
 
 # If ondir is available, set up its shell hooks.
-if [ -n "$(command -v ondir)" ]; then
+if hash ondir 2>/dev/null; then
     cd() {
         # shellcheck disable=SC2006
         builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
