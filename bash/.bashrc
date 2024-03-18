@@ -128,7 +128,7 @@ if [ -x "$(command -v fzf)" ]; then
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     fi
 
-    [ -f ~/.fzf.bash ] && . ~/.fzf.bash
+    eval "$(fzf --bash)"
 fi
 
 # Support for programmatically changing the current iTerm profile
