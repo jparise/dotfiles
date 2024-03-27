@@ -98,9 +98,6 @@
 [stash]
 	showPatch = true
 
-[rerere]
-	enabled = true
-
 [submodule]
 	recurse = true
 
