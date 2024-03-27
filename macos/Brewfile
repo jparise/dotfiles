@@ -14,7 +14,7 @@ brew "ondir"
 brew "python"
 brew "ripgrep"
 brew "shellcheck"
-brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
+brew "universal-ctags"
 brew "vim"
 
 mas "Acorn", id: 1547371478
