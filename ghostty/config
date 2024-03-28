@@ -11,6 +11,8 @@ window-theme = "dark"
 window-height = 70
 window-width = 132
 window-inherit-working-directory = false
+window-title-font-family = "Iosevka Fixed"
+macos-titlebar-tabs = true
 unfocused-split-opacity = 0.96
 
 # Shell
