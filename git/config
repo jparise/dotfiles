@@ -25,8 +25,8 @@
 	slog = "!f() { git log --no-merges --pretty=format:'%C(yellow)%cs %C(cyan)%h %Creset%s %C(green)(%aN)%C(bold red)%d%Creset' -- ${@/#/$GIT_PREFIX}; }; f"
 	stat = status -sb
 	tags = tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=-creatordate
-	take-ours = "!f() { git checkout --ours $@ && git add $@; }; f"
-	take-theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	take-ours = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --ours -- $PATHS && git add -- $PATHS; }; f"
+	take-theirs = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --theirs -- $PATHS && git add -- $PATHS; }; f"
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
 	vimdiff = !vim -d -p $(git changes) +\"tabdo Gdiff ${DIFF_BASE:-$(git main)}\"
