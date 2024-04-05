@@ -2,8 +2,8 @@ if exists('b:current_syntax')
   finish
 endif
 
-let s:cpo_save = &cpo
-set cpo&vim
+let s:cpo_save = &cpoptions
+set cpoptions&vim
 
 syn case match
 
@@ -25,5 +25,5 @@ hi def link ondirColon    Operator
 
 let b:current_syntax = 'ondir'
 
-let &cpo = s:cpo_save
+let &cpoptions = s:cpo_save
 unlet s:cpo_save
