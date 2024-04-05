@@ -14,7 +14,7 @@ syn match   ondirPath     "[^:]\+" contained display
 syn match   ondirColon    ":" contained display
 
 syn include @ondirShell   syntax/sh.vim
-syn region  ondirContent  start="^\( \{4,}\|\t\)" end="^\ze\S.*$" keepend contained contains=@ondirShell
+syn region  ondirContent  start="^\s\+" end="^\ze\S.*$" keepend contained contains=@ondirShell
 
 syn region  ondirSection  start="^\(final\|enter\|leave\)" end="^\ze\S.*$" fold contains=ondirKeyword,ondirPath,ondirColon,ondirContent
 
