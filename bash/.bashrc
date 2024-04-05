@@ -40,6 +40,10 @@ if [ -d "/opt/homebrew" ]; then
     export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}";
     export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
     export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
+
+    # Additional environment variables
+    export HOMEBREW_NO_ANALYTICS=1
+    export HOMEBREW_NO_ENV_HINTS=1
 fi
 
 # Add git branch and status in the prompt
@@ -76,8 +80,6 @@ export ERL_AFLAGS='-kernel shell_history enabled'
 if [[ $OSTYPE == "darwin"* ]]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
     export GREP_OPTIONS='--binary-files=without-match'
-    export HOMEBREW_NO_ANALYTICS=1
-    export HOMEBREW_NO_ENV_HINTS=1
 fi
 
 # Language-specific paths
