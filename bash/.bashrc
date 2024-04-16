@@ -70,7 +70,7 @@ export VISUAL=vim
 
 export PAGER=less
 export MANPAGER='less -FiRs'
-export LESS='-ErX'
+export LESS='-EX'
 
 export DIFF_OPTIONS='-du'
 
