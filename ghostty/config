@@ -16,10 +16,6 @@ window-vsync = true
 macos-titlebar-tabs = true
 unfocused-split-opacity = 0.96
 
-# Shell
-shell-integration = "none"
-shell-integration-features = "no-cursor"
-
 # Clipboard
 copy-on-select = clipboard
 

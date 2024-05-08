@@ -113,7 +113,6 @@ fi
 # Apply any additional local settings. Ordering here is important.
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 [ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-[ -n "$GHOSTTY_RESOURCES_DIR" ] && . "$GHOSTTY_RESOURCES_DIR/shell-integration/bash/ghostty.bash"
 [[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
 
 # Set up fzf defaults when it's available.
