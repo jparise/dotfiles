@@ -22,7 +22,7 @@
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
 	remotes = for-each-ref --sort=-committerdate --format='%(color:yellow)%(authordate:short)\t%(align:50)%(color:reset)%(refname:short)%(end)\t%(color:green)%(authorname)' refs/remotes
 	root = rev-parse --show-toplevel
-	slog = "!f() { git log --no-merges --pretty=format:'%C(yellow)%cs %C(cyan)%h %Creset%s %C(green)(%aN)%C(bold red)%d%Creset' -- ${@/#/$GIT_PREFIX}; }; f"
+	slog = log --pretty=format:'%C(yellow)%cs %C(cyan)%h %Creset%s %C(green)(%aN)%C(bold red)%d%Creset'
 	stat = status -sb
 	tags = tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=-creatordate
 	take-ours = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --ours -- $PATHS && git add -- $PATHS; }; f"
