@@ -12,7 +12,6 @@ window-height = 70
 window-width = 132
 window-inherit-working-directory = false
 window-title-font-family = "Iosevka Fixed"
-window-vsync = true
 macos-titlebar-tabs = true
 unfocused-split-opacity = 0.96
 
