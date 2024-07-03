@@ -21,6 +21,7 @@ copy-on-select = clipboard
 
 # Misc
 cursor-style-blink = false
+focus-follows-mouse = true
 mouse-hide-while-typing = true
 quit-after-last-window-closed = true
 
