@@ -23,6 +23,7 @@ let g:markdown_fenced_languages = [
 \ 'ts=typescript',
 \ 'vim',
 \ 'viml=vim',
+\ 'zig',
 \]
 
 setlocal linebreak
