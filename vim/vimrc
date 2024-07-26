@@ -24,7 +24,6 @@ Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
 Plug 'peterrincker/vim-argumentative'
-Plug 'peterrincker/vim-searchlight'
 Plug 'xtal8/traces.vim'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
@@ -201,7 +200,7 @@ if has('autocmd')
         autocmd ColorScheme * highlight SpellBad cterm=undercurl
         autocmd ColorScheme * highlight SpellCap cterm=undercurl
         autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
-        autocmd ColorScheme * highlight link Searchlight Incsearch
+        autocmd ColorScheme * highlight link CurSearch IncSearch
 
         if exists('##TerminalOpen')
           autocmd TerminalOpen * runtime! ftplugin/terminal.vim
