@@ -208,6 +208,12 @@ if has('autocmd')
     augroup END
 endif
 
+" GUI options
+if has('gui_running')
+  set guicursor+=a:blinkon0
+  set guioptions=aAeimgr
+endif
+
 " Cursor shapes
 if !has('nvim') && exists('$ITERM_PROFILE')
   let &t_SI="\<Esc>]1337;CursorShape=1\x7"
@@ -237,12 +243,7 @@ augroup ColorSchemes
   autocmd ColorScheme spring-night highlight! link ALEVirtualTextWarning NonText
 augroup END
 
-" Platform / GUI options
-if has('gui_running')
-    colorscheme base16-ocean
-    set guicursor+=a:blinkon0
-    set guioptions=aAeimgr
-elseif has('termguicolors')
+if has('termguicolors')
   set termguicolors
   if &background ==# 'dark'
     colorscheme everforest
@@ -250,7 +251,7 @@ elseif has('termguicolors')
     colorscheme edge
   endif
 else
-    colorscheme mustang
+  colorscheme edge
 endif
 
 " Highlight conflict markers
