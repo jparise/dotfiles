@@ -49,6 +49,21 @@ config.keys = {
   { key = 'DownArrow', mods = 'SHIFT|CMD', action = act.ActivatePaneDirection 'Down' },
   { key = 'LeftArrow', mods = 'SHIFT|CMD', action = act.ActivatePaneDirection 'Left' },
   { key = 'RightArrow', mods = 'SHIFT|CMD', action = act.ActivatePaneDirection 'Right' },
+  { key = 't', mods = 'SHIFT|CMD', action = act.EmitEvent 'cycle-theme' },
 }
+
+wezterm.on('cycle-theme', function(window, _)
+  local schemes = { 'Oceanic-Next', 'OneHalfLight' }
+  local currentScheme = window:effective_config().color_scheme
+
+  for i = 1, #schemes, 1 do
+    if schemes[i] == currentScheme then
+      local overrides = window:get_config_overrides() or {}
+      overrides.color_scheme = schemes[i % #schemes + 1]
+      window:set_config_overrides(overrides)
+      return
+    end
+  end
+end)
 
 return config
