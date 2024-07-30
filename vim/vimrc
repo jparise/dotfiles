@@ -215,10 +215,10 @@ if has('gui_running')
 endif
 
 " Cursor shapes
-if !has('nvim') && exists('$ITERM_PROFILE')
-  let &t_SI="\<Esc>]1337;CursorShape=1\x7"
-  let &t_SR="\<Esc>]1337;CursorShape=2\x7"
-  let &t_EI="\<Esc>]1337;CursorShape=0\x7"
+if !has('nvim')
+  let &t_SI="\e[6 q"  " steady bar
+  let &t_SR="\e[4 q"  " steady underline
+  let &t_EI="\e[0 q"  " default
 endif
 
 " https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
