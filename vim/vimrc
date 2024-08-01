@@ -10,7 +10,6 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
 Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rhubarb'
@@ -53,6 +52,7 @@ call plug#end()
 
 runtime! ftplugin/man.vim
 packadd! cfilter
+packadd! comment
 packadd! matchit
 
 if !has('nvim')
