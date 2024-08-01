@@ -193,10 +193,6 @@ if has('autocmd')
           autocmd BufWritePost */vim/spell/*.add silent! :mkspell! %
         endif
 
-        " Standardize some highlight groups across all color schemes.
-        autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
-        autocmd ColorScheme * highlight link CurSearch IncSearch
-
         if exists('##TerminalOpen')
           autocmd TerminalOpen * runtime! ftplugin/terminal.vim
         endif
@@ -230,6 +226,8 @@ let g:spring_night_cterm_italic=1
 
 augroup ColorSchemes
   autocmd!
+  autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight link CurSearch IncSearch
   autocmd ColorScheme spring-night highlight! link Todo Special
   autocmd ColorScheme spring-night highlight! ALEError ctermbg=235 guibg=#3a4b5c
   autocmd ColorScheme spring-night highlight! ALEErrorSign cterm=bold ctermfg=210 ctermbg=235 gui=bold guifg=#fd8489 guibg=#3a4b5c
