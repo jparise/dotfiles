@@ -291,9 +291,6 @@ nnoremap <silent> [x :tabprev<CR>
 nnoremap <silent> ]x :tabnext<CR>
 nnoremap <silent> <leader>x :tabclose<CR>
 
-" Tag management
-nnoremap <leader>t :tjump /
-
 " Notes
 nnoremap <silent> <leader>n :Notes<CR>
 
