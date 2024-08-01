@@ -194,10 +194,6 @@ if has('autocmd')
         endif
 
         " Standardize some highlight groups across all color schemes.
-        autocmd ColorScheme * highlight clear SpellBad
-        autocmd ColorScheme * highlight clear SpellCap
-        autocmd ColorScheme * highlight SpellBad cterm=undercurl
-        autocmd ColorScheme * highlight SpellCap cterm=undercurl
         autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
         autocmd ColorScheme * highlight link CurSearch IncSearch
 
