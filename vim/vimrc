@@ -52,10 +52,10 @@ call plug#end()
 
 runtime! ftplugin/man.vim
 packadd! cfilter
-packadd! comment
 packadd! matchit
 
 if !has('nvim')
+  packadd! comment
   packadd! editorconfig
 endif
 
