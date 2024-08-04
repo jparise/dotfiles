@@ -1,4 +1,4 @@
---theme="Monokai Extended"
+--theme="Nord"
 --style=plain
 
 # Syntax mappings: map a certain filename pattern to a language.
