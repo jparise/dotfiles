@@ -9,8 +9,6 @@ TARGETS = install-bash \
 		  install-vim \
 		  install-wezterm
 
-UNAME := $(shell uname -s)
-
 .PHONY: install $(TARGETS)
 
 install: $(TARGETS)
