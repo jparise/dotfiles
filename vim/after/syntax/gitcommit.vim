@@ -8,6 +8,11 @@ syn match gitcommitUnderDots  "\<\w*[_.]\+\w*\>" contains=@NoSpell
 syn match gitcommitUnderDotsC "\<\w*[_.]\+\w*\>" contains=@NoSpell
       \ contained containedin=gitcommitSummary transparent
 
+" Words inside single quotes and backticks [commit body and summary]
+syn match gitcommitQuoted "\(['`]\)\(.\{-}\)\1" contains=@NoSpell
+syn match gitcommitQuotedC "\(['`]\)\(.\{-}\)\1" contains=@NoSpell
+      \ contained containedin=gitcommitSummary transparent
+
 " Email addresses and URLs [commit body only]
 syn match gitcommitEmail "<\?\w\+@\w\+\.\w\+>\?" contains=@NoSpell
 syn match gitcommitURL "https\?:\/\/[^[:space:])>]\+" contains=@NoSpell
