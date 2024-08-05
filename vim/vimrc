@@ -204,11 +204,16 @@ if has('gui_running')
   set guioptions=aAeimgr
 endif
 
-" Cursor shapes
+" Terminal text styles
 if !has('nvim')
   let &t_SI="\e[6 q"  " steady bar
   let &t_SR="\e[4 q"  " steady underline
   let &t_EI="\e[0 q"  " default
+  let &t_Ce="\e[4:0m" " undercurl (end)
+  let &t_Cs="\e[4:3m" " undercurl (mode)
+  let &t_ds="\e[4:4m" " dotted underline
+  let &t_Ds="\e[4:5m" " dashed underline
+  let &t_Us="\e[4:2m" " double underline
 endif
 
 " https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
