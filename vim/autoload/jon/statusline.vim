@@ -82,15 +82,15 @@ function! s:extract_highlight(group) abort
     silent execute '0verbose silent highlight ' . a:group
   redir END
 
-  " Cleared highlight groups are empty.
-  if l:highlight =~# 'cleared$'
-    return ''
-  endif
-
   " Traverse links back to authoritative group.
   let l:links = matchlist(l:highlight, 'links to \(\S\+\)')
   if !empty(l:links)
     return s:extract_highlight(l:links[1])
+  endif
+
+  " Cleared highlight groups are empty.
+  if l:highlight =~# 'cleared$'
+    return ''
   endif
 
   " Extract the highlighting details (the bit after "xxx")
