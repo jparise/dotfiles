@@ -63,82 +63,34 @@ function! jon#statusline#quickfix() abort
 endfunction
 
 function! jon#statusline#update_colorscheme() abort
-  let l:bg = s:extract_colors('StatusLine', 'bg')
+  let l:base = get(hlget('StatusLine', v:true), 0, {})
 
-  " Light
-  execute 'highlight User1 ' . s:highlight('StatusLine', l:bg)
-
-  " Light (Bold) and Dark (Italic)
-  execute 'highlight User2 ' . s:decorate('User1', 'bold')
-  execute 'highlight User3 ' . s:decorate('StatusLine', 'italic')
+  " Bold and Italic
+  call s:stylize('User1', l:base, {'bold': 1})
+  call s:stylize('User2', l:base, {'italic': 1})
 
   " Warnings and Errors
-  execute 'highlight User4 ' . s:highlight('WarningMsg', l:bg)
-  execute 'highlight User5 ' . s:highlight('ErrorMsg', l:bg)
+  call s:colorize('User3', l:base, 'WarningMsg')
+  call s:colorize('User4', l:base, 'ErrorMsg')
 endfunction
 
-function! s:extract_highlight(group) abort
-  redir => l:highlight
-    silent execute '0verbose silent highlight ' . a:group
-  redir END
-
-  " Traverse links back to authoritative group.
-  let l:links = matchlist(l:highlight, 'links to \(\S\+\)')
-  if !empty(l:links)
-    return s:extract_highlight(l:links[1])
-  endif
-
-  " Cleared highlight groups are empty.
-  if l:highlight =~# 'cleared$'
-    return ''
-  endif
-
-  " Extract the highlighting details (the bit after "xxx")
-  let l:matches = matchlist(l:highlight, '\<xxx\>\s\+\(.*\)')
-  return l:matches[1]
-endfunction
-
-function! s:extract_colors(group, type) abort
-  let l:highlight = s:extract_highlight(a:group)
-  let l:cterm = s:extract_color(l:highlight, 'cterm' . a:type . '=\(\w\+\)')
-  let l:gui   = s:extract_color(l:highlight, 'gui' . a:type . '=\(#\w\+\)')
-  return [l:gui, l:cterm]
-endfunction
-
-function! s:extract_color(highlight, pattern) abort
-  let l:matches = matchlist(a:highlight, a:pattern)
-  return empty(l:matches) ? 'NONE' : l:matches[1]
-endfunction
-
-function! s:highlight(group, bg) abort
-  let [l:guifg, l:ctermfg] = s:extract_colors(a:group, 'fg')
-  return
-        \ 'guifg=' . l:guifg . ' ctermfg=' . l:ctermfg . ' ' .
-        \ 'guibg=' . a:bg[0] . ' ctermbg=' . a:bg[1]
-endfunction
-
-function s:decorate(group, attr) abort
-  let l:original = s:extract_highlight(a:group)
-
+function s:stylize(name, base, style) abort
+  let l:highlight = copy(a:base)
+  let l:highlight['name'] = a:name
   for l:type in ['gui', 'term', 'cterm']
-    let l:matches = matchlist(
-      \   l:original,
-      \   '^\(\%([^ ]\+ \)*\)' .
-      \   '\(' . l:type . '=[^ ]\+\)' .
-      \   '\(\%( [^ ]\+\)*\)$'
-      \ )
-    if empty(l:matches)
-      " No existing match so just add a:attr to it.
-      let l:original .= ' ' . l:type . '=' . a:attr
-    else
-      " Existing match so only add a:attr if it's not already there.
-      let [l:start, l:value, l:end] = l:matches[1:3]
-      if l:value !~# '.*' . a:attr . '.*'
-        let l:original = l:start . l:value . ',' . a:attr . l:end
-      endif
-    endif
+    let l:item = get(l:highlight, l:type, {})
+    let l:highlight[l:type] = extend(l:item, a:style)
   endfor
+  return hlset([l:highlight])
+endfunction
 
-  " Remove newlines in case this came from a narrow window with wrapped output.
-  return tr(l:original, "\r\n", '  ')
+function s:colorize(name, base, group) abort
+  let l:highlight = get(hlget(a:group, v:true), 0, {})
+  let l:highlight['name'] = a:name
+  let l:highlight['guibg'] = get(a:base, 'guibg', 'NONE')
+  let l:highlight['ctermbg'] = get(a:base, 'ctermbg', 'NONE')
+  for l:type in ['gui', 'term', 'cterm']
+    let l:highlight[l:type] = {}
+  endfor
+  return hlset([l:highlight])
 endfunction
