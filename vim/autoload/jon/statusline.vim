@@ -63,7 +63,7 @@ function! jon#statusline#quickfix() abort
 endfunction
 
 function! jon#statusline#update_colorscheme() abort
-  let l:base = get(hlget('StatusLine', v:true), 0, {})
+  let l:base = s:hlget('StatusLine')
 
   " Bold and Italic
   call s:stylize('User1', l:base, {'bold': 1})
@@ -74,8 +74,22 @@ function! jon#statusline#update_colorscheme() abort
   call s:colorize('User4', l:base, 'ErrorMsg')
 endfunction
 
+function s:hlget(name) abort
+  if has('nvim')
+    return nvim_get_hl(0, {'name': a:name, 'link': v:false})
+  endif
+
+  return get(hlget('StatusLine', v:true), 0, {})
+endfunction
+
 function s:stylize(name, base, style) abort
   let l:highlight = copy(a:base)
+  if has('nvim')
+    let l:highlight['cterm'] = a:style
+    call extend(l:highlight, a:style)
+    return nvim_set_hl(0, a:name, l:highlight)
+  endif
+
   let l:highlight['name'] = a:name
   for l:type in ['gui', 'term', 'cterm']
     let l:item = get(l:highlight, l:type, {})
@@ -85,12 +99,21 @@ function s:stylize(name, base, style) abort
 endfunction
 
 function s:colorize(name, base, group) abort
-  let l:highlight = get(hlget(a:group, v:true), 0, {})
-  let l:highlight['name'] = a:name
-  let l:highlight['guibg'] = get(a:base, 'guibg', 'NONE')
-  let l:highlight['ctermbg'] = get(a:base, 'ctermbg', 'NONE')
-  for l:type in ['gui', 'term', 'cterm']
-    let l:highlight[l:type] = {}
-  endfor
-  return hlset([l:highlight])
+  let l:highlight = s:hlget(a:group)
+  if has('nvim')
+    return nvim_set_hl(0, a:name, {
+          \ 'ctermfg': get(l:highlight, 'ctermfg', 'NONE'),
+          \ 'ctermbg': get(a:base, 'ctermbg', 'NONE'),
+          \ 'fg': get(l:highlight, 'fg', 'NONE'),
+          \ 'bg': get(a:base, 'bg', 'NONE'),
+          \ })
+  endif
+
+  return hlset([{
+        \ 'name': a:name,
+        \ 'ctermfg': get(l:highlight, 'ctermfg', 'NONE'),
+        \ 'ctermbg': get(a:base, 'ctermbg', 'NONE'),
+        \ 'guifg': get(l:highlight, 'guifg', 'NONE'),
+        \ 'guibg': get(a:base, 'guibg', 'NONE'),
+        \ }])
 endfunction
