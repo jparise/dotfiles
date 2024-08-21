@@ -79,7 +79,7 @@ function s:hlget(name) abort
     return nvim_get_hl(0, {'name': a:name, 'link': v:false})
   endif
 
-  return get(hlget('StatusLine', v:true), 0, {})
+  return get(hlget(a:name, v:true), 0, {})
 endfunction
 
 function s:stylize(name, base, style) abort
