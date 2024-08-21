@@ -9,6 +9,7 @@ let g:ale_virtualtext_cursor = 0
 let g:ale_floating_preview=1
 let g:ale_hover_to_floating_preview=1
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
+let g:ale_sign_warning = '❭'
 
 function! s:on_lsp_started() abort
   noremap <buffer> <CR>        <Plug>(ale_detail)
