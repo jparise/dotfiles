@@ -45,13 +45,16 @@ function! s:gitfiles(args) abort
         \ (s:git_operation_in_progress(root)
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
+  let preview_cmd = executable('bat')
+        \ ? 'bat --color=always --style=numbers,changes,snip --diff {-1}'
+        \ : 'sh -c "(git diff origin --color -- {-1} | sed 1,4d)"'
+
   let wrapped = fzf#wrap('gitfiles', {
   \ 'source': '('.modified.' && '.committed.") | awk '!filenames[$NF]++'",
   \ 'dir':    root,
   \ 'options': [
   \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
-  \   '--prompt', 'GitFiles?> ', '--preview',
-  \   'sh -c "(git diff origin --color -- {-1} | sed 1,4d; head -500 {-1})"']
+  \   '--prompt', 'GitFiles?> ', '--preview', preview_cmd]
   \})
 
   " This replacement sink strips status characters from each line (leaving
