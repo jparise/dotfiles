@@ -22,11 +22,15 @@ function! s:gitfiles(args) abort
     if empty(root)
       return fzf#run(fzf#wrap('FZF'))
     endif
+
+    let preview_cmd = executable('bat') ? 'bat --color=always {-1}' : ''
     return fzf#run(fzf#wrap('gitfiles', {
-    \ 'source':  'git ls-files '.a:args.' | uniq',
-    \ 'dir':     root,
-    \ 'options': '--multi --prompt "GitFiles> "'
-    \}))
+          \ 'source':  'git ls-files '.a:args.' | uniq',
+          \ 'dir':     root,
+          \ 'options': [
+          \   '--multi', '--prompt', 'GitFiles> ',
+          \   '--preview', preview_cmd]
+          \}))
   endif
 
   " We can't proceed unless we're in a git repository.
