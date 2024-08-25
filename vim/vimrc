@@ -54,7 +54,9 @@ packadd! cfilter
 packadd! matchit
 
 if !has('nvim')
-  packadd! comment
+  if has('patch-9.1.0375')
+    packadd! comment
+  endif
   packadd! editorconfig
 endif
 
