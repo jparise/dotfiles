@@ -133,7 +133,7 @@ if has('linebreak') && exists('&breakindent')
     set breakindent " indent wrapped lines to match start
 endif
 
-if has('diff') && has('patch-8.1.0360')
+if has('diff') && &diffopt =~# 'internal'
   set diffopt+=algorithm:patience
   set diffopt+=indent-heuristic
 endif
