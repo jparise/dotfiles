@@ -1,6 +1,6 @@
 set rulerformat=%8(%4l:%-3v%)
 
-set statusline=%0*
+set statusline=
 set statusline+=%(\%w\ %)
 set statusline+=%{jon#statusline#fileprefix()}
 set statusline+=%1*%t
@@ -12,7 +12,7 @@ if has('timers') && (has('nvim') || (exists('*job_start')))
   set statusline+=%3*%(%{jon#statusline#lint_warnings()}\ %)
   set statusline+=%4*%(%{jon#statusline#lint_errors()}\ %)
 endif
-set statusline+=%0*%4l:%-3v
+set statusline+=%*%4l:%-3v
 
 augroup StatuslineRefresh
   autocmd!
