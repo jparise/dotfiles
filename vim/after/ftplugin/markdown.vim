@@ -1,6 +1,7 @@
 let g:markdown_fenced_languages = [
 \ 'bash=sh',
 \ 'c',
+\ 'console=sh',
 \ 'cpp',
 \ 'c++=cpp',
 \ 'elixir',
