@@ -9,6 +9,7 @@ window-theme = "dark"
 window-height = 70
 window-width = 132
 window-inherit-working-directory = false
+window-save-state = never
 window-title-font-family = "Iosevka Fixed"
 macos-titlebar-style = tabs
 unfocused-split-opacity = 0.96
