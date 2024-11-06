@@ -23,13 +23,11 @@ function! s:gitfiles(args) abort
       return fzf#run(fzf#wrap('FZF'))
     endif
 
-    let preview_cmd = executable('bat') ? 'bat --color=always {-1}' : ''
     return fzf#run(fzf#wrap('gitfiles', {
           \ 'source':  'git ls-files '.a:args.' | uniq',
           \ 'dir':     root,
           \ 'options': [
-          \   '--multi', '--prompt', 'GitFiles> ',
-          \   '--preview', preview_cmd]
+          \   '--multi', '--prompt', 'GitFiles> ']
           \}))
   endif
 
@@ -58,7 +56,8 @@ function! s:gitfiles(args) abort
   \ 'dir':    root,
   \ 'options': [
   \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
-  \   '--prompt', 'GitFiles?> ', '--preview', preview_cmd]
+  \   '--prompt', 'GitFiles?> ',
+  \   '--preview', preview_cmd, '--preview-window', 'up']
   \})
 
   " This replacement sink strips status characters from each line (leaving
