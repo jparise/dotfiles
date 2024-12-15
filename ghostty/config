@@ -15,9 +15,6 @@ window-title-font-family = "Iosevka Fixed"
 macos-titlebar-style = tabs
 unfocused-split-opacity = 0.96
 
-# Shell
-shell-integration = bash
-
 # Clipboard
 copy-on-select = clipboard
 
