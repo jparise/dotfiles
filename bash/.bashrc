@@ -54,7 +54,7 @@ if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
     PS1="\$(__git_ps1 \"[%s] \")$PS1"
 fi
 
-# Some shells let us configure their window title. Take advantage of that to
+# Some terminals let us configure their window title. Take advantage of that to
 # display the current working directory. Remote (ssh) shells also include the
 # hostname.
 if [[ $TERM == "xterm"* ]]; then
