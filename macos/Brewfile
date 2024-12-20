@@ -15,7 +15,7 @@ brew "shellcheck"
 brew "universal-ctags"
 brew "vim"
 
-mas "Acorn", id: 1547371478
+mas "Acorn", id: 6737921844
 mas "DaisyDisk", id: 411643860
 mas "Dark Noise", id: 1465439395
 mas "Marked 2", id: 890031187
