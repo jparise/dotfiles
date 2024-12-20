@@ -131,19 +131,6 @@ if [ -x "$(command -v fzf)" ]; then
     eval "$(fzf --bash)"
 fi
 
-# Support for programmatically changing the current iTerm profile
-if [ -n "$ITERM_PROFILE" ]; then
-    iterm_profile() {
-        echo -en "\\033]50;SetProfile=$*\\a"
-    }
-
-    ssh() {
-        trap "iterm_profile Default" RETURN
-        iterm_profile ssh
-        command ssh "$@"
-    }
-fi
-
 # Execute a command and load its output into vim's quickfix list.
 vimq() {
     vim -q <("$@")
