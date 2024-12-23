@@ -6,6 +6,7 @@ scriptencoding utf-8
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
+Plug 'embark-theme/vim', {'as': 'embark', 'branch': 'main'}
 Plug 'rhysd/vim-color-spring-night'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
@@ -230,6 +231,7 @@ elseif !has('nvim') && (&term ==# 'xterm-ghostty' || exists('$WEZTERM_EXECUTABLE
 endif
 
 " Color scheme configuration
+let g:embark_terminal_italics = 1
 let g:everforest_background = 'hard'
 let g:spring_night_high_contrast=1
 let g:spring_night_cterm_italic=1
