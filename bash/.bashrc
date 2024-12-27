@@ -25,7 +25,7 @@ umask 0022
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 FIGNORE=".o:.class:.pyc:.egg-info:__pycache__"
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 HISTIGNORE="&:bg:fg:clear:exit:pwd"
 HISTSIZE=5000
 PROMPT_COMMAND="history -a"
