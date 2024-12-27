@@ -27,6 +27,7 @@ export LANG LANGUAGE LC_CTYPE LC_ALL
 FIGNORE=".o:.class:.pyc:.egg-info:__pycache__"
 HISTCONTROL=ignoreboth
 HISTIGNORE="&:bg:fg:clear:exit:pwd"
+HISTSIZE=5000
 PROMPT_COMMAND="history -a"
 PROMPT_DIRTRIM=3
 PS1='[\W]$([ \j -gt 0 ] && echo \*)\$ '
