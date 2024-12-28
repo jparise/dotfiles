@@ -5,7 +5,6 @@ TARGETS = install-bash \
 		  install-git \
 		  install-hg \
 		  install-pip \
-		  install-terminfo \
 		  install-vim \
 		  install-wezterm
 
