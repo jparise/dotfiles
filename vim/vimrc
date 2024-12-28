@@ -333,8 +333,12 @@ nnoremap <leader>gb :Git blame<CR>
 vnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gc :GBrowse!<CR>
 vnoremap <leader>gc :GBrowse!<CR>
+nnoremap <leader>gC :GBrowse! @upstream<CR>
+vnoremap <leader>gC :GBrowse! @upstream<CR>
 nnoremap <leader>go :GBrowse<CR>
 vnoremap <leader>go :GBrowse<CR>
+nnoremap <leader>gO :GBrowse @upstream<CR>
+vnoremap <leader>gO :GBrowse @upstream<CR>
 nnoremap <leader>gv :GV!<CR>
 
 " Grep mappings
