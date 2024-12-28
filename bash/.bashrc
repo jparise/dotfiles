@@ -116,6 +116,12 @@ fi
 [ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
 
+# Set up direnv when it's available.
+if hash direnv 2>/dev/null; then
+    export DIRENV_LOG_FORMAT=$'\e[2mdirenv: %s\e[0m'
+    eval "$(direnv hook bash)"
+fi
+
 # Set up fzf defaults when it's available.
 if [ -x "$(command -v fzf)" ]; then
     export FZF_DEFAULT_OPTS="--height 40% --border"
@@ -165,24 +171,3 @@ gv() {
 # Aliases
 alias n=notes
 alias ng=notesgrep
-
-# If ondir is available, set up its shell hooks.
-if hash ondir 2>/dev/null; then
-    cd() {
-        # shellcheck disable=SC2006
-        builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-    }
-
-    pushd() {
-        # shellcheck disable=SC2006
-        builtin pushd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-    }
-
-    popd() {
-        # shellcheck disable=SC2006
-        builtin popd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-    }
-
-    # shellcheck disable=SC2006
-    [ "$PWD" != "$HOME" ] && eval "`ondir /`"
-fi
