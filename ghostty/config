@@ -12,7 +12,7 @@ window-padding-color = extend
 window-inherit-working-directory = false
 window-title-font-family = "Iosevka Fixed"
 macos-titlebar-style = tabs
-unfocused-split-opacity = 0.96
+unfocused-split-opacity = 0.8
 
 # Clipboard
 copy-on-select = clipboard
