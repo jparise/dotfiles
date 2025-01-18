@@ -228,6 +228,8 @@ if &term ==# 'xterm-kitty'
   let &t_ut=''
 elseif !has('nvim') && (&term ==# 'xterm-ghostty' || exists('$WEZTERM_EXECUTABLE'))
   set background=dark
+elseif exists('$SSH_CONNECTION')
+  set background=dark
 endif
 
 " Color scheme configuration
