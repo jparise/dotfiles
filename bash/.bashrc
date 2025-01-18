@@ -49,15 +49,11 @@ if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
     PS1="\$(__git_ps1 \"[%s] \")$PS1"
 fi
 
-# Some terminals let us configure their window title. Take advantage of that to
-# display the current working directory. Remote (ssh) shells also include the
-# hostname.
-if [[ $TERM == "xterm"* ]]; then
-	if [ -n "$SSH_CONNECTION" ]; then
-		PS1="\\[\\e]0;\\h:\\w\\a\\]$PS1"
-	else
-		PS1="\\[\\e]0;\\w\\a\\]$PS1"
-	fi
+# For remote (ssh) sessions, add the hostname to the prompt and also display
+# the current working directory in the window title in compatible terminals.
+if [ -n "$SSH_CONNECTION" ]; then
+    PS1='(\h) '$PS1
+    [[ $TERM == "xterm"* ]] && PS1='\[\e]0;\h:\w\a\]'$PS1
 fi
 
 export EDITOR=vim
