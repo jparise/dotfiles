@@ -65,8 +65,6 @@ export LESS='-ERX'
 
 export DIFF_OPTIONS='-du'
 
-export ERL_AFLAGS='-kernel shell_history enabled'
-
 # macOS-specific environment flags
 if [[ $OSTYPE == "darwin"* ]]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
