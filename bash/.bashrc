@@ -56,8 +56,9 @@ if [ -n "$SSH_CONNECTION" ]; then
     [[ $TERM == "xterm"* ]] && PS1='\[\e]0;\h:\w\a\]'$PS1
 fi
 
-export EDITOR=vim
-export VISUAL=vim
+EDITOR="$(command -v vim 2>/dev/null || command -v vi)"
+VISUAL=$EDITOR
+export EDITOR VISUAL
 
 export PAGER=less
 export MANPAGER='less -FiRs'
