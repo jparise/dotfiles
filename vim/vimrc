@@ -226,9 +226,19 @@ endif
 " https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 if &term ==# 'xterm-kitty'
   let &t_ut=''
-elseif !has('nvim') && (&term ==# 'xterm-ghostty' || exists('$WEZTERM_EXECUTABLE'))
-  set background=dark
-elseif exists('$SSH_CONNECTION')
+endif
+
+" Vim defaults to background=light in most terminal environments. It then
+" attempts to query the terminal for the background color ('t_RB') and then
+" adjusts 'background' accordingly _if it hasn't already been set_. Because
+" this query happens _after_ .vimrc is read, we've already set 'colorscheme',
+" this unfortunately causes a light-to-dark redraw flash if the color scheme
+" provides both light and dark backgrounds.
+"
+" To avoid that annoyance, always use a dark background. Neovim doesn't have
+" the same problem, perhaps due to the order and timing in which it queries
+" the terminal relative to when 'colorscheme' is set and applied.
+if !has('nvim')
   set background=dark
 endif
 
