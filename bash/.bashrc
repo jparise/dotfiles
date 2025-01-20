@@ -47,7 +47,7 @@ if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
     . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh"
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWUPSTREAM=auto
-    PS1="\$(__git_ps1 \"[%s] \")$PS1"
+    PS1='$(__git_ps1 "[%s] ")'$PS1
 fi
 
 # For remote (ssh) sessions, add the hostname to the prompt and also display
