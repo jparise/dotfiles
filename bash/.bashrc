@@ -19,11 +19,7 @@ fi
 umask 0022
 
 # Default to en_US locale with UTF-8 encoding.
-: "${LANG:="en_US.UTF-8"}"
-: "${LANGUAGE:="en"}"
-: "${LC_CTYPE:="en_US.UTF-8"}"
-: "${LC_ALL:="en_US.UTF-8"}"
-export LANG LANGUAGE LC_CTYPE LC_ALL
+export LANG="en_US.UTF-8"
 
 FIGNORE=".o:.class:.pyc:.egg-info:__pycache__"
 HISTCONTROL=ignoreboth:erasedups
