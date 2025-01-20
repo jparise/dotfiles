@@ -4,7 +4,6 @@ TARGETS = install-bash \
 		  install-direnv \
 		  install-ghostty \
 		  install-git \
-		  install-hg \
 		  install-pip \
 		  install-vim \
 		  install-wezterm
@@ -38,11 +37,6 @@ install-ghostty: ~/.config
 install-git: ~/.config
 	rm -f ~/.config/git
 	ln -s `pwd`/git ~/.config/git
-
-install-hg:
-	rm -f ~/.hgignore ~/.hgrc
-	ln -s `pwd`/hg/.hgignore ~/.hgignore
-	ln -s `pwd`/hg/.hgrc ~/.hgrc
 
 install-pip: ~/.config
 	rm -rf ~/.config/pip
