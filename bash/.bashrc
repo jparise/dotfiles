@@ -101,10 +101,10 @@ if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-# Apply any additional local settings. Ordering here is important.
-[ -f ~/.bashrc.local ] && . ~/.bashrc.local
+# Source any additional local scripts. Ordering here is important.
+[ -f "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
 [ -f "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-[[ -n "$WEZTERM_EXECUTABLE" && -f ~/.config/wezterm/wezterm.sh ]] && . ~/.config/wezterm/wezterm.sh
+[ -f "$WEZTERM_CONFIG_DIR/wezterm.sh" ] && . "$WEZTERM_CONFIG_DIR/wezterm.sh"
 
 # Set up direnv when it's available.
 if hash direnv 2>/dev/null; then
