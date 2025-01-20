@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # shellcheck disable=SC1090,SC1091,SC2039
 
 [ -z "$PS1" ] && return
