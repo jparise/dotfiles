@@ -129,3 +129,7 @@
 [diff "plist"]
 	binary = true
 	textconv = /usr/libexec/PlistBuddy -x -c print
+
+[tig]
+	line-graphics = auto
+	main-view-date-display = custom
