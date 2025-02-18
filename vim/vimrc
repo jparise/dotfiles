@@ -250,7 +250,7 @@ let g:spring_night_cterm_italic=1
 
 augroup ColorSchemes
   autocmd!
-  autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
   autocmd ColorScheme * highlight link CurSearch IncSearch
   autocmd ColorScheme spring-night highlight! link Todo Special
   autocmd ColorScheme spring-night highlight! ALEError ctermbg=235 guibg=#3a4b5c
