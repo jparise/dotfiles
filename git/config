@@ -54,6 +54,9 @@
 [branch "master"]
 	mergeoptions = --ff-only
 
+[tag]
+	sort = version:refname
+
 [push]
 	default = current
 	autoSetupRemote = true
