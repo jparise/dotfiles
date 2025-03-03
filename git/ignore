@@ -21,6 +21,10 @@ tags.temp.tmp
 # python
 .venv/
 
+# direnv
+.direnv
+.envrc
+
 # vscode
 .vscode/*
 !.vscode/settings.json
