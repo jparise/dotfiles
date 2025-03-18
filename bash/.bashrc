@@ -124,17 +124,18 @@ if [ -x "$(command -v fzf)" ]; then
     eval "$(fzf --bash)"
 fi
 
-# Execute a command and load its output into vim's quickfix list.
-vimq() {
-    vim -q <("$@")
-}
-complete -F _command vimq
-
 # Perform a ripgrep search and load its results into vim's quickfix list.
 vimgrep() {
-    local args=(--vimgrep)
-    args+=("$@")
-    vim -q <(rg "${args[@]}")
+    [[ $# -eq 0 ]] && return
+
+    # Form a quickfix list title string based on the command line,
+    # quoting any arguments that contain spaces.
+    local title="rg"
+    for arg in "$@"; do
+        [[ $arg =~ \  ]] && title+=" \"$arg\"" || title+=" $arg"
+    done
+
+    vim -q <(rg --vimgrep "$@") -c "call setqflist([], 'a', {'title' : '$title'})"
 }
 complete -o bashdefault -o default vimgrep
 
