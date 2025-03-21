@@ -5,6 +5,7 @@ TARGETS = install-bash \
 		  install-ghostty \
 		  install-git \
 		  install-pip \
+		  install-tig \
 		  install-vim \
 		  install-wezterm
 
@@ -41,6 +42,10 @@ install-git: ~/.config
 install-pip: ~/.config
 	rm -rf ~/.config/pip
 	ln -s `pwd`/pip ~/.config/pip
+
+install-tig: ~/.config
+	rm -rf ~/.config/tig
+	ln -s `pwd`/tig ~/.config/tig
 
 install-vim: ~/.config vim/autoload/plug.vim
 	rm -rf ~/.vim ~/.vimrc ~/.config/nvim
