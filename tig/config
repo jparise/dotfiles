@@ -1,5 +1,7 @@
 set line-graphics = auto
 set main-view-date-display = custom
+set mouse = true
+set mouse-scroll = 1
 
 # large repositories (contrib/large-repo.tigrc)
 set commit-order = default
