@@ -15,7 +15,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-scriptease'
-Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
 Plug 'airblade/vim-gitgutter', { 'branch': 'main' }
@@ -55,9 +54,8 @@ packadd! cfilter
 packadd! matchit
 
 if !has('nvim')
-  if has('patch-9.1.0375')
-    packadd! comment
-  endif
+  silent! packadd! comment
+  silent! packadd! hlyank
   packadd! editorconfig
 endif
 
@@ -201,6 +199,10 @@ if has('autocmd')
 
         if exists('##TerminalOpen')
           autocmd TerminalOpen * runtime! ftplugin/terminal.vim
+        endif
+
+        if has('nvim')
+          autocmd TextYankPost * silent! lua vim.hl.on_yank {higroup='IncSearch'}
         endif
     augroup END
 endif
