@@ -79,6 +79,9 @@ bind generic K view-help
 bind generic <C-w><C-w> view-next
 
 # github 
-bind main \go !@gh browse %(commit)
-bind diff \go !@gh browse %(commit)
-bind log  \go !@gh browse %(commit)
+bind main \gc @sh -c "gh browse -n %(commit) | pbcopy"
+bind diff \gc @sh -c "gh browse -n %(commit) | pbcopy"
+bind log  \gc @sh -c "gh browse -n %(commit) | pbcopy"
+bind main \go @gh browse %(commit)
+bind diff \go @gh browse %(commit)
+bind log  \go @gh browse %(commit)
