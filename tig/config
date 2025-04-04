@@ -20,13 +20,15 @@ bind generic gj next
 bind generic gk previous
 bind generic gp parent
 bind generic gP back
-bind generic gn view-next
 
 bind main    G move-last-line
 bind generic G move-last-line
 
 bind generic <C-f> move-page-down
 bind generic <C-b> move-page-up
+
+bind generic <C-w>w view-next
+bind generic <C-w>c view-close
 
 bind generic v  none
 bind generic vm view-main
