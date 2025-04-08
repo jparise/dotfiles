@@ -13,6 +13,10 @@ syn match gitcommitNoSpell "\(['`]\)\(.\{-}\)\1" contains=@NoSpell
 syn match gitcommitNoSpell "\(['`]\)\(.\{-}\)\1" contains=@NoSpell
       \ contained containedin=gitcommitSummary transparent
 
+" Words inside pairs of brackets [commit summary only]
+syn match gitcommitNoSpell /\[\([^]]*\)\]/ contains=@NoSpell
+      \ contained containedin=gitcommitSummary transparent
+
 " Email addresses and URLs [commit body only]
 syn match gitcommitEmail "<\?\w\+@\w\+\.\w\+>\?" contains=@NoSpell
 syn match gitcommitURL "https\?:\/\/[^[:space:])>]\+" contains=@NoSpell
