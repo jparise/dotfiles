@@ -1,3 +1,12 @@
 [global]
 disable_stdin = true
 strict_env = true
+
+# \e (escape) support was introduced in TOML 1.1 (not yet released), and
+# BurntSushi/toml (used by direnv) guards TOML 1.1 syntax support behind
+# a BURNTSUSHI_TOML_110 environment variable feature flag.
+#
+# See:
+# - https://github.com/toml-lang/toml/pull/790
+# - https://github.com/BurntSushi/toml/releases/tag/v1.3.0
+# log_format = "\e[2mdirenv: %s\e[0m"
