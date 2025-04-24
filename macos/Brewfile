@@ -24,6 +24,7 @@ mas "WiFi Explorer", id: 494803304
 
 cask "alfred"
 cask "dash"
+cask "obsidian"
 cask "rectangle"
 cask "wezterm"
 
