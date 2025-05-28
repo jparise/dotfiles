@@ -252,7 +252,6 @@ let g:spring_night_cterm_italic=1
 
 augroup ColorSchemes
   autocmd!
-  autocmd ColorScheme * highlight VertSplit ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
   autocmd ColorScheme * highlight link CurSearch IncSearch
   autocmd ColorScheme embark highlight! StatusLine guibg=#2F2A47
   autocmd ColorScheme embark highlight! StatusLineNC guibg=#2F2A47
