@@ -85,6 +85,9 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Reduce menu bar status item spacing
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
+
 ## Safari
 
 # Map Command-W to only close tabs but not the window
