@@ -90,11 +90,6 @@ defaults write com.apple.dock mru-spaces -bool false
 # Map Command-W to only close tabs but not the window
 defaults write com.apple.Safari NSUserKeyEquivalents -dict-add 'Close Tab' '<string>@w</string></dict>'
 
-## Tweetbot
-
-# Bypass the annoyingly slow t.co URL shortener
-defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
-
 ## Visual Studio Code
 
 # Disable system "press-and-hold" behavior so we get key repeats
