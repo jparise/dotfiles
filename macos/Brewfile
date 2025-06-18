@@ -23,6 +23,7 @@ mas "Marked 2", id: 890031187
 
 cask "alfred"
 cask "dash"
+cask "ghostty@tip"
 cask "obsidian"
 cask "rectangle"
 cask "wezterm"
