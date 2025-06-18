@@ -20,7 +20,6 @@ mas "Acorn", id: 6737921844
 mas "DaisyDisk", id: 411643860
 mas "Dark Noise", id: 1465439395
 mas "Marked 2", id: 890031187
-mas "WiFi Explorer", id: 494803304
 
 cask "alfred"
 cask "dash"
