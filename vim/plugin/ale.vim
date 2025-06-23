@@ -14,6 +14,8 @@ let g:ale_sign_warning = '❭'
 function! s:on_lsp_started() abort
   noremap <buffer> <CR>        <Plug>(ale_detail)
   noremap <buffer> K           <Plug>(ale_hover)
+  noremap <buffer> g]          <Plug>(ale_go_to_definition)
+  noremap <buffer> g<C-]>      <Plug>(ale_go_to_definition)
   noremap <buffer> <C-]>       <Plug>(ale_go_to_definition)
   noremap <buffer> <C-W>]      <Plug>(ale_go_to_definition_in_vsplit)
   noremap <buffer> <C-W><C-]>  <Plug>(ale_go_to_definition_in_vsplit)
