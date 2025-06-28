@@ -24,10 +24,10 @@ function! s:gitfiles(args) abort
     endif
 
     return fzf#run(fzf#wrap('gitfiles', {
-          \ 'source':  'git ls-files '.a:args.' | uniq',
+          \ 'source':  'git ls-files -z --deduplicate '.a:args,
           \ 'dir':     root,
           \ 'options': [
-          \   '--multi', '--prompt', 'GitFiles> ']
+          \   '-m', '--read0', '--scheme', 'path', '--prompt', 'GitFiles> ']
           \}))
   endif
 
@@ -56,7 +56,7 @@ function! s:gitfiles(args) abort
   \ 'dir':    root,
   \ 'options': [
   \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
-  \   '--prompt', 'GitFiles?> ',
+  \   '--scheme', 'path', '--prompt', 'GitFiles?> ',
   \   '--preview', preview_cmd, '--preview-window', 'up']
   \})
 
