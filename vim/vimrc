@@ -55,6 +55,7 @@ packadd! matchit
 
 if !has('nvim')
   silent! packadd! comment
+  silent! packadd! helptoc
   silent! packadd! hlyank
   packadd! editorconfig
 endif
