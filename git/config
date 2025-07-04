@@ -29,8 +29,6 @@
 	take-theirs = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --theirs -- $PATHS && git add -- $PATHS; }; f"
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
-	vimdiff = !vim -d -p $(git changes) +\"tabdo Gdiff ${DIFF_BASE:-$(git main)}\"
-
 
 [protocol "http"]
 	allow = never
