@@ -110,8 +110,6 @@ fi
 
 # Set up fzf defaults when it's available.
 if [ -x "$(command -v fzf)" ]; then
-    export FZF_DEFAULT_OPTS="--height 40% --border"
-
     # Prefer fd- or ripgrep-based fzf searches when available.
     if [ -x "$(command -v fd)" ]; then
         export FZF_DEFAULT_COMMAND='fd --type f'
