@@ -39,6 +39,19 @@ function! s:gitfiles(args) abort
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
   " List changes between the current branch and its base (e.g. master).
+  "
+  " This uses 'origin/HEAD...' (here and in the preview command below)
+  " to select the range of commits that differ between our branch and
+  " the origin. This approach is simple and doesn't require any extra
+  " shell commands, but it is limited to common branch topologies.
+  "
+  " A more "complete" approach (git really makes this hard):
+  "
+  "   base_branch = $(git show-branch |
+  "     grep "\\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" |
+  "     head -n1 | sed "s/.*\\[//;s/\\].*//"')
+  "   diff_target = $(git merge-base HEAD $base_branch)
+  "
   let committed = 'git diff --name-status --no-renames origin/HEAD...'
 
   " Preview the file by showing the diff relative to either the local
