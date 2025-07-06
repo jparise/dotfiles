@@ -6,6 +6,11 @@ function! s:get_git_root() abort
   return v:shell_error ? '' : root
 endfunction
 
+function! s:git_merge_base() abort
+  let merge_base = systemlist('git merge-base origin/HEAD HEAD')[0]
+  return v:shell_error ? '' : merge_base
+endfunction
+
 function! s:git_operation_in_progress(root) abort
   return filereadable(a:root.'/.git/MERGE_HEAD') ||
         \filereadable(a:root.'/.git/rebase-merge') ||
@@ -37,19 +42,21 @@ function! s:gitfiles(args) abort
     return 0
   endif
 
-  " List changes between the current branch and its origin (e.g. master).
-  let committed = 'git diff --name-status --no-renames '.
-        \ '$(git merge-base origin/HEAD HEAD)..'
-
-  " Also list modified files in the current working tree. Only include
+  " List the modified files in the current working tree. Only include
   " untracked files if we're not in the middle of e.g. a merge operation.
   let modified = 'git -c color.status=always status --short --no-renames '.
         \ (s:git_operation_in_progress(root)
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
-  let preview_cmd = executable('bat')
-        \ ? 'bat --color=always --style=numbers,changes,snip --diff {-1}'
-        \ : 'sh -c "(git diff origin --color -- {-1} | sed 1,4d)"'
+  " List changes between the current branch and its base (e.g. master).
+  let merge_base = s:git_merge_base()
+  let committed = 'git diff --name-status --no-renames '.merge_base
+
+  " Preview the file by showing the diff relative to either the local
+  " branch (uncomitted) or base branch (committed).
+  let preview_cmd = 'git diff --color '.
+        \ '$(git diff --quiet HEAD -- {-1} && echo "'.merge_base.'") '.
+        \ '-- {-1} | sed 1,4d'
 
   let wrapped = fzf#wrap('gitfiles', {
   \ 'source': '('.modified.' && '.committed.") | awk '!filenames[$NF]++'",
@@ -57,7 +64,7 @@ function! s:gitfiles(args) abort
   \ 'options': [
   \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
   \   '--scheme', 'path', '--prompt', 'GitFiles?> ',
-  \   '--preview', preview_cmd, '--preview-window', 'up']
+  \   '--preview', preview_cmd, '--preview-window', 'right,50%,<70(up,40%)']
   \})
 
   " This replacement sink strips status characters from each line (leaving
