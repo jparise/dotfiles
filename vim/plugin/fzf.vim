@@ -1,16 +1,6 @@
 let s:cpo_save = &cpoptions
 set cpoptions&vim
 
-function! s:get_git_root() abort
-  let root = systemlist('git rev-parse --show-toplevel')[0]
-  return v:shell_error ? '' : root
-endfunction
-
-function! s:git_merge_base() abort
-  let merge_base = systemlist('git merge-base origin/HEAD HEAD')[0]
-  return v:shell_error ? '' : merge_base
-endfunction
-
 function! s:git_operation_in_progress(root) abort
   return filereadable(a:root.'/.git/MERGE_HEAD') ||
         \filereadable(a:root.'/.git/rebase-merge') ||
@@ -19,7 +9,7 @@ function! s:git_operation_in_progress(root) abort
 endfunction
 
 function! s:gitfiles(args) abort
-  let root = s:get_git_root()
+  let root = FugitiveWorkTree()
 
   " If we weren't called as GitFiles?, simply list all files in the git repo.
   " Any additional function arguments will be passed to `git ls-files`.
@@ -49,13 +39,12 @@ function! s:gitfiles(args) abort
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
   " List changes between the current branch and its base (e.g. master).
-  let merge_base = s:git_merge_base()
-  let committed = 'git diff --name-status --no-renames '.merge_base
+  let committed = 'git diff --name-status --no-renames origin/HEAD...'
 
   " Preview the file by showing the diff relative to either the local
   " branch (uncomitted) or base branch (committed).
   let preview_cmd = 'git diff --color '.
-        \ '$(git diff --quiet HEAD -- {-1} && echo "'.merge_base.'") '.
+        \ '$(git diff --quiet HEAD -- {-1} && echo "origin/HEAD...") '.
         \ '-- {-1} | sed 1,4d'
 
   let wrapped = fzf#wrap('gitfiles', {
