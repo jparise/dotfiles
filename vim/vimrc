@@ -247,7 +247,8 @@ endif
 
 " Color scheme configuration
 let g:embark_terminal_italics = 1
-let g:everforest_background = 'hard'
+let g:everforest_background='hard'
+let g:everforest_ui_contrast='high'
 let g:spring_night_high_contrast=1
 let g:spring_night_cterm_italic=1
 
