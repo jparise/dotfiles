@@ -1,7 +1,9 @@
+set focus-child = false
 set line-graphics = auto
 set main-view-date-display = custom
 set mouse = true
 set mouse-scroll = 1
+set vertical-split = false
 set wrap-lines = true
 
 # large repositories (contrib/large-repo.tigrc)
