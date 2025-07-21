@@ -28,6 +28,10 @@ let g:fzf_colors =
 
 let g:fzf_layout = { 'down': '40%' }
 
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['right,50%,<70(up,40%)', 'ctrl-space']
+let g:fzf_vim.buffers_jump = 1
+
 " Hide the statusline when running inside of a terminal buffer
 augroup FZFStatusline
   autocmd! FileType fzf
