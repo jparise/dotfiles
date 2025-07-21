@@ -21,7 +21,7 @@ let g:projectionist_heuristics = {
 \           'type': 'test'
 \       },
 \   },
-\   'src/': {
+\   'go.mod': {
 \       '*.go': {
 \           'alternate': '{}_test.go',
 \           'type': 'source'
