@@ -12,6 +12,12 @@ end
 execute 'setlocal path^=' . join(g:python_path, ',')
 setlocal textwidth=79
 
+let g:python_indent = {}
+let g:python_indent.open_paren = 'shiftwidth()'
+let g:python_indent.nested_paren = 'shiftwidth()'
+let g:python_indent.continue = 'shiftwidth()'
+let g:python_indent.closed_paren_align_last_line = v:false
+
 let b:match_words = '\<if\>:\<elif\>:\<else\>,\<try\>:\<except\>'
 let b:match_skip = 'R:^\s*'
 
