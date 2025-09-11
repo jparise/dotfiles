@@ -31,7 +31,6 @@ Plug 'fatih/vim-go', {'for': ['go', 'gohtmltmpl', 'gomod', 'gosum', 'gowork']}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'mustache'}
 Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
-Plug 'rhysd/vim-syntax-codeowners', {'for': 'codeowners'}
 if has('timers') && (has('nvim') || (exists('*job_start')))
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'dense-analysis/ale'
