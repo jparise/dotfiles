@@ -68,7 +68,6 @@ set incsearch           " use incremental search
 set nojoinspaces        " don't insert two spaces after period when joining lines
 set laststatus=2        " always show status line
 set lazyredraw          " don't update screen while executing commands
-set modelines=0         " turn off modelines
 set mouse=a             " enable the mouse for all modes
 set nrformats=alpha,hex " increment alphabet characters and hex numbers
 set path=.,,            " start with a simplified 'path' on all systems
