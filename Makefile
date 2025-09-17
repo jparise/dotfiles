@@ -4,6 +4,7 @@ TARGETS = install-bash \
 		  install-direnv \
 		  install-ghostty \
 		  install-git \
+		  install-jj \
 		  install-pip \
 		  install-tig \
 		  install-vim \
@@ -38,6 +39,10 @@ install-ghostty: ~/.config
 install-git: ~/.config
 	rm -f ~/.config/git
 	ln -s `pwd`/git ~/.config/git
+
+install-jj: ~/.config
+	rm -f ~/.config/jj
+	ln -s `pwd`/jj ~/.config/jj
 
 install-pip: ~/.config
 	rm -rf ~/.config/pip
