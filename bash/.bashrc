@@ -66,6 +66,7 @@ export DIFF_OPTIONS='-du'
 # macOS-specific environment flags
 if [[ $OSTYPE == "darwin"* ]]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
+    export CLICOLOR=1
     export GREP_OPTIONS='--binary-files=without-match'
 fi
 
