@@ -21,7 +21,6 @@ Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
 Plug 'peterrincker/vim-argumentative'
-Plug 'xtal8/traces.vim'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
 Plug 'wsdjeg/vim-fetch'
@@ -31,6 +30,9 @@ Plug 'fatih/vim-go', {'for': ['go', 'gohtmltmpl', 'gomod', 'gosum', 'gowork']}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'mustache'}
 Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
+if !has('nvim')
+  Plug 'markonm/traces.vim'
+endif
 if has('timers') && (has('nvim') || (exists('*job_start')))
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'dense-analysis/ale'
