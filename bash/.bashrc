@@ -161,3 +161,6 @@ alias ng=notesgrep
 # Remap Ctrl-w to kill words using whitespace and slashes as word boundaries.
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
+
+# Disable START/STOP (Ctrl-q / Ctrl-s) output control.
+stty -ixon
