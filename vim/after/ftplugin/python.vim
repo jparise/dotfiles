@@ -18,10 +18,6 @@ let g:python_indent.nested_paren = 'shiftwidth()'
 let g:python_indent.continue = 'shiftwidth()'
 let g:python_indent.closed_paren_align_last_line = v:false
 
-let b:match_words = '\<if\>:\<elif\>:\<else\>,\<try\>:\<except\>'
-let b:match_skip = 'R:^\s*'
-
 let b:undo_ftplugin = get(b:, 'undo_ftplugin', 'execute')
 let b:undo_ftplugin .= '|setlocal path< textwidth<'
 let b:undo_ftplugin .= '|unlet b:ale_fixers b:ale_linters'
-let b:undo_ftplugin .= '|unlet b:match_words b:match_skip'
