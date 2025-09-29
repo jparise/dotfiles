@@ -1,1 +1,0 @@
-autocmd BufNewFile,BufReadPost CODEOWNERS setlocal filetype=codeowners
