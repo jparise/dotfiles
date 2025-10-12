@@ -12,7 +12,6 @@ brew "mas"
 brew "python"
 brew "ripgrep"
 brew "shellcheck"
-brew "tig"
 brew "universal-ctags"
 brew "vim"
 
