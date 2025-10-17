@@ -343,11 +343,14 @@ vnoremap <leader>go :GBrowse<CR>
 nnoremap <leader>gO :GBrowse @upstream<CR>
 vnoremap <leader>gO :GBrowse @upstream<CR>
 nnoremap <leader>gv :GV!<CR>
+nnoremap <leader>gf :Flogsplit -path=%<CR>
 
 " Grep mappings
 nnoremap <leader>a :Grep<Space>
 nnoremap <leader>s :Grep -F -w -- <C-R><C-W><CR>
 nnoremap <leader>S :Grep -F -w -- <C-R><C-W><Space><C-R>=expand('%:h')<CR>
+vnoremap <leader>s "zy:Grep -F -w -- <C-R>=shellescape(@z)<CR><CR>
+vnoremap <leader>S "zy:Grep -F -w -- <C-R>=shellescape(@z)<CR> <C-R>=expand('%:h')<CR>
 
 " Sandwich mappings
 let g:textobj_sandwich_no_default_key_mappings = 1
