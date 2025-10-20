@@ -15,6 +15,14 @@ function! s:grep(kind, ...) abort
   silent doautocmd <nomodeline> User GrepStart
   let args = expandcmd(join(a:000, ' '))
   let lines = system(&grepprg . ' ' . args)
+
+  if v:shell_error && v:shell_error != 1
+    echohl ErrorMsg
+    echomsg 'grep failed: ' . trim(lines)
+    echohl None
+    return
+  endif
+
   execute a:kind . 'getexpr lines'
   if a:kind ==# 'c'
     call setqflist([], 'a', {'title': ':Grep ' . args})
