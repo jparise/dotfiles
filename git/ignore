@@ -32,3 +32,6 @@ tags.temp.tmp
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+# claude
+**/.claude/settings.local.json
