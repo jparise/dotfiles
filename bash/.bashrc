@@ -93,7 +93,10 @@ if [ -n "$HOMEBREW_PREFIX" ]; then
     fi
 fi
 
-# Lastly, add my personal ~/bin directory to the front of $PATH.
+# Lastly, add personal "bin" directories to the front of $PATH.
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
+fi
 if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
