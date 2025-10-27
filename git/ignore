@@ -34,4 +34,5 @@ tags.temp.tmp
 !.vscode/*.code-snippets
 
 # claude
+CLAUDE.local.md
 **/.claude/settings.local.json
