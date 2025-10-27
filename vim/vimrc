@@ -20,6 +20,7 @@ Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
 Plug 'peterrincker/vim-argumentative'
+Plug 'rbong/vim-flog', {'on': ['Flog', 'Flogsplit']}
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
 Plug 'wsdjeg/vim-fetch'
