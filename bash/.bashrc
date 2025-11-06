@@ -32,8 +32,6 @@ PS1='[\W]$([ \j -gt 0 ] && echo \*)\$ '
 # Set up the Homebrew shell environment.
 if [ -d "/opt/homebrew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-
-    # Additional environment variables
     export HOMEBREW_NO_ANALYTICS=1
     export HOMEBREW_NO_ENV_HINTS=1
 fi
