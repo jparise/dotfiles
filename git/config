@@ -128,5 +128,4 @@
 	cmd = vim -f -c 'Git mergetool'
 
 [diff "plist"]
-	binary = true
-	textconv = /usr/libexec/PlistBuddy -x -c print
+	textconv = plutil -convert xml1 -o -
