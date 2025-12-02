@@ -1,0 +1,22 @@
+# vim:ft=bash
+
+use_nvm() {
+  local node_version=${1:-}
+  [[ -z $node_version && -f .nvmrc ]] && node_version=$(<.nvmrc)
+  [[ -z $node_version ]] && log_error "No node version specified and no .nvmrc found" && return 1
+
+  if [[ $(node --version 2>/dev/null) == "v${node_version}" ]]; then
+    return 0
+  fi
+
+  if [[ -z $NVM_DIR || ! -r $NVM_DIR/nvm.sh ]]; then
+    log_error "nvm is not loaded"
+    return 1
+  fi
+
+  # shellcheck disable=SC1091
+  source "$NVM_DIR/nvm.sh"
+
+  log_status "Using node ${node_version}"
+  nvm use "$node_version" >/dev/null
+}
