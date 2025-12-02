@@ -5,6 +5,7 @@ let g:markdown_fenced_languages = [
 \ 'cpp',
 \ 'c++=cpp',
 \ 'elixir',
+\ 'elvish',
 \ 'erlang',
 \ 'gradle=groovy',
 \ 'groovy',
@@ -25,6 +26,7 @@ let g:markdown_fenced_languages = [
 \ 'vim',
 \ 'viml=vim',
 \ 'zig',
+\ 'zsh',
 \]
 
 setlocal linebreak
