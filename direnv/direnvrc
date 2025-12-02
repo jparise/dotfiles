@@ -17,6 +17,6 @@ use_nvm() {
   # shellcheck disable=SC1091
   source "$NVM_DIR/nvm.sh"
 
-  log_status "Using node ${node_version}"
+  log_status "using node ${node_version}"
   nvm use "$node_version" >/dev/null
 }
