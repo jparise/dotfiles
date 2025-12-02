@@ -156,6 +156,7 @@ gv() {
 [ "$(declare -Ff __git_complete)" ] && __git_complete gv git_log
 
 # Aliases
+alias gf='vim -c Flog'
 alias n=notes
 alias ng=notesgrep
 
