@@ -28,6 +28,7 @@ Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'dmix/elvish.vim', {'for': 'elvish'}
 Plug 'fatih/vim-go', {'for': ['go', 'gohtmltmpl', 'gomod', 'gosum', 'gowork']}
 Plug 'keith/swift.vim', {'for': 'swift'}
+Plug 'https://codeberg.org/ziglang/zig.vim', {'for': 'zig'}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'mustache'}
 Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
 if !has('nvim')
