@@ -3,6 +3,7 @@ theme = "Ayu Mirage"
 font-family = "Iosevka Fixed"
 font-style = "Light"
 font-size = 15
+window-title-font-family = "Iosevka Fixed"
 
 # Windows
 window-theme = "dark"
@@ -10,7 +11,7 @@ window-height = 70
 window-width = 132
 window-padding-color = extend
 window-inherit-working-directory = false
-window-title-font-family = "Iosevka Fixed"
+tab-inherit-working-directory = false
 macos-titlebar-style = tabs
 unfocused-split-opacity = 0.8
 scrollbar = never
