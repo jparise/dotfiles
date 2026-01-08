@@ -57,7 +57,7 @@ export EDITOR VISUAL
 
 export PAGER=less
 export MANPAGER='less -FiRs'
-export LESS='-ERX'
+export LESS='-EMRX --use-color'
 
 export DIFF_OPTIONS='-du'
 
