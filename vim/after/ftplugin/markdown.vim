@@ -15,6 +15,7 @@ let g:markdown_fenced_languages = [
 \ 'javascript',
 \ 'js=javascript',
 \ 'objc',
+\ 'nushell=nu',
 \ 'python',
 \ 'py=python',
 \ 'pycon=python',
