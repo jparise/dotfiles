@@ -41,26 +41,17 @@ function! s:gitfiles(args) abort
         \ (s:git_operation_in_progress(root)
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
-  " List changes between the current branch and its base (e.g. master).
-  "
-  " This uses 'origin/HEAD...' (here and in the preview command below)
-  " to select the range of commits that differ between our branch and
-  " the origin. This approach is simple and doesn't require any extra
-  " shell commands, but it is limited to common branch topologies.
-  "
-  " A more "complete" approach (git really makes this hard):
-  "
-  "   base_branch = $(git show-branch |
-  "     grep "\\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" |
-  "     head -n1 | sed "s/.*\\[//;s/\\].*//"')
-  "   diff_target = $(git merge-base HEAD $base_branch)
-  "
-  let committed = 'git diff --name-status --no-renames origin/HEAD...'
+  " List changes between the current branch and where it diverged from
+  " the base branch. merge-base is used to find the common ancestor with
+  " origin/HEAD, which works regardless of what the base branch is named.
+  let committed = 'git diff --name-status --no-renames '.
+        \ '$(git merge-base HEAD origin/HEAD)..'
 
   " Preview the file by showing the diff relative to either the local
-  " branch (uncomitted) or base branch (committed).
+  " working tree (uncommitted) or the merge-base with origin (committed).
   let preview_cmd = 'git diff --color '.
-        \ '$(git diff --quiet HEAD -- {-1} && echo "origin/HEAD...") '.
+        \ '$(git diff --quiet HEAD -- {-1} && '.
+        \   'echo "$(git merge-base HEAD origin/HEAD)..") '.
         \ '-- {-1} | sed 1,4d'
 
   let wrapped = fzf#wrap('gitfiles', {
