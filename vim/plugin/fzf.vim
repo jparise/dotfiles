@@ -2,10 +2,13 @@ let s:cpo_save = &cpoptions
 set cpoptions&vim
 
 function! s:git_operation_in_progress(root) abort
-  return filereadable(a:root.'/.git/MERGE_HEAD') ||
-        \filereadable(a:root.'/.git/rebase-merge') ||
-        \filereadable(a:root.'/.git/rebase-apply') ||
-        \filereadable(a:root.'/.git/CHERRY_PICK_HEAD')
+  let git_dir = FugitiveGitDir(a:root)
+  if empty(git_dir) | return 0 | endif
+
+  return filereadable(git_dir.'/MERGE_HEAD') ||
+        \filereadable(git_dir.'/REBASE_HEAD') ||
+        \filereadable(git_dir.'/CHERRY_PICK_HEAD') ||
+        \filereadable(git_dir.'/REVERT_HEAD')
 endfunction
 
 function! s:gitfiles(args) abort
