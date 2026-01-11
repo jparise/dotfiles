@@ -35,23 +35,29 @@ function! s:gitfiles(args) abort
     return 0
   endif
 
+  " Find the merge-base with origin/HEAD to determine where the current
+  " branch diverged, regardless of what the base branch is named.
+  let result = FugitiveExecute(['merge-base', 'HEAD', 'origin/HEAD'])
+  let merge_base = result.exit_status == 0 ? result.stdout[0] : ''
+
   " List the modified files in the current working tree. Only include
   " untracked files if we're not in the middle of e.g. a merge operation.
   let modified = 'git -c color.status=always status --short --no-renames '.
         \ (s:git_operation_in_progress(root)
         \   ? '--untracked-files=no' : '--untracked-files=all')
 
-  " List changes between the current branch and where it diverged from
-  " the base branch. merge-base is used to find the common ancestor with
-  " origin/HEAD, which works regardless of what the base branch is named.
-  let committed = 'git diff --name-status --no-renames '.
-        \ '$(git merge-base HEAD origin/HEAD)..'
+  " List changes between the current branch and where it diverged from the
+  " base branch. Skip if we don't have a merge base (e.g. local-only repo).
+  let committed = !empty(merge_base)
+        \ ? 'git diff --name-status --no-renames '.merge_base.'..'
+        \ : 'true'
 
   " Preview the file by showing the diff relative to either the local
   " working tree (uncommitted) or the merge-base with origin (committed).
   let preview_cmd = 'git diff --color '.
-        \ '$(git diff --quiet HEAD -- {-1} && '.
-        \   'echo "$(git merge-base HEAD origin/HEAD)..") '.
+        \ (!empty(merge_base)
+        \   ? '$(git diff --quiet HEAD -- {-1} && echo "'.merge_base.'..") '
+        \   : '').
         \ '-- {-1} | sed 1,4d'
 
   let wrapped = fzf#wrap('gitfiles', {
