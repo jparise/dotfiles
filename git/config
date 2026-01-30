@@ -1,3 +1,5 @@
+# vim:ft=gitconfig
+
 [user]
 	name = Jon Parise
 	useConfigOnly = true
