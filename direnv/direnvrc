@@ -2,10 +2,10 @@
 
 use_nvm() {
   local node_version=${1:-}
-  [[ -z $node_version && -f .nvmrc ]] && node_version=$(<.nvmrc)
+  [[ -z $node_version && -f .nvmrc ]] && read -r node_version < .nvmrc
   [[ -z $node_version ]] && log_error "No node version specified and no .nvmrc found" && return 1
 
-  if [[ $(node --version 2>/dev/null) == "v${node_version}" ]]; then
+  if [[ $(node --version 2>/dev/null) == "v${node_version#v}" ]]; then
     return 0
   fi
 
@@ -17,6 +17,6 @@ use_nvm() {
   # shellcheck disable=SC1091
   source "$NVM_DIR/nvm.sh"
 
+  nvm use "$node_version" >/dev/null || return 1
   log_status "using node ${node_version}"
-  nvm use "$node_version" >/dev/null
 }
