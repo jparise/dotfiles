@@ -6,6 +6,7 @@ use_nvm() {
   [[ -z $node_version ]] && log_error "No node version specified and no .nvmrc found" && return 1
 
   if [[ $(node --version 2>/dev/null) == "v${node_version#v}" ]]; then
+    log_status "using node ${node_version}"
     return 0
   fi
 
