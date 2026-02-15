@@ -12,6 +12,7 @@ end
 execute 'setlocal path^=' . join(g:python_path, ',')
 setlocal textwidth=79
 
+let g:python_highlight_all = 1
 let g:python_indent = {}
 let g:python_indent.open_paren = 'shiftwidth()'
 let g:python_indent.nested_paren = 'shiftwidth()'
