@@ -118,6 +118,8 @@ set shortmess+=t        " truncate file messages to fit command line
 set shortmess+=I        " disable :intro message when starting vim
 set shortmess+=c        " completion messages
 
+silent! set wildoptions+=fuzzy
+
 if has('nvim')
   set clipboard+=unnamed
 else
