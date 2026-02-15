@@ -136,7 +136,6 @@ endif
 
 if has('diff') && &diffopt =~# 'internal'
   set diffopt+=algorithm:patience
-  set diffopt+=indent-heuristic
 endif
 
 if exists(':Man')
