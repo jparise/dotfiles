@@ -27,8 +27,8 @@
 	slog = log --pretty=tformat:'%C(cyan)%cs %C(auto)%h %Creset%s %C(green)(%aN)%C(auto)%d%Creset'
 	stat = status -sb
 	tags = tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=-creatordate
-	take-ours = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --ours -- $PATHS && git add -- $PATHS; }; f"
-	take-theirs = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --theirs -- $PATHS && git add -- $PATHS; }; f"
+	take-ours = "!f() { git checkout --ours -- \"${@/#/$GIT_PREFIX}\" && git add -- \"${@/#/$GIT_PREFIX}\"; }; f"
+	take-theirs = "!f() { git checkout --theirs -- \"${@/#/$GIT_PREFIX}\" && git add -- \"${@/#/$GIT_PREFIX}\"; }; f"
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD~
 
