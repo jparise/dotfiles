@@ -19,7 +19,7 @@
 	edit = !git files | xargs -r -o $(git var GIT_EDITOR)
 	files = "!f() { git ls-files --exclude-standard -m -- \"${@/#/$GIT_PREFIX}\" | sort -u; }; f"
 	head = log -1 --decorate --name-status HEAD
-	main = !basename $(git symbolic-ref refs/remotes/origin/HEAD)
+	main = !basename $(git symbolic-ref refs/remotes/origin/HEAD || git config init.defaultBranch)
 	mine = !git log --no-merges --author=$(git config user.email)
 	outgoing = log --pretty=oneline --abbrev-commit @{u}..
 	remotes = for-each-ref --sort=-committerdate --format='%(color:yellow)%(authordate:short)\t%(align:50)%(color:reset)%(refname:short)%(end)\t%(color:green)%(authorname)' refs/remotes
