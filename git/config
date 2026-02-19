@@ -30,7 +30,7 @@
 	take-ours = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --ours -- $PATHS && git add -- $PATHS; }; f"
 	take-theirs = "!f() { PATHS=${@/#/$GIT_PREFIX}; git checkout --theirs -- $PATHS && git add -- $PATHS; }; f"
 	unstage = reset HEAD --
-	uncommit = reset --soft HEAD^
+	uncommit = reset --soft HEAD~
 
 [protocol "http"]
 	allow = never
