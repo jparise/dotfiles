@@ -18,6 +18,9 @@ scrollbar = never
 # Clipboard
 copy-on-select = clipboard
 
+# Shell
+shell-integration-features = true
+
 # Misc
 cursor-style-blink = false
 focus-follows-mouse = true
