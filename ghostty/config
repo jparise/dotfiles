@@ -22,6 +22,7 @@ copy-on-select = clipboard
 shell-integration-features = true
 
 # Misc
+auto-update-channel = tip
 cursor-style-blink = false
 focus-follows-mouse = true
 mouse-hide-while-typing = true
