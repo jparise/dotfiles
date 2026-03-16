@@ -11,7 +11,7 @@ TARGETS = install-bash \
 
 .PHONY: install $(TARGETS)
 
-install: $(TARGETS)
+install: $(TARGETS) ~/.hushlogin
 
 install-bash:
 	rm -f ~/.bash_profile ~/.bashrc ~/.inputrc
@@ -60,6 +60,9 @@ install-wezterm: ~/.config
 
 ~/.config:
 	mkdir -p ~/.config
+
+~/.hushlogin:
+	touch ~/.hushlogin
 
 vim/autoload/plug.vim:
 	curl -fLo `pwd`/vim/autoload/plug.vim --create-dirs \
