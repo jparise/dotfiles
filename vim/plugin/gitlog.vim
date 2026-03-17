@@ -64,7 +64,7 @@ function! s:type(visual) abort
   return [0, 0]
 endfunction
 
-function! s:open(visual) abort
+function! s:open(visual, focus) abort
   let [type, target] = s:type(a:visual)
 
   if empty(type)
@@ -80,7 +80,9 @@ function! s:open(visual) abort
     setfiletype diff
   endif
   nnoremap <silent> <buffer> q :close<CR>
-  wincmd p
+  if !a:focus
+    wincmd p
+  endif
 endfunction
 
 function! s:dot() abort
@@ -159,10 +161,10 @@ endfunction
 
 function! s:maps() abort
   nnoremap <silent> <buffer>          ?     :call <SID>help()<CR>
-  nnoremap <silent> <buffer>          <CR>  :call <SID>open(0)<CR>
-  nnoremap <silent> <buffer>          o     :call <SID>open(0)<CR>
-  xnoremap <silent> <buffer>          <CR>  :<C-U>call <SID>open(1)<CR>
-  xnoremap <silent> <buffer>          o     :<C-U>call <SID>open(1)<CR>
+  nnoremap <silent> <buffer>          <CR>  :call <SID>open(0, 0)<CR>
+  nnoremap <silent> <buffer>          o     :call <SID>open(0, 1)<CR>
+  xnoremap <silent> <buffer>          <CR>  :<C-U>call <SID>open(1, 0)<CR>
+  xnoremap <silent> <buffer>          o     :<C-U>call <SID>open(1, 1)<CR>
   nnoremap <silent> <buffer>          x     :call <SID>close()<CR>
   nnoremap          <buffer> <expr>   .     <SID>dot()
   nnoremap <silent> <buffer>          gb    :call <SID>gbrowse()<CR>
@@ -181,8 +183,8 @@ function! s:maps() abort
   nnoremap <silent> <buffer> [r :<C-U>call <SID>jump_ref(-v:count1)<CR>
 
   " Move and preview
-  nnoremap <silent> <buffer> <C-N> j:call <SID>open(0)<CR>
-  nnoremap <silent> <buffer> <C-P> k:call <SID>open(0)<CR>
+  nnoremap <silent> <buffer> <C-N> j:call <SID>open(0, 0)<CR>
+  nnoremap <silent> <buffer> <C-P> k:call <SID>open(0, 0)<CR>
 endfunction
 
 function! s:gbrowse() abort
