@@ -207,7 +207,9 @@ function! s:list(opts, flat) abort
   let fmt = (a:flat ? '%H %P%x09' : '') . '%cd %h%d %s (%an)'
   let cmd = FugitiveShellCommand(['log', '--color=never', '--date=short',
         \ '--topo-order', '--decorate-refs=refs/heads/',
-        \ '--decorate-refs=refs/tags/', '--format=' . fmt] + a:opts)
+        \ '--decorate-refs=refs/tags/',
+        \ '--decorate-refs=refs/remotes/origin/HEAD',
+        \ '--format=' . fmt] + a:opts)
 
   let b:gitlog_name = trim(fnamemodify(FugitiveWorkTree(), ':t') . ' ' . join(a:opts))
   silent execute 'file' fnameescape(b:gitlog_name)
