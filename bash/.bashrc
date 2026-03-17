@@ -149,14 +149,13 @@ notesgrep() {
     vim -c "NotesGrep $*"
 }
 
-# Open GV with optional `git log` arguments
-gv() {
-    vim -c "GV $*"
+# Open GitLog with optional `git log` arguments
+gl() {
+    vim -c "GitLog $*"
 }
-[ "$(declare -Ff __git_complete)" ] && __git_complete gv git_log
+[ "$(declare -Ff __git_complete)" ] && __git_complete gl git_log
 
 # Aliases
-alias gf='vim -c Flog'
 alias n=notes
 alias ng=notesgrep
 

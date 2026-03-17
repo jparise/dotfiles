@@ -16,11 +16,9 @@ Plug 'tpope/vim-scriptease'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-textobj-delimited'
 Plug 'airblade/vim-gitgutter', { 'branch': 'main' }
-Plug 'junegunn/gv.vim', {'on': ['GV', 'GV!']}
 Plug 'junegunn/vader.vim', {'for': 'vader'}
 Plug 'justinmk/vim-dirvish'
 Plug 'peterrincker/vim-argumentative'
-Plug 'rbong/vim-flog', {'on': ['Flog', 'Flogsplit']}
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
 Plug 'wsdjeg/vim-fetch'
@@ -345,8 +343,7 @@ nnoremap <leader>go :GBrowse<CR>
 vnoremap <leader>go :GBrowse<CR>
 nnoremap <leader>gO :GBrowse @upstream<CR>
 vnoremap <leader>gO :GBrowse @upstream<CR>
-nnoremap <leader>gv :GV!<CR>
-nnoremap <leader>gf :Flogsplit -path=%<CR>
+nnoremap <leader>gl :GitLog!<CR>
 
 " Grep mappings
 nnoremap <leader>a :Grep<Space>
