@@ -1,4 +1,4 @@
-theme = "Ayu Mirage"
+theme="light:Flexoki Light,dark:Ayu Mirage"
 
 font-family = "Iosevka Fixed"
 font-style = "Light"
