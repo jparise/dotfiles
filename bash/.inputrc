@@ -25,11 +25,18 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
-"\C-d": possible-completions
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-"\e[1;5D": backward-word
-"\e[1;5C": forward-word
+# Let Readline ignore the TTY's special-char bindings (Bash 4.4+).
+set bind-tty-special-chars off
+
+Control-d:  possible-completions
+Control-w:  backward-kill-word
+
+"\e[A":     history-search-backward # Up
+"\e[B":     history-search-forward  # Down
+"\e[1;5D":  backward-word           # Ctrl+Left
+"\e[1;5C":  forward-word            # Ctrl+Right
+"\e\e[D":   backward-word           # Alt+Left
+"\e\e[C":   forward-word            # Alt+Right
 
 $if Bash
     space: magic-space
