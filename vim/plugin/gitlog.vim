@@ -143,7 +143,7 @@ function! s:close() abort
 endfunction
 
 function! s:help() abort
-  echo 'o: open  gb: browse  f: filter  ]m/[m: main  ]r/[r: refs  ?: help  q: quit'
+  echo 'o: open  gb: browse  f: filter  ]]/[[: main  ]r/[r: refs  ?: help  q: quit'
 endfunction
 
 function! s:quit() abort
@@ -177,8 +177,8 @@ function! s:maps() abort
   nnoremap <silent> <buffer> <BS>  :call <SID>filter('')<CR>
 
   " Navigation
-  nnoremap <silent> <buffer> ]m :<C-U>call <SID>jump_main(v:count1)<CR>
-  nnoremap <silent> <buffer> [m :<C-U>call <SID>jump_main(-v:count1)<CR>
+  nnoremap <silent> <buffer> ]] :<C-U>call <SID>jump_main(v:count1)<CR>
+  nnoremap <silent> <buffer> [[ :<C-U>call <SID>jump_main(-v:count1)<CR>
   nnoremap <silent> <buffer> ]r :<C-U>call <SID>jump_ref(v:count1)<CR>
   nnoremap <silent> <buffer> [r :<C-U>call <SID>jump_ref(-v:count1)<CR>
 
