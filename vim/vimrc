@@ -99,7 +99,6 @@ set complete+=u         " other unloaded, listed buffers
 set complete+=kspell    " currently active 'spell' dictionary
 set complete+=t         " tags
 
-set formatoptions+=n    " recognize numbered lists
 set formatoptions+=r    " insert comment leader after <Enter>
 set formatoptions-=o    " don't insert comment leader after 'o' or 'O'
 set formatoptions+=j    " remove comment leader when joining comment lines

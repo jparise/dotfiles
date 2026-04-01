@@ -1,5 +1,6 @@
 scriptencoding utf-8
 
+setlocal autoindent
 setlocal formatoptions+=tcoqnl1j
 
 " Improved text list recognition for formatoption+=n
@@ -21,6 +22,6 @@ nnoremap <buffer> <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
 nnoremap <buffer> <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 
 let b:undo_ftplugin = get(b:, 'undo_ftplugin', 'execute')
-let b:undo_ftplugin .= '|setlocal formatoptions< formatlistpat<'
+let b:undo_ftplugin .= '|setlocal autoindent< formatoptions< formatlistpat<'
 let b:undo_ftplugin .= '|execute "silent! nunmap <buffer> <expr> {"'
 let b:undo_ftplugin .= '|execute "silent! nunmap <buffer> <expr> }"'
