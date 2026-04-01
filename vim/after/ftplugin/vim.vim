@@ -14,7 +14,7 @@ if exists('g:plugs')
       if has_key(spec, 'dir')
         execute 'edit' fnameescape(spec.dir)
       else
-        normal! gf
+        call vimgoto#Find('gF')
       endif
     endfunction
 
