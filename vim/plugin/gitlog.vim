@@ -28,12 +28,49 @@ function! s:path(path) abort
   return empty(rel) ? '.' : rel
 endfunction
 
-function! s:fill(cmd) abort
-  setlocal modifiable
-  %delete _
-  silent execute 'read' escape('!' . a:cmd, '%')
-  normal! gg"_dd
-  setlocal nomodifiable
+" Run a command list directly without a shell; return stdout lines.
+function! s:run(args) abort
+  let lines = []
+  if has('nvim')
+    let job = jobstart(a:args, {
+          \ 'stdout_buffered': 1,
+          \ 'on_stdout': {id, data, e -> extend(lines, data)}
+          \ })
+    call jobwait([job])
+    if !empty(lines) && empty(lines[-1])
+      call remove(lines, -1)
+    endif
+  else
+    let job = job_start(a:args, {
+          \ 'out_cb': {ch, line -> add(lines, line)},
+          \ 'out_mode': 'nl',
+          \ 'err_io': 'null'
+          \ })
+    while job_status(job) ==# 'run'
+      sleep 10m
+    endwhile
+  endif
+  return lines
+endfunction
+
+" Annotate flat log lines with ● (mainline) or ├ (branch).
+" Input lines have format "%h %p<TAB>rest"; output prefixes rest with ● or ├.
+function! s:flatten(lines) abort
+  let main = ''
+  let result = []
+  for line in a:lines
+    let tab = stridx(line, "\t")
+    if tab < 0
+      call add(result, line)
+      continue
+    endif
+    let parts = split(line[:tab-1], ' ')
+    let sha = parts[0]
+    let prefix = (empty(main) || sha ==# main) ? '● ' : '├ '
+    let main = get(parts, 1, '')
+    call add(result, prefix . line[tab+1:])
+  endfor
+  return result
 endfunction
 
 function! s:split() abort
@@ -76,7 +113,13 @@ function! s:open(visual, focus) abort
   if type ==# 'commit'
     execute 'edit' escape(target, ' ')
   elseif type ==# 'diff'
-    call s:fill(target)
+    let lines = systemlist(target)
+    setlocal modifiable
+    silent %delete _
+    if !empty(lines)
+      call setline(1, lines)
+    endif
+    setlocal nomodifiable
     setfiletype diff
   endif
   nnoremap <silent> <buffer> q :close<CR>
@@ -195,30 +238,40 @@ function! s:gbrowse() abort
   execute 'GBrowse' sha
 endfunction
 
-" Awk script that flattens git's topological log into a two-column view.
-" Input: tab-separated "%H %P" and "%cd %h%d %s (%an)"
-" Output: ● (main-line) or ├ (branch) prefix before each commit line.
-let s:flatten_awk = "awk -F'\t' '"
-      \ . 'BEGIN{m=""}'
-      \ . '{split($1,p," ");'
-      \ . 'if(m==""||p[1]==m){printf "● ";m=p[2]}'
-      \ . 'else{printf "├ "};'
-      \ . "print \$2}'"
-
 function! s:list(opts, flat) abort
-  let fmt = (a:flat ? '%H %P%x09' : '') . '%cd %h%d %s (%an)'
-  let cmd = FugitiveShellCommand(['log', '--color=never', '--date=short',
-        \ '--topo-order', '--decorate-refs=refs/heads/',
+  " Limit default output to keep flatten() fast on large repos. Can be
+  " overridden by passing --max-count=N. On repos without a commit-graph
+  " file, cold-cache loads are also slower; run `git commit-graph write
+  " --reachable` once to speed those up.
+  let has_count = !empty(filter(copy(a:opts), 'v:val =~# ''^--max-count\|^-[0-9]'''))
+  let fmt = (a:flat ? '%h %p%x09' : '') . '%cd %h%d %s (%an)'
+  let git = get(g:, 'fugitive_git_executable', 'git')
+  let args = [git, '-C', FugitiveWorkTree(), '--literal-pathspecs',
+        \ 'log', '--color=never', '--date=short', '--topo-order',
+        \ '--decorate-refs=refs/heads/',
         \ '--decorate-refs=refs/tags/',
         \ '--decorate-refs=refs/remotes/origin/HEAD',
-        \ '--format=' . fmt] + a:opts)
+        \ '--format=' . fmt]
+        \ + (has_count ? [] : ['--max-count=10000'])
+        \ + a:opts
 
   let b:gitlog_name = trim(fnamemodify(FugitiveWorkTree(), ':t') . ' ' . join(a:opts))
   silent execute 'file' fnameescape(b:gitlog_name)
-  setfiletype gitlog
   setlocal nowrap tabstop=8 cursorline iskeyword+=#
   call FugitiveDetect(@#)
-  call s:fill(cmd . (a:flat ? ' | ' . s:flatten_awk : ''))
+
+  let lines = s:run(args)
+  if a:flat
+    let lines = s:flatten(lines)
+  endif
+
+  setlocal modifiable
+  silent %delete _
+  if !empty(lines)
+    call setline(1, lines)
+  endif
+  setlocal nomodifiable
+  setfiletype gitlog
   call s:maps()
   redraw
 endfunction
