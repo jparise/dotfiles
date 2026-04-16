@@ -10,7 +10,6 @@ window-theme = "dark"
 window-padding-color = extend
 window-inherit-working-directory = false
 macos-titlebar-style = tabs
-unfocused-split-opacity = 0.8
 scrollbar = never
 
 # Clipboard
