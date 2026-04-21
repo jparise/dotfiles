@@ -336,13 +336,24 @@ nnoremap <leader>gb :Git blame<CR>
 vnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gc :GBrowse!<CR>
 vnoremap <leader>gc :GBrowse!<CR>
-nnoremap <leader>gC :GBrowse! @upstream<CR>
-vnoremap <leader>gC :GBrowse! @upstream<CR>
+nnoremap <expr> <leader>gC ':GBrowse! ' . <SID>git_browse_ref() . '<CR>'
+vnoremap <expr> <leader>gC ':GBrowse! ' . <SID>git_browse_ref() . '<CR>'
 nnoremap <leader>go :GBrowse<CR>
 vnoremap <leader>go :GBrowse<CR>
-nnoremap <leader>gO :GBrowse @upstream<CR>
-vnoremap <leader>gO :GBrowse @upstream<CR>
+nnoremap <expr> <leader>gO ':GBrowse ' . <SID>git_browse_ref() . '<CR>'
+vnoremap <expr> <leader>gO ':GBrowse ' . <SID>git_browse_ref() . '<CR>'
 nnoremap <leader>gl :GitLog!<CR>
+
+" Returns a :GBrowse-compatible reference for the current file at the main
+" branch of the canonical remote (upstream if it exists, otherwise origin).
+function! s:git_browse_ref() abort
+  let remote = !empty(FugitiveRemoteUrl('upstream')) ? 'upstream' : 'origin'
+  let result = FugitiveExecute(['symbolic-ref', 'refs/remotes/' . remote . '/HEAD'])
+  let branch = !empty(result.stdout)
+        \ ? fnamemodify(result.stdout[0], ':t')
+        \ : get(FugitiveExecute(['config', 'init.defaultBranch']).stdout, 0, 'main')
+  return remote . '/' . branch . ':' . FugitivePath(@%)
+endfunction
 
 " Grep mappings
 nnoremap <leader>a :Grep<Space>
