@@ -29,27 +29,21 @@ function! s:path(path) abort
 endfunction
 
 " Run a command list directly without a shell; return stdout lines.
+" TODO: Vim gained list-arg systemlist() in 9.2.0250 (2026-03-25). Once
+" that's ubiquitous, the Vim branch can collapse to systemlist() too.
 function! s:run(args) abort
-  let lines = []
   if has('nvim')
-    let job = jobstart(a:args, {
-          \ 'stdout_buffered': 1,
-          \ 'on_stdout': {id, data, e -> extend(lines, data)}
-          \ })
-    call jobwait([job])
-    if !empty(lines) && empty(lines[-1])
-      call remove(lines, -1)
-    endif
-  else
-    let job = job_start(a:args, {
-          \ 'out_cb': {ch, line -> add(lines, line)},
-          \ 'out_mode': 'nl',
-          \ 'err_io': 'null'
-          \ })
-    while job_status(job) ==# 'run'
-      sleep 10m
-    endwhile
+    return systemlist(a:args)
   endif
+  let lines = []
+  let job = job_start(a:args, {
+        \ 'out_cb': {ch, line -> add(lines, line)},
+        \ 'out_mode': 'nl',
+        \ 'err_io': 'null'
+        \ })
+  while job_status(job) ==# 'run'
+    sleep 10m
+  endwhile
   return lines
 endfunction
 
