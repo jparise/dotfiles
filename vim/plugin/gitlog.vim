@@ -204,7 +204,8 @@ function! s:maps() abort
   xnoremap <silent> <buffer>          o     :<C-U>call <SID>open(1, 1)<CR>
   nnoremap <silent> <buffer>          x     :call <SID>close()<CR>
   nnoremap          <buffer> <expr>   .     <SID>dot()
-  nnoremap <silent> <buffer>          gb    :call <SID>gbrowse()<CR>
+  nnoremap <silent> <buffer>          gb    :call <SID>gbrowse(0)<CR>
+  nnoremap <silent> <buffer> <nowait> gc    :call <SID>gbrowse(1)<CR>
   nnoremap <silent> <buffer>          yc    :let @+=<SID>sha() \| echo @+<CR>
   nnoremap <silent> <buffer> <nowait> q    :call <SID>quit()<CR>
   nnoremap <silent> <buffer> <nowait> gq   :call <SID>quit()<CR>
@@ -224,12 +225,12 @@ function! s:maps() abort
   nnoremap <silent> <buffer> <C-P> k:call <SID>open(0, 0)<CR>
 endfunction
 
-function! s:gbrowse() abort
+function! s:gbrowse(bang) abort
   let sha = s:sha()
   if empty(sha)
     return s:warn('not a commit line')
   endif
-  execute 'GBrowse' sha
+  execute 'GBrowse' . (a:bang ? '!' : '') sha
 endfunction
 
 function! s:list(opts, flat) abort
