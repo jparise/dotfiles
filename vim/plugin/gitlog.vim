@@ -49,8 +49,12 @@ endfunction
 
 " Annotate flat log lines with ● (mainline) or ├ (branch).
 " Input lines have format "%h %p<TAB>rest"; output prefixes rest with ● or ├.
+" Mainline = the first commit plus every first-parent descendant. Because
+" --topo-order can interleave side-branch commits ahead of the next mainline
+" commit, track expected shas in a set rather than a single "next" sha.
 function! s:flatten(lines) abort
-  let main = ''
+  let mainline = {}
+  let first = 1
   let result = []
   for line in a:lines
     let tab = stridx(line, "\t")
@@ -60,9 +64,12 @@ function! s:flatten(lines) abort
     endif
     let parts = split(line[:tab-1], ' ')
     let sha = parts[0]
-    let prefix = (empty(main) || sha ==# main) ? '● ' : '├ '
-    let main = get(parts, 1, '')
-    call add(result, prefix . line[tab+1:])
+    let is_main = first || has_key(mainline, sha)
+    let first = 0
+    if is_main && len(parts) > 1
+      let mainline[parts[1]] = 1
+    endif
+    call add(result, (is_main ? '● ' : '├ ') . line[tab+1:])
   endfor
   return result
 endfunction
