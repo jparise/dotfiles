@@ -1,7 +1,6 @@
 set rulerformat=%8(%4l:%-3v%)
 
-set statusline=
-set statusline+=%(\%w\ %)
+set statusline=%(\%w\ %)
 set statusline+=%{jon#statusline#fileprefix()}
 set statusline+=%1*%t
 set statusline+=%<
