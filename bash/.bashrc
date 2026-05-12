@@ -155,6 +155,26 @@ gl() {
 }
 [ "$(declare -Ff __git_complete)" ] && __git_complete gl git_log
 
+# Interactive git browser and commit picker
+gv() {
+    git log --color=always --date=short \
+        --decorate-refs=refs/heads/ \
+        --decorate-refs=refs/tags/ \
+        --decorate-refs=refs/remotes/origin/HEAD \
+        --format='%C(cyan)%cd %C(yellow)%h %Creset%s %C(green)(%aN)%C(auto)%d%Creset' "$@" | \
+    fzf --ansi --reverse --no-sort --multi \
+        --info=inline-right \
+        --preview 'git show --color=always --stat -p {2}' \
+        --preview-window '<50(down):wrap' \
+        --header 'enter:sha  ^b:browse  ^d:diff(multi)  ^y:yank  ^/:preview' \
+        --bind 'ctrl-/:toggle-preview' \
+        --bind 'ctrl-b:execute-silent(gh browse {2})' \
+        --bind 'ctrl-d:execute(git diff --color=always {+2})' \
+        --bind 'ctrl-y:execute-silent(echo -n {2} | pbcopy)' | \
+    awk '{print $2}'
+}
+[ "$(declare -Ff __git_complete)" ] && __git_complete gv git_log
+
 # Aliases
 alias n=notes
 alias ng=notesgrep
