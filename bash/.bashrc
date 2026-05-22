@@ -157,7 +157,7 @@ gl() {
 
 # Interactive git browser and commit picker
 gv() {
-    git log --color=always --date=short \
+    git log --color=always --date=short --topo-order \
         --decorate-refs=refs/heads/ \
         --decorate-refs=refs/tags/ \
         --decorate-refs=refs/remotes/origin/HEAD \
