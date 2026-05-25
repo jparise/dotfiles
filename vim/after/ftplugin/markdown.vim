@@ -39,9 +39,8 @@ let b:undo_ftplugin = get(b:, 'undo_ftplugin', 'execute')
 let b:undo_ftplugin .= '|setlocal autoindent< formatoptions< linebreak< spell<'
 let b:undo_ftplugin .= '|unlet g:markdown_fenced_languages'
 
-" For macOS, add a markdown preview mapping.
-if has('osx') && executable('open')
-  command! -buffer Preview
-        \ silent execute '!open -a "Marked 2.app" "' . expand('%') . '"' | redraw!
-  let b:undo_ftplugin .= '|delcommand -buffer Preview'
+" Preview in whichever application the system associates with Markdown.
+if exists(':Open') == 2
+  nmap <buffer> <leader>p <Cmd>Open %<CR>
+  let b:undo_ftplugin .= '|nunmap <buffer> <leader>p'
 endif
