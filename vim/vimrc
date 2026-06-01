@@ -38,6 +38,7 @@ endif
 let fzf_prefix = exists('$HOMEBREW_PREFIX') ? $HOMEBREW_PREFIX : '/usr/local'
 if isdirectory(fzf_prefix.'/opt/fzf')
   Plug fzf_prefix.'/opt/fzf'
+  Plug 'junegunn/fzf.vim'
 endif
 if !has('nvim') && exists('$GHOSTTY_RESOURCES_DIR')
   Plug $GHOSTTY_RESOURCES_DIR.'/../vim/vimfiles'
