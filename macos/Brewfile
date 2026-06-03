@@ -25,6 +25,7 @@ mas "Marked 3", id: 6747497179
 cask "alfred"
 cask "dash"
 cask "ghostty@tip"
+cask "leader-key"
 cask "obsidian"
 cask "rectangle"
 cask "wezterm"
