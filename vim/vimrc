@@ -245,11 +245,7 @@ augroup END
 
 if has('termguicolors')
   set termguicolors
-  if &background ==# 'dark'
-    colorscheme everforest
-  else
-    colorscheme retrobox
-  endif
+  colorscheme everforest
 else
   colorscheme quiet
 endif
