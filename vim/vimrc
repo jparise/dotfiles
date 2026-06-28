@@ -243,6 +243,21 @@ augroup ColorSchemes
   autocmd ColorScheme spring-night highlight! link ALEVirtualTextWarning NonText
 augroup END
 
+" Vim defaults 'background' to light and only corrects it after querying the
+" terminal (t_RB), which happens after the first screen paint. On a dark
+" terminal that produces a brief light→dark flash. Set 'background' from the
+" macOS appearance up front so the first paint already matches. Re-checked on
+" every launch, so it stays correct when the system theme is toggled under a
+" long-lived shell. Neovim queries before painting and isn't affected.
+"
+" Skipped when $COLORFGBG is set: Vim already derives the right background from
+" it before the first paint, so there is nothing to correct.
+if !has('nvim') && empty($COLORFGBG) && has('macunix') && executable('defaults')
+  let &background =
+        \ system('defaults read -g AppleInterfaceStyle 2>/dev/null') =~? 'dark'
+        \ ? 'dark' : 'light'
+endif
+
 if has('termguicolors')
   set termguicolors
   colorscheme everforest
