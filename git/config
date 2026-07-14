@@ -8,6 +8,11 @@
 	pager = less -FRX
 	precomposeunicode = true
 
+[pager]
+	diff = ~/.config/git/diff-highlight | less -FRX
+	log = ~/.config/git/diff-highlight | less -FRX
+	show = ~/.config/git/diff-highlight | less -FRX
+
 [alias]
 	amend = commit --amend
 	base = !git merge-base HEAD $(git main)
