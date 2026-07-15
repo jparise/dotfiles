@@ -21,6 +21,7 @@ brew "vim"
 mas "Acorn", id: 6737921844
 mas "DaisyDisk", id: 411643860
 mas "Marked 3", id: 6747497179
+mas "Soulver 4", id: 1508732804
 
 cask "alfred"
 cask "dash"
