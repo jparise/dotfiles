@@ -280,6 +280,7 @@ nnoremap <leader>P "0P
 
 " Buffer management
 nnoremap <Space>        :buffers<CR>:buffer<Space>
+nnoremap <leader><Space> :Buffers<CR>
 nnoremap <expr> <tab>   (bufloaded(0) ? '<C-^>' : ':bnext<CR>')
 nnoremap <leader><tab>  :A<CR>
 nnoremap <expr> <leader>d
