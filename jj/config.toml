@@ -2,3 +2,6 @@
 
 [user]
 name = "Jon Parise"
+
+[colors]
+"diff token" = { reverse = true, underline = false }
