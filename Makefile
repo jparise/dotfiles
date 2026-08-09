@@ -1,4 +1,5 @@
-TARGETS = install-bash \
+TARGETS = agents \
+		  install-bash \
 		  install-bat \
 		  install-ctags \
 		  install-direnv \
@@ -12,6 +13,15 @@ TARGETS = install-bash \
 .PHONY: install $(TARGETS)
 
 install: $(TARGETS) ~/.hushlogin
+
+agents: SRC := $(CURDIR)/agents
+agents:
+	rm -f $(HOME)/.agents
+	ln -s $(SRC) $(HOME)/.agents
+# Claude Code
+	mkdir -p $(HOME)/.claude/skills
+	@find $(HOME)/.claude/skills -maxdepth 1 -type l ! -exec test -e {} \; -delete
+	$(foreach d,$(wildcard $(SRC)/skills/*),ln -sfn $(d) $(HOME)/.claude/skills/$(notdir $(d)) &&) true
 
 install-bash:
 	rm -f ~/.bash_profile ~/.bashrc ~/.inputrc
