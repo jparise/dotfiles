@@ -1,79 +1,42 @@
-TARGETS = agents \
-		  install-bash \
-		  install-bat \
-		  install-ctags \
-		  install-direnv \
-		  install-ghostty \
-		  install-git \
-		  install-jj \
-		  install-pip \
-		  install-vim \
-		  install-wezterm
+CONFIGS = bat ctags direnv ghostty git jj pip wezterm
+TARGETS = agents bash vim $(CONFIGS)
 
 .PHONY: install $(TARGETS)
 
 install: $(TARGETS) ~/.hushlogin
 
+~/.config ~/.cache/vim:
+	mkdir -p $@
+
+~/.hushlogin:
+	touch $@
+
+$(CONFIGS): | ~/.config
+	@test ! -d $(HOME)/.config/$@ -o -L $(HOME)/.config/$@ \
+		|| { echo "~/.config/$@ is a real directory; move or remove it"; exit 1; }
+	ln -sfn $(CURDIR)/$@ $(HOME)/.config/$@
+
 agents: SRC := $(CURDIR)/agents
 agents:
-	rm -f $(HOME)/.agents
-	ln -s $(SRC) $(HOME)/.agents
+	ln -sfn $(SRC) $(HOME)/.agents
 # Claude Code
 	mkdir -p $(HOME)/.claude/skills
 	@find $(HOME)/.claude/skills -maxdepth 1 -type l ! -exec test -e {} \; -delete
 	$(foreach d,$(wildcard $(SRC)/skills/*),ln -sfn $(d) $(HOME)/.claude/skills/$(notdir $(d)) &&) true
 
-install-bash:
-	rm -f ~/.bash_profile ~/.bashrc ~/.inputrc
-	ln -s `pwd`/bash/.bash_profile ~/.bash_profile
-	ln -s `pwd`/bash/.bashrc ~/.bashrc
-	ln -s `pwd`/bash/.inputrc ~/.inputrc
+bash: SRC := $(CURDIR)/bash
+bash:
+	ln -sfn $(SRC)/.bash_profile ~/.bash_profile
+	ln -sfn $(SRC)/.bashrc ~/.bashrc
+	ln -sfn $(SRC)/.inputrc ~/.inputrc
 
-install-bat: ~/.config
-	rm -f ~/.config/bat
-	ln -s `pwd`/bat ~/.config/bat
-
-install-ctags: ~/.config
-	rm -f ~/.config/ctags
-	ln -s `pwd`/ctags ~/.config/ctags
-
-install-direnv: ~/.config
-	rm -f ~/.config/direnv
-	ln -s `pwd`/direnv ~/.config/direnv
-
-install-ghostty: ~/.config
-	rm -f ~/.config/ghostty
-	ln -s `pwd`/ghostty ~/.config/ghostty
-
-install-git: ~/.config
-	rm -f ~/.config/git
-	ln -s `pwd`/git ~/.config/git
-
-install-jj: ~/.config
-	rm -f ~/.config/jj
-	ln -s `pwd`/jj ~/.config/jj
-
-install-pip: ~/.config
-	rm -rf ~/.config/pip
-	ln -s `pwd`/pip ~/.config/pip
-
-install-vim: ~/.config vim/autoload/plug.vim
-	rm -rf ~/.vim ~/.vimrc ~/.config/nvim
-	ln -s `pwd`/vim ~/.vim
-	ln -s `pwd`/vim/vimrc ~/.vimrc
-	ln -s `pwd`/vim ~/.config/nvim
-	mkdir -p ~/.cache/vim
-
-install-wezterm: ~/.config
-	rm -f ~/.config/wezterm
-	ln -s `pwd`/wezterm ~/.config/wezterm
-
-~/.config:
-	mkdir -p ~/.config
-
-~/.hushlogin:
-	touch ~/.hushlogin
+vim: SRC := $(CURDIR)/vim
+vim: | ~/.config ~/.cache/vim vim/autoload/plug.vim
+	rm -rf ~/.vim ~/.config/nvim
+	ln -sfn $(SRC) ~/.vim
+	ln -sfn $(SRC) ~/.config/nvim
+	ln -sfn $(SRC)/vimrc ~/.vimrc
 
 vim/autoload/plug.vim:
-	curl -fLo `pwd`/vim/autoload/plug.vim --create-dirs \
+	curl -fLo $(CURDIR)/vim/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
