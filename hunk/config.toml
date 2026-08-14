@@ -1,0 +1,6 @@
+theme = "auto"
+transparent_background = true
+mode = "stack"
+hunk_headers = false
+menu_bar = false
+wrap_lines = true

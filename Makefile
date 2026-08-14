@@ -1,4 +1,4 @@
-CONFIGS = bat ctags direnv ghostty git jj pip wezterm
+CONFIGS = bat ctags direnv ghostty git hunk jj pip wezterm
 TARGETS = agents bash vim $(CONFIGS)
 
 .PHONY: install $(TARGETS)
