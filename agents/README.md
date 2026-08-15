@@ -7,6 +7,8 @@ Reusable [skills](skills) that are meant for use with Claude Code, Codex, and
 
 - [`commit`](skills/commit/) - Guidance for making concise git commits with
   good subjects and bodies.
+- [`debug`](skills/debug/) - Systematic debugging. Finds root cause before
+  attempting fixes, without guessing.
 - [`discuss`](skills/discuss/) - Planning interviewer mode. It inspects the
   project first, asks focused questions in short rounds, and stops once the
   plan is clear enough to implement.
