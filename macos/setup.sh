@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# See also:
-# - https://github.com/mathiasbynens/dotfiles/blob/master/.osx
-# - https://github.com/necolas/dotfiles/blob/master/bin/osxdefaults
+# Targets macOS 26 (Tahoe) and later.
+if [ "$(sw_vers -productVersion | cut -d. -f1)" -lt 26 ]; then
+	echo "warning: this script targets macOS 26+; some settings may not apply." >&2
+fi
 
 chflags nohidden ~/Library
 
@@ -15,7 +16,6 @@ defaults write NSGlobalDomain KeyRepeat -int 6
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -46,14 +46,8 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
-
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-# Disable window and Get Info animations
-defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Expand the following File Info panes: "General", "More Info", "Open With"
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
@@ -79,19 +73,11 @@ defaults write com.apple.dock show-recents -bool false
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
-
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
 # Reduce menu bar status item spacing
 defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
-
-## Safari
-
-# Map Command-W to only close tabs but not the window
-defaults write com.apple.Safari NSUserKeyEquivalents -dict-add 'Close Tab' '<string>@w</string></dict>'
 
 ## Visual Studio Code
 
@@ -101,6 +87,6 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ## Cleanup
 
 # Restart all affected applications.
-for app in "Dashboard" "Dock" "Finder" "SystemUIServer"; do
+for app in "Dock" "Finder" "SystemUIServer"; do
 	killall "$app" > /dev/null 2>&1
 done
