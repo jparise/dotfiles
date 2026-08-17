@@ -98,6 +98,10 @@ defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
 defaults write com.apple.WindowManager HideDesktop -bool true
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
+# Tile windows edge to edge, and don't tile on a drag to the screen top
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
+defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+
 ## Visual Studio Code
 
 # Disable system "press-and-hold" behavior so we get key repeats
