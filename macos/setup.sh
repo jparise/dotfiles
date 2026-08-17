@@ -15,6 +15,7 @@ defaults write NSGlobalDomain KeyRepeat -int 6
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable “natural” (Lion-style) scrolling
@@ -50,7 +51,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Expand the following File Info panes: "General", "More Info", "Open With"
-defaults write com.apple.finder FXInfoPanesExpanded -dict \
+defaults write com.apple.finder FXInfoPanesExpanded -dict-add \
 	General -bool true \
 	MetaData -bool true \
 	OpenWith -bool true
