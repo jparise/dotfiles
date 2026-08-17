@@ -24,6 +24,16 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 # Autocorrect
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
+# Text replacements. This list is authoritative: `defaults` has no merge
+# form for arrays, so anything added through System Settings is lost on
+# the next run unless it's also added here.
+defaults write NSGlobalDomain NSUserDictionaryReplacementItems -array \
+	'{ replace = "<--"; with = "\U2190 "; }' \
+	'{ replace = "<->"; with = "\U2194"; }' \
+	'{ replace = "-->"; with = "\U2192"; }' \
+	'{ replace = "omw"; with = "On my way!"; }' \
+	'{ replace = "brt"; with = "Be right there."; }'
+
 ## Screen
 
 # Save screenshots to the Desktop as PNGs
