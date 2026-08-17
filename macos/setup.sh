@@ -41,6 +41,15 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Use list view by default
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Open new windows in the home directory
+defaults write com.apple.finder NewWindowTarget -string "PfAF"
+
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
@@ -58,8 +67,10 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict-add \
 
 ## Dock
 
-# Position the Dock on the right
+# Position the Dock on the right and hide it when unused
 defaults write com.apple.dock orientation right
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock tilesize -int 36
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
@@ -80,6 +91,13 @@ defaults write com.apple.dock mru-spaces -bool false
 # Reduce menu bar status item spacing
 defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
 
+## Desktop
+
+# Hide desktop icons unless the Desktop is focused in Finder, and don't
+# reveal the desktop on a stray click in the wallpaper
+defaults write com.apple.WindowManager HideDesktop -bool true
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
 ## Visual Studio Code
 
 # Disable system "press-and-hold" behavior so we get key repeats
@@ -88,6 +106,6 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ## Cleanup
 
 # Restart all affected applications.
-for app in "Dock" "Finder" "SystemUIServer"; do
+for app in "Dock" "Finder" "SystemUIServer" "WindowManager"; do
 	killall "$app" > /dev/null 2>&1
 done
