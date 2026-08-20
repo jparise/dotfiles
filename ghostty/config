@@ -29,3 +29,4 @@ keybind = cmd+left=previous_tab
 keybind = cmd+right=next_tab
 keybind = cmd+shift+left=goto_split:previous
 keybind = cmd+shift+right=goto_split:next
+keybind = global:ctrl+backquote=toggle_quick_terminal
