@@ -1,3 +1,8 @@
+let g:gutentags_ctags_exclude = [
+\ '.venv',
+\ 'bazel-*',
+\ 'node_modules',
+\ ]
 let g:gutentags_define_advanced_commands = 1
 let g:gutentags_exclude_filetypes = [
 \ 'git',
