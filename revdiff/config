@@ -1,0 +1,8 @@
+[Application Options]
+theme = auto
+auto-theme-dark = basic
+auto-theme-light = nord
+compact = true
+cross-file-hunks = true
+start-at-change = true
+word-diff = true
