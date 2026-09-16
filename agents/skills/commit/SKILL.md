@@ -52,4 +52,8 @@ Create a git commit for the current changes using a concise subject.
 
 - Only commit; do NOT push.
 - Always `git add <path ...>` specific files. Never bulk-add using `git add -A`.
-- If it is unclear whether a file should be included, ask the user which files to commit.
+- Pass the message via `git commit -F -` with a heredoc so the body keeps its
+  literal newlines. Don't use `-m` for the body; it flattens the prose onto a
+  single line.
+- If it is unclear whether a file should be included, ask the user which files
+  to commit.
