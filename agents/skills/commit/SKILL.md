@@ -24,8 +24,7 @@ Create a git commit for the current changes using a concise subject.
 
 - `scope` OPTIONAL. Short noun for the affected area (e.g., `api`, `parser`,
   `ui`) determined from the file paths of the diff. Write it directly before
-  the colon (for example, `api: add pagination`). Use nested scopes with `/`
-  when helpful and exclusive (e.g., `ui/components`).
+  the colon (for example, `api: add pagination`).
 - `summary` REQUIRED. Short, lowercase start (not capitalized), imperative
   mood, no trailing period. Keep it concise—ideally under 60 characters total
   for the whole subject line.
