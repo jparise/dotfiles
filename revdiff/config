@@ -6,3 +6,4 @@ compact = true
 cross-file-hunks = true
 start-at-change = true
 word-diff = true
+vim-motion = true
