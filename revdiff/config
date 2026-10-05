@@ -6,5 +6,4 @@ compact = true
 cross-file-hunks = true
 start-at-change = true
 wrap = true
-word-diff = true
 vim-motion = true
