@@ -106,7 +106,6 @@ fi
 
 # Set up direnv when it's available.
 if hash direnv 2>/dev/null; then
-    export DIRENV_LOG_FORMAT=$'\e[2mdirenv: %s\e[0m'
     eval "$(direnv hook bash)"
 fi
 
