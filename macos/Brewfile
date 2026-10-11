@@ -32,6 +32,6 @@ cask "rectangle"
 cask "wezterm"
 
 cask "font-fira-code"
-cask "font-ibm-plex"
+cask "font-ibm-plex-mono"
 cask "font-iosevka"
 cask "font-jetbrains-mono"
