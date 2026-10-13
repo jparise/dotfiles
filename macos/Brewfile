@@ -33,5 +33,6 @@ cask "wezterm"
 
 cask "font-fira-code"
 cask "font-ibm-plex-mono"
+cask "font-ibm-plex-sans"
 cask "font-iosevka"
 cask "font-jetbrains-mono"
