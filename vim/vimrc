@@ -245,17 +245,15 @@ augroup END
 
 " Vim defaults 'background' to light and only corrects it after querying the
 " terminal (t_RB), which happens after the first screen paint. On a dark
-" terminal that produces a brief light→dark flash. Set 'background' from the
-" macOS appearance up front so the first paint already matches. Re-checked on
-" every launch, so it stays correct when the system theme is toggled under a
-" long-lived shell. Neovim queries before painting and isn't affected.
-"
-" Skipped when $COLORFGBG is set: Vim already derives the right background from
-" it before the first paint, so there is nothing to correct.
-if !has('nvim') && empty($COLORFGBG) && has('macunix') && executable('defaults')
-  let &background =
-        \ system('defaults read -g AppleInterfaceStyle 2>/dev/null') =~? 'dark'
-        \ ? 'dark' : 'light'
+" terminal that produces a brief light→dark flash. Hide it with a synchronized
+" update (t_BS): the terminal holds the screen until we release it (t_ES) once
+" the reply has been handled and the screen redrawn, or after 200ms if no reply
+" comes. Terminals without synchronized updates ignore both codes. Neovim
+" queries before painting and isn't affected.
+if !has('nvim') && has('vim_starting') && !&termsync
+  call echoraw(&t_BS)
+  autocmd TermResponseAll background ++once call timer_start(0, {-> echoraw(&t_ES)})
+  call timer_start(200, {-> echoraw(&t_ES)})
 endif
 
 if has('termguicolors')
