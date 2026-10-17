@@ -107,6 +107,7 @@ fi
 # Set up direnv when it's available.
 if hash direnv 2>/dev/null; then
     eval "$(direnv hook bash)"
+    PS1='${VIRTUAL_ENV:+(venv) }'$PS1
 fi
 
 # Set up fzf defaults when it's available.
