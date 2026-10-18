@@ -8,6 +8,7 @@ window-title-font-family = "Iosevka Fixed"
 # Windows
 window-padding-color = extend
 window-inherit-working-directory = false
+window-theme = dark
 macos-titlebar-style = tabs
 scrollbar = never
 
