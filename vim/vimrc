@@ -243,17 +243,27 @@ augroup ColorSchemes
   autocmd ColorScheme spring-night highlight! link ALEVirtualTextWarning NonText
 augroup END
 
-" Vim defaults 'background' to light and only corrects it after querying the
-" terminal (t_RB), which happens after the first screen paint. On a dark
-" terminal that produces a brief light→dark flash. Hide it with a synchronized
-" update (t_BS): the terminal holds the screen until we release it (t_ES) once
-" the reply has been handled and the screen redrawn, or after 200ms if no reply
-" comes. Terminals without synchronized updates ignore both codes. Neovim
-" queries before painting and isn't affected.
-if !has('nvim') && has('vim_starting') && !&termsync
-  call echoraw(&t_BS)
-  autocmd TermResponseAll background ++once call timer_start(0, {-> echoraw(&t_ES)})
-  call timer_start(200, {-> echoraw(&t_ES)})
+" Vim learns the terminal background after the first screen paint. Keep the
+" first frame buffered until that query is handled and redrawn. Temporarily
+" hide Vim's own synchronized-output codes: its mode probe can otherwise end
+" this outer frame before the background response arrives.
+if !has('nvim') && has('vim_starting') && !&termsync && !empty(&t_BS) && !empty(&t_ES)
+  let s:startup_t_BS = &t_BS
+  let s:startup_t_ES = &t_ES
+  let s:startup_sync_active = v:true
+  call echoraw(s:startup_t_BS)
+  let &t_BS = ''
+  let &t_ES = ''
+  function s:EndStartupSync(...) abort
+    if !s:startup_sync_active | return | endif
+    let s:startup_sync_active = v:false
+    redraw
+    call echoraw(s:startup_t_ES)
+    let &t_BS = s:startup_t_BS
+    let &t_ES = s:startup_t_ES
+  endfunction
+  autocmd TermResponseAll background ++once call s:EndStartupSync()
+  call timer_start(200, function('s:EndStartupSync'))
 endif
 
 if has('termguicolors')
