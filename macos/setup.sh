@@ -55,7 +55,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Open new windows in the home directory
-defaults write com.apple.finder NewWindowTarget -string "PfAF"
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
 
 # Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -108,9 +108,16 @@ defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
 defaults write com.apple.WindowManager HideDesktop -bool true
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
-# Tile windows edge to edge, and don't tile on a drag to the screen top
+# Tile windows edge to edge, and disable drag and Option-key tiling
 defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
+defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
 defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+
+## Appearance
+
+# Liquid Glass transparency (System Settings > Appearance)
+defaults write NSGlobalDomain NSGlassTintAmount -float 0.78
 
 ## Visual Studio Code
 
