@@ -98,6 +98,12 @@ defaults write com.apple.dock launchanim -bool false
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Disable all Hot Corners (1 = no action)
+for corner in tl tr bl br; do
+	defaults write com.apple.dock "wvous-${corner}-corner" -int 1
+	defaults write com.apple.dock "wvous-${corner}-modifier" -int 0
+done
+
 # Reduce menu bar status item spacing
 defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
 
