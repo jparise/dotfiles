@@ -38,14 +38,17 @@ function! s:handler(lines) abort
   " list, create a new file named after the query string. Otherwise, open
   " all of the selected files.
   if action ==? s:create_key || len(a:lines) <= 2
-    let files = [fnameescape(s:notes_dir.'/'.query.'.md')]
+    let files = [expand(s:notes_dir).'/'.query.'.md']
   else
     let files = a:lines[2:]
   endif
 
-  let cmd = get(g:fzf_action, action, 'edit')
+  let Cmd = get(g:fzf_action, action, 'edit')
+  if type(Cmd) == v:t_func
+    return Cmd(files)
+  endif
   for file in files
-    execute cmd.' '.file
+    execute Cmd fnameescape(file)
   endfor
 endfunction
 
@@ -57,8 +60,9 @@ command! -nargs=* -bang Notes
   \   'options': [
   \     '--ansi', '--multi', '--exact', '--tiebreak=length,begin',
   \     '--prompt', 'Notes> ', '--info=hidden', '--print-query',
+  \     '--ghost', s:create_key.': new note',
   \     '--expect', join(keys(g:fzf_action) + [s:create_key], ','),
-  \     '--preview', s:preview_cmd, '--preview-window', ':75%:wrap',
+  \     '--preview', s:preview_cmd, '--preview-window', '75%,wrap-word',
   \     '--select-1', '--query', <q-args>]
   \ }, <bang>0))
 
@@ -70,9 +74,10 @@ command! -nargs=+ -bang NotesGrep
   \   'options': [
   \     '--ansi', '--multi', '--exact', '--tiebreak=length,begin',
   \     '--prompt', 'Notes: '.<q-args>.'> ', '--info=hidden', '--print-query',
+  \     '--ghost', s:create_key.': new note',
   \     '--expect', join(keys(g:fzf_action) + [s:create_key], ','),
   \     '--preview', 'rg -i --pretty --context 5 '.shellescape(<q-args>).' {}',
-  \     '--preview-window', ':75%:wrap']
+  \     '--preview-window', '75%,wrap-word']
   \ }, <bang>0))
 
 let &cpoptions = s:cpo_save
