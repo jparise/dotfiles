@@ -56,31 +56,18 @@ function! s:gitfiles(args) abort
   " working tree (uncommitted) or the merge-base with origin (committed).
   let preview_cmd = 'git diff --color '.
         \ (!empty(merge_base)
-        \   ? '$(git diff --quiet HEAD -- {-1} && echo "'.merge_base.'..") '
+        \   ? '$(git diff --quiet HEAD -- {2..} && echo "'.merge_base.'..") '
         \   : '').
-        \ '-- {-1} | sed 1,4d'
+        \ '-- {2..} | sed 1,4d'
 
-  let wrapped = fzf#wrap('gitfiles', {
+  return fzf#run(fzf#wrap('gitfiles', {
   \ 'source': '('.modified.' && '.committed.") | awk '!filenames[$NF]++'",
   \ 'dir':    root,
   \ 'options': [
-  \   '--ansi', '--multi', '--nth', '2..,..', '--tiebreak=index',
-  \   '--scheme', 'path', '--prompt', 'GitFiles?> ',
+  \   '--ansi', '--multi', '--nth', '2..,..', '--accept-nth', '2..',
+  \   '--tiebreak=index', '--scheme', 'path', '--prompt', 'GitFiles?> ',
   \   '--preview', preview_cmd, '--preview-window', 'right,50%,<70(up,40%)']
-  \})
-
-  " This replacement sink strips status characters from each line (leaving
-  " just the filename) and then passes the lines to the s:common_sink()
-  " function that will be added by fzf#wrap(). That way, we don't have to
-  " reimplement all of the common action behavior.
-  let wrapped.common_sink = remove(wrapped, 'sink*')
-  function! wrapped.newsink(lines)
-    let lines = extend(a:lines[0:0], map(a:lines[1:], 'trim(v:val[2:])'))
-    return self.common_sink(lines)
-  endfunction
-  let wrapped['sink*'] = remove(wrapped, 'newsink')
-
-  return fzf#run(wrapped)
+  \}))
 endfunction
 
 command! -nargs=? GitFiles  call s:gitfiles(<q-args>)
