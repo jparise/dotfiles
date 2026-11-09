@@ -162,7 +162,7 @@ gv() {
         --decorate-refs=refs/tags/ \
         --decorate-refs=refs/remotes/origin/HEAD \
         --format='%C(cyan)%cd %C(yellow)%h %Creset%s %C(green)(%aN)%C(auto)%d%Creset' "$@" | \
-    fzf --ansi --reverse --no-sort --multi \
+    fzf --ansi --reverse --no-sort --multi --accept-nth 2 \
         --info=inline-right \
         --preview 'git show --color=always --stat -p {2}' \
         --preview-window '<50(down):wrap' \
@@ -170,8 +170,7 @@ gv() {
         --bind 'ctrl-/:toggle-preview' \
         --bind 'ctrl-b:execute-silent(gh browse {2})' \
         --bind 'ctrl-d:execute(git diff --color=always {+2})' \
-        --bind 'ctrl-y:execute-silent(echo -n {2} | pbcopy)' | \
-    awk '{print $2}'
+        --bind 'ctrl-y:execute-silent(echo -n {2} | pbcopy)'
 }
 [ "$(declare -Ff __git_complete)" ] && __git_complete gv git_log
 
