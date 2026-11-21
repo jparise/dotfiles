@@ -243,27 +243,8 @@ augroup ColorSchemes
   autocmd ColorScheme spring-night highlight! link ALEVirtualTextWarning NonText
 augroup END
 
-" Vim learns the terminal background after the first screen paint. Keep the
-" first frame buffered until that query is handled and redrawn. Temporarily
-" hide Vim's own synchronized-output codes: its mode probe can otherwise end
-" this outer frame before the background response arrives.
-if !has('nvim') && has('vim_starting') && !&termsync && !empty(&t_BS) && !empty(&t_ES)
-  let s:startup_t_BS = &t_BS
-  let s:startup_t_ES = &t_ES
-  let s:startup_sync_active = v:true
-  call echoraw(s:startup_t_BS)
-  let &t_BS = ''
-  let &t_ES = ''
-  function s:EndStartupSync(...) abort
-    if !s:startup_sync_active | return | endif
-    let s:startup_sync_active = v:false
-    redraw
-    call echoraw(s:startup_t_ES)
-    let &t_BS = s:startup_t_BS
-    let &t_ES = s:startup_t_ES
-  endfunction
-  autocmd TermResponseAll background ++once call s:EndStartupSync()
-  call timer_start(200, function('s:EndStartupSync'))
+if exists('+termbackgroundwait')
+  set termbackgroundwait=100
 endif
 
 if has('termguicolors')
