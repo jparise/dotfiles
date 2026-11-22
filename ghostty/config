@@ -9,6 +9,7 @@ window-title-font-family = "Iosevka Fixed"
 window-padding-color = extend
 window-inherit-working-directory = false
 window-theme = dark
+split-divider-color = #727785
 macos-titlebar-style = tabs
 scrollbar = never
 
